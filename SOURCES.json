@@ -32,5 +32,6 @@
   "sim_meshes": "Derived simplified visual meshes only; native STEP and printing STL remain separate. Collision proxies are approximate.",
   "local_reference": {
     "references/X2_官方尺寸图.png": "https://cdn.shopify.com/s/files/1/0621/5493/2452/files/X2_Underwater_Thruster_Dimensions_2048x2048.png?v=1761040266"
-  }
+  },
+  "hardware_sources": "electronics/sources.json"
 }

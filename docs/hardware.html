@@ -1,0 +1,62 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>SimpleROV | Project documentation</title><style>
+:root{--ink:#183d46;--muted:#5d7480;--line:#dbe6e9;--accent:#176271;--orange:#ed8a24}
+*{box-sizing:border-box}body{margin:0;background:#f3f7f8;color:var(--ink);font:16px/1.8 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+header{background:#fff;border-bottom:1px solid var(--line)}nav{max-width:1100px;margin:auto;padding:18px 28px;display:flex;gap:22px;align-items:center;flex-wrap:wrap}nav strong{margin-right:auto;letter-spacing:-.5px;font-size:22px}nav a{font-size:14px;text-decoration:none}
+main{max-width:1100px;margin:32px auto 70px;background:#fff;border:1px solid var(--line);border-radius:16px;padding:42px 48px;box-shadow:0 8px 35px #183d4608}
+h1{font-size:42px;letter-spacing:-1.3px;line-height:1.2;margin-top:0}h2{font-size:26px;border-top:1px solid var(--line);padding-top:30px;margin-top:44px;line-height:1.35}h3{font-size:20px;margin-top:30px;line-height:1.4}p{margin:16px 0}a{color:var(--accent);text-underline-offset:3px}img,video{max-width:100%;height:auto;border-radius:8px}p>img{display:block;margin:22px auto}table{border-collapse:collapse;width:100%;font-size:14px;margin:20px 0}th,td{border:1px solid var(--line);padding:12px 15px;text-align:left;vertical-align:top}th{background:#eaf2f4;font-weight:600}tr:nth-child(even){background:#fafcfc}td img{width:100%}pre{overflow:auto;background:#163843;color:#edf6f8;padding:22px;border-radius:10px;font-size:13px;line-height:1.7}code{font-family:ui-monospace,SFMono-Regular,Consolas,monospace}p code,td code{background:#edf3f5;padding:2px 5px;border-radius:4px;font-size:.88em}blockquote{margin:20px 0;padding:1px 20px;background:#fff5e7;border-left:3px solid var(--orange)}details{border:1px solid var(--line);border-radius:10px;padding:12px 18px;margin:20px 0}summary{cursor:pointer}footer{color:var(--muted);font-size:12px;text-align:center;margin:35px auto}
+@media(max-width:700px){main{margin:12px 8px;padding:24px 18px;border-radius:10px}h1{font-size:34px}h2{font-size:23px}table{font-size:12px}th,td{padding:8px}nav{gap:12px;padding:14px 20px}pre{font-size:11px}}
+@media print{body,main{margin:0;padding:0;background:#fff;border:0;box-shadow:none}header,footer{display:none}h2{break-before:page}}
+</style></head><body><header><nav><strong>SimpleROV</strong><a href="index.html">Overview</a><a href="assembly.html">Assembly</a><a href="gallery.html">Gallery</a><a href="simulation.html">Simulation</a><a href="hardware.html">Hardware</a><a href="index.es.html">ES</a><a href="index.zh-CN.html">中文</a></nav></header><main><h1 id="hardware-and-connections">Hardware and connections</h1>
+<p>SimpleROV v0.0.1 uses a four-channel controller/interface PCB, purchased bidirectional ESCs and a separate power harness. The initial commissioning configuration is a regulated <strong>12 V source with a 5 A total current limit</strong>, followed by controlled individual-motor checks. A mobile battery and the complete electrical package remain subject to the documented procurement and fit holds.</p>
+<p><a href="../electronics/README.md">Hardware directory</a> · <a href="../electronics/architecture.md">Architecture</a> · <a href="../electronics/wiring.md">Wiring</a> · <a href="../electronics/power.md">Power</a> · <a href="../electronics/commissioning.md">Commissioning</a></p>
+<h2 id="editable-board-and-manufacturing-review">Editable board and manufacturing review</h2>
+<p><img alt="Controller native PCB perspective" src="assets/hardware/controller-angle.png" /></p>
+<p>The <strong>80 × 32 × 1.6 mm, four-layer</strong> RP2040 controller includes an ICM-42688-P IMU, external watchdog, latched arming logic, four separate ESC receiver channels, Bar02/leak inputs and USB service. It is an unpowered engineering prototype.</p>
+<p><a href="../electronics/pcb/controller/SimpleROV001_control.kicad_pro">KiCad project</a> · <a href="../electronics/pcb/drawings/schematic.pdf">Schematic PDF</a> · <a href="../electronics/pcb/drawings/assembly_top.pdf">Top assembly</a> · <a href="../electronics/pcb/drawings/assembly_bottom.pdf">Bottom assembly</a> · <a href="../electronics/pcb/controller/BOM.csv">Board BOM</a> · <a href="../electronics/pcb/README.md">Manufacturing and reproduction</a> · <a href="../electronics/interfaces/CONTROLLER_PINOUT.csv">Pin map</a></p>
+<h2 id="material-lists">Material lists</h2>
+<table>
+<thead>
+<tr>
+<th>List</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../electronics/bom/SYSTEM_BOM.csv">System BOM</a></td>
+<td>Purchased modules, PCBA, sensors, power parts, shore equipment and conditional items</td>
+</tr>
+<tr>
+<td><a href="../electronics/bom/HARNESS_BOM.csv">Harness BOM</a></td>
+<td>Power, ESC control, phases, UART, USB, Ethernet and sensor cable assemblies</td>
+</tr>
+<tr>
+<td><a href="../electronics/bom/CONSUMABLES_TOOLS.csv">Consumables and tools</a></td>
+<td>Added mounting hardware, insulation, strain relief, identification, spares and test tools</td>
+</tr>
+<tr>
+<td><a href="../electronics/bom/CONTROLLER_HARNESS_PARTS.csv">Controller mating parts</a></td>
+<td>GH housings/contacts, source-side sense resistor and remote leak-probe EOL resistor</td>
+</tr>
+<tr>
+<td><a href="../bom/README.md">Mechanical BOM</a></td>
+<td>Existing prints, 134 base metal parts and commercial mechanical references</td>
+</tr>
+</tbody>
+</table>
+<p>A system row for an assembled controller is one PCBA, not a second order for its populated chips. Thrusters, camera and enclosure references already counted in the mechanical BOM are cross-references with zero incremental purchase quantity. A hold status does not mean that a part is unnecessary. <a href="../electronics/procurement.md">Quantity and procurement rules</a>.</p>
+<h2 id="how-it-connects">How it connects</h2>
+<pre><code class="language-text">Computer / gamepad &lt;--&gt; Ethernet tether &lt;--&gt; Pi Zero 2 W + USB/Ethernet hub
+                                              |-- USB --&gt; Camera
+                                              `-- 3.3 V UART --&gt; RP2040 controller
+                                                                  |-- Sensors
+                                                                  `-- 4 ESCs --&gt; 4 thrusters
+</code></pre>
+<p>The Pi handles compressed video and network commands. The real-time MCU will implement command validity, arming, classical stabilization and motor signals. Each ESC controls a three-phase brushless motor. Propulsion current goes through the protected harness, not the controller PCB. No flashable vehicle firmware is included yet.</p>
+<p>The selected output architecture uses each ESC's BEC only for that channel's optocoupler receiver side. The four BEC positives and the regulated logic supply must not be paralleled. Follow the delivered board connector table, including its enable and fault behavior. Missing pulses or a fixed level does not constitute a valid neutral pulse. <a href="../electronics/wiring.md">Exact connection procedure</a>.</p>
+<h2 id="fit-and-verification">Fit and verification</h2>
+<p>The controller mounting contract is <strong>80 × 32 × 1.6 mm</strong>, with four M3 clearance holes aligned to the existing tray slots. The declared board-envelope check uses 5 mm insulating spacers; its PCB bottom is at global Z = 13 mm. Four screws, eight washers and four nuts add <strong>16 metal pieces</strong> to the base 134; these are listed separately with four insulating spacers.</p>
+<p><a href="../electronics/interfaces/MECHANICAL_CONTRACT.json">Mechanical contract</a> · <a href="../electronics/validation/controller_mount.json">Declared-envelope report</a> · <a href="../electronics/mechanical/controller-mount-review.step">Mount review STEP</a>.</p>
+<p>The <a href="../electronics/validation/native_controller_fit.json">native STEP fit report</a> additionally checks all 118 exported PCB/component solids, nine GH mating-plug reservations and nine wire-bend reservations against the unchanged tray, camera carrier, tube, end fittings, camera and added mounting hardware. The <a href="../electronics/mechanical/native-controller-fit.step">native fit STEP</a> makes that nominal placement reviewable. No overlap above 0.01 mm³ was found in that scope. Two component models are declared dimension envelopes; cable bends are engineering reservations. This does not establish that the battery, four ESCs, host/hub, USB plugs, power junctions and complete harness fit the current 50 mm-series / 150 mm enclosure. Tray axial retention, connector access, temperature, penetrators, real fit and sealing still need verification. The standard mechanical assembly and its dimensions have not been enlarged to imply a solution.</p>
+<p>The exact X2 battery-voltage interpretation, mobile battery pack, cable seals and full packaging are explicit release gates. The current X2 reference is for freshwater. Start with the <a href="../electronics/commissioning.md">commissioning checklist</a>; complete the physical gates before powered water operation.</p>
+<p><a href="../electronics/manufacturing.md">Fabrication and JLC review files</a>.</p></main><footer>SimpleROV · Prototype documentation · Original content all rights reserved</footer></body></html>

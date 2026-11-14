@@ -6,7 +6,7 @@ main{max-width:1100px;margin:32px auto 70px;background:#fff;border:1px solid var
 h1{font-size:42px;letter-spacing:-1.3px;line-height:1.2;margin-top:0}h2{font-size:26px;border-top:1px solid var(--line);padding-top:30px;margin-top:44px;line-height:1.35}h3{font-size:20px;margin-top:30px;line-height:1.4}p{margin:16px 0}a{color:var(--accent);text-underline-offset:3px}img,video{max-width:100%;height:auto;border-radius:8px}p>img{display:block;margin:22px auto}table{border-collapse:collapse;width:100%;font-size:14px;margin:20px 0}th,td{border:1px solid var(--line);padding:12px 15px;text-align:left;vertical-align:top}th{background:#eaf2f4;font-weight:600}tr:nth-child(even){background:#fafcfc}td img{width:100%}pre{overflow:auto;background:#163843;color:#edf6f8;padding:22px;border-radius:10px;font-size:13px;line-height:1.7}code{font-family:ui-monospace,SFMono-Regular,Consolas,monospace}p code,td code{background:#edf3f5;padding:2px 5px;border-radius:4px;font-size:.88em}blockquote{margin:20px 0;padding:1px 20px;background:#fff5e7;border-left:3px solid var(--orange)}details{border:1px solid var(--line);border-radius:10px;padding:12px 18px;margin:20px 0}summary{cursor:pointer}footer{color:var(--muted);font-size:12px;text-align:center;margin:35px auto}
 @media(max-width:700px){main{margin:12px 8px;padding:24px 18px;border-radius:10px}h1{font-size:34px}h2{font-size:23px}table{font-size:12px}th,td{padding:8px}nav{gap:12px;padding:14px 20px}pre{font-size:11px}}
 @media print{body,main{margin:0;padding:0;background:#fff;border:0;box-shadow:none}header,footer{display:none}h2{break-before:page}}
-</style></head><body><header><nav><strong>SimpleROV</strong><a href="index.html">Overview</a><a href="assembly.html">Assembly</a><a href="gallery.html">Gallery</a><a href="simulation.html">Simulation</a><a href="index.es.html">ES</a><a href="index.zh-CN.html">中文</a></nav></header><main><div align="center">
+</style></head><body><header><nav><strong>SimpleROV</strong><a href="index.html">Overview</a><a href="assembly.html">Assembly</a><a href="gallery.html">Gallery</a><a href="simulation.html">Simulation</a><a href="hardware.html">Hardware</a><a href="index.es.html">ES</a><a href="index.zh-CN.html">中文</a></nav></header><main><div align="center">
 <h1 id="simplerov">SimpleROV</h1>
 <p><strong>A compact four-thruster underwater robot.</strong></p>
 <p>Printable mechanics · Documented assembly · MuJoCo simulation</p>
@@ -383,6 +383,11 @@ for _ in range(1000):
 <pre><code class="language-bash">python simulation/mujoco/run.py --scenario cross-current --viewer --manual --seconds 300
 </code></pre>
 <p>The development path is <strong>mechanical fit and assembly → tethered remote operation → classical stabilization → measured calibration and shallow-water trials</strong>. Hardware selection and onboard code follow the mechanical prototype.</p>
+<h2 id="hardware-and-connections">Hardware and connections</h2>
+<p>The hardware work follows the current small frame and tray. A dedicated <strong>80 × 32 mm RP2040 controller board</strong> handles sensing and four ESC signal channels; propulsion current stays in a separate protected harness. A <strong>Pi Zero 2 W with an Ethernet/USB hub</strong> handles the existing USB camera and tethered communication. Onboard code is still to be implemented.</p>
+<p><a href="../electronics/pcb/controller/SimpleROV001_control.kicad_pro">KiCad controller</a> · <a href="../electronics/pcb/drawings/schematic.pdf">Schematic</a> · <a href="../electronics/pcb/controller/BOM.csv">PCBA BOM</a> · <a href="hardware.html">Hardware overview</a> · <a href="../electronics/bom/SYSTEM_BOM.csv">System BOM</a> · <a href="../electronics/bom/HARNESS_BOM.csv">Harness BOM</a> · <a href="../electronics/bom/CONSUMABLES_TOOLS.csv">Consumables and tools</a> · <a href="../electronics/wiring.md">Wiring</a></p>
+<p><img alt="RP2040 controller, native KiCad design render" src="assets/hardware/controller-angle.png" /></p>
+<p>The first electrical commissioning configuration is <strong>12 V with a 5 A total source limit</strong>, not the full propulsion rating. The native controller STEP, GH plug reservations and mounting hardware have been checked against the unchanged core geometry; the battery, four ESCs, host/hub, plugs, heat rejection and complete cable seals are not a verified fitted package. Purchase holds are explicit in the BOM. <a href="../electronics/power.md">Power and battery boundary</a> · <a href="../electronics/interfaces/README.md">Mechanical interface</a>.</p>
 <h2 id="edit-and-reproduce">Edit and reproduce</h2>
 <table>
 <thead>
@@ -439,7 +444,7 @@ python simulation/mujoco/verify_manual.py
 <pre><code class="language-text">mechanical/          Parametric CAD, separate parts, assemblies and supplier references
 simulation/mujoco/   Underwater forces, classical control, driving and checks
 bom/                 Print, purchase, fastener and interface records
-electronics/         Future KiCad work and mechanical interface constraints
+electronics/         Controller PCB engineering, system BOM, wiring and interfaces
 firmware/            Future onboard implementation and failure handling
 docs/                Assembly, design, trim, simulation, development and images
 validation/          Digital check records and historical Onshape import records
@@ -473,6 +478,6 @@ runs/                Local outputs; excluded from version control
 </tr>
 </tbody>
 </table>
-<p>PCB manufacturing files and flashable firmware are future work. Digital checks are evidence about files, geometry and software, not a reliability or depth certification. <a href="../STATUS.json">Status</a> · <a href="roadmap.html">Roadmap</a> · <a href="../CHANGELOG.md">Changelog</a>.</p>
+<p>The <a href="hardware.html">hardware engineering package</a> adds controller design, system selection, wiring and material lists. Read its board-review and procurement status before ordering. Complete electrical packaging and flashable onboard firmware remain pending. Digital checks are evidence about files, geometry and software, not a reliability or depth certification. <a href="../STATUS.json">Status</a> · <a href="roadmap.html">Roadmap</a> · <a href="../CHANGELOG.md">Changelog</a>.</p>
 <h2 id="rights-and-sources">Rights and sources</h2>
 <p>This repository is public for review. <strong>All rights reserved for original content; no open-source license is granted.</strong> Third-party CAD, manufacturer drawings and dependencies retain their owners' rights. <a href="../LICENSE">License</a> · <a href="../THIRD_PARTY_NOTICES.md">Third-party notices</a> · <a href="../SOURCES.json">Sources</a>.</p></main><footer>SimpleROV · Prototype documentation · Original content all rights reserved</footer></body></html>

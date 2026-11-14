@@ -1,0 +1,567 @@
+[
+  {
+    "reference": "R42",
+    "model": "R_0603_1608Metric.step",
+    "type": "KiCad_standard"
+  },
+  {
+    "reference": "J11",
+    "model": "USB105017_conservative.step",
+    "type": "original_envelope"
+  },
+  {
+    "reference": "R34",
+    "model": "R_0603_1608Metric.step",
+    "type": "KiCad_standard"
+  },
+  {
+    "reference": "D2",
+    "model": "D_SMA.step",
+    "type": "KiCad_standard"
+  },
+  {
+    "reference": "U6",
+    "model": "SO-5-6_4.55x3.7mm_P1.27mm.step",
+    "type": "KiCad_standard"
+  },
+  {
+    "reference": "U7",
+    "model": "SO-5-6_4.55x3.7mm_P1.27mm.step",
+    "type": "KiCad_standard"
+  },
+  {
+    "reference": "U3",
+    "model": "ICM42688_max.step",
+    "type": "original_envelope"
+  },
+  {
+    "reference": "F1",
+    "model": "Fuse_1206_3216Metric.step",
+    "type": "KiCad_standard"
+  },
+  {
+    "reference": "D1",
+    "model": "D_SMA.step",
+    "type": "KiCad_standard"
+  },
+  {
+    "reference": "C18",
+    "model": "C_0603_1608Metric.step",
+    "type": "KiCad_standard"
+  },
+  {
+    "reference": "C8",
+    "model": "C_0402_1005Metric.step",
+    "type": "KiCad_standard"
+  },
+  {
+    "reference": "R11",
+    "model": "R_0603_1608Metric.step",
+    "type": "KiCad_standard"
+  },
+  {
+    "reference": "R25",
+    "model": "R_0603_1608Metric.step",
+    "type": "KiCad_standard"
+  },
+  {
+    "reference": "D4",
+    "model": "SOT-23.step",
+    "type": "KiCad_standard"
+  },
+  {
+    "reference": "R23",
+    "model": "R_0603_1608Metric.step",
+    "type": "KiCad_standard"
+  },
+  {
+    "reference": "U8",
+    "model": "SO-5-6_4.55x3.7mm_P1.27mm.step",
+    "type": "KiCad_standard"
+  },
+  {
+    "reference": "C20",
+    "model": "C_0603_1608Metric.step",
+    "type": "KiCad_standard"
+  },
+  {
+    "reference": "C28",
+    "model": "C_0603_1608Metric.step",
+    "type": "KiCad_standard"
+  },
+  {
+    "reference": "R19",
+    "model": "R_0603_1608Metric.step",
+    "type": "KiCad_standard"
+  },
+  {
+    "reference": "R40",
+    "model": "R_0603_1608Metric.step",
+    "type": "KiCad_standard"
+  },
+  {
+    "reference": "J2",
+    "model": "JST_GH_BM03B-GHS-TBT_1x03-1MP_P1.25mm_Vertical.step",
+    "type": "KiCad_standard"
+  },
+  {
+    "reference": "R38",
+    "model": "R_0603_1608Metric.step",
+    "type": "KiCad_standard"
+  },
+  {
+    "reference": "C32",
+    "model": "C_0603_1608Metric.step",
+    "type": "KiCad_standard"
+  },
+  {
+    "reference": "R47",
+    "model": "R_0603_1608Metric.step",
+    "type": "KiCad_standard"
+  },
+  {
+    "reference": "R30",
+    "model": "R_0603_1608Metric.step",
+    "type": "KiCad_standard"
+  },
+  {
+    "reference": "U10",
+    "model": "SOT-363_SC-70-6.step",
+    "type": "KiCad_standard"
+  },
+  {
+    "reference": "R15",
+    "model": "R_0603_1608Metric.step",
+    "type": "KiCad_standard"
+  },
+  {
+    "reference": "C27",
+    "model": "C_0603_1608Metric.step",
+    "type": "KiCad_standard"
+  },
+  {
+    "reference": "C3",
+    "model": "C_0603_1608Metric.step",
+    "type": "KiCad_standard"
+  },
+  {
+    "reference": "C11",
+    "model": "C_0402_1005Metric.step",
+    "type": "KiCad_standard"
+  },
+  {
+    "reference": "J8",
+    "model": "JST_GH_BM02B-GHS-TBT_1x02-1MP_P1.25mm_Vertical.step",
+    "type": "KiCad_standard"
+  },
+  {
+    "reference": "C25",
+    "model": "C_0603_1608Metric.step",
+    "type": "KiCad_standard"
+  },
+  {
+    "reference": "R39",
+    "model": "R_0603_1608Metric.step",
+    "type": "KiCad_standard"
+  },
+  {
+    "reference": "C13",
+    "model": "C_0402_1005Metric.step",
+    "type": "KiCad_standard"
+  },
+  {
+    "reference": "U5",
+    "model": "SO-5-6_4.55x3.7mm_P1.27mm.step",
+    "type": "KiCad_standard"
+  },
+  {
+    "reference": "R48",
+    "model": "R_0603_1608Metric.step",
+    "type": "KiCad_standard"
+  },
+  {
+    "reference": "C12",
+    "model": "C_0402_1005Metric.step",
+    "type": "KiCad_standard"
+  },
+  {
+    "reference": "R45",
+    "model": "R_0603_1608Metric.step",
+    "type": "KiCad_standard"
+  },
+  {
+    "reference": "R1",
+    "model": "R_0603_1608Metric.step",
+    "type": "KiCad_standard"
+  },
+  {
+    "reference": "R31",
+    "model": "R_0603_1608Metric.step",
+    "type": "KiCad_standard"
+  },
+  {
+    "reference": "C15",
+    "model": "C_0402_1005Metric.step",
+    "type": "KiCad_standard"
+  },
+  {
+    "reference": "C22",
+    "model": "C_0603_1608Metric.step",
+    "type": "KiCad_standard"
+  },
+  {
+    "reference": "C24",
+    "model": "C_0603_1608Metric.step",
+    "type": "KiCad_standard"
+  },
+  {
+    "reference": "R28",
+    "model": "R_0603_1608Metric.step",
+    "type": "KiCad_standard"
+  },
+  {
+    "reference": "C23",
+    "model": "C_0603_1608Metric.step",
+    "type": "KiCad_standard"
+  },
+  {
+    "reference": "C14",
+    "model": "C_0603_1608Metric.step",
+    "type": "KiCad_standard"
+  },
+  {
+    "reference": "C26",
+    "model": "C_0603_1608Metric.step",
+    "type": "KiCad_standard"
+  },
+  {
+    "reference": "R3",
+    "model": "R_0603_1608Metric.step",
+    "type": "KiCad_standard"
+  },
+  {
+    "reference": "J9",
+    "model": "JST_GH_BM02B-GHS-TBT_1x02-1MP_P1.25mm_Vertical.step",
+    "type": "KiCad_standard"
+  },
+  {
+    "reference": "U1",
+    "model": "QFN-56-1EP_7x7mm_P0.4mm_EP3.2x3.2mm.step",
+    "type": "KiCad_standard"
+  },
+  {
+    "reference": "C4",
+    "model": "C_0603_1608Metric.step",
+    "type": "KiCad_standard"
+  },
+  {
+    "reference": "R5",
+    "model": "R_0603_1608Metric.step",
+    "type": "KiCad_standard"
+  },
+  {
+    "reference": "J4",
+    "model": "JST_GH_BM03B-GHS-TBT_1x03-1MP_P1.25mm_Vertical.step",
+    "type": "KiCad_standard"
+  },
+  {
+    "reference": "C19",
+    "model": "C_0603_1608Metric.step",
+    "type": "KiCad_standard"
+  },
+  {
+    "reference": "J3",
+    "model": "JST_GH_BM03B-GHS-TBT_1x03-1MP_P1.25mm_Vertical.step",
+    "type": "KiCad_standard"
+  },
+  {
+    "reference": "R24",
+    "model": "R_0603_1608Metric.step",
+    "type": "KiCad_standard"
+  },
+  {
+    "reference": "R29",
+    "model": "R_0603_1608Metric.step",
+    "type": "KiCad_standard"
+  },
+  {
+    "reference": "C2",
+    "model": "C_0805_2012Metric.step",
+    "type": "KiCad_standard"
+  },
+  {
+    "reference": "U4",
+    "model": "SOIC-8_3.9x4.9mm_P1.27mm.step",
+    "type": "KiCad_standard"
+  },
+  {
+    "reference": "C29",
+    "model": "C_0603_1608Metric.step",
+    "type": "KiCad_standard"
+  },
+  {
+    "reference": "C1",
+    "model": "C_0805_2012Metric.step",
+    "type": "KiCad_standard"
+  },
+  {
+    "reference": "R35",
+    "model": "R_0603_1608Metric.step",
+    "type": "KiCad_standard"
+  },
+  {
+    "reference": "C21",
+    "model": "C_0603_1608Metric.step",
+    "type": "KiCad_standard"
+  },
+  {
+    "reference": "SW1",
+    "model": "SW_SPST_B3U-1000P.step",
+    "type": "KiCad_standard"
+  },
+  {
+    "reference": "R10",
+    "model": "R_0603_1608Metric.step",
+    "type": "KiCad_standard"
+  },
+  {
+    "reference": "D3",
+    "model": "SOT-23-6.step",
+    "type": "KiCad_standard"
+  },
+  {
+    "reference": "R12",
+    "model": "R_0603_1608Metric.step",
+    "type": "KiCad_standard"
+  },
+  {
+    "reference": "C9",
+    "model": "C_0402_1005Metric.step",
+    "type": "KiCad_standard"
+  },
+  {
+    "reference": "R8",
+    "model": "R_0603_1608Metric.step",
+    "type": "KiCad_standard"
+  },
+  {
+    "reference": "C16",
+    "model": "C_0603_1608Metric.step",
+    "type": "KiCad_standard"
+  },
+  {
+    "reference": "R22",
+    "model": "R_0603_1608Metric.step",
+    "type": "KiCad_standard"
+  },
+  {
+    "reference": "R21",
+    "model": "R_0603_1608Metric.step",
+    "type": "KiCad_standard"
+  },
+  {
+    "reference": "R6",
+    "model": "R_0603_1608Metric.step",
+    "type": "KiCad_standard"
+  },
+  {
+    "reference": "R27",
+    "model": "R_0603_1608Metric.step",
+    "type": "KiCad_standard"
+  },
+  {
+    "reference": "R36",
+    "model": "R_0603_1608Metric.step",
+    "type": "KiCad_standard"
+  },
+  {
+    "reference": "R20",
+    "model": "R_0603_1608Metric.step",
+    "type": "KiCad_standard"
+  },
+  {
+    "reference": "R16",
+    "model": "R_0603_1608Metric.step",
+    "type": "KiCad_standard"
+  },
+  {
+    "reference": "R49",
+    "model": "R_0603_1608Metric.step",
+    "type": "KiCad_standard"
+  },
+  {
+    "reference": "R26",
+    "model": "R_0603_1608Metric.step",
+    "type": "KiCad_standard"
+  },
+  {
+    "reference": "C31",
+    "model": "C_0603_1608Metric.step",
+    "type": "KiCad_standard"
+  },
+  {
+    "reference": "R4",
+    "model": "R_0603_1608Metric.step",
+    "type": "KiCad_standard"
+  },
+  {
+    "reference": "C6",
+    "model": "C_0402_1005Metric.step",
+    "type": "KiCad_standard"
+  },
+  {
+    "reference": "R13",
+    "model": "R_0603_1608Metric.step",
+    "type": "KiCad_standard"
+  },
+  {
+    "reference": "D5",
+    "model": "LED_0603_1608Metric.step",
+    "type": "KiCad_standard"
+  },
+  {
+    "reference": "R9",
+    "model": "R_0603_1608Metric.step",
+    "type": "KiCad_standard"
+  },
+  {
+    "reference": "R44",
+    "model": "R_0603_1608Metric.step",
+    "type": "KiCad_standard"
+  },
+  {
+    "reference": "J6",
+    "model": "JST_GH_BM03B-GHS-TBT_1x03-1MP_P1.25mm_Vertical.step",
+    "type": "KiCad_standard"
+  },
+  {
+    "reference": "C10",
+    "model": "C_0402_1005Metric.step",
+    "type": "KiCad_standard"
+  },
+  {
+    "reference": "SW2",
+    "model": "SW_SPST_B3U-1000P.step",
+    "type": "KiCad_standard"
+  },
+  {
+    "reference": "Y1",
+    "model": "Crystal_SMD_3225-4Pin_3.2x2.5mm.step",
+    "type": "KiCad_standard"
+  },
+  {
+    "reference": "R37",
+    "model": "R_0603_1608Metric.step",
+    "type": "KiCad_standard"
+  },
+  {
+    "reference": "U13",
+    "model": "SOT-363_SC-70-6.step",
+    "type": "KiCad_standard"
+  },
+  {
+    "reference": "U11",
+    "model": "TSSOP-14_4.4x5mm_P0.65mm.step",
+    "type": "KiCad_standard"
+  },
+  {
+    "reference": "J5",
+    "model": "JST_GH_BM03B-GHS-TBT_1x03-1MP_P1.25mm_Vertical.step",
+    "type": "KiCad_standard"
+  },
+  {
+    "reference": "R2",
+    "model": "R_0603_1608Metric.step",
+    "type": "KiCad_standard"
+  },
+  {
+    "reference": "C30",
+    "model": "C_0603_1608Metric.step",
+    "type": "KiCad_standard"
+  },
+  {
+    "reference": "J1",
+    "model": "JST_GH_BM02B-GHS-TBT_1x02-1MP_P1.25mm_Vertical.step",
+    "type": "KiCad_standard"
+  },
+  {
+    "reference": "C17",
+    "model": "C_0603_1608Metric.step",
+    "type": "KiCad_standard"
+  },
+  {
+    "reference": "J7",
+    "model": "JST_GH_BM04B-GHS-TBT_1x04-1MP_P1.25mm_Vertical.step",
+    "type": "KiCad_standard"
+  },
+  {
+    "reference": "R41",
+    "model": "R_0603_1608Metric.step",
+    "type": "KiCad_standard"
+  },
+  {
+    "reference": "R43",
+    "model": "R_0603_1608Metric.step",
+    "type": "KiCad_standard"
+  },
+  {
+    "reference": "R7",
+    "model": "R_0603_1608Metric.step",
+    "type": "KiCad_standard"
+  },
+  {
+    "reference": "R46",
+    "model": "R_0603_1608Metric.step",
+    "type": "KiCad_standard"
+  },
+  {
+    "reference": "U12",
+    "model": "TSSOP-14_4.4x5mm_P0.65mm.step",
+    "type": "KiCad_standard"
+  },
+  {
+    "reference": "R32",
+    "model": "R_0603_1608Metric.step",
+    "type": "KiCad_standard"
+  },
+  {
+    "reference": "U9",
+    "model": "SOT-23-5.step",
+    "type": "KiCad_standard"
+  },
+  {
+    "reference": "R14",
+    "model": "R_0603_1608Metric.step",
+    "type": "KiCad_standard"
+  },
+  {
+    "reference": "R17",
+    "model": "R_0603_1608Metric.step",
+    "type": "KiCad_standard"
+  },
+  {
+    "reference": "R33",
+    "model": "R_0603_1608Metric.step",
+    "type": "KiCad_standard"
+  },
+  {
+    "reference": "C5",
+    "model": "C_0603_1608Metric.step",
+    "type": "KiCad_standard"
+  },
+  {
+    "reference": "U2",
+    "model": "SOT-23-5.step",
+    "type": "KiCad_standard"
+  },
+  {
+    "reference": "R18",
+    "model": "R_0603_1608Metric.step",
+    "type": "KiCad_standard"
+  },
+  {
+    "reference": "C7",
+    "model": "C_0402_1005Metric.step",
+    "type": "KiCad_standard"
+  }
+]

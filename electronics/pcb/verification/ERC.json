@@ -1,0 +1,24 @@
+{
+    "$schema": "https://schemas.kicad.org/erc.v1.json",
+    "coordinate_units": "mm",
+    "date": "2026-11-14T22:04:12",
+    "ignored_checks": [
+        {
+            "description": "SPICE model issue",
+            "key": "simulation_model_issue"
+        }
+    ],
+    "included_severities": [
+        "error",
+        "warning"
+    ],
+    "kicad_version": "10.0.8",
+    "sheets": [
+        {
+            "path": "/",
+            "uuid_path": "/c358d3de-c715-4003-b248-af7d532274d4",
+            "violations": []
+        }
+    ],
+    "source": "SimpleROV001_control.kicad_sch"
+}

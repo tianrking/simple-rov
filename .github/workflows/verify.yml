@@ -19,6 +19,7 @@ jobs:
             requirements/sim.txt
       - run: python -m pip install -r requirements/sim.txt
       - run: python tools/validate_repository.py --manifest
+      - run: python tools/hardware/verify_hardware.py --check
       - run: python tools/verify_videos.py
       - run: python simulation/mujoco/verify.py
       - run: python simulation/mujoco/verify_manual.py

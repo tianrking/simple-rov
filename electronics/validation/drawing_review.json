@@ -1,0 +1,11 @@
+{
+  "scope": "Visual PDF rendering review: schematic sheet completeness at overview, assembly identifiers/orientation, corrected J2 legend. Electrical connectivity is covered separately by native netlist/ERC and PCB checks. The A0 net-label schematic requires zoom for pin details.",
+  "reviewed": true,
+  "renderer": "Poppler pdftoppm",
+  "files_sha256": {
+    "electronics/pcb/drawings/schematic.pdf": "9802c6ffdc502fb93cef15467a5cbbfe75c761ec5a5bf27cfe18679b61ca6159",
+    "electronics/pcb/drawings/assembly_top.pdf": "587b61fba82b46407b0384dd162cd2b03ffdadd57aea87caf5f78546d95b95ad",
+    "electronics/pcb/drawings/assembly_bottom.pdf": "2567805bb13f0363470d4ad57bde33f064848ef3da11c970df05a80bdf95ed0a"
+  },
+  "physical_board_tested": false
+}

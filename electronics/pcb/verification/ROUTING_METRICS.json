@@ -1,0 +1,38 @@
+{
+  "min_track_width_mm": 0.1,
+  "track_count": 1510,
+  "via_count": 197,
+  "critical_net_total_length_mm": {
+    "XIN": 13.585,
+    "XOUT": 4.528,
+    "XTAL_OUT": 7.097,
+    "USB_DM_MCU": 5.65,
+    "USB_DP_MCU": 8.831,
+    "USB_DM": 38.431,
+    "USB_DP": 40.889,
+    "FLASH_CS": 31.894,
+    "QSPI_SCLK_MCU": 11.867,
+    "QSPI_SCLK": 7.855,
+    "QSPI_IO0": 9.39,
+    "QSPI_IO1": 10.092,
+    "QSPI_IO2": 13.198,
+    "QSPI_IO3": 10.286
+  },
+  "critical_net_via_count": {
+    "XIN": 2,
+    "XOUT": 0,
+    "XTAL_OUT": 0,
+    "USB_DM_MCU": 2,
+    "USB_DP_MCU": 2,
+    "USB_DM": 2,
+    "USB_DP": 2,
+    "FLASH_CS": 3,
+    "QSPI_SCLK_MCU": 2,
+    "QSPI_SCLK": 2,
+    "QSPI_IO0": 2,
+    "QSPI_IO1": 2,
+    "QSPI_IO2": 2,
+    "QSPI_IO3": 2
+  },
+  "method": "Sum of native center-line segments per named net, including branches; not signal-integrity simulation or proof of controlled impedance. USB is full-speed12Mbps only."
+}

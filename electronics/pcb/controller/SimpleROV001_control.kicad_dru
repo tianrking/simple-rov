@@ -1,0 +1,5 @@
+(version 1)
+(rule "ESC HL domain spacing" (condition "A.NetName != '' && B.NetName != '' && ((A.NetName == '/ESC_HL_*' && B.NetName != '/ESC_HL_*') || (B.NetName == '/ESC_HL_*' && A.NetName != '/ESC_HL_*'))") (constraint clearance (min 0.5mm)))
+(rule "ESC HR domain spacing" (condition "A.NetName != '' && B.NetName != '' && ((A.NetName == '/ESC_HR_*' && B.NetName != '/ESC_HR_*') || (B.NetName == '/ESC_HR_*' && A.NetName != '/ESC_HR_*'))") (constraint clearance (min 0.5mm)))
+(rule "ESC VL domain spacing" (condition "A.NetName != '' && B.NetName != '' && ((A.NetName == '/ESC_VL_*' && B.NetName != '/ESC_VL_*') || (B.NetName == '/ESC_VL_*' && A.NetName != '/ESC_VL_*'))") (constraint clearance (min 0.5mm)))
+(rule "ESC VR domain spacing" (condition "A.NetName != '' && B.NetName != '' && ((A.NetName == '/ESC_VR_*' && B.NetName != '/ESC_VR_*') || (B.NetName == '/ESC_VR_*' && A.NetName != '/ESC_VR_*'))") (constraint clearance (min 0.5mm)))

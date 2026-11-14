@@ -1,0 +1,95 @@
+{
+  "project_version": "v0.0.1",
+  "contract_id": "SROV001-ME-EC-01",
+  "status": "PCB_REVIEW_ENVELOPE_NOT_COMPLETE_VEHICLE_FIT",
+  "coordinates": {
+    "units": "mm",
+    "global_axes": "X forward, Y left, Z up",
+    "board_local_axes": "x along length, y across width, z from PCB bottom toward components",
+    "board_local_origin_global_mm": [
+      -50,
+      -16,
+      13
+    ],
+    "kicad_assumption": "Final native outline coordinates (0,0)..(80,32), checked by verify_hardware.py",
+    "kicad_to_global": "X=KiCad_x-50; Y=16-KiCad_y; Z=13+physical height above PCB bottom",
+    "engineering_local_to_global": "X=local_x-50; Y=local_y-16; Z=local_z+13"
+  },
+  "board": {
+    "length_mm": 80,
+    "width_mm": 32,
+    "thickness_mm": 1.6,
+    "mount_holes_local_xy_mm": [
+      [
+        10,
+        6
+      ],
+      [
+        10,
+        26
+      ],
+      [
+        70,
+        6
+      ],
+      [
+        70,
+        26
+      ]
+    ],
+    "mount_hole_diameter_mm": 3.2,
+    "mount_hole_type": "NPTH",
+    "mount_hole_component_keepout_radius_mm": 4.5,
+    "mount_hole_copper_keepout_radius_mm": 3.7,
+    "provisional_top_component_height_mm": 12,
+    "provisional_bottom_protrusion_mm": 1,
+    "spacer_height_mm": 5,
+    "mounting_hardware": "4 x M3x14 through screws, 4 x 5mm insulating unthreaded spacers, 8 x M3 washers OD7 ID3.2 thickness0.5, 4 x M3 nuts AF5.5 height2.4; 16 added metal items, not part of base 134 metal instances",
+    "screw_length_mm": 14
+  },
+  "host_tray": {
+    "part": "V5_06_MODULE_TRAY",
+    "top_plane_Z_mm": 8,
+    "slot_centres_global_XY_mm": [
+      [
+        -40,
+        -10
+      ],
+      [
+        -40,
+        10
+      ],
+      [
+        20,
+        -10
+      ],
+      [
+        20,
+        10
+      ]
+    ],
+    "slot_size_mm": [
+      8,
+      3.4
+    ],
+    "positive_axial_retention": "PENDING_DESIGN",
+    "bottom_plane_Z_mm": 6,
+    "height_basis": "Actual STEP support surfaces sampled at slot centre X and slot centre Y +/-2.5mm; tray support plate spans Z6..8."
+  },
+  "fit_boundaries": {
+    "controller_pcb_and_declared_envelopes": "DIGITAL_NATIVE_BOARD_AND_GH_RESERVATIONS_CHECKED",
+    "battery_ESCs_video_host_USB_ethernet_connectors_full_harness": "NOT_PACKAGED_OR_VERIFIED",
+    "pressure_hardware": "Do not drill, enlarge ports, modify seals or assume undocumented thread equivalence",
+    "rear_ports": "One M10 reserved for Bar02; eight M6 remain. Actual sensor thread/seat must match purchased rear-cap revision.",
+    "motor_reference": "APISQUEEN X2 freshwater only; saltwater operation is not approved by this project",
+    "controller_fit_scope": "Nominal native STEP/component models (including declared IMU/USB envelopes), GH plug/bend reservations and M3 mounting stack against unchanged tray, camera carrier, tube, front/rear fittings and camera. This is not physical fit or complete electrical packaging qualification."
+  },
+  "source_sha256": {
+    "mechanical/INTERFACES.json": "54e30530c0c52a105b1babb54635ee649cbf5a03df89d1b74007222a59754157",
+    "mechanical/parts.json": "159ff3250d0ab5670ee69a24f069e64e2f93f741c49f19d8564b32f5a59fbabd",
+    "mechanical/parameters.json": "1e06442b497e83284f4aa5ada5eedbb110d39a4cf5adffab36e9a26a90a10c48"
+  },
+  "physical_fit_tested": false,
+  "electrical_tested": false,
+  "sealing_tested": false
+}

@@ -21,7 +21,7 @@ secret_patterns=[r'-----BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY-----',r'gh[pousr
 for file in files:
     name=str(file.relative_to(ROOT))
     if file.suffix=='.py':ast.parse(file.read_text(),filename=name)
-    if file.suffix in ('.py','.md','.json','.yml','.toml','.command','.txt','.html'):
+    if file.suffix in ('.py','.md','.json','.yml','.toml','.command','.txt','.html','.csv','.xml','.svg','.kicad_pcb','.kicad_sch','.kicad_pro','.kicad_sym','.kicad_mod','.kicad_dru'):
         text=file.read_text()
         require(('/'+'Users/') not in text and ('/'+'home/') not in text,name+': absolute personal filesystem path')
         require(not any(re.search(pattern,text) for pattern in secret_patterns),name+': potential secret material')
@@ -74,7 +74,7 @@ require(len(gallery['views'])==9 and gallery['default_configuration']=='base','G
 for view in gallery['views']:
  require(view['pixels']==[2400,1800],'Gallery image dimensions')
  require(hashlib.sha256((ROOT/'docs/assets/gallery'/view['file']).read_bytes()).hexdigest()==view['sha256'],'Stale gallery image: '+view['file'])
-status=json.loads((ROOT/'STATUS.json').read_text());require(not status['physical_tested'] and status['pcb_status']=='PLANNED_NO_DESIGN','Maturity status mismatch')
+status=json.loads((ROOT/'STATUS.json').read_text());require(not status['physical_tested'] and status['pcb_status'] in ('PLANNED_NO_DESIGN','DESIGN_REVIEW_UNTESTED'),'Maturity status mismatch')
 require('All rights reserved' in (ROOT/'LICENSE').read_text(),'Missing reserved rights notice')
 require(status.get('default_language')=='en','Default project language must be English')
 for name in ['README.md','README.es.md','README.zh-CN.md']:
@@ -101,6 +101,10 @@ for name in ['README.md','README.es.md','README.zh-CN.md']:
  require('\n'+hosted['assets'][0]['url']+'\n' in (ROOT/name).read_text(),'Native video player missing: '+name)
 for name in ['index.html','index.es.html','index.zh-CN.html','videos.html']:
  require('<video controls' in (ROOT/'docs'/name).read_text(),'Offline video player missing: '+name)
+if status['pcb_status']=='DESIGN_REVIEW_UNTESTED':
+    hw=json.loads((ROOT/'electronics/validation/INTEGRATION_CHECKS.json').read_text())
+    require(hw['passed'] and not hw['physical_tested'],'Hardware engineering status')
+    for n,h in hw['source_sha256'].items():require(hashlib.sha256((ROOT/n).read_bytes()).hexdigest()==h,'Stale hardware source: '+n)
 if args.manifest:
     manifest=json.loads((ROOT/'MANIFEST.sha256.json').read_text());actual={str(p.relative_to(ROOT)):hashlib.sha256(p.read_bytes()).hexdigest() for p in files};require(manifest==actual,'Manifest differs from project files; update after final verification')
 if errors:raise SystemExit('\n'.join(errors))

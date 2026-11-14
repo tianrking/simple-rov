@@ -1,13 +1,13 @@
 ﻿module,target_quantity,model_revision,purchase_link,length_mm,width_mm,height_mm,mass_g,interfaces_cable_bend_envelope,allowed_voltage,continuous_peak_current,fit_harness_validation,notes
 Thruster,4,APISQUEEN X2,,,,,,,,,UNVERIFIED,Start with one; mounting holes/depth unmeasured; supplier mass reference 117 g each
-Bidirectional ESC,4,To select,,,,,,,,,UNVERIFIED,"Start with one matched unit; verify neutral, reverse thrust and protocol"
+Bidirectional ESC,4,APISQUEEN X2 matched Feather 30A BEC variant,https://www.underwaterthruster.com/products/apisqueen-bi-directional-30a-esc-2-4s-5v-1a-bec-electronic-speed-controllers,,,,,,,,UNVERIFIED,"Start with one matched unit; verify neutral, reverse thrust and protocol"
 Pressure-enclosure kit,1,BR50mm / 150mm reference,,,,,,,,,UNVERIFIED,"Include seals, locks and plugs; verify full payload first"
 Camera,1,BR Low-Light HD USB reference,,,,,,,,,UNVERIFIED,"Verify USB plug, bend envelope and host"
-Controller,1,To select,,,,,,,,,UNVERIFIED,Confirm current firmware/allocation support and physical dimensions
-USB host / communications computer,1,To select,,,,,,,,,UNVERIFIED,"Video support, power and heat"
-Battery and protection,1,To select,,,,,,,,,UNVERIFIED,"Maximum voltage, dimensions, current, protection and removal"
-Regulation and power distribution,1,To select,,,,,,,,,UNVERIFIED,Total/branch current and thermal behavior
-Depth sensor,1,To select,,,,,,,,,UNVERIFIED,"Range, pressure port, mounting and protocol"
-Leak detection,1,To select,,,,,,,,,UNVERIFIED,Placement and failure response
+Controller,1,SimpleROV001 RP2040 control PCBA; design review,https://github.com/tianrking/simple-rov/tree/main/electronics,,,,,,,,UNVERIFIED,Confirm current firmware/allocation support and physical dimensions
+USB host / communications computer,1,Raspberry Pi Zero 2 W + Waveshare ETH/USB HUB HAT SKU16595,https://www.raspberrypi.com/documentation/computers/zero.html,,,,,,,,UNVERIFIED,"Video support, power and heat"
+Battery and protection,1,RFQ professional4S1P APR18650m1B pack; no frozen pack,https://lithiumwerks.com/products/lithium-ion-18650-cells/,,,,,,,,UNVERIFIED,"Maximum voltage, dimensions, current, protection and removal"
+Regulation and power distribution,1,Pololu D24V50F5#2851 + separate fused harness,https://www.pololu.com/product/2851,,,,,,,,UNVERIFIED,Total/branch current and thermal behavior
+Depth sensor,1,Blue Robotics Bar02 BR-100891,https://bluerobotics.com/store/sensors-cameras/sensors/bar-depth-pressure-sensor/,,,,,,,,UNVERIFIED,"Range, pressure port, mounting and protocol"
+Leak detection,1,Replaceable two-contact probe via controller J8,https://github.com/tianrking/simple-rov/tree/main/electronics,,,,,,,,UNVERIFIED,Placement and failure response
 Tether and penetrator harness,1,To select,,,,,,,,,UNVERIFIED,"Communication, independent strain relief, each port seal and plugs"
 Complete assembly,1,Mechanical prototype,,,,,,,,,UNVERIFIED,"Record mass, displacement, CG/CB, sealing and load tests"

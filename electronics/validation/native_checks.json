@@ -1,0 +1,81 @@
+{
+  "tool": "10.0.8",
+  "commands": [
+    [
+      "sch",
+      "erc",
+      "SimpleROV001_control.kicad_sch",
+      "--format",
+      "json",
+      "--severity-all",
+      "--exit-code-violations",
+      "--output",
+      "../../validation/erc.json"
+    ],
+    [
+      "pcb",
+      "drc",
+      "SimpleROV001_control.kicad_pcb",
+      "--format",
+      "json",
+      "--severity-all",
+      "--schematic-parity",
+      "--exit-code-violations",
+      "--refill-zones",
+      "--output",
+      "../../validation/drc.json"
+    ],
+    [
+      "sch",
+      "export",
+      "netlist",
+      "--format",
+      "kicadxml",
+      "--output",
+      "../../validation/controller.net.xml",
+      "SimpleROV001_control.kicad_sch"
+    ]
+  ],
+  "netlist_metadata_normalization": "Only design/source absolute path replaced by schematic filename; native ERC/DRC JSON unchanged.",
+  "source_sha256": {
+    "electronics/pcb/controller/SimpleROV.kicad_sym": "2db862588eb0b836fd7a8b76eeb7f245e9842105321f0a23998b3dfbe3ac76ec",
+    "electronics/pcb/controller/SimpleROV001_control.kicad_dru": "b5fbdcf6f0140d11b82c5c7fc8a597a68540c9694ef438463476b84f68ac0aa5",
+    "electronics/pcb/controller/SimpleROV001_control.kicad_pcb": "42c7c2b8f3ddef333b85d34a6b3e46aa553f7b9da68488573e397d1af9de359a",
+    "electronics/pcb/controller/SimpleROV001_control.kicad_pro": "c20467367c5904785870f3ba22d21de92e48ba52dca4db0988e102cbcf55acdc",
+    "electronics/pcb/controller/SimpleROV001_control.kicad_sch": "ddd1ca6d58e16301ac614c947cb570878a1f54c83553d6f0e5a15b2b1fa6dd07",
+    "electronics/pcb/controller/SimpleROV_HW.pretty/D_SMA_SilkTrim.kicad_mod": "780f2f9f828b8c3ebb951778f2f4eb0992379d9af80658a5054b4411e3985df7",
+    "electronics/pcb/controller/SimpleROV_HW.pretty/MountingHole3.2_M3_Clearance.kicad_mod": "10e330864559ea5288904d46d3019b9d63a988c12e34471074c5d21edcdec6cd",
+    "electronics/pcb/controller/SimpleROV_HW.pretty/USB_MicroB_Molex105017_SilkTrim.kicad_mod": "4c24ec9d06d09ea30fd4b9898ece9dbf0b43649692b58cbd81a54469cbf01148",
+    "electronics/pcb/controller/footprints/Button_Switch_SMD.pretty/SW_SPST_B3U-1000P.kicad_mod": "6aceefea5b5967a7389160840a736f37652df5928c3d4b35ff773ed3d3c3e00d",
+    "electronics/pcb/controller/footprints/Capacitor_SMD.pretty/C_0402_1005Metric.kicad_mod": "45f1ddfb7b32db9f614c4a32b15c47fd9e71752699e66ab3456ddae21c9691f4",
+    "electronics/pcb/controller/footprints/Capacitor_SMD.pretty/C_0603_1608Metric.kicad_mod": "227252d52393d183d6f0fe1c1dc6d0b4b4a3e7042b19082bbf11e6f3f59db058",
+    "electronics/pcb/controller/footprints/Capacitor_SMD.pretty/C_0805_2012Metric.kicad_mod": "46c8702a491b004f72a464ab2a9c8a22540199a27998b70a8314700bafc0e722",
+    "electronics/pcb/controller/footprints/Connector_JST.pretty/JST_GH_BM02B-GHS-TBT_1x02-1MP_P1.25mm_Vertical.kicad_mod": "6f8c02c26ada4639293ca267cf9a9f610ed5cadd57cf0a3b5bb1f916f308bb3a",
+    "electronics/pcb/controller/footprints/Connector_JST.pretty/JST_GH_BM03B-GHS-TBT_1x03-1MP_P1.25mm_Vertical.kicad_mod": "c2ecd7921f26eef557f8786e56b99da113378420a7a00f73485f381e06d08d0d",
+    "electronics/pcb/controller/footprints/Connector_JST.pretty/JST_GH_BM04B-GHS-TBT_1x04-1MP_P1.25mm_Vertical.kicad_mod": "540e92752280dd65b55e93538c4126e9405484d5119a7956417ba50f5a17f171",
+    "electronics/pcb/controller/footprints/Crystal.pretty/Crystal_SMD_3225-4Pin_3.2x2.5mm.kicad_mod": "c841a347040db0ce5d1acb7a8a29ec0234f9a77cab75a01d4aad0b4287ec432d",
+    "electronics/pcb/controller/footprints/Diode_SMD.pretty/D_SMA.kicad_mod": "d6cadc71aad9d82f58d292241d230f8384e727b6c8a6d91e2240327591e7b8bb",
+    "electronics/pcb/controller/footprints/Fuse.pretty/Fuse_1206_3216Metric.kicad_mod": "9ebbd22006660d0969d420d2fb4ff3f2f892c0e095afd2047e1c29fb0f3dbf37",
+    "electronics/pcb/controller/footprints/LED_SMD.pretty/LED_0603_1608Metric.kicad_mod": "c07ad464e58cb54b3ac6f1ddfacc43fea2631f490379701a186365829fead317",
+    "electronics/pcb/controller/footprints/Package_DFN_QFN.pretty/QFN-56-1EP_7x7mm_P0.4mm_EP3.2x3.2mm.kicad_mod": "c0c32fd5e97e9f2f1dd8ab59983601bd3aec4f6a34b27f93486d888ac5e9e5b6",
+    "electronics/pcb/controller/footprints/Package_LGA.pretty/LGA-14_3x2.5mm_P0.5mm_LayoutBorder3x4y.kicad_mod": "2eb94a413967acc5db8f171496b8965370df5f68110a6394a97aabaf92c11b7f",
+    "electronics/pcb/controller/footprints/Package_SO.pretty/SO-5-6_4.55x3.7mm_P1.27mm.kicad_mod": "73e1317118efacf8e38ac1c6cf92b875d3a2b89950565f48a1c65e628a61c24e",
+    "electronics/pcb/controller/footprints/Package_SO.pretty/SOIC-8_3.9x4.9mm_P1.27mm.kicad_mod": "a18a6fb36b98b7e9dfc05c7140bf99a02b6e889d0b9829f1721ee485fcc7bd8a",
+    "electronics/pcb/controller/footprints/Package_SO.pretty/TSSOP-14_4.4x5mm_P0.65mm.kicad_mod": "a571a6a4892777db048e27218990d30b42594476e5a26bf5f54c85797b93b201",
+    "electronics/pcb/controller/footprints/Package_TO_SOT_SMD.pretty/SOT-23-5.kicad_mod": "299da0cfc5bb3eb3b6a4767694384f524c79673aa81c902e7758f9f2a4694828",
+    "electronics/pcb/controller/footprints/Package_TO_SOT_SMD.pretty/SOT-23-6.kicad_mod": "24ce553793d5c8d50a13211b5613ee21af7035bebbe2b7e36e8c2b2fc616288f",
+    "electronics/pcb/controller/footprints/Package_TO_SOT_SMD.pretty/SOT-23.kicad_mod": "f6d6f5560b703975ee2c1427d54642f6873d0ed267367ceb393eac45b289388e",
+    "electronics/pcb/controller/footprints/Package_TO_SOT_SMD.pretty/SOT-363_SC-70-6.kicad_mod": "b40a27ca23eacdbc2d34cf2bf1fabf53749486ac983b03bae2d9fad5f07b8816",
+    "electronics/pcb/controller/footprints/Resistor_SMD.pretty/R_0603_1608Metric.kicad_mod": "598ac974b8a7668ecbc98d7b00b524c760edef21aeee4b34f84f9b2deb73b2ef",
+    "electronics/pcb/controller/footprints/TestPoint.pretty/TestPoint_Pad_D1.0mm.kicad_mod": "6d602c576b4ab0de29fa4cc096f419a62e828ba45ceee30c1263d86b420b2b12",
+    "electronics/pcb/controller/footprints/TestPoint.pretty/TestPoint_Pad_D2.0mm.kicad_mod": "0a1ce94753a7b270c8ff6c20698b4de7ce95606b643549926acc04bb698d0120",
+    "electronics/pcb/controller/fp-lib-table": "28efbb2720482015295a2420b2b0a5304ce0c47e694391a8ddcc5b79384fae21",
+    "electronics/pcb/controller/sym-lib-table": "89634ca15c0fcffb13d8063c02090ebac908864e5518c19995017c3cceb03c48",
+    "tools/hardware/run_native_checks.py": "2d32352e74610296fb75ff6e955281938e77b9000d2638d2a57b044dd86afc79"
+  },
+  "outputs": {
+    "electronics/validation/erc.json": "6111849051e54520b07614231c34f63698f4a6e81e9584f99acde57d5b20223c",
+    "electronics/validation/drc.json": "2bfc9d9103fa2c5b41d2a05042b54cc02e309b2bed4647ec7e7081d907fd1004",
+    "electronics/validation/controller.net.xml": "9d950d8e9815063ae2e14ab4b88e882f99d4fe8606e2a7cf489e72bda1f7959e"
+  }
+}

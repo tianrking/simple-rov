@@ -1,0 +1,2 @@
+Item,Qty,Manufacturer,MPN,Specification,Location,Source
+VBAT positive takeoff resistor,1,Yageo,MFR50SFBE52-1K,1k ohm1%0.5W at<=70C; body6.3xdiameter2.4mm nominal,"At positive12V bus takeoff, insulated before sense wire toJ10",https://yageogroup.com/content/Resource%20Library/Datasheet/YAGEO-MFR_DATASHEET.pdf

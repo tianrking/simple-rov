@@ -1,0 +1,345 @@
+{
+  "project": "SimpleROV",
+  "version": "v0.0.1",
+  "board_step_bbox_mm": [
+    0.0,
+    -1.0,
+    -0.8049999999999999,
+    80.0,
+    32.0,
+    5.795
+  ],
+  "board_solid_count": 118,
+  "frame": "STEP=(Kx,32-Ky,z); board bottom0 top1.6",
+  "world_translation_mm": [
+    -50,
+    -16,
+    13
+  ],
+  "world_axes": "X forward,Y left,Z up",
+  "all_purchased_components_top": true,
+  "bottom_features": "Six bare test pads; conservative USB tab envelope extends0.8mm below board bottom. No bottom purchased components.",
+  "mounts_native_mm": [
+    [
+      10,
+      6
+    ],
+    [
+      10,
+      26
+    ],
+    [
+      70,
+      6
+    ],
+    [
+      70,
+      26
+    ]
+  ],
+  "mount_npth_diameter_mm": 3.2,
+  "copper_keepout_radius_mm": 3.7,
+  "component_keepout_radius_mm": 4.5,
+  "top_model_completeness": "113 component instances carry models;111 use KiCad standard models, U3/J11 use explicitly described original envelopes. J10 and six test pads are bare PCB features.",
+  "envelopes": [
+    {
+      "connector": "J1",
+      "kind": "mated_header_and_plug_clearance",
+      "step_bbox_mm": [
+        1.5,
+        12.675,
+        1.6,
+        8.5,
+        19.325,
+        9.2
+      ],
+      "nominal_mated_height_above_pcb_mm": 7.3,
+      "engineering_height_above_pcb_mm": 7.6,
+      "source": "https://www.jst.com/wp-content/uploads/2025/06/eGH.pdf",
+      "measured": false
+    },
+    {
+      "connector": "J1",
+      "kind": "wire_exit_bend_reservation",
+      "step_bbox_mm": [
+        1.5,
+        12.675,
+        9.2,
+        8.5,
+        19.325,
+        13.6
+      ],
+      "engineering_reservation_only": true,
+      "measured": false
+    },
+    {
+      "connector": "J2",
+      "kind": "mated_header_and_plug_clearance",
+      "step_bbox_mm": [
+        10.875,
+        14.575,
+        1.6,
+        19.125,
+        21.224999999999998,
+        9.2
+      ],
+      "nominal_mated_height_above_pcb_mm": 7.3,
+      "engineering_height_above_pcb_mm": 7.6,
+      "source": "https://www.jst.com/wp-content/uploads/2025/06/eGH.pdf",
+      "measured": false
+    },
+    {
+      "connector": "J2",
+      "kind": "wire_exit_bend_reservation",
+      "step_bbox_mm": [
+        10.875,
+        14.575,
+        9.2,
+        19.125,
+        21.224999999999998,
+        13.6
+      ],
+      "engineering_reservation_only": true,
+      "measured": false
+    },
+    {
+      "connector": "J3",
+      "kind": "mated_header_and_plug_clearance",
+      "step_bbox_mm": [
+        51.675,
+        16.375,
+        1.6,
+        58.325,
+        24.625,
+        9.2
+      ],
+      "nominal_mated_height_above_pcb_mm": 7.3,
+      "engineering_height_above_pcb_mm": 7.6,
+      "source": "https://www.jst.com/wp-content/uploads/2025/06/eGH.pdf",
+      "measured": false
+    },
+    {
+      "connector": "J3",
+      "kind": "wire_exit_bend_reservation",
+      "step_bbox_mm": [
+        51.675,
+        16.375,
+        9.2,
+        58.325,
+        24.625,
+        13.6
+      ],
+      "engineering_reservation_only": true,
+      "measured": false
+    },
+    {
+      "connector": "J4",
+      "kind": "mated_header_and_plug_clearance",
+      "step_bbox_mm": [
+        73.175,
+        13.875,
+        1.6,
+        79.825,
+        22.125,
+        9.2
+      ],
+      "nominal_mated_height_above_pcb_mm": 7.3,
+      "engineering_height_above_pcb_mm": 7.6,
+      "source": "https://www.jst.com/wp-content/uploads/2025/06/eGH.pdf",
+      "measured": false
+    },
+    {
+      "connector": "J4",
+      "kind": "wire_exit_bend_reservation",
+      "step_bbox_mm": [
+        73.175,
+        13.875,
+        9.2,
+        79.825,
+        22.125,
+        13.6
+      ],
+      "engineering_reservation_only": true,
+      "measured": false
+    },
+    {
+      "connector": "J5",
+      "kind": "mated_header_and_plug_clearance",
+      "step_bbox_mm": [
+        48.675,
+        0.375,
+        1.6,
+        55.325,
+        8.625,
+        9.2
+      ],
+      "nominal_mated_height_above_pcb_mm": 7.3,
+      "engineering_height_above_pcb_mm": 7.6,
+      "source": "https://www.jst.com/wp-content/uploads/2025/06/eGH.pdf",
+      "measured": false
+    },
+    {
+      "connector": "J5",
+      "kind": "wire_exit_bend_reservation",
+      "step_bbox_mm": [
+        48.675,
+        0.375,
+        9.2,
+        55.325,
+        8.625,
+        13.6
+      ],
+      "engineering_reservation_only": true,
+      "measured": false
+    },
+    {
+      "connector": "J6",
+      "kind": "mated_header_and_plug_clearance",
+      "step_bbox_mm": [
+        56.875,
+        7.925,
+        1.6,
+        65.125,
+        14.575,
+        9.2
+      ],
+      "nominal_mated_height_above_pcb_mm": 7.3,
+      "engineering_height_above_pcb_mm": 7.6,
+      "source": "https://www.jst.com/wp-content/uploads/2025/06/eGH.pdf",
+      "measured": false
+    },
+    {
+      "connector": "J6",
+      "kind": "wire_exit_bend_reservation",
+      "step_bbox_mm": [
+        56.875,
+        7.925,
+        9.2,
+        65.125,
+        14.575,
+        13.6
+      ],
+      "engineering_reservation_only": true,
+      "measured": false
+    },
+    {
+      "connector": "J7",
+      "kind": "mated_header_and_plug_clearance",
+      "step_bbox_mm": [
+        58.675,
+        21.25,
+        1.6,
+        65.325,
+        30.75,
+        9.2
+      ],
+      "nominal_mated_height_above_pcb_mm": 7.3,
+      "engineering_height_above_pcb_mm": 7.6,
+      "source": "https://www.jst.com/wp-content/uploads/2025/06/eGH.pdf",
+      "measured": false
+    },
+    {
+      "connector": "J7",
+      "kind": "wire_exit_bend_reservation",
+      "step_bbox_mm": [
+        58.675,
+        21.25,
+        9.2,
+        65.325,
+        30.75,
+        13.6
+      ],
+      "engineering_reservation_only": true,
+      "measured": false
+    },
+    {
+      "connector": "J8",
+      "kind": "mated_header_and_plug_clearance",
+      "step_bbox_mm": [
+        43.5,
+        17.675,
+        1.6,
+        50.5,
+        24.325,
+        9.2
+      ],
+      "nominal_mated_height_above_pcb_mm": 7.3,
+      "engineering_height_above_pcb_mm": 7.6,
+      "source": "https://www.jst.com/wp-content/uploads/2025/06/eGH.pdf",
+      "measured": false
+    },
+    {
+      "connector": "J8",
+      "kind": "wire_exit_bend_reservation",
+      "step_bbox_mm": [
+        43.5,
+        17.675,
+        9.2,
+        50.5,
+        24.325,
+        13.6
+      ],
+      "engineering_reservation_only": true,
+      "measured": false
+    },
+    {
+      "connector": "J9",
+      "kind": "mated_header_and_plug_clearance",
+      "step_bbox_mm": [
+        15.0,
+        6.925,
+        1.6,
+        22.0,
+        13.575,
+        9.2
+      ],
+      "nominal_mated_height_above_pcb_mm": 7.3,
+      "engineering_height_above_pcb_mm": 7.6,
+      "source": "https://www.jst.com/wp-content/uploads/2025/06/eGH.pdf",
+      "measured": false
+    },
+    {
+      "connector": "J9",
+      "kind": "wire_exit_bend_reservation",
+      "step_bbox_mm": [
+        15.0,
+        6.925,
+        9.2,
+        22.0,
+        13.575,
+        13.6
+      ],
+      "engineering_reservation_only": true,
+      "measured": false
+    }
+  ],
+  "fit_status": "PCB geometry/export only. Full enclosure/camera/Pi/hub/USB loom/thermal/mechanical retention fit must be checked by system integration. TheUSB envelope and wire bends are unmeasured engineering reservations.",
+  "imu": {
+    "native_xy_mm": [
+      34.0,
+      24.0
+    ],
+    "native_angle_deg": 0.0,
+    "derived_sensor_to_vehicle_rotation": [
+      [
+        1,
+        0,
+        0
+      ],
+      [
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        0,
+        1
+      ]
+    ],
+    "basis": "TDK DS-000347 v1.2 fig15 axes/pin1; zero-degree top-side footprint, STEP transform above.",
+    "verified_physically": false
+  },
+  "mass_g": null,
+  "mass_status": "Unweighed; no measured board or assembly mass is claimed."
+}
