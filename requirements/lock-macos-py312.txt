@@ -7,13 +7,16 @@ cadquery-ocp==7.9.3.1.1
 cadquery-ocp-proxy==7.9.3.1.1
 casadi==3.8.2
 charset-normalizer==3.5.2
+cloudpickle==3.1.2
 contourpy==1.4.0
 cycler==0.12.1
 ezdxf==1.4.5
+farama-notifications==0.0.6
 fast-simplification==0.2.0
 fonttools==4.68.0
 frozenlist==1.8.0
 glfw==2.11.0
+gymnasium==1.4.0
 idna==3.20
 imageio==2.38.1
 imageio-ffmpeg==0.8.1

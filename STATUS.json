@@ -44,7 +44,7 @@
   "license": "All rights reserved for original work; third-party rights retained",
   "pcb_status": "PLANNED_NO_DESIGN",
   "firmware_status": "PLANNED_NO_FIRMWARE",
-  "release": "v0.5.2",
+  "release": "v0.6.0",
   "mechanical_revision": "V5-01",
   "default_configuration": "base",
   "size_with_buoyancy_mm": [
@@ -58,5 +58,11 @@
     "en",
     "es",
     "zh-CN"
-  ]
+  ],
+  "simulation_engine": "MuJoCo 4.0.1",
+  "simulation_control_Hz": 50,
+  "simulation_physics_Hz": 500,
+  "simulation_foundation_checks_passed": true,
+  "gymnasium_version": "1.4.0",
+  "trained_policy": false
 }

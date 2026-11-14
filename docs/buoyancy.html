@@ -6,7 +6,7 @@ main{max-width:1100px;margin:32px auto 70px;background:#fff;border:1px solid var
 h1{font-size:42px;letter-spacing:-1.3px;line-height:1.2;margin-top:0}h2{font-size:26px;border-top:1px solid var(--line);padding-top:30px;margin-top:44px;line-height:1.35}h3{font-size:20px;margin-top:30px;line-height:1.4}p{margin:16px 0}a{color:var(--accent);text-underline-offset:3px}img,video{max-width:100%;height:auto;border-radius:8px}p>img{display:block;margin:22px auto}table{border-collapse:collapse;width:100%;font-size:14px;margin:20px 0}th,td{border:1px solid var(--line);padding:12px 15px;text-align:left;vertical-align:top}th{background:#eaf2f4;font-weight:600}tr:nth-child(even){background:#fafcfc}td img{width:100%}pre{overflow:auto;background:#163843;color:#edf6f8;padding:22px;border-radius:10px;font-size:13px;line-height:1.7}code{font-family:ui-monospace,SFMono-Regular,Consolas,monospace}p code,td code{background:#edf3f5;padding:2px 5px;border-radius:4px;font-size:.88em}blockquote{margin:20px 0;padding:1px 20px;background:#fff5e7;border-left:3px solid var(--orange)}details{border:1px solid var(--line);border-radius:10px;padding:12px 18px;margin:20px 0}summary{cursor:pointer}footer{color:var(--muted);font-size:12px;text-align:center;margin:35px auto}
 @media(max-width:700px){main{margin:12px 8px;padding:24px 18px;border-radius:10px}h1{font-size:34px}h2{font-size:23px}table{font-size:12px}th,td{padding:8px}nav{gap:12px;padding:14px 20px}pre{font-size:11px}}
 @media print{body,main{margin:0;padding:0;background:#fff;border:0;box-shadow:none}header,footer{display:none}h2{break-before:page}}
-</style></head><body><header><nav><strong>SimpleROV</strong><a href="index.html">Overview</a><a href="assembly.html">Assembly</a><a href="gallery.html">Gallery</a><a href="simulation.html">Simulation</a><a href="index.es.html">ES</a><a href="index.zh-CN.html">中文</a></nav></header><main><h1>Buoyancy module and trim</h1>
+</style></head><body><header><nav><strong>SimpleROV</strong><a href="index.html">Overview</a><a href="assembly.html">Assembly</a><a href="gallery.html">Gallery</a><a href="simulation.html">Simulation</a><a href="index.es.html">ES</a><a href="index.zh-CN.html">中文</a></nav></header><main><h1 id="buoyancy-module-and-trim">Buoyancy module and trim</h1>
 <p>The standard assembly omits top foam and straps. The chassis and fairing retain their mounting routes. Decide whether to add foam after installing the real battery, controller, ESCs, video host, wiring and penetrators, or equivalent representative mass.</p>
 <p><img alt="Assembly comparison" src="assets/gallery/configuration-comparison.png" /></p>
 <table>
@@ -34,7 +34,7 @@ h1{font-size:42px;letter-spacing:-1.3px;line-height:1.2;margin-top:0}h2{font-siz
 </tbody>
 </table>
 <p>Dimensions exclude final cable exits, penetrators, tether fittings, strap buckles and ballast. Both configurations share ten main prints.</p>
-<h2>When to add foam</h2>
+<h2 id="when-to-add-foam">When to add foam</h2>
 <p>Total real mass determines weight; actual displaced volume determines buoyancy. Freely flooded space inside the fairing is not sealed displacement.</p>
 <ul>
 <li>Add depth-appropriate closed-cell foam or revise components if buoyancy is insufficient.</li>
@@ -42,12 +42,12 @@ h1{font-size:42px;letter-spacing:-1.3px;line-height:1.2;margin-top:0}h2{font-siz
 <li>Excess foam increases the continuous downward thrust needed to dive, as well as size and drag.</li>
 </ul>
 <p>A slightly positive fully submerged trim is a prototype target, not an established property of this CAD. A foam-free default does not guarantee passive ascent. Check actual displacement and the unpowered attitude in a recoverable shallow-water test.</p>
-<h2>Reference installation</h2>
+<h2 id="reference-installation">Reference installation</h2>
 <p>Two nominal 62 × 160 × 35 mm blanks sit fore and aft at X = ±69 mm, bottom Z = 60.5 mm. Four nominal D12 tool reliefs preserve fairing-screw access. Four releasable straps run along X at Y = ±32.5 mm through 3 × 7 mm chassis guides at X = -101/-35/35/101 mm. Reference straps are about 450 × 4.8 mm, at most 1.2 mm thick. Buckles are not modeled; place them on top, away from screw wells and flow paths.</p>
 <p>The two rectangular blanks total about 0.694 L before cutouts. Actual material density, cutouts, absorption and pressure compression determine useful buoyancy; blank volume is not a supported payload rating. Select a specific foam grade and applicable depth.</p>
 <p>For foam alone, an initial estimate is <code>net buoyancy = (water density - foam density) × actual volume × gravitational acceleration</code>. Verify the final assembly by measurement.</p>
-<h2>CAD and procurement</h2>
+<h2 id="cad-and-procurement">CAD and procurement</h2>
 <p><a href="../bom/BOM_PURCHASED.csv">BOM_PURCHASED.csv</a> separates default quantities from optional quantities. <a href="../mechanical/assemblies/simple-rov.step">Standard STEP</a> · <a href="../mechanical/assemblies/simple-rov-with-buoyancy.step">Optional STEP</a>.</p>
-<h2>Simulation boundary</h2>
+<h2 id="simulation-boundary">Simulation boundary</h2>
 <p><code>ROV(configuration="base")</code> / <code>--configuration base</code> is the default. <code>with-buoyancy</code> adds the foam appearance and associated collision proxies.</p>
 <p>Mass, inertia, CG, CB, displacement and drag are explicit shared example parameters, not material properties derived from CAD. Switching variants does not calculate added buoyancy or altered trim. After physical measurements, update <code>simulation/mujoco/config.json</code> and rebuild before comparing performance.</p></main><footer>SimpleROV · Prototype documentation · Original content all rights reserved</footer></body></html>

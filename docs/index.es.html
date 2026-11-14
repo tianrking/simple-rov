@@ -7,12 +7,12 @@ h1{font-size:42px;letter-spacing:-1.3px;line-height:1.2;margin-top:0}h2{font-siz
 @media(max-width:700px){main{margin:12px 8px;padding:24px 18px;border-radius:10px}h1{font-size:34px}h2{font-size:23px}table{font-size:12px}th,td{padding:8px}nav{gap:12px;padding:14px 20px}pre{font-size:11px}}
 @media print{body,main{margin:0;padding:0;background:#fff;border:0;box-shadow:none}header,footer{display:none}h2{break-before:page}}
 </style></head><body><header><nav><strong>SimpleROV</strong><a href="index.html">Overview</a><a href="assembly.html">Assembly</a><a href="gallery.html">Gallery</a><a href="simulation.html">Simulation</a><a href="index.es.html">ES</a><a href="index.zh-CN.html">中文</a></nav></header><main><div align="center">
-<h1>SimpleROV</h1>
+<h1 id="simplerov">SimpleROV</h1>
 <p><strong>Un robot submarino compacto con cuatro propulsores.</strong></p>
 <p>Mecánica imprimible · Montaje documentado · Simulación en MuJoCo</p>
 <p><a href="index.html">English</a> · <a href="index.es.html"><strong>Español</strong></a> · <a href="index.zh-CN.html">简体中文</a></p>
 <p><a href="https://github.com/tianrking/simple-rov/actions/workflows/verify.yml"><img alt="Verificaciones" src="https://github.com/tianrking/simple-rov/actions/workflows/verify.yml/badge.svg" /></a>
-<a href="https://github.com/tianrking/simple-rov/releases/tag/v0.5.2"><img alt="Versión" src="https://img.shields.io/badge/release-v0.5.2-176271" /></a>
+<a href="https://github.com/tianrking/simple-rov/releases/tag/v0.6.0"><img alt="Versión" src="https://img.shields.io/badge/release-v0.6.0-176271" /></a>
 <a href="https://github.com/tianrking/simple-rov/blob/main/mechanical/README.md"><img alt="CAD" src="https://img.shields.io/badge/CAD-STEP%20%2B%20STL-f29932" /></a></p>
 <p><img alt="Montaje estándar de SimpleROV" src="assets/gallery/hero.png" /></p>
 <p><strong>213 × 210 × 148 mm</strong> &nbsp; · &nbsp; <strong>4 propulsores</strong> &nbsp; · &nbsp; <strong>10 piezas impresas</strong></p>
@@ -21,7 +21,7 @@ h1{font-size:42px;letter-spacing:-1.3px;line-height:1.2;margin-top:0}h2{font-siz
 <p>SimpleROV reúne el bastidor, los soportes de propulsión, la cámara, el alojamiento estanco y la simulación en un proyecto reproducible. Está pensado para empezar con pruebas de ajuste mecánico y avanzar hacia el control remoto por cable, el mantenimiento de profundidad y el control de rumbo.</p>
 <p>El idioma principal del proyecto y de la documentación técnica es <strong>inglés</strong>. Este README ofrece una introducción en español; los manuales enlazados están en inglés.</p>
 <p>El <strong>montaje estándar no incluye espuma de flotabilidad superior ni correas</strong>. Conserva las interfaces para añadir un módulo opcional tras medir la masa y el equilibrio del vehículo completo. Las imágenes son renderizados CAD, no fotografías de un prototipo probado.</p>
-<h2>Vista general</h2>
+<h2 id="vista-general">Vista general</h2>
 <table>
 <thead>
 <tr>
@@ -73,7 +73,7 @@ h1{font-size:42px;letter-spacing:-1.3px;line-height:1.2;margin-top:0}h2{font-siz
 </tbody>
 </table>
 <p>Las dimensiones no incluyen los cables definitivos, pasacables estancos, terminación del umbilical, cierres de las correas ni lastre. El desplazamiento lateral y el cabeceo no tienen actuadores independientes. Las roscas reales del motor, las salidas de cable y el espacio para toda la electrónica aún deben comprobarse físicamente.</p>
-<h2>Explorar la estructura</h2>
+<h2 id="explorar-la-estructura">Explorar la estructura</h2>
 <p><img alt="Seis vistas ortográficas del montaje estándar" src="assets/gallery/overview.png" /></p>
 <table>
 <thead>
@@ -90,7 +90,7 @@ h1{font-size:42px;letter-spacing:-1.3px;line-height:1.2;margin-top:0}h2{font-siz
 </tbody>
 </table>
 <p>La vista interior oculta el carenado y los componentes del alojamiento de presión para mostrar la cámara, la bandeja y sus soportes. No demuestra que la batería, los cuatro variadores, el controlador y el equipo de vídeo definitivo quepan en el tubo.</p>
-<h3>Capturas de Onshape</h3>
+<h3 id="capturas-de-onshape">Capturas de Onshape</h3>
 <p>Son <strong>capturas reales del montaje histórico en la nube</strong>, con espuma y correas opcionales instaladas. El STEP estándar del repositorio define la configuración predeterminada sin espuma.</p>
 <table>
 <thead>
@@ -107,7 +107,7 @@ h1{font-size:42px;letter-spacing:-1.3px;line-height:1.2;margin-top:0}h2{font-siz
 </tbody>
 </table>
 <p><a href="https://cad.onshape.com/documents/256f9be06adfdc472f7aac06/w/aefb43ce726d3d5c24877f23/e/1186baa4f5bb2c01f6be971a">Abrir el montaje público de Onshape</a> · <a href="gallery.html#onshape-screenshots">Galería y limitaciones de importación</a>.</p>
-<h2>Función de cada pieza</h2>
+<h2 id="funcion-de-cada-pieza">Función de cada pieza</h2>
 <table>
 <thead>
 <tr>
@@ -169,7 +169,7 @@ h1{font-size:42px;letter-spacing:-1.3px;line-height:1.2;margin-top:0}h2{font-siz
 </tr>
 </tbody>
 </table>
-<h2>Elegir una configuración</h2>
+<h2 id="elegir-una-configuracion">Elegir una configuración</h2>
 <p><img alt="Comparación entre montaje estándar y flotabilidad opcional" src="assets/gallery/configuration-comparison.png" /></p>
 <table>
 <thead>
@@ -195,7 +195,7 @@ h1{font-size:42px;letter-spacing:-1.3px;line-height:1.2;margin-top:0}h2{font-siz
 <p>Ambas usan las mismas diez piezas impresas. También hay versiones con la tornillería metálica nominal en <a href="../mechanical/assemblies">mechanical/assemblies/</a>.</p>
 <p>Las piezas de espuma de referencia miden 62 × 160 × 35 mm cada una y se cortan de un material de célula cerrada apropiado. <strong>No se imprimen junto con el carenado.</strong> La cantidad de compra predeterminada es cero; las cantidades opcionales se registran por separado.</p>
 <p>Prescindir de la espuma no garantiza flotabilidad positiva ni ascenso pasivo al parar los motores. Hay que pesar el vehículo completo, medir su desplazamiento y comprobar el equilibrio totalmente sumergido. Véase <a href="buoyancy.html">flotabilidad y equilibrio</a>.</p>
-<h2>Construir el primer prototipo</h2>
+<h2 id="construir-el-primer-prototipo">Construir el primer prototipo</h2>
 <ol>
 <li><strong>Comprobar un motor.</strong> Comprar un propulsor y un variador bidireccional compatible. Ensayar las dos <a href="../mechanical/fit_coupons">probetas</a> contra los agujeros, profundidad de rosca, apoyo y salida de cable reales.</li>
 <li><strong>Comprobar la carga seca.</strong> Distribuir a escala real batería, cuatro variadores, controlador, equipo de vídeo, conectores y cableado.</li>
@@ -205,7 +205,7 @@ h1{font-size:42px;letter-spacing:-1.3px;line-height:1.2;margin-top:0}h2{font-siz
 <li><strong>Probar a poca profundidad.</strong> En un entorno controlado y recuperable, verificar cada propulsor, órdenes remotas, mantenimiento de profundidad y parada por pérdida de comunicación.</li>
 </ol>
 <p>La guía detalla dirección de los tornillos, arandelas, cantidades y puntos de inspección. <a href="assembly.html">Montaje</a> · <a href="acceptance.html">Aceptación</a> · <a href="build-plan.html">Plan del prototipo</a>.</p>
-<h2>Ejecutar MuJoCo</h2>
+<h2 id="ejecutar-mujoco">Ejecutar MuJoCo</h2>
 <p>Desde la raíz del repositorio, con Python 3.12:</p>
 <pre><code class="language-bash">git clone https://github.com/tianrking/simple-rov.git
 cd simple-rov
@@ -256,9 +256,9 @@ python simulation/mujoco/run.py --viewer --manual --configuration with-buoyancy 
 # Grabar demostración, CSV y vistas de cámara
 python simulation/mujoco/run.py --render --output-dir runs/demo
 </code></pre>
-<h3>Física y control</h3>
+<h3 id="fisica-y-control">Física y control</h3>
 <p>El modelo incluye geometría CAD, dinámica de cuerpo rígido, cuatro puntos de empuje, flotabilidad y resistencia explícitas, retardo de motor y control clásico de profundidad, balanceo y rumbo. <strong>Masa, inercia, centros de gravedad y flotabilidad, volumen desplazado, resistencia y empuje inverso son parámetros de ejemplo sin calibrar.</strong> Cambiar de montaje modifica la geometría visible y las aproximaciones de colisión; no recalcula esos parámetros automáticamente.</p>
-<p>El entorno supone inmersión completa y agua quieta. No incluye oleaje, corrientes, transición de superficie, fuerzas del umbilical, CFD ni óptica submarina realista. Cargar solo el XML omite las fuerzas implementadas en Python: se debe usar <code>run.py</code>.</p>
+<p>El entorno supone inmersión completa y agua quieta. Incluye corrientes configurables y una aproximación del umbilical con tensión; no incluye oleaje, transición de superficie, dinámica distribuida del cable, CFD ni óptica submarina realista. Cargar solo el XML omite las fuerzas implementadas en Python: se debe usar <code>run.py</code>.</p>
 <pre><code class="language-python">from simulation.mujoco.environment import ROV
 
 rov = ROV(configuration=&quot;base&quot;)
@@ -266,8 +266,8 @@ for _ in range(1000):
     forces = rov.controller(depth=1.2, surge_N=2.0, yaw=0.0)
     position, attitude, velocity, angular_velocity = rov.step(forces)
 </code></pre>
-<p>Los comandos son fuerzas en newtons: horizontal izquierdo, horizontal derecho, vertical izquierdo y vertical derecho. No son PWM ni RPM. Se incluyen ejemplos de control clásico, pero no firmware, entorno Gymnasium ni políticas entrenadas. <a href="simulation.html">Documentación de simulación</a>.</p>
-<h2>Editar y reproducir</h2>
+<p>Los comandos son fuerzas en newtons: horizontal izquierdo, horizontal derecho, vertical izquierdo y vertical derecho. No son PWM ni RPM. La base usa MuJoCo 4.0.1 e incluye control clásico y un entorno Gymnasium 1.4.0 comprobado. No incluye firmware ni políticas entrenadas. Véase la <a href="simulation-foundation.html">base de simulación</a>, con sensores, escenarios, calibración y evaluación reproducible. <a href="simulation.html">Documentación de simulación</a>.</p>
+<h2 id="editar-y-reproducir">Editar y reproducir</h2>
 <table>
 <thead>
 <tr>
@@ -307,9 +307,9 @@ for _ in range(1000):
 </tbody>
 </table>
 <p>Al cambiar motores hay que revisar envolvente, plano de montaje, agujeros, profundidad, salida de cable, pasos de flujo y longitud de tornillo. Mantener sincronizados CAD, BOM, documentación y simulación. Los identificadores existentes de las piezas se conservan por compatibilidad.</p>
-<h2>Estado del proyecto</h2>
+<h2 id="estado-del-proyecto">Estado del proyecto</h2>
 <p>Ya se ofrecen fuentes paramétricas, piezas independientes, dos configuraciones, guía de montaje, BOM mecánica, coordenadas de agujeros y simulación con control clásico.</p>
 <p>Faltan la comprobación física de las interfaces del motor y las cargas de impresión, distribución electrónica completa, retención de bandeja, pasacables, gestión térmica, calibración de masa y empuje, estanqueidad y pruebas en agua. Los archivos de fabricación de PCB y el firmware son trabajo futuro. Las verificaciones digitales no certifican fiabilidad ni profundidad de operación.</p>
 <p><a href="../STATUS.json">Estado detallado</a> · <a href="roadmap.html">Hoja de ruta</a> · <a href="../CHANGELOG.md">Cambios</a>.</p>
-<h2>Derechos y fuentes</h2>
+<h2 id="derechos-y-fuentes">Derechos y fuentes</h2>
 <p>El repositorio es público para revisión. <strong>Todos los derechos del contenido original están reservados; no se concede una licencia de código abierto.</strong> El CAD de terceros, los planos de fabricantes y las dependencias conservan los derechos de sus propietarios. <a href="../LICENSE">Licencia</a> · <a href="../THIRD_PARTY_NOTICES.md">Avisos de terceros</a> · <a href="../SOURCES.json">Fuentes</a>.</p></main><footer>SimpleROV · Prototype documentation · Original content all rights reserved</footer></body></html>

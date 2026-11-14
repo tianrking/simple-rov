@@ -42,9 +42,12 @@ for n,h in geometry['source_sha256'].items():require(hashlib.sha256((ROOT/'mecha
 for x in json.loads((ROOT/'mechanical/EXPORT_CHECKS.json').read_text()):require(x['passed'],'Export baseline failed: '+x['part'])
 sources=json.loads((ROOT/'SOURCES.json').read_text())
 for n,h in sources['supplier_SHA256'].items():require(hashlib.sha256((ROOT/'mechanical/supplier'/n).read_bytes()).hexdigest()==h,'Supplier fingerprint: '+n)
-for fname in ['SIMULATION_CHECKS.json','MANUAL_CONTROL_CHECKS.json','DRIVING_WINDOW_CHECKS.json']:
+for fname in ['SIMULATION_CHECKS.json','MANUAL_CONTROL_CHECKS.json','DRIVING_WINDOW_CHECKS.json','FOUNDATION_CHECKS.json','GYM_CHECKS.json']:
     report=json.loads((ROOT/'simulation/mujoco'/fname).read_text());require(report['passed'],'Failed report '+fname)
     for n,h in report['source_sha256'].items():require(hashlib.sha256((ROOT/'simulation/mujoco'/n).read_bytes()).hexdigest()==h,'Stale simulation source '+fname+':'+n)
+benchmark=json.loads((ROOT/'validation/simulation_benchmark.json').read_text());require(benchmark['passed'] and len(benchmark['cases'])>=18,'Simulation benchmark coverage')
+for n,h in benchmark['source_sha256'].items():require(hashlib.sha256((ROOT/'simulation/mujoco'/n).read_bytes()).hexdigest()==h,'Stale benchmark source: '+n)
+require('mujoco==4.0.1' in (ROOT/'requirements/sim.txt').read_text(),'Validated MuJoCo version pin')
 guide=json.loads((ROOT/'validation/assembly_guide.json').read_text());require(guide['passed'] and guide['pages']==11,'Assembly guide status')
 for n,h in guide['source_sha256'].items():require(hashlib.sha256((ROOT/n).read_bytes()).hexdigest()==h,'Stale assembly guide source '+n)
 act=json.loads((ROOT/'simulation/mujoco/ACTUATOR_MAP.json').read_text())

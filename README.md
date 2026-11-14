@@ -9,7 +9,7 @@ Printable mechanics · Documented assembly · MuJoCo simulation
 [**English**](README.md) · [Español](README.es.md) · [简体中文](README.zh-CN.md)
 
 [![Checks](https://github.com/tianrking/simple-rov/actions/workflows/verify.yml/badge.svg)](https://github.com/tianrking/simple-rov/actions/workflows/verify.yml)
-[![Release](https://img.shields.io/badge/release-v0.5.2-176271)](https://github.com/tianrking/simple-rov/releases/tag/v0.5.2)
+[![Release](https://img.shields.io/badge/release-v0.6.0-176271)](https://github.com/tianrking/simple-rov/releases/tag/v0.6.0)
 [![CAD](https://img.shields.io/badge/CAD-STEP%20%2B%20STL-f29932)](https://github.com/tianrking/simple-rov/blob/main/mechanical/README.md)
 [![Simulation](https://img.shields.io/badge/simulation-MuJoCo-176271)](https://github.com/tianrking/simple-rov/blob/main/docs/simulation.md)
 
@@ -158,9 +158,9 @@ python simulation/mujoco/run.py --render --output-dir runs/demo
 
 ### Physics and control
 
-The model includes the CAD appearance, rigid-body dynamics, four thrust locations, explicit buoyancy and drag, motor lag, and classical depth, roll and heading control. **Mass, inertia, centers of gravity/buoyancy, displacement, drag and reverse thrust are uncalibrated example parameters.** Changing the assembly changes visuals and associated collision proxies; it does not automatically recalculate those parameters.
+Powered by **MuJoCo 4.0.1**, the foundation includes relative-current drag, buoyancy, delayed/rate-limited actuators, bounded allocation, sensor proxies, classical control, a lumped tether and fault scenarios. [Simulation foundation](docs/simulation-foundation.md). **Mass, inertia, centers of gravity/buoyancy, displacement, drag and reverse thrust are uncalibrated example parameters.** Changing the assembly changes visuals and associated collision proxies; it does not automatically recalculate those parameters.
 
-This is a fully submerged, still-water model. It does not include waves, currents, free-surface transitions, tether forces, CFD or realistic underwater optics. Open it through `run.py`: loading an XML alone omits the Python underwater forces.
+This is a fully submerged, still-water model. It includes configurable current and a tension-only tether approximation; it does not include waves, free-surface transitions, distributed cable dynamics, CFD or realistic underwater optics. Open it through `run.py`: loading an XML alone omits the Python underwater forces.
 
 ```python
 from simulation.mujoco.environment import ROV
@@ -171,7 +171,19 @@ for _ in range(1000):
     position, attitude, velocity, angular_velocity = rov.step(forces)
 ```
 
-Commands are forces in newtons, ordered horizontal-left, horizontal-right, vertical-left, vertical-right. They are not PWM or RPM. The project provides classical control examples; firmware, a Gymnasium wrapper and trained reinforcement-learning policies are not included. [Full simulation documentation](docs/simulation.md).
+Commands are forces in newtons, ordered horizontal-left, horizontal-right, vertical-left, vertical-right. They are not PWM or RPM. The project provides classical control and a checked Gymnasium 1.4.0 depth/heading task. Install `requirements/rl.txt` to use the learning interface; firmware and trained policies are not included. [Full simulation documentation](docs/simulation.md).
+
+### Evaluate the foundation
+
+```bash
+python simulation/mujoco/run.py --scenario cross-current --viewer --manual --seed 7
+python simulation/mujoco/verify_foundation.py
+python simulation/mujoco/benchmark.py --seeds 0 1 2
+```
+
+![Scenario benchmark under assumed, uncalibrated parameters](docs/assets/images/simulation-benchmark.png)
+
+Six scenarios cover pool, seawater density, current, lumped tether, actuator failure and native ellipsoid fluid comparison. [Benchmark details](docs/simulation-foundation.md#regression-and-benchmark).
 
 ## Edit and reproduce
 

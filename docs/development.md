@@ -6,7 +6,7 @@ Run commands from the repository root in a Python 3.12 virtual environment. Depe
 
 `python simulation/mujoco/run.py --viewer --manual --seconds 300` opens the dedicated GLFW driving window on the Python main thread. On macOS, the automatic native MuJoCo viewer can be launched with `python simulation/mujoco/launch_macos.py --seconds 120`; it repairs the selected virtual environment's libpython link when required, without modifying system Python.
 
-`--output-dir runs/demo` selects a run directory; otherwise a UTC timestamp is used. `verify.py` checks allocation, motion signs and depth/attitude response. `verify_manual.py` checks command targets and release behavior. `verify_driving_window.py` creates an OpenGL window to check callbacks and framebuffer rendering; it requires a desktop and does not inject operating-system keyboard events.
+`--output-dir runs/demo` selects a run directory; otherwise a UTC timestamp is used. `verify.py` checks allocation, motion signs and depth/attitude response. `verify_foundation.py` checks water/actuator/sensor invariants, and `verify_gym.py` checks the optional learning environment after installing `requirements/rl.txt`. `benchmark.py` evaluates six scenarios with recorded seeds; details are in [simulation foundation](simulation-foundation.md). `verify_manual.py` checks command targets and release behavior. `verify_driving_window.py` creates an OpenGL window to check callbacks and framebuffer rendering; it requires a desktop and does not inject operating-system keyboard events.
 
 ## CAD
 
@@ -44,6 +44,6 @@ python tools/validate_repository.py --manifest
 python tools/build_release.py
 ```
 
-The inventory excludes Git, environments, caches and `runs/`. Release ZIPs go to `runs/releases/`; update STATUS and CHANGELOG with a new version. GitHub Actions checks repository integrity and headless simulation, not physical reliability.
+The inventory excludes Git, environments, caches and `runs/`. Release ZIPs go to `runs/releases/`; update STATUS and CHANGELOG with a new version. GitHub Actions checks repository integrity, the foundation invariants, Gymnasium compatibility, scenario benchmarks and headless simulation, not physical reliability.
 
 `requirements/lock-macos-py312.txt` records the original complete macOS/Python 3.12 validation environment. Linux CI installs `requirements/sim.txt`; native libraries are not assumed identical across platforms. CSV files use LF so fingerprints match a Git checkout.

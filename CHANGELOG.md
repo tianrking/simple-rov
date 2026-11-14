@@ -1,5 +1,16 @@
 # Changelog
 
+## v0.6.0
+
+- Verify MuJoCo 4.0.1 as the current stable runtime; retain a reproducible version pin.
+- Add validated per-instance scenarios, seeded uncertainty, water-relative drag, current/shear, a tension-only tether and an optional native ellipsoid backend.
+- Add bounded weighted allocation with explicit residual/rank, delayed/rate-limited thrusters, normalized command curves and stale-command timeout.
+- Separate truth and sampled sensor proxies; run classical control at 50 Hz over 500 Hz physics with complete run metadata.
+- Add a checked Gymnasium 1.4.0 sensor-based depth/heading task, normalized observations and episode limits; no trained policy.
+- Add calibration tooling, physical-invariant tests, timestep comparison and an 18-case seeded scenario benchmark.
+- Mechanical geometry is unchanged. Parameters remain uncalibrated; no physical performance or global optimality claim.
+
+
 ## v0.5.2
 
 - Make English the default for project documentation, assembly PDF, diagram labels, offline HTML and the component-confirmation worksheet.

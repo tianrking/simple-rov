@@ -1,7 +1,7 @@
 # MuJoCo simulation
 
-The runnable implementation in [mujoco/](mujoco/) includes the current CAD appearance, rigid body, four thrust locations, explicit Python buoyancy/drag, motor lag and classical control.
+MuJoCo **4.0.1** provides the rigid-body plant. The foundation adds validated scenario configuration, water-relative loads, bounded allocation, actuator dynamics/failure/timeout, sensor proxies, classical control, reproducible benchmarks and an optional Gymnasium 1.4.0 task.
 
-[Installation, operation and assumptions](../docs/simulation.md) · [Quick start](../README.md#run-the-simulation)
+[Simulation foundation](../docs/simulation-foundation.md) · [Installation and driving](../docs/simulation.md) · [Quick start](../README.md#run-the-simulation)
 
-This is an underactuated, fully submerged, still-water demonstrator with uncalibrated hydrodynamics. It has no CFD, waves/currents, free surface, tether, optical refraction or reinforcement-learning environment. Use classical control for initial remote operation and stabilization. Later policy work needs explicit observations, actions, rewards, parameter randomization and independent evaluation.
+The default is the foam-free assembly, fully submerged. Parameters remain uncalibrated. Native ellipsoid and analytic water backends are alternatives; neither is CFD. Classical control is the initial real-vehicle baseline; no trained policy or firmware is included.

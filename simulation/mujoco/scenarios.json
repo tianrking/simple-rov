@@ -1,0 +1,64 @@
+{
+  "pool": {
+    "description": "Fully submerged freshwater baseline",
+    "overrides": {}
+  },
+  "seawater": {
+    "description": "Example 1025 kg/m3 still-water density; not an ocean-wave model",
+    "overrides": {
+      "water_density_kg_m3": 1025.0
+    }
+  },
+  "cross-current": {
+    "description": "Example cross-current with slow oscillation and noisy measurements",
+    "overrides": {
+      "water": {
+        "current_world_m_s": [
+          0.12,
+          0.1,
+          0
+        ],
+        "oscillation_world_m_s": [
+          0.03,
+          0.02,
+          0
+        ]
+      }
+    }
+  },
+  "tethered": {
+    "description": "Example tension-only tether at the chassis eye",
+    "overrides": {
+      "tether": {
+        "enabled": true,
+        "anchor_world_m": [
+          -0.3,
+          0,
+          -0.2
+        ],
+        "rest_length_m": 0.95
+      }
+    }
+  },
+  "motor-fault": {
+    "description": "One horizontal actuator unavailable; four-axis tracking is infeasible",
+    "overrides": {
+      "thrusters": {
+        "effectiveness": [
+          0,
+          1,
+          1,
+          1
+        ]
+      }
+    }
+  },
+  "native-fluid": {
+    "description": "MuJoCo ellipsoid fluid approximation for comparison; envelope is assumed",
+    "overrides": {
+      "water": {
+        "backend": "native-ellipsoid"
+      }
+    }
+  }
+}

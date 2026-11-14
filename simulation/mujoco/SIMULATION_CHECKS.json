@@ -2,47 +2,47 @@
   "physical_site_wrench_matches_CAD_map_max_error": 1.249000902703301e-16,
   "allocation_rank": 4,
   "forward": {
-    "signed_change": 0.4559575240008881,
+    "signed_change": 0.451271162300409,
     "unit": "m"
   },
   "reverse": {
-    "signed_change": -0.4559575240008881,
+    "signed_change": -0.451271162300409,
     "unit": "m"
   },
   "up": {
-    "signed_change": 0.36967555526898466,
+    "signed_change": 0.36629753215116534,
     "unit": "m"
   },
   "down": {
-    "signed_change": -0.3330422835558098,
+    "signed_change": -0.32929572626404235,
     "unit": "m"
   },
   "yaw": {
-    "signed_change": 0.8855081111356794,
+    "signed_change": 0.876508113268649,
     "unit": "rad"
   },
   "roll": {
-    "signed_change": 0.0949422798100368,
+    "signed_change": 0.09522234044244444,
     "unit": "rad"
   },
   "hover_20s": {
-    "depth_error_m": -6.057376822354854e-13,
-    "roll_rad": 1.4457936000447557e-16,
-    "pitch_rad": -4.031545843297215e-33
+    "depth_error_m": 3.173395970001991e-05,
+    "roll_rad": 1.7938588000637917e-16,
+    "pitch_rad": -1.603184306202488e-33
   },
   "depth_step": {
     "target_m": 0.9,
-    "final_m": 0.9001078269384561
+    "final_m": 0.8806394121241413
   },
   "roll_recovery": {
     "initial_rad": 0.2,
-    "final_rad": -9.603805283528765e-15
+    "final_rad": -5.418942695914982e-05
   },
   "roll_recovery_at_rotated_heading": {
     "initial_roll_rad": 0.2,
     "target_yaw_rad": 1.0,
-    "final_roll_rad": -9.603796443139301e-15,
-    "final_yaw_rad": 0.9999999999999979
+    "final_roll_rad": -5.418942695897574e-05,
+    "final_yaw_rad": 1.0010018416409883
   },
   "assembly_configurations": {
     "base": {
@@ -56,11 +56,11 @@
   },
   "scope": "Functional checks under assumed uncalibrated mass/CG/CB/thrust/drag. Does not validate a physical robot, pressure depth, structure or optical performance.",
   "source_sha256": {
-    "config.json": "8eea99dd1d6d09579e46b8acfbeb7307b6f2c7d5e5f8442bea1b285ca9a5e844",
+    "config.json": "39606628adefc572e5eeeb3cfb3ad696a747ea7f56a71912073e24de872f2bd6",
     "simple_rov.xml": "e07a4ff03a6f9b4b66c45d2d85399a02cd889de7f31124d280dfc5cc73190437",
     "simple_rov_with_buoyancy.xml": "8138497016c5ffd1854d3d155d1edd1868d46e829accead5aa900f34c22f61d8",
     "ACTUATOR_MAP.json": "afa0f4f0b0bb384daa62282e789e097b8203c855ce194f8cd00a79dc02490984",
-    "environment.py": "24d5db1ec9dc4ec080e90a33853f5e58940fc21793042b8db9ce84325a36d746"
+    "environment.py": "603ee2d389624cfbe7752c8b49ae9b777c502cde725b92e2c3d7c21a9cf01d37"
   },
   "passed": true
 }

@@ -1,5 +1,7 @@
 # MuJoCo simulation and keyboard driving
 
+**Engine: MuJoCo 4.0.1.** For the complete timing, sensor, current/tether, actuator, calibration and Gymnasium interfaces, start with the [simulation foundation](simulation-foundation.md).
+
 A four-thruster rigid-body demonstrator tied to the CAD coordinates. CAD meshes supply appearance; separate proxies supply simplified collision. Neither is a CFD model.
 
 ## Installation and launch
@@ -53,7 +55,7 @@ No gamepad integration or onboard firmware is included.
 python simulation/mujoco/run.py --render --output-dir runs/demo
 ```
 
-Automatic recording writes `demo.mp4`, `demo_states.csv`, `simulation.png` and `front-camera.png`. Manual runs write `manual_states.csv`; automatic viewer runs write `viewer_states.csv`. Omit `--output-dir` for a UTC timestamp directory under `runs/`.
+Automatic recording writes `demo.mp4`, `demo_states.csv`, `simulation.png` and `front-camera.png`. Manual runs write `manual_states.csv`; automatic viewer runs write `viewer_states.csv`. Every run also writes `run_metadata.json` with the resolved parameters, feedback mode, seed and source hashes. Omit `--output-dir` for a UTC timestamp directory under `runs/`.
 
 [Example video](../simulation/mujoco/demo.mp4)
 
@@ -73,7 +75,7 @@ forces = rov.controller(depth=1.2, surge_N=2, yaw=0.5)
 position, rpy, velocity, angular_velocity = rov.step(forces)
 ```
 
-`step` accepts forces in newtons, ordered H_LEFT, H_RIGHT, V_LEFT, V_RIGHT, not PWM or RPM. X is forward, Y left, Z up; depth is -z. Positive vertical force is upward. Actual propeller handedness and ESC commands must be mapped to these signs by submerged calibration.
+`step` accepts nominal actuator force targets in newtons, ordered H_LEFT, H_RIGHT, V_LEFT, V_RIGHT, not PWM or RPM. X is forward, Y left, Z up; depth is -z. Positive vertical force is upward. Actual propeller handedness and ESC commands must be mapped to these signs by submerged calibration.
 
 [ACTUATOR_MAP.json](../simulation/mujoco/ACTUATOR_MAP.json) records the 6 × 4 wrench matrix and reference points. Controlled rows are Fx/Fz/Mx/Mz, rank four. Pitch and sway remain passive/coupled axes. The ideal `front_camera` represents the upright image after rotating the physically inverted camera image 180°; there is no refraction, turbidity, scattering, lens distortion or estimation model.
 
@@ -85,13 +87,13 @@ position, rpy, velocity, angular_velocity = rov.step(forces)
 
 The 20.59 N forward limit uses the supplier's maximum-thrust reference; reverse 10 N is an assumed placeholder. Measure continuous forward/reverse thrust curves, deadband, saturation and response before claiming physical performance.
 
-The environment assumes fully submerged still water, away from the surface. There is no free surface, water entry/exit, waves, currents, added mass, thruster interaction, tether, fault model or CFD. Built-in MuJoCo fluid density/viscosity are zero to avoid double-counting Python drag. The program rejects a body origin too close to the surface; this is a use-boundary check, not a surface model. Changing water density alone does not simulate seawater waves or currents.
+The environment assumes fully submerged still water, away from the surface. Configurable currents, a tension-only lumped tether and actuator outages are available. The default analytic model omits added mass; an optional native ellipsoid fluid model is available for comparison. Native fluid drag and explicit analytic drag are mutually exclusive. The full CAD envelope must stay below the configured surface-clearance boundary. There is no free surface, water entry/exit, waves, thruster interaction, distributed cable or CFD. Changing density alone does not simulate an ocean.
 
 ## Classical control and later learning
 
-The controller uses proportional/derivative feedback plus net-buoyancy feedforward for depth, roll and heading. Surge is a force command, not closed-loop speed control. Establish this baseline and real trim/thrust calibration before learning policies.
+The controller uses configurable depth PI/velocity damping and roll/heading feedback, with net-buoyancy feedforward and conditional integral accumulation. Surge is a force command, not closed-loop speed control. The normal runner uses sampled sensor proxies at 50 Hz; `--feedback truth` selects the ideal diagnostic baseline. Establish physical trim/thrust calibration before policy deployment.
 
-A future Gymnasium wrapper could study PPO/SAC with observations such as error, attitude, velocities and previous action. Actions could be four bounded thrusts or bounded residuals around classical control. Define rewards, termination conditions, control cost and a separate evaluation set; randomize plausible mass, buoyancy, drag, thrust bias, latency and sensor noise. No wrapper, training script or trained policy is currently included.
+A tested Gymnasium 1.4.0 depth/heading environment now exposes four normalized actions and 13 bounded sensor-derived features, with seeded domain randomization, reward, task boundaries and time limits. Install `requirements/rl.txt`; see the [learning interface](simulation-foundation.md#gymnasium-foundation). No training algorithm or trained policy is included.
 
 References: [Gymnasium custom environments](https://gymnasium.farama.org/introduction/create_custom_env/), [SB3 evaluation guidance](https://stable-baselines3.readthedocs.io/en/master/guide/rl_tips.html).
 

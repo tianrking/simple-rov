@@ -6,7 +6,7 @@ main{max-width:1100px;margin:32px auto 70px;background:#fff;border:1px solid var
 h1{font-size:42px;letter-spacing:-1.3px;line-height:1.2;margin-top:0}h2{font-size:26px;border-top:1px solid var(--line);padding-top:30px;margin-top:44px;line-height:1.35}h3{font-size:20px;margin-top:30px;line-height:1.4}p{margin:16px 0}a{color:var(--accent);text-underline-offset:3px}img,video{max-width:100%;height:auto;border-radius:8px}p>img{display:block;margin:22px auto}table{border-collapse:collapse;width:100%;font-size:14px;margin:20px 0}th,td{border:1px solid var(--line);padding:12px 15px;text-align:left;vertical-align:top}th{background:#eaf2f4;font-weight:600}tr:nth-child(even){background:#fafcfc}td img{width:100%}pre{overflow:auto;background:#163843;color:#edf6f8;padding:22px;border-radius:10px;font-size:13px;line-height:1.7}code{font-family:ui-monospace,SFMono-Regular,Consolas,monospace}p code,td code{background:#edf3f5;padding:2px 5px;border-radius:4px;font-size:.88em}blockquote{margin:20px 0;padding:1px 20px;background:#fff5e7;border-left:3px solid var(--orange)}details{border:1px solid var(--line);border-radius:10px;padding:12px 18px;margin:20px 0}summary{cursor:pointer}footer{color:var(--muted);font-size:12px;text-align:center;margin:35px auto}
 @media(max-width:700px){main{margin:12px 8px;padding:24px 18px;border-radius:10px}h1{font-size:34px}h2{font-size:23px}table{font-size:12px}th,td{padding:8px}nav{gap:12px;padding:14px 20px}pre{font-size:11px}}
 @media print{body,main{margin:0;padding:0;background:#fff;border:0;box-shadow:none}header,footer{display:none}h2{break-before:page}}
-</style></head><body><header><nav><strong>SimpleROV</strong><a href="index.html">Overview</a><a href="assembly.html">Assembly</a><a href="gallery.html">Gallery</a><a href="simulation.html">Simulation</a><a href="index.es.html">ES</a><a href="index.zh-CN.html">中文</a></nav></header><main><h1>SimpleROV</h1>
+</style></head><body><header><nav><strong>SimpleROV</strong><a href="index.html">Overview</a><a href="assembly.html">Assembly</a><a href="gallery.html">Gallery</a><a href="simulation.html">Simulation</a><a href="index.es.html">ES</a><a href="index.zh-CN.html">中文</a></nav></header><main><h1 id="simplerov">SimpleROV</h1>
 <p><a href="index.html">English</a> · <a href="index.es.html">Español</a> · <a href="index.zh-CN.html"><strong>简体中文</strong></a></p>
 <p>项目默认技术文档为英文，本页为中文入口。</p>
 <p>小型四推进器水下机器人，包含可打印的机械结构、装配说明、物料清单和 MuJoCo 仿真。适合从机械试装开始，逐步完成有线遥控、定深和定向控制。</p>
@@ -14,7 +14,7 @@ h1{font-size:42px;letter-spacing:-1.3px;line-height:1.2;margin-top:0}h2{font-siz
 <p><img alt="SimpleROV 标准装配" src="assets/gallery/hero.png" /></p>
 <p><strong>标准装配不包含顶部浮力块或绑带，外包尺寸约 213 × 210 × 148 mm。</strong> 机架保留浮力模块的安装位置，可根据实际重量和水中配平结果增加浮材。图像由本项目 CAD 生成，尚未选定的电子模块和线束没有画入；这些不是实物照片。</p>
 <p><a href="assembly.html">装配说明</a> · <a href="../mechanical/stl">打印文件</a> · <a href="../bom/README.md">物料清单</a> · <a href="simulation.html">运行仿真</a> · <a href="gallery.html">图像与视图</a> · <a href="https://github.com/tianrking/simple-rov/releases">版本下载</a></p>
-<h2>项目概览</h2>
+<h2 id="_1">项目概览</h2>
 <p>SimpleROV 采用两个水平推进器和两个竖直推进器。承力底架连接推进器、中央密封舱和滑橇，上罩负责外部保护；电子设备安装在密封舱内。默认配置保留完整的四推进器布局，不安装额外的浮力模块。</p>
 <table>
 <thead>
@@ -67,7 +67,7 @@ h1{font-size:42px;letter-spacing:-1.3px;line-height:1.2;margin-top:0}h2{font-siz
 </tbody>
 </table>
 <p>上述尺寸不包含后续选定的线缆、穿舱接头、系缆头及配重。系统没有独立横移和主动俯仰控制；“保持深度和航向”也不等于锁定水平位置。</p>
-<h2>多视角查看结构</h2>
+<h2 id="_2">多视角查看结构</h2>
 <p>以下六个方向采用一致的正投影视图，方便检查推进器方向、机架轮廓、滑橇和中央舱的位置。坐标约定为 <strong>X 向前、Y 向左、Z 向上</strong>。</p>
 <p><img alt="标准装配六向视图" src="assets/gallery/overview.png" /></p>
 <table>
@@ -113,7 +113,7 @@ h1{font-size:42px;letter-spacing:-1.3px;line-height:1.2;margin-top:0}h2{font-siz
 </tbody>
 </table>
 <p><a href="gallery.html">查看内部安装、选装配置及原分辨率图片</a>。</p>
-<h2>每个部分的用途</h2>
+<h2 id="_3">每个部分的用途</h2>
 <table>
 <thead>
 <tr>
@@ -177,7 +177,7 @@ h1{font-size:42px;letter-spacing:-1.3px;line-height:1.2;margin-top:0}h2{font-siz
 </table>
 <p><img alt="内部安装视图" src="assets/gallery/interior.png" /></p>
 <p>内部图隐藏上罩与压力舱组件，展示已有相机、托板和机架关系。图中空出的空间不是“所有电子设备已装得下”的证明。</p>
-<h2>浮力模块为什么是选装</h2>
+<h2 id="_4">浮力模块为什么是选装</h2>
 <p>标准装配便于先做机械试装、确认推进器接口和测量整机重量。之后可以根据电池、电子模块、线束和实际排水量选择浮材，不把顶部两块浮材固定成每台机器都必须安装的部分。</p>
 <p><img alt="标准配置与选装浮力模块对比" src="assets/gallery/configuration-comparison.png" /></p>
 <table>
@@ -203,7 +203,7 @@ h1{font-size:42px;letter-spacing:-1.3px;line-height:1.2;margin-top:0}h2{font-siz
 </table>
 <p>现有浮材参考为前后两块闭孔材料，每块名义尺寸 62 × 160 × 35 mm。它们是采购后切割的材料，<strong>不需要和上罩一体打印</strong>。BOM 中浮材和绑带的默认数量为 0，选装数量单独列出。</p>
 <p>是否可以不装浮材，要在完整装机后称重、测排水量并试水判断。默认不安装不代表裸机已具备正浮力，也不保证断推后上浮。材料尺寸、位置和配重都应按实际配平调整。<a href="buoyancy.html">浮力模块与配平说明</a>。</p>
-<h2>获取文件</h2>
+<h2 id="_5">获取文件</h2>
 <table>
 <thead>
 <tr>
@@ -255,7 +255,7 @@ h1{font-size:42px;letter-spacing:-1.3px;line-height:1.2;margin-top:0}h2{font-siz
 </tbody>
 </table>
 <p>文件名中的既有零件编号保留，方便对照孔位和已有打印资料。默认与选装总装使用同一套 10 个主体打印件。</p>
-<h2>从打印到首次下水</h2>
+<h2 id="_6">从打印到首次下水</h2>
 <ol>
 <li><strong>核对电机接口。</strong> 先用一台实物推进器和两个试片检查孔距、底脚、孔深与出线，确认后再打印主体。</li>
 <li><strong>确定舱内摆放。</strong> 收集电池、四路电调、控制器、相机主机、连接器及线束的真实尺寸，先完成 1:1 试装。</li>
@@ -265,7 +265,7 @@ h1{font-size:42px;letter-spacing:-1.3px;line-height:1.2;margin-top:0}h2{font-siz
 <li><strong>浅水低功率验证。</strong> 在可随时回收的场地逐台核对推力方向，再调试升降、转向、定深和失联停推。</li>
 </ol>
 <p>完整的螺钉方向、垫片位置、装配顺序和停点见 <a href="assembly.html">组装说明</a>。制造与验收条件见 <a href="acceptance.html">装配验收</a> 和 <a href="build-plan.html">实机路线</a>。</p>
-<h2>运行 MuJoCo</h2>
+<h2 id="mujoco">运行 MuJoCo</h2>
 <p>推荐 Python 3.12。从仓库根目录安装依赖：</p>
 <pre><code class="language-bash">git clone https://github.com/tianrking/simple-rov.git
 cd simple-rov
@@ -319,11 +319,11 @@ python -m pip install -r requirements/sim.txt
 <pre><code class="language-bash">python simulation/mujoco/run.py --render --output-dir runs/demo
 </code></pre>
 <p><code>runs/demo/</code> 中包含录像、状态 CSV 和图像。省略输出目录时，程序创建带 UTC 时间戳的运行目录。</p>
-<h3>仿真计算什么</h3>
+<h3 id="_7">仿真计算什么</h3>
 <p>模型包含当前 CAD 外观、刚体质量与惯量、四个真实位置的推力作用点、Python 浮力和阻力、电机响应延迟，以及定深、定向和横滚的经典反馈控制。坐标、推力单位和控制分配见 <a href="simulation.html">仿真说明</a>。</p>
 <p><strong>质量、重心、浮心、排水量、阻力和反向推力目前是示例参数。</strong> 切换浮材装配只改变可见几何和对应碰撞体，不会自动根据材料计算净浮力或重心。两种装配都需要实测标定后才能用于性能比较。</p>
-<p>当前没有海浪、海流、自由液面穿越、系缆拉力、CFD 或真实水下成像模型。只打开 XML 不会执行 Python 中的水下外力，正常运行请使用 <code>run.py</code>。</p>
-<h3>在代码中使用控制接口</h3>
+<p>当前已增加可配置水流、简化系缆张力、推进器故障、传感器接口与受限推力分配；尚无海浪、自由液面穿越、分布式线缆、CFD 或真实水下成像。只打开 XML 不会执行 Python 中的水下外力，正常运行请使用 <code>run.py</code>。</p>
+<h3 id="_8">在代码中使用控制接口</h3>
 <pre><code class="language-python">from simulation.mujoco.environment import ROV
 
 rov = ROV(configuration=&quot;base&quot;)
@@ -331,8 +331,8 @@ for _ in range(1000):
     forces = rov.controller(depth=1.2, surge_N=2.0, yaw=0.0)
     position, attitude, velocity, angular_velocity = rov.step(forces)
 </code></pre>
-<p><code>step()</code> 的四个输入依次对应水平左、水平右、竖直左、竖直右，单位为牛顿，不是 PWM 或电机转速。实机首先采用经典控制完成遥控与稳定，再考虑自主任务或强化学习；仓库目前没有训练好的策略或可烧录固件。</p>
-<h2>修改结构与复建</h2>
+<p><code>step()</code> 的四个输入依次对应水平左、水平右、竖直左、竖直右，单位为牛顿，不是 PWM 或电机转速。实机首先采用经典控制完成遥控与稳定，再考虑自主任务或强化学习；仿真基座使用 MuJoCo 4.0.1，并提供通过检查的 Gymnasium 1.4.0 接口；没有训练好的策略或可烧录固件。<a href="simulation-foundation.html">仿真基座详细说明</a>。</p>
+<h2 id="_9">修改结构与复建</h2>
 <pre><code class="language-bash">python -m pip install -r requirements/cad.txt
 python mechanical/build.py
 python mechanical/build_fit_coupons.py
@@ -344,7 +344,7 @@ python simulation/mujoco/verify.py
 python simulation/mujoco/verify_manual.py
 </code></pre>
 <p>CAD 构建会同时输出标准和选装装配。修改推进器时，应同时核对外形、安装面、孔距、孔深、出线、桨水路和螺钉长度，不能只改孔距。CAD、BOM、装配文档和仿真应保持同一版本。<a href="development.html">开发说明</a>。</p>
-<h2>目录结构</h2>
+<h2 id="_10">目录结构</h2>
 <pre><code class="language-text">mechanical/          参数化 CAD、独立零件、两种总装、原厂参考和几何检查
 simulation/mujoco/   水下受力模型、经典控制、键盘驾驶和验证
 bom/                 默认及选装物料、打印清单、接口记录
@@ -356,7 +356,7 @@ validation/          检查记录；历史 Onshape 回导记录单独保存
 requirements/        按用途固定的 Python 依赖
 runs/                本地运行结果，默认不提交
 </code></pre>
-<h2>当前状态</h2>
+<h2 id="_11">当前状态</h2>
 <table>
 <thead>
 <tr>
@@ -392,5 +392,5 @@ runs/                本地运行结果，默认不提交
 </tbody>
 </table>
 <p>自动检查用于验证文件、几何与程序的一致性，不代表整机通过了可靠性或潜深认证。<a href="../.github/workflows/verify.yml">检查流程</a> · <a href="../STATUS.json">详细状态</a> · <a href="roadmap.html">路线图</a> · <a href="../CHANGELOG.md">变更记录</a>。</p>
-<h2>权利与第三方资料</h2>
+<h2 id="_12">权利与第三方资料</h2>
 <p>本仓库公开展示，原创内容保留全部权利，暂未授予开源许可。第三方 CAD、厂家图纸及依赖保留原作者权利。<a href="../LICENSE">LICENSE</a> · <a href="../THIRD_PARTY_NOTICES.md">第三方说明</a> · <a href="../SOURCES.json">资料来源</a>。</p></main><footer>SimpleROV · Prototype documentation · Original content all rights reserved</footer></body></html>

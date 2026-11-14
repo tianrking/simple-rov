@@ -9,7 +9,7 @@ Mecánica imprimible · Montaje documentado · Simulación en MuJoCo
 [English](README.md) · [**Español**](README.es.md) · [简体中文](README.zh-CN.md)
 
 [![Verificaciones](https://github.com/tianrking/simple-rov/actions/workflows/verify.yml/badge.svg)](https://github.com/tianrking/simple-rov/actions/workflows/verify.yml)
-[![Versión](https://img.shields.io/badge/release-v0.5.2-176271)](https://github.com/tianrking/simple-rov/releases/tag/v0.5.2)
+[![Versión](https://img.shields.io/badge/release-v0.6.0-176271)](https://github.com/tianrking/simple-rov/releases/tag/v0.6.0)
 [![CAD](https://img.shields.io/badge/CAD-STEP%20%2B%20STL-f29932)](https://github.com/tianrking/simple-rov/blob/main/mechanical/README.md)
 
 ![Montaje estándar de SimpleROV](docs/assets/gallery/hero.png)
@@ -142,7 +142,7 @@ python simulation/mujoco/run.py --render --output-dir runs/demo
 
 El modelo incluye geometría CAD, dinámica de cuerpo rígido, cuatro puntos de empuje, flotabilidad y resistencia explícitas, retardo de motor y control clásico de profundidad, balanceo y rumbo. **Masa, inercia, centros de gravedad y flotabilidad, volumen desplazado, resistencia y empuje inverso son parámetros de ejemplo sin calibrar.** Cambiar de montaje modifica la geometría visible y las aproximaciones de colisión; no recalcula esos parámetros automáticamente.
 
-El entorno supone inmersión completa y agua quieta. No incluye oleaje, corrientes, transición de superficie, fuerzas del umbilical, CFD ni óptica submarina realista. Cargar solo el XML omite las fuerzas implementadas en Python: se debe usar `run.py`.
+El entorno supone inmersión completa y agua quieta. Incluye corrientes configurables y una aproximación del umbilical con tensión; no incluye oleaje, transición de superficie, dinámica distribuida del cable, CFD ni óptica submarina realista. Cargar solo el XML omite las fuerzas implementadas en Python: se debe usar `run.py`.
 
 ```python
 from simulation.mujoco.environment import ROV
@@ -153,7 +153,7 @@ for _ in range(1000):
     position, attitude, velocity, angular_velocity = rov.step(forces)
 ```
 
-Los comandos son fuerzas en newtons: horizontal izquierdo, horizontal derecho, vertical izquierdo y vertical derecho. No son PWM ni RPM. Se incluyen ejemplos de control clásico, pero no firmware, entorno Gymnasium ni políticas entrenadas. [Documentación de simulación](docs/simulation.md).
+Los comandos son fuerzas en newtons: horizontal izquierdo, horizontal derecho, vertical izquierdo y vertical derecho. No son PWM ni RPM. La base usa MuJoCo 4.0.1 e incluye control clásico y un entorno Gymnasium 1.4.0 comprobado. No incluye firmware ni políticas entrenadas. Véase la [base de simulación](docs/simulation-foundation.md), con sensores, escenarios, calibración y evaluación reproducible. [Documentación de simulación](docs/simulation.md).
 
 ## Editar y reproducir
 

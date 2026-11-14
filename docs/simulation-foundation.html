@@ -1,0 +1,216 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>SimpleROV | Project documentation</title><style>
+:root{--ink:#183d46;--muted:#5d7480;--line:#dbe6e9;--accent:#176271;--orange:#ed8a24}
+*{box-sizing:border-box}body{margin:0;background:#f3f7f8;color:var(--ink);font:16px/1.8 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+header{background:#fff;border-bottom:1px solid var(--line)}nav{max-width:1100px;margin:auto;padding:18px 28px;display:flex;gap:22px;align-items:center;flex-wrap:wrap}nav strong{margin-right:auto;letter-spacing:-.5px;font-size:22px}nav a{font-size:14px;text-decoration:none}
+main{max-width:1100px;margin:32px auto 70px;background:#fff;border:1px solid var(--line);border-radius:16px;padding:42px 48px;box-shadow:0 8px 35px #183d4608}
+h1{font-size:42px;letter-spacing:-1.3px;line-height:1.2;margin-top:0}h2{font-size:26px;border-top:1px solid var(--line);padding-top:30px;margin-top:44px;line-height:1.35}h3{font-size:20px;margin-top:30px;line-height:1.4}p{margin:16px 0}a{color:var(--accent);text-underline-offset:3px}img,video{max-width:100%;height:auto;border-radius:8px}p>img{display:block;margin:22px auto}table{border-collapse:collapse;width:100%;font-size:14px;margin:20px 0}th,td{border:1px solid var(--line);padding:12px 15px;text-align:left;vertical-align:top}th{background:#eaf2f4;font-weight:600}tr:nth-child(even){background:#fafcfc}td img{width:100%}pre{overflow:auto;background:#163843;color:#edf6f8;padding:22px;border-radius:10px;font-size:13px;line-height:1.7}code{font-family:ui-monospace,SFMono-Regular,Consolas,monospace}p code,td code{background:#edf3f5;padding:2px 5px;border-radius:4px;font-size:.88em}blockquote{margin:20px 0;padding:1px 20px;background:#fff5e7;border-left:3px solid var(--orange)}details{border:1px solid var(--line);border-radius:10px;padding:12px 18px;margin:20px 0}summary{cursor:pointer}footer{color:var(--muted);font-size:12px;text-align:center;margin:35px auto}
+@media(max-width:700px){main{margin:12px 8px;padding:24px 18px;border-radius:10px}h1{font-size:34px}h2{font-size:23px}table{font-size:12px}th,td{padding:8px}nav{gap:12px;padding:14px 20px}pre{font-size:11px}}
+@media print{body,main{margin:0;padding:0;background:#fff;border:0;box-shadow:none}header,footer{display:none}h2{break-before:page}}
+</style></head><body><header><nav><strong>SimpleROV</strong><a href="index.html">Overview</a><a href="assembly.html">Assembly</a><a href="gallery.html">Gallery</a><a href="simulation.html">Simulation</a><a href="index.es.html">ES</a><a href="index.zh-CN.html">中文</a></nav></header><main><h1 id="simulation-foundation">Simulation foundation</h1>
+<p>SimpleROV runs on <strong>MuJoCo 4.0.1</strong>, verified against the official latest stable release on <strong>2026-11-14</strong>. <a href="https://github.com/google-deepmind/mujoco/releases/tag/4.0.1">Official release</a> · <a href="../validation/engine.json">Runtime record</a>.</p>
+<p>This foundation supports repeatable controller development, fault experiments, calibration and a sensor-based learning task. It remains an uncalibrated rigid-body approximation. A software benchmark is not an experimental validation or a global optimality result.</p>
+<h2 id="architecture-and-timing">Architecture and timing</h2>
+<pre><code class="language-text">Scenario + assembly + validated overrides + seed
+                       |
+          resolved per-instance configuration
+                       |
+50 Hz control / action -&gt; bounded allocation / normalized thrust curve
+                       |
+       delay -&gt; deadband -&gt; lag -&gt; slew limit -&gt; effectiveness
+                       |
+500 Hz MuJoCo rigid-body plant + buoyancy + water-relative loads + tether
+                       |
+             sample-and-hold sensor proxies
+                       |
+     classical controller or Gymnasium policy observation
+                       |
+       CSV traces + complete run metadata + regression metrics
+</code></pre>
+<p>Default physics timestep is 2 ms, control period 20 ms and sensor period 20 ms. Control and sensor periods must align with physics ticks. State-derived transforms are refreshed after each step, so rendering, returned truth and measurements describe the updated simulation time. Repeated sensor reads do not consume random draws or change the sample schedule.</p>
+<table>
+<thead>
+<tr>
+<th>Module</th>
+<th>Responsibility</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../simulation/mujoco/configuration.py">configuration.py</a></td>
+<td>Strict override keys, parameter validation and seeded uncertainty draws</td>
+</tr>
+<tr>
+<td><a href="../simulation/mujoco/environment.py">environment.py</a></td>
+<td>MuJoCo plant, runtime physical parameters, truth API, controller and metadata</td>
+</tr>
+<tr>
+<td><a href="../simulation/mujoco/hydrodynamics.py">hydrodynamics.py</a></td>
+<td>Water-relative passive drag and tension-only tether</td>
+</tr>
+<tr>
+<td><a href="../simulation/mujoco/actuators.py">actuators.py</a></td>
+<td>Bounded allocation, command curve, delay, rate limits, lag and watchdog</td>
+</tr>
+<tr>
+<td><a href="../simulation/mujoco/sensors.py">sensors.py</a></td>
+<td>Timestamped pressure, attitude, gyro and specific-acceleration proxies</td>
+</tr>
+<tr>
+<td><a href="../simulation/mujoco/gym_env.py">gym_env.py</a></td>
+<td>Seedable, bounded sensor-observation depth/heading task</td>
+</tr>
+<tr>
+<td><a href="../simulation/mujoco/calibrate.py">calibrate.py</a></td>
+<td>Nonnegative steady-tow drag fit from measured CSV</td>
+</tr>
+<tr>
+<td><a href="../simulation/mujoco/benchmark.py">benchmark.py</a></td>
+<td>Seeded scenario metrics, traces and optional plots</td>
+</tr>
+</tbody>
+</table>
+<h2 id="run-a-scenario">Run a scenario</h2>
+<pre><code class="language-bash">python simulation/mujoco/run.py --viewer --manual --scenario cross-current --seed 7
+python simulation/mujoco/run.py --render --scenario tethered --output-dir runs/tethered
+python simulation/mujoco/run.py --scenario seawater --feedback sensors --seconds 16
+</code></pre>
+<p>The normal runner now uses sampled sensor feedback by default. <code>--feedback truth</code> selects the ideal-state diagnostic baseline. Keyboard controls remain W/S, A/D, U/J and X. The GUI still displays ground truth for inspection; controller feedback selection is separate.</p>
+<table>
+<thead>
+<tr>
+<th>Scenario</th>
+<th>Changes from baseline</th>
+<th>Interpretation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>pool</code></td>
+<td>997 kg/m³ water, no current/tether</td>
+<td>Fully submerged freshwater example</td>
+</tr>
+<tr>
+<td><code>seawater</code></td>
+<td>Density 1025 kg/m³</td>
+<td>Example density only; no waves, salinity chemistry or realistic ocean environment</td>
+</tr>
+<tr>
+<td><code>cross-current</code></td>
+<td>0.12/0.10 m/s X/Y current with slow oscillation</td>
+<td>Water-relative drag and lateral drift; no independent sway actuator</td>
+</tr>
+<tr>
+<td><code>tethered</code></td>
+<td>Tension-only spring/damper from a fixed anchor to the chassis eye</td>
+<td>Lumped cable force, not a distributed cable model</td>
+</tr>
+<tr>
+<td><code>motor-fault</code></td>
+<td>H_LEFT effectiveness zero</td>
+<td>Controlled allocation rank drops to three; conflicting targets cannot all be achieved</td>
+</tr>
+<tr>
+<td><code>native-fluid</code></td>
+<td>MuJoCo ellipsoid fluid backend</td>
+<td>An assumed envelope approximation for comparison, not an identified vehicle model</td>
+</tr>
+</tbody>
+</table>
+<p>Both foam-free <code>base</code> and optional <code>with-buoyancy</code> assemblies are supported. Switching assembly does not infer mass, CG/CB, displacement or hydrodynamic coefficients. Runtime mass, inertia, CG and reaction torque overrides update the physical plant and allocation, not only metadata.</p>
+<h2 id="hydrodynamic-scope">Hydrodynamic scope</h2>
+<h3 id="calibratable-analytic-backend">Calibratable analytic backend</h3>
+<p>For a drag point fixed in the body, compute its velocity including angular motion, subtract world current and rotate into body axes. Apply</p>
+<p><code>F = -D_linear * v_relative - D_quadratic * abs(v_relative) * v_relative</code></p>
+<p>with the analogous angular damping law. Nonnegative diagonal coefficients guarantee nonpositive drag power relative to water. Apply the force at the configured drag center, preserving the resulting moment. Current can contain a uniform component, a sinusoidal component and a depth-dependent shear. These coefficients already include their dimensional force scaling; do not multiply them by density again. The shear option changes translational flow locally; fluid-vorticity effects on rotational damping are not modeled. The native backend sees the current evaluated at the vehicle as locally uniform wind.</p>
+<p>Buoyancy is <code>rho * g * displaced_volume</code>, applied at configured CB. Gravity comes from MuJoCo and the configured rigid-body mass. All quantities are SI; body axes are X forward, Y left, Z up. Relative-motion convention follows the <a href="https://www.fossen.biz/html/marineCraftModel.html">marine craft model reference</a>, but this analytic implementation omits added-mass acceleration and Coriolis terms. It is not a full implementation of that model.</p>
+<h3 id="native-ellipsoid-comparison">Native ellipsoid comparison</h3>
+<p>The alternative enables one hidden, noncolliding ellipsoid with MuJoCo <code>fluidshape="ellipsoid"</code>, nonzero density/viscosity and configured wind/current. Explicit Python drag is disabled in this mode to prevent double-counting. The default native coefficients disable Kutta and Magnus lift. MuJoCo supplies its documented ellipsoid fluid approximation; see <a href="https://mujoco.readthedocs.io/en/latest/computation/fluid.html">official fluid documentation</a>.</p>
+<p>The assumed 0.1065 / 0.105 / 0.074 m semiaxes do not identify the real freely flooded frame. Native fluid effects do not make the simulation CFD, establish physical added-mass coefficients or guarantee better accuracy than calibrated analytic drag. Compare and calibrate rather than selecting a backend solely for visual complexity.</p>
+<h3 id="tether-approximation">Tether approximation</h3>
+<p>Let <code>extension = length - rest_length</code>. A slack line exerts zero force. A taut line applies the nonnegative spring/damping tension toward the anchor at the real chassis attachment, including its moment. It cannot push. There is no distributed cable mass, buoyancy, hydrodynamic drag, slack-loop shape, cable contact or winch model. Tether coefficients and geometry are illustrative.</p>
+<h2 id="actuators-and-allocation">Actuators and allocation</h2>
+<p>The four actuators remain H_LEFT, H_RIGHT, V_LEFT, V_RIGHT. <code>ROV.step()</code> accepts nominal force targets in N; actual forces include configured effectiveness, transport delay, lag, deadband and slew limits. <code>step(None)</code> holds the last received target until its timeout, then commands zero through the actuator dynamics; it does not instantaneously stop vehicle motion. No electrical ESC, battery or propeller-spin model is implied.</p>
+<p><code>step_normalized()</code> maps four commands in [-1, 1] through a monotone, assumed bidirectional force curve. It is a simulation interface, not a PWM calibration. Replace the curve and limits with measured values.</p>
+<p>Allocation minimizes the weighted wrench residual under per-motor bounds. It evaluates feasible faces of the four-dimensional box when the unconstrained solution is infeasible. Force rows have weights 1 and roll/yaw moment rows weights 10; these are engineering priorities with dimensional scaling, not universal optimal weights. Saturation and rank loss are returned explicitly. <code>allocator.last</code> records requested/achievable wrench, residual, rank and saturation. Predicted allocation assumes steady motor response; <code>diagnostics</code> records actual current thrust wrench.</p>
+<p>The classical controller uses configurable depth PI/velocity damping, roll/yaw feedback, buoyancy feedforward and conditional integral accumulation under saturation. By default it uses the scenario's configured mass and volume for feedforward; benchmark results do not demonstrate robustness to unknown physical parameters. Its ideal-state API remains available for regression tests.</p>
+<h2 id="sensors-and-truth">Sensors and truth</h2>
+<p><code>state()</code> is ground truth. <code>measurements()</code> contains timestamped sample-and-hold proxies:</p>
+<table>
+<thead>
+<tr>
+<th>Measurement</th>
+<th>Default illustrative uncertainty</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Pressure</td>
+<td>15 Pa white noise, 10 Pa reset-fixed bias standard deviation</td>
+</tr>
+<tr>
+<td>Depth</td>
+<td>Derived from pressure, configured water density and atmospheric pressure</td>
+</tr>
+<tr>
+<td>Depth rate</td>
+<td>Filtered finite difference of measured depth; 0.15 s filter time constant</td>
+</tr>
+<tr>
+<td>Attitude</td>
+<td>Quaternion with 0.002 rad small-angle noise</td>
+</tr>
+<tr>
+<td>Gyro</td>
+<td>0.002 rad/s noise standard deviation</td>
+</tr>
+<tr>
+<td>Specific acceleration</td>
+<td>MuJoCo IMU-site acceleration with 0.02 m/s² noise standard deviation</td>
+</tr>
+</tbody>
+</table>
+<p>Attitude is a noisy orientation proxy, not a validated IMU/magnetometer filter. There is no perfect global position or linear-velocity measurement in the policy observation. Temperature drift, bias random walks, magnetics, DVL, sonar, video estimation, pressure-port dynamics and packet dropouts are not modeled. The sensor assumptions require real sensor selection and identification.</p>
+<h2 id="gymnasium-foundation">Gymnasium foundation</h2>
+<p>Install the optional, pinned Gymnasium 1.4.0 interface:</p>
+<pre><code class="language-bash">python -m pip install -r requirements/rl.txt
+python simulation/mujoco/verify_gym.py
+</code></pre>
+<pre><code class="language-python">import numpy as np
+from simulation.mujoco.gym_env import SimpleROVEnv
+
+env = SimpleROVEnv(scenario=&quot;cross-current&quot;, randomize=True)
+observation, info = env.reset(seed=7)
+for _ in range(200):
+    # Zero action is only an API example, not a useful trained policy.
+    observation, reward, terminated, truncated, info = env.step(
+        np.zeros(4, dtype=np.float32)
+    )
+    if terminated or truncated:
+        break
+env.close()
+</code></pre>
+<p>Actions are four normalized thruster commands at 50 Hz. The 13 observation entries are depth error; sine/cosine of heading error; roll/pitch; depth rate; three gyro axes; four previous actions. Representation scales are [2 m, 1, 1, pi rad, pi rad, 2 m/s, 4 rad/s, 4 rad/s, 4 rad/s, 1, 1, 1, 1], clipped to [-1, 1]. These are representation scales, not physical sensor bounds.</p>
+<p>The reward penalizes measured depth/heading/attitude error, effort and action changes, scaled by the control period. Surface-envelope violation, excessive attitude and collision terminate the task; episode duration truncates it. A ground-truth diagnostic is returned in <code>info</code> for evaluation only. Use the observation for policy input.</p>
+<p>Reset randomization can vary mass, volume, drag, lag and actuator effectiveness with a recorded seed. It is an assumed uncertainty distribution, not a measured population. Gymnasium's environment checker, deterministic reset and time-limit semantics are tested. No training algorithm or trained policy is included; classical control remains the initial real-vehicle baseline.</p>
+<h2 id="calibration-and-provenance">Calibration and provenance</h2>
+<p><code>--config</code> accepts a strict JSON override object or a calibration report containing <code>overrides</code>. A small change can be applied without rebuilding CAD:</p>
+<pre><code class="language-json">{&quot;water&quot;: {&quot;current_world_m_s&quot;: [0.05, 0.0, 0.0]}}
+</code></pre>
+<pre><code class="language-bash">python simulation/mujoco/run.py --config my-overrides.json --seed 7
+python simulation/mujoco/calibrate.py measured-tow.csv --output runs/calibrated-drag.json
+python simulation/mujoco/run.py --config runs/calibrated-drag.json --render
+</code></pre>
+<p>Tow CSV columns: <code>velocity_x_m_s,velocity_y_m_s,velocity_z_m_s,drag_x_N,drag_y_N,drag_z_N</code>. Drag columns are the signed force of water on the vehicle, opposite velocity, with other loads removed. Supply at least six finite, nonzero samples at distinct speed magnitudes per axis. The tool fits nonnegative diagonal linear/quadratic coefficients and reports residuals and input SHA256. It does not verify the measurement setup or identify rotational/coupled drag, thrust, inertia or added mass.</p>
+<p>Each run writes <code>run_metadata.json</code> containing exact engine/library version, seed, assembly, scenario, resolved randomized parameters, source hashes and feedback mode. Traces include actual and measured depth, targets, actual thruster force, current, tether tension and allocation residual. Source files are not changed by overrides. A ROV plant has an immutable constructor seed; construct a new plant to change physical/sensor draws. The Gymnasium reset API creates a new seeded plant per episode.</p>
+<h2 id="regression-and-benchmark">Regression and benchmark</h2>
+<pre><code class="language-bash">python simulation/mujoco/verify.py
+python simulation/mujoco/verify_foundation.py
+python simulation/mujoco/verify_manual.py
+python simulation/mujoco/verify_gym.py
+python simulation/mujoco/benchmark.py --seconds 8 --seeds 0 1 2
+</code></pre>
+<p><a href="../validation/simulation_benchmark.json">Benchmark record</a> · <a href="../simulation/mujoco/FOUNDATION_CHECKS.json">Foundation checks</a> · <a href="../simulation/mujoco/GYM_CHECKS.json">Gym checks</a></p>
+<p><img alt="Seeded scenario benchmark under assumed coefficients" src="assets/images/simulation-benchmark.png" /></p>
+<p>The published 18-case benchmark uses six scenarios and three sensor seeds. Metrics include last-two-second depth/heading/roll RMS, lateral drift, integrated squared thrust (N²s, not electrical energy), maximum tether tension and allocation residual. The plot shows the first seed; all seeds are in the record. Failure is evaluated as rank loss and visible residual, not successful four-axis control. Regression envelopes are software checks, not vehicle requirements.</p>
+<p>Tests also cover drag passivity, bounded-allocation KKT conditions, zero-compression tether, transport delay, stale-command timeout, sample holding, deterministic replay, runtime mass/CG/reaction changes, synthetic drag-fit recovery and 1/2/4 ms timestep comparison. A synthetic fit proves numerical behavior only. Platform/version changes can alter numerical results; exact local replay does not guarantee cross-platform bitwise identity.</p>
+<p>There is no free-surface, waves, CFD, thruster-wash interaction, complete cable dynamics, electrical power model or real underwater optics. These should be added only with a concrete use case, data and validation, rather than being represented as solved by increasing simulator complexity.</p></main><footer>SimpleROV · Prototype documentation · Original content all rights reserved</footer></body></html>

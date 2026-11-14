@@ -1,0 +1,37 @@
+{
+  "gymnasium_version": "1.4.0",
+  "env_checker": true,
+  "same_seed_reset": true,
+  "time_limit_trace": [
+    [
+      -0.0016823620946032774,
+      false,
+      false
+    ],
+    [
+      -0.0016931146452386675,
+      false,
+      false
+    ],
+    [
+      -0.0017221906436031453,
+      false,
+      true
+    ]
+  ],
+  "observation_size": 13,
+  "actions": "Four normalized thruster commands",
+  "source_sha256": {
+    "gym_env.py": "ac556b51f61f5cd40e83cc6193f7e8c6ba09c953140887c60014017eb6342d92",
+    "verify_gym.py": "b5c5146d527210b6b7166982c3858831f1d3e7e4969e4e406e526ad98e04165d",
+    "environment.py": "603ee2d389624cfbe7752c8b49ae9b777c502cde725b92e2c3d7c21a9cf01d37",
+    "configuration.py": "1d3daa1d65e66483ef9b849bb53b3860ed550dfdfd0e0c7308f97edc7523d86c",
+    "sensors.py": "30b63e6a0e951c71518df441954e06c570531e1c9278047825ac3b09d7eeaa92",
+    "actuators.py": "2caf0a311ad47a58eb81eb8968424fa1e57567c35fae688da3e79e275d52bbcb",
+    "hydrodynamics.py": "2bdac92f366927450c229d111f63c8e844446c65ffe136d06ad0e451c8dac000",
+    "config.json": "39606628adefc572e5eeeb3cfb3ad696a747ea7f56a71912073e24de872f2bd6",
+    "scenarios.json": "fc2b9a0856f6565805fb0d001b75ea5a4b4b2f53ed3358e1db796a65c79fc8f1"
+  },
+  "passed": true,
+  "trained_policy": false
+}

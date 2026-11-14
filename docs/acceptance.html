@@ -6,17 +6,17 @@ main{max-width:1100px;margin:32px auto 70px;background:#fff;border:1px solid var
 h1{font-size:42px;letter-spacing:-1.3px;line-height:1.2;margin-top:0}h2{font-size:26px;border-top:1px solid var(--line);padding-top:30px;margin-top:44px;line-height:1.35}h3{font-size:20px;margin-top:30px;line-height:1.4}p{margin:16px 0}a{color:var(--accent);text-underline-offset:3px}img,video{max-width:100%;height:auto;border-radius:8px}p>img{display:block;margin:22px auto}table{border-collapse:collapse;width:100%;font-size:14px;margin:20px 0}th,td{border:1px solid var(--line);padding:12px 15px;text-align:left;vertical-align:top}th{background:#eaf2f4;font-weight:600}tr:nth-child(even){background:#fafcfc}td img{width:100%}pre{overflow:auto;background:#163843;color:#edf6f8;padding:22px;border-radius:10px;font-size:13px;line-height:1.7}code{font-family:ui-monospace,SFMono-Regular,Consolas,monospace}p code,td code{background:#edf3f5;padding:2px 5px;border-radius:4px;font-size:.88em}blockquote{margin:20px 0;padding:1px 20px;background:#fff5e7;border-left:3px solid var(--orange)}details{border:1px solid var(--line);border-radius:10px;padding:12px 18px;margin:20px 0}summary{cursor:pointer}footer{color:var(--muted);font-size:12px;text-align:center;margin:35px auto}
 @media(max-width:700px){main{margin:12px 8px;padding:24px 18px;border-radius:10px}h1{font-size:34px}h2{font-size:23px}table{font-size:12px}th,td{padding:8px}nav{gap:12px;padding:14px 20px}pre{font-size:11px}}
 @media print{body,main{margin:0;padding:0;background:#fff;border:0;box-shadow:none}header,footer{display:none}h2{break-before:page}}
-</style></head><body><header><nav><strong>SimpleROV</strong><a href="index.html">Overview</a><a href="assembly.html">Assembly</a><a href="gallery.html">Gallery</a><a href="simulation.html">Simulation</a><a href="index.es.html">ES</a><a href="index.zh-CN.html">中文</a></nav></header><main><h1>Assembly interfaces and physical acceptance</h1>
+</style></head><body><header><nav><strong>SimpleROV</strong><a href="index.html">Overview</a><a href="assembly.html">Assembly</a><a href="gallery.html">Gallery</a><a href="simulation.html">Simulation</a><a href="index.es.html">ES</a><a href="index.zh-CN.html">中文</a></nav></header><main><h1 id="assembly-interfaces-and-physical-acceptance">Assembly interfaces and physical acceptance</h1>
 <p><a href="assembly.html">Step-by-step assembly</a> · <a href="assembly.pdf">PDF</a></p>
 <p>Ten main prints and two separate fit coupons are provided. Commercial motor/propeller references are not printable project parts. Digital checks do not establish physical fit, load capacity, sealing or operating depth.</p>
-<h2>Before printing the main parts</h2>
+<h2 id="before-printing-the-main-parts">Before printing the main parts</h2>
 <ol>
 <li>Confirm all four X2 hole types, the 14/8 mm cross orientation, usable blind depths, inferred 31 mm face offset and axial datums. Check the actual three-phase cable construction and sealing options; loose wires do not automatically seal in a single-cable gland.</li>
 <li>Test H_mount_fit and V_mount_fit with one real thruster. Horizontal effective clamping plus washer is about 5 mm; M3 × 8 targets 3 mm engagement. Vertical wall plus washer is about 8.5 mm; M3 × 12 targets 3.5 mm. Change screw length or geometry when needed; do not bottom a screw.</li>
 <li>Confirm the real electrical stack and service access before committing to the enclosure. Complete a board adapter and positive axial tray retention.</li>
 <li>Slice PETG prints with at least six walls, 0.2 mm layers and solid load paths. Check orientation, local supports, warping, nut pockets and dimensional coupons. Printed M3/M2 clearances are nominally 3.4/2.2 mm.</li>
 </ol>
-<h2>Assembly interfaces</h2>
+<h2 id="assembly-interfaces">Assembly interfaces</h2>
 <table>
 <thead>
 <tr>
@@ -72,7 +72,7 @@ h1{font-size:42px;letter-spacing:-1.3px;line-height:1.2;margin-top:0}h2{font-siz
 </tbody>
 </table>
 <p><a href="../bom/BOM_FASTENERS.csv">Fastener BOM</a> · <a href="../mechanical/bolt_locations.json">Bolt datums</a>. No common torque or thread-locking process is frozen. Respect supplier requirements and actual printed-joint tests; metal-joint torque assumptions do not apply to acrylic or FDM parts. Check chemical compatibility before using locking products.</p>
-<h2>Completed digital checks</h2>
+<h2 id="completed-digital-checks">Completed digital checks</h2>
 <ul>
 <li>Nominal printed-part / hardware / supplier interferences, supplier-to-supplier interference and optional strap paths.</li>
 <li>48 screw-driver paths, evaluated in appropriate assembly states. These do not cover every wrench, finger or tool brand.</li>
@@ -80,7 +80,7 @@ h1{font-size:42px;letter-spacing:-1.3px;line-height:1.2;margin-top:0}h2{font-siz
 <li>Sampled central/boundary camera rays at horizontal ±40° and vertical ±32°, without printed-part blockage. This is not full optical validation; refraction, distortion, lighting and the final USB cable are absent.</li>
 <li>Ten watertight, single-component print STLs and STEP volume/envelope readback; standard/optional assembly STEP envelopes and solid counts.</li>
 </ul>
-<h2>Strength-screen limits</h2>
+<h2 id="strength-screen-limits">Strength-screen limits</h2>
 <p>The vertical carrier uses an 8 mm main wall, two ribs and four foot connections. An ideal 32 × 8 mm solid section at 35 mm eccentricity under the supplier's 20.59 N maximum-thrust reference gives about 2.2 MPa nominal stress, or 6.6 MPa at three times that analysis load. Ribs are not credited. This is not FEA, a complete joint check or an established safety factor; hole/root stress concentration, wet anisotropy, creep, fatigue and impact are excluded.</p>
 <p>Proposed physical gates, not yet performed:</p>
 <ol>

@@ -1,5 +1,5 @@
 {
-  "version": "v0.5.2",
+  "version": "v0.6.0",
   "mechanical_revision": "V5-01",
   "repository": "https://github.com/tianrking/simple-rov",
   "rights": "Original work all rights reserved; third-party rights retained",
@@ -18,9 +18,14 @@
     "english_assembly_pdf_review": "PASS",
     "actual_Onshape_viewport_captures": "PASS",
     "english_media_output_smoke_test": "PASS",
-    "multilingual_HTML_structure_and_links": "PASS"
+    "multilingual_HTML_structure_and_links": "PASS",
+    "simulation_foundation_invariants": "PASS",
+    "gymnasium_1_4_0_checker": "PASS",
+    "seeded_18_case_benchmark": "PASS",
+    "physics_timestep_convergence": "PASS",
+    "calibration_synthetic_recovery": "PASS"
   },
-  "engineering_scope": "Digitally checked mechanical prototype and uncalibrated water-model demonstrator. No physical assembly/strength/sealing/trim validation.",
+  "engineering_scope": "Digitally checked mechanical prototype and uncalibrated simulation foundation. Current, actuator, sensor, tether and learning interfaces are software models; physical assembly/strength/sealing/trim remain unverified.",
   "electronics": "PLANNED_NO_PCB_DESIGN",
   "firmware": "PLANNED_NO_FIRMWARE",
   "physical_tested": false,
@@ -31,5 +36,6 @@
     "en",
     "es",
     "zh-CN"
-  ]
+  ],
+  "engine_version": "4.0.1"
 }

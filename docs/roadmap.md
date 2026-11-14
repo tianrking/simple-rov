@@ -5,7 +5,8 @@
 | Mechanical source and print exports | Available; physical checks pending | Ten prints, two coupons, STEP, parameters and digital checks |
 | Standard / optional assembly | Available | Foam-free default; matching optional CAD, BOM and simulation variants |
 | Documentation and presentation | Available in English | Illustrated 11-page assembly guide, gallery, actual Onshape captures; Spanish and Chinese README entry points |
-| MuJoCo control and driving | Available, uncalibrated | Allocation, motion signs, depth/roll and keyboard callback checks |
+| MuJoCo simulation foundation | Available on 4.0.1, uncalibrated | Sensor feedback, bounded allocation, currents/tether/faults, two water backends and seeded benchmarks |
+| Learning interface | Gymnasium 1.4.0 task available | Checked API, seeded reset, normalized sensor observations; no trained policy |
 | Motor fit and printed load capacity | Unverified | One actual motor, fit coupons, load and wet-retention tests |
 | Electronics and penetrators | Not frozen | Real envelopes, wiring, weight, heat and service layout |
 | Tray adapter and positive retention | To design | Select boards and enclosure arrangement first |
