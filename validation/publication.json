@@ -24,14 +24,10 @@
     "calibration_synthetic_recovery": "PASS",
     "five_H264_videos_full_decode": "PASS",
     "github_native_README_video_render": "PASS",
-    "offline_local_video_players": "PASS",
-    "controller_native_ERC_DRC_netlist": "PASS",
-    "controller_BOM_pinout_mount_contract": "PASS",
-    "controller_PDF_and_native_render_review": "PASS",
-    "controller_nominal_STEP_and_GH_reservations": "PASS"
+    "offline_local_video_players": "PASS"
   },
-  "engineering_scope": "Digitally checked mechanical prototype with controller PCB engineering, system/harness material lists and uncalibrated classical-control simulation. Complete electrical packaging, mobile battery, physical assembly, strength, sealing, thermal behavior and trim remain unverified.",
-  "electronics": "CONTROLLER_DESIGN_REVIEW_UNTESTED",
+  "engineering_scope": "Digitally checked mechanical prototype with manual driving and classical stabilization in an uncalibrated simulator. Physical assembly, strength, sealing and trim remain unverified. Hardware and onboard code follow the mechanical prototype.",
+  "electronics": "PLANNED_NO_PCB_DESIGN",
   "firmware": "PLANNED_NO_FIRMWARE",
   "physical_tested": false,
   "default_configuration": "base",
@@ -42,6 +38,5 @@
     "es",
     "zh-CN"
   ],
-  "engine_version": "4.0.1",
-  "hardware_tool": "KiCad 10.0.8; native local checks recorded separately from Python simulation checks"
+  "engine_version": "4.0.1"
 }

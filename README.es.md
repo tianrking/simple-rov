@@ -179,13 +179,7 @@ for _ in range(1000):
 
 Los comandos son fuerzas en newtons: horizontal izquierdo, horizontal derecho, vertical izquierdo y vertical derecho. No son PWM ni RPM. El teclado fija el empuje longitudinal, la profundidad y el rumbo; el control clásico estabiliza profundidad, balanceo y rumbo en MuJoCo 4.0.1. [Conducción y control](docs/simulation.md).
 
-La secuencia del proyecto es **ajuste y montaje mecánico → operación remota por cable → estabilización clásica → calibración medida y pruebas en agua poco profunda**. La selección de hardware y el código de a bordo siguen al prototipo mecánico.
-
-## Hardware y conexiones
-
-El [paquete de hardware](docs/hardware.md) documenta la controladora RP2040 de **80 × 32 mm**, cuatro ESC independientes, el ordenador de vídeo Pi Zero 2 W y el enlace Ethernet. Incluye [BOM del sistema](electronics/bom/SYSTEM_BOM.csv), [cableado](electronics/bom/HARNESS_BOM.csv), [consumibles y herramientas](electronics/bom/CONSUMABLES_TOOLS.csv) e [instrucciones de conexión](electronics/wiring.md).
-
-La puesta en marcha inicial usa **12 V con límite total de 5 A**. El montaje completo de batería, ESC, vídeo, conectores y sellos sigue sin validar; el firmware de a bordo está pendiente. Consultar los bloqueos de compra antes de hacer un pedido.
+La secuencia del proyecto es **ajuste y montaje mecánico → operación remota por cable → estabilización clásica → calibración medida y pruebas en agua poco profunda**. El diseño de la PCB propia queda aplazado; esta versión se centra en la mecánica, el montaje y la simulación de control remoto.
 
 ## Editar y reproducir
 
@@ -205,7 +199,7 @@ Al cambiar motores hay que revisar envolvente, plano de montaje, agujeros, profu
 
 Ya se ofrecen fuentes paramétricas, piezas independientes, dos configuraciones, guía de montaje, BOM mecánica, coordenadas de agujeros y simulación con control clásico.
 
-Faltan la comprobación física de las interfaces del motor y las cargas de impresión, distribución electrónica completa, retención de bandeja, pasacables, gestión térmica, calibración de masa y empuje, estanqueidad y pruebas en agua. El diseño de la controladora está en revisión; el firmware y la validación del conjunto eléctrico siguen pendientes. Las verificaciones digitales no certifican fiabilidad ni profundidad de operación.
+Faltan la comprobación física de las interfaces del motor y las cargas de impresión, distribución electrónica completa, retención de bandeja, pasacables, gestión térmica, calibración de masa y empuje, estanqueidad y pruebas en agua. Los archivos de fabricación de PCB y el firmware son trabajo futuro. Las verificaciones digitales no certifican fiabilidad ni profundidad de operación.
 
 [Estado detallado](STATUS.json) · [Hoja de ruta](docs/roadmap.md) · [Cambios](CHANGELOG.md).
 

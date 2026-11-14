@@ -50,6 +50,6 @@ for source,target in entries.items():
     raw=raw.replace('<div align="center">','<div align="center" markdown="1">').replace('<details>','<details markdown="1">')
     body=markdown.markdown(raw,extensions=['tables','fenced_code','md_in_html','toc'])
     lang='es' if source.name=='README.es.md' else ('zh-CN' if source.name=='README.zh-CN.md' else 'en')
-    nav='<header><nav><strong>SimpleROV</strong><a href="index.html">Overview</a><a href="assembly.html">Assembly</a><a href="gallery.html">Gallery</a><a href="simulation.html">Simulation</a><a href="hardware.html">Hardware</a><a href="index.es.html">ES</a><a href="index.zh-CN.html">中文</a></nav></header>'
+    nav='<header><nav><strong>SimpleROV</strong><a href="index.html">Overview</a><a href="assembly.html">Assembly</a><a href="gallery.html">Gallery</a><a href="simulation.html">Simulation</a><a href="index.es.html">ES</a><a href="index.zh-CN.html">中文</a></nav></header>'
     target.write_text('<!doctype html><html lang="'+lang+'"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>SimpleROV | Project documentation</title><style>'+css+'</style></head><body>'+nav+'<main>'+body+'</main><footer>SimpleROV · Prototype documentation · Original content all rights reserved</footer></body></html>')
 print('Generated English assembly guide and',len(entries),'HTML pages')

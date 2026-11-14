@@ -203,17 +203,7 @@ To try a water current while driving:
 python simulation/mujoco/run.py --scenario cross-current --viewer --manual --seconds 300
 ```
 
-The development path is **mechanical fit and assembly → tethered remote operation → classical stabilization → measured calibration and shallow-water trials**. Hardware selection and onboard code follow the mechanical prototype.
-
-## Hardware and connections
-
-The hardware work follows the current small frame and tray. A dedicated **80 × 32 mm RP2040 controller board** handles sensing and four ESC signal channels; propulsion current stays in a separate protected harness. A **Pi Zero 2 W with an Ethernet/USB hub** handles the existing USB camera and tethered communication. Onboard code is still to be implemented.
-
-[KiCad controller](electronics/pcb/controller/SimpleROV001_control.kicad_pro) · [Schematic](electronics/pcb/drawings/schematic.pdf) · [PCBA BOM](electronics/pcb/controller/BOM.csv) · [Hardware overview](docs/hardware.md) · [System BOM](electronics/bom/SYSTEM_BOM.csv) · [Harness BOM](electronics/bom/HARNESS_BOM.csv) · [Consumables and tools](electronics/bom/CONSUMABLES_TOOLS.csv) · [Wiring](electronics/wiring.md)
-
-![RP2040 controller, native KiCad design render](docs/assets/hardware/controller-angle.png)
-
-The first electrical commissioning configuration is **12 V with a 5 A total source limit**, not the full propulsion rating. The native controller STEP, GH plug reservations and mounting hardware have been checked against the unchanged core geometry; the battery, four ESCs, host/hub, plugs, heat rejection and complete cable seals are not a verified fitted package. Purchase holds are explicit in the BOM. [Power and battery boundary](electronics/power.md) · [Mechanical interface](electronics/interfaces/README.md).
+The development path is **mechanical fit and assembly → tethered remote operation → classical stabilization → measured calibration and shallow-water trials**. Custom PCB work is deferred; the current release focuses on mechanics, assembly and remote-control simulation.
 
 ## Edit and reproduce
 
@@ -250,7 +240,7 @@ When changing motors, check the full envelope, mounting-face offset, hole patter
 mechanical/          Parametric CAD, separate parts, assemblies and supplier references
 simulation/mujoco/   Underwater forces, classical control, driving and checks
 bom/                 Print, purchase, fastener and interface records
-electronics/         Controller PCB engineering, system BOM, wiring and interfaces
+electronics/         Future KiCad work and mechanical interface constraints
 firmware/            Future onboard implementation and failure handling
 docs/                Assembly, design, trim, simulation, development and images
 validation/          Digital check records and historical Onshape import records
@@ -267,7 +257,7 @@ runs/                Local outputs; excluded from version control
 | MuJoCo demonstrator and classical control | Measured mass, trim, thrust and hydrodynamic calibration |
 | Digital consistency and regression checks | Physical assembly, sealing and shallow-water trials |
 
-The [hardware engineering package](docs/hardware.md) adds controller design, system selection, wiring and material lists. Read its board-review and procurement status before ordering. Complete electrical packaging and flashable onboard firmware remain pending. Digital checks are evidence about files, geometry and software, not a reliability or depth certification. [Status](STATUS.json) · [Roadmap](docs/roadmap.md) · [Changelog](CHANGELOG.md).
+PCB manufacturing files and flashable firmware are future work. Digital checks are evidence about files, geometry and software, not a reliability or depth certification. [Status](STATUS.json) · [Roadmap](docs/roadmap.md) · [Changelog](CHANGELOG.md).
 
 ## Rights and sources
 

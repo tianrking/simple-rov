@@ -1,3 +1,0 @@
-# Third-party attribution
-
-Used footprint and standard STEP model subsets originate from the KiCad library installed with KiCad10.0.8. Source:https://gitlab.com/kicad/libraries/kicad-footprints and https://gitlab.com/kicad/libraries/kicad-packages3D . Library collection license:CC BY-SA4.0 plus electronic-design exception; see KICAD_LIBRARY_LICENSE.md. Cached footprint model links are changed to project-relative model files; USB and IMU model links use explicitly documented original envelopes. Embedded mounting-hole courtyards are enlarged to4.5mm radius and local copper clearance to2.1mm for the washer contract. Original schematic/circuit/layout/generator/envelope models remain all rights reserved. No vendor datasheet full text is redistributed.

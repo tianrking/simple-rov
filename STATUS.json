@@ -23,7 +23,7 @@
   "blocked_driver_paths": 0,
   "driver_paths": 48,
   "physical_tested": false,
-  "PCB_in_scope": true,
+  "PCB_in_scope": false,
   "motor_internal_thread_depth_verified": false,
   "electrical_payload_and_penetrators_frozen": false,
   "Onshape_assembly": "https://cad.onshape.com/documents/256f9be06adfdc472f7aac06/w/aefb43ce726d3d5c24877f23/e/1186baa4f5bb2c01f6be971a",
@@ -42,7 +42,7 @@
   "complete_electrical_packaging_verified": false,
   "repository": "https://github.com/tianrking/simple-rov",
   "license": "All rights reserved for original work; third-party rights retained",
-  "pcb_status": "DESIGN_REVIEW_UNTESTED",
+  "pcb_status": "PLANNED_NO_DESIGN",
   "firmware_status": "PLANNED_NO_FIRMWARE",
   "release": "v0.0.1",
   "mechanical_revision": "V5-01",
@@ -73,14 +73,5 @@
     "fps": 20,
     "native_README_players": true
   },
-  "control_approach": "Tethered remote operation with classical depth, roll and heading stabilization",
-  "pcb_mcu": "RP2040",
-  "controller_board_outline_mm": [
-    80,
-    32,
-    1.6
-  ],
-  "controller_mount_added_metal_items": 16,
-  "hardware_bom_status": "SYSTEM_HARNESS_CONSUMABLES_WITH_EXPLICIT_HOLDS",
-  "mobile_battery_status": "RFQ_HOLD"
+  "control_approach": "Tethered remote operation with classical depth, roll and heading stabilization"
 }

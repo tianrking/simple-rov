@@ -9,9 +9,7 @@
 | Motor fit and printed load capacity | Unverified | One actual motor, fit coupons, load and wet-retention tests |
 | Electronics and penetrators | Not frozen | Real envelopes, wiring, weight, heat and service layout |
 | Tray adapter and positive retention | To design | Select boards and enclosure arrangement first |
-| Controller PCB | Engineering review | RP2040 controller/interface board; see hardware package for native files and check status |
-| System selection and harness | Documented, procurement holds remain | Module, wire and consumables BOM; power, port and full-package fit gates |
-| Onboard firmware | Planned, not implemented | RP2040 real-time control and Pi networking/video integration follow hardware bring-up |
+| PCB and firmware | Planned, not implemented | Native KiCad and onboard sources will be added when developed |
 | Physical sealing, trim and shallow-water trials | Not performed | Follow the acceptance plan and record results |
 
 English is the default for technical documentation and generated figures. [Español](../README.es.md) · [中文](../README.zh-CN.md). Public availability does not grant an open-source license. See [rights](../LICENSE).
