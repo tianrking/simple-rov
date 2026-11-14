@@ -1,0 +1,23 @@
+name: Verify engineering sources
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  repository-and-simulation:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+          cache-dependency-path: requirements/sim.txt
+      - run: python -m pip install -r requirements/sim.txt
+      - run: python tools/validate_repository.py --manifest
+      - run: python simulation/mujoco/verify.py
+      - run: python simulation/mujoco/verify_manual.py
+      - run: python simulation/mujoco/run.py --seconds 1 --output-dir runs/ci

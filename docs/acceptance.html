@@ -1,0 +1,48 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>SimpleROV工程资料</title><style>body{font-family:system-ui,sans-serif;max-width:1050px;margin:36px auto;padding:0 24px;color:#173d46;line-height:1.8;background:#f5f9fa}main{background:#fff;padding:30px;border-radius:12px}h1,h2{line-height:1.4}h2{border-top:2px solid #e0ecee;padding-top:22px;margin-top:36px}table{border-collapse:collapse;width:100%;font-size:14px}td,th{border:1px solid #cbdade;padding:8px;text-align:left}th{background:#e8f1f3}pre{overflow:auto;padding:18px;background:#173d46;color:#effbff;border-radius:8px}img,video{display:block;max-width:100%;max-height:700px;margin:auto}blockquote{background:#fff0da;padding:10px 16px;border-left:4px solid #df8b31}a{color:#006980} @media print{body,main{margin:0;padding:0}h2{break-before:page}nav{display:none}}</style><main><nav><a href="index.html">工程入口</a> · <a href="assembly.html">装配</a> · <a href="simulation.html">仿真</a> · <a href="build-plan.html">实机</a></nav><h1>V5 装配、采购接口与实物验收</h1>
+<p>详细图文操作入口：<a href="assembly.html">V5详细组装说明</a> · <a href="assembly.pdf">PDF</a> · <a href="assembly.html">网页</a>。</p>
+<p>本文件配合本版CAD；所有载荷与潜深结论仍待实测。装机10个打印件，另有两个电机孔位试片。模型中电机是商用尺寸重建参考，不打印电机或桨。</p>
+<h2>先核对接口，再打印主体</h2>
+<ol>
+<li>采购前向X2厂家确认：四孔是否均为M3、14/8十字孔方向、有效螺纹深度、安装面到轴心的31mm推算值及孔心到前后端的精确尺寸；核对三根引线的外径、是否有连续外护套及可用穿舱方式。单根电线/三线束不能默认可用普通单孔电缆压盖密封。</li>
+<li>打印<code>mechanical/fit_coupons/H_mount_fit.stl</code>与<code>V_mount_fit.stl</code>。用实物核对孔位、底座贴合及螺钉啮合。H试片5mm、底部0.5mm垫片沉台，配0.5mm垫片和M3×8，以3mm啮合作目标。V试片8mm配0.5mm垫片及M3×12，以3.5mm啮合作目标。孔深不符时换螺钉/修改安装件，不能旋到底硬压。</li>
+<li>压力舱按Blue Robotics当前50mm系列套件核对：150mm透明管、前RAILS法兰、BR-100094透明端盖、后1M10/8M6法兰盖、对应密封圈/锁止绳。CAD零件号和当前目录商品号可能不同，按几何与套件兼容性核对。</li>
+<li>后盖采用多口型号，为四电机、系缆及后续传感器提供接口容量；<strong>穿舱件尚未冻结</strong>。需按实际线径、护套及厂家密封方式选定合格件，未使用端口用配套堵头封闭。不要把螺纹孔、空心螺钉或扎带当作防水连接。</li>
+</ol>
+<h2>打印与配合</h2>
+<p>主体STL在<code>mechanical/stl/</code>，已落床，单位mm。建议PETG、0.2mm层高、6道壁；承力支架和连接区按实心打印。主件210mm平面尺寸，应核对打印机实际有效范围、裙边与支撑。外罩、支架法兰外耳和相机架需按切片预览设置局部支撑。不要用支撑堵住工具井、绑带槽和螺母窝。</p>
+<p>M3打印通孔3.4mm，M2打印通孔2.2mm；先用试片标定孔径。去毛刺后试穿金属件，不强拉翘曲零件。浮材是另外采购切割的闭孔材料，不用普通FDM零件替代。</p>
+<h2>装配顺序</h2>
+<ol>
+<li><strong>滑橇</strong>：在每侧两个侧向螺母槽放入M3螺母，用4颗M3×16和顶部垫片连接底架。先装滑橇，再装水平推进器；拆滑橇时需要取下遮挡上方工具路径的水平推进器。底架四个沉台让螺钉/垫片落在承力平面。</li>
+<li><strong>竖推支架</strong>：每侧4颗M3×20从底部穿过8mm法兰和底架，上面装垫片/螺母。法兰两排孔沿X分开，双侧肋传递弯矩。两台竖推分别用4颗M3×12从侧面固定。该4颗电机螺钉可以独立拆装；先确认厂家孔深。</li>
+<li><strong>水平推进器</strong>：各用4颗M3×8和沉台内垫片从下方安装，轴心为(−78,±74,18)。固定厂家底脚，不夹外转子、桨轴或桨叶。</li>
+<li><strong>相机</strong>：把4个M2螺母放入相机架背部六角窝，先装相机及4颗M2×10/前垫片。相机板相对基准绕光轴旋转180°，让USB线接口在上侧让位口中。使用2颗M3×12及两面垫片/螺母，把相机架固定到托板。相机及托板在舱外装好，再放入压力舱。</li>
+<li><strong>内部托板</strong>：两只弧形脚配闭孔软垫试装；实际内壁与软垫压缩量须实测。通用长圆孔只负责固定现成模块；最终电池/电调/控制器的空间、散热和保持力需按选型确认。托板当前保持方式尚未通过湿态/冲击验证。</li>
+<li><strong>压力舱</strong>：原厂管体与端盖按厂家指南组装。前法兰锁止入口对准管体缺口，前透明盖六孔对齐，使用厂家规定6颗M2×0.4−10原装螺钉；不要自行增加垫片改变该原装堆叠。参考CAD的姿态已对齐。密封圈及锁止绳按厂家完整装配，单独完成验漏。</li>
+<li><strong>舱夹与限位</strong>：两舱座配约1mm闭孔EPDM软衬，压环止挡处贴合后停止挤压。4颗M3×16、两面垫片及螺母固定。底架两端的侧向槽接纳金属法兰外伸部，提供约0.6mm轴向余量；接触位置只针对金属法兰，不向透明窗、密封槽或锁止入口施压。用实际件验证槽位和轴向保持，不能强压端盖入槽。</li>
+<li><strong>线束与系缆</strong>：沿底架避开桨叶、进排水口和定位沿布线，单独应力释放。系缆通过后部专用6mm眼位建立承力连接，电线及穿舱件不承拉。系缆头、护弯及穿舱件未选择，需核对安装后弯曲空间。后盖接口孔不代表接头已选型或已经防水。</li>
+<li><strong>上罩</strong>：自由进排水的保护罩通过浅定位沿落座，以4颗M3×25、两面垫片与螺母固定。4个8mm井供长杆内六角进入。外罩不作提手、不承受回收拉力。</li>
+<li><strong>浮材</strong>：两块62×160×35闭孔浮材，前后放置。各两条可释放绑带沿X方向绕过浮材和底架，带宽约4.8mm、厚度不超过1.2mm、长度约450mm；3×7导向槽和纵向通路已建模。锁头放在可达顶部，远离工具井。模型只画带身及路径，未画厂家锁头。检修先释放绑带、移走浮材，再拆罩和舱夹。</li>
+<li><strong>配平</strong>：装实际模块、线束与穿舱件后称重并测排水量。底部M3长圆孔用于固定后续配重；浮材按材料密度和目标水深选定，调整厚度/位置。优先让重心在浮心下方，前后配平使升降推力线靠近实际重心。原型建议略正浮力，不能用仿真假设代替实测。</li>
+</ol>
+<p>完整安装量和实例位置见<code>bom/BOM_FASTENERS.csv</code>、<code>bolt_locations.json</code>。紧固件为普通螺母/垫片的名义几何，未选择防松工艺或统一拧紧扭矩；扭矩必须分别服从电机/压力舱厂家和实物打印连接试验。M2原厂透明盖按厂家交叉顺序紧固，禁止把适用于金属的扭矩直接用于透明盖或打印件。</p>
+<h2>已做的数字检查</h2>
+<ul>
+<li>打印实体与名义硬件、商用参考件的干涉；供应件彼此的干涉；绑带路径与周边零件的干涉。</li>
+<li>48条实际螺钉工具路径，按本装配顺序区分完整装配/拆罩/舱外相机装配等状态；这不是扳手、手指或所有品牌工具的完整可达性证明。</li>
+<li>两条直径54mm、Z−140至+120mm的竖直净空通道。这只证明几何净空，不证明喷流、吸入效率或推力性能。</li>
+<li>相机水平±40°、垂直±32°中心及边界取样线未被打印件遮挡；不等于完整光学视场验证，玻璃折射、畸变、灯光反射和USB线未仿真。</li>
+<li>10个主体独立STL的封闭/单连通与STEP体积、边界复核。</li>
+</ul>
+<h2>强度评估的边界与实测要求</h2>
+<p>8mm双肋支架替代V4的4mm单壁支架，并改为两排四点连接。单独按32×8mm完整主壁、35mm偏心、厂家最大宣称20.59N作简化估算，名义应力约2.2MPa，3倍分析工况约6.6MPa；加强肋未计入该截面估算。<strong>这不是有限元分析、完整连接校核或已经证明的安全系数</strong>，没有纳入根部/孔边集中、实际打印层间性能、蠕变、疲劳、冲击和密封性能。</p>
+<p>定版需完成：</p>
+<ul>
+<li>使用本批打印工艺和样件，先核孔位、安装面、实际最小间隙及螺纹深度。</li>
+<li>用刚性替身夹具在真实推进轴位置，分别向两个方向对每个安装模块施加暂定约41N（2倍厂家最大宣称推力）的静载，保持5分钟、重复3次；检查加载位移、残余变形、裂纹/分层、螺母槽和滑移。该数值是拟定项目验收工况，未实际执行，也非认证标准。允许位移应小于实际最小间隙的一半，不能以“看起来没断”判合格。</li>
+<li>按最终整机重量W验证底架、单侧支承、舱体保持及系缆眼；暂不赋予整机承重或回收额定值。对可能同时发生的推进力组合也需验证。</li>
+<li>湿态复测关键载荷与保持力；反复拆装、正反转及启停后检查预紧保持和裂纹。短时测试不能代表全寿命。</li>
+<li>压力舱单独按原厂流程验漏，再做可回收、受控浅水的配平与低推力运动试验，逐步核对方向、姿态及电机线应力释放。</li>
+</ul>
+<p>没有上述实物证据前，本版始终标为工程原型，不承诺额定潜深、满功率长期运行、寿命或“直接下水即可靠”。</p>
+<p>参考：<a href="https://bluerobotics.com/learn/watertight-enclosure-wte-assembly-new/">压力舱原厂装配指南</a>；<a href="https://bluerobotics.com/wp-content/uploads/2025/02/WTE-DATASHEET-RevC.2-FEB2025.pdf">原厂压力舱规格</a>；<a href="https://www.underwaterthruster.com/products/apisqueen-12-16v-2-1kg-thrust-84w-x2-freshwater-brushless-dc-waterproof-thrusters">X2规格</a>。</p></main></html>

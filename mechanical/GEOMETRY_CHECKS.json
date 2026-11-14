@@ -1,0 +1,319 @@
+{
+  "revision": "V5-01",
+  "geometry_tests": 320,
+  "interferences": [],
+  "driver_checks": [
+    {
+      "bolt": "COVER_-95_-18_M3x25",
+      "condition": "assembled",
+      "hits": []
+    },
+    {
+      "bolt": "COVER_-95_18_M3x25",
+      "condition": "assembled",
+      "hits": []
+    },
+    {
+      "bolt": "COVER_95_-18_M3x25",
+      "condition": "assembled",
+      "hits": []
+    },
+    {
+      "bolt": "COVER_95_18_M3x25",
+      "condition": "assembled",
+      "hits": []
+    },
+    {
+      "bolt": "SKID_-80_-97_M3x16",
+      "condition": "fairing/foam/retention straps removed; horizontal thrusters removed",
+      "hits": []
+    },
+    {
+      "bolt": "SKID_-80_97_M3x16",
+      "condition": "fairing/foam/retention straps removed; horizontal thrusters removed",
+      "hits": []
+    },
+    {
+      "bolt": "SKID_80_-97_M3x16",
+      "condition": "fairing/foam/retention straps removed; horizontal thrusters removed",
+      "hits": []
+    },
+    {
+      "bolt": "SKID_80_97_M3x16",
+      "condition": "fairing/foam/retention straps removed; horizontal thrusters removed",
+      "hits": []
+    },
+    {
+      "bolt": "CLAMP_-50_-38_M3x16",
+      "condition": "fairing/foam/retention straps removed",
+      "hits": []
+    },
+    {
+      "bolt": "CLAMP_-50_38_M3x16",
+      "condition": "fairing/foam/retention straps removed",
+      "hits": []
+    },
+    {
+      "bolt": "CLAMP_50_-38_M3x16",
+      "condition": "fairing/foam/retention straps removed",
+      "hits": []
+    },
+    {
+      "bolt": "CLAMP_50_38_M3x16",
+      "condition": "fairing/foam/retention straps removed",
+      "hits": []
+    },
+    {
+      "bolt": "VFOOT_-44_-83_M3x20",
+      "condition": "assembled",
+      "hits": []
+    },
+    {
+      "bolt": "VFOOT_-44_-41_M3x20",
+      "condition": "assembled",
+      "hits": []
+    },
+    {
+      "bolt": "VFOOT_-30_-83_M3x20",
+      "condition": "assembled",
+      "hits": []
+    },
+    {
+      "bolt": "VFOOT_-30_-41_M3x20",
+      "condition": "assembled",
+      "hits": []
+    },
+    {
+      "bolt": "VFOOT_-44_41_M3x20",
+      "condition": "assembled",
+      "hits": []
+    },
+    {
+      "bolt": "VFOOT_-44_83_M3x20",
+      "condition": "assembled",
+      "hits": []
+    },
+    {
+      "bolt": "VFOOT_-30_41_M3x20",
+      "condition": "assembled",
+      "hits": []
+    },
+    {
+      "bolt": "VFOOT_-30_83_M3x20",
+      "condition": "assembled",
+      "hits": []
+    },
+    {
+      "bolt": "HMOTOR_LEFT_0_M3x8",
+      "condition": "assembled",
+      "hits": []
+    },
+    {
+      "bolt": "HMOTOR_LEFT_1_M3x8",
+      "condition": "assembled",
+      "hits": []
+    },
+    {
+      "bolt": "HMOTOR_LEFT_2_M3x8",
+      "condition": "assembled",
+      "hits": []
+    },
+    {
+      "bolt": "HMOTOR_LEFT_3_M3x8",
+      "condition": "assembled",
+      "hits": []
+    },
+    {
+      "bolt": "HMOTOR_RIGHT_0_M3x8",
+      "condition": "assembled",
+      "hits": []
+    },
+    {
+      "bolt": "HMOTOR_RIGHT_1_M3x8",
+      "condition": "assembled",
+      "hits": []
+    },
+    {
+      "bolt": "HMOTOR_RIGHT_2_M3x8",
+      "condition": "assembled",
+      "hits": []
+    },
+    {
+      "bolt": "HMOTOR_RIGHT_3_M3x8",
+      "condition": "assembled",
+      "hits": []
+    },
+    {
+      "bolt": "VMOTOR_LEFT_0_M3x12",
+      "condition": "assembled",
+      "hits": []
+    },
+    {
+      "bolt": "VMOTOR_LEFT_1_M3x12",
+      "condition": "assembled",
+      "hits": []
+    },
+    {
+      "bolt": "VMOTOR_LEFT_2_M3x12",
+      "condition": "assembled",
+      "hits": []
+    },
+    {
+      "bolt": "VMOTOR_LEFT_3_M3x12",
+      "condition": "assembled",
+      "hits": []
+    },
+    {
+      "bolt": "VMOTOR_RIGHT_0_M3x12",
+      "condition": "assembled",
+      "hits": []
+    },
+    {
+      "bolt": "VMOTOR_RIGHT_1_M3x12",
+      "condition": "assembled",
+      "hits": []
+    },
+    {
+      "bolt": "VMOTOR_RIGHT_2_M3x12",
+      "condition": "assembled",
+      "hits": []
+    },
+    {
+      "bolt": "VMOTOR_RIGHT_3_M3x12",
+      "condition": "assembled",
+      "hits": []
+    },
+    {
+      "bolt": "CAMFOOT_-10_M3x12",
+      "condition": "tray/camera assembled outside pressure pod",
+      "hits": []
+    },
+    {
+      "bolt": "CAMFOOT_10_M3x12",
+      "condition": "tray/camera assembled outside pressure pod",
+      "hits": []
+    },
+    {
+      "bolt": "CAMERA_-14_8_M2x10",
+      "condition": "camera module assembled outside pod before tray attachment",
+      "hits": []
+    },
+    {
+      "bolt": "CAMERA_-14_36_M2x10",
+      "condition": "camera module assembled outside pod before tray attachment",
+      "hits": []
+    },
+    {
+      "bolt": "CAMERA_14_8_M2x10",
+      "condition": "camera module assembled outside pod before tray attachment",
+      "hits": []
+    },
+    {
+      "bolt": "CAMERA_14_36_M2x10",
+      "condition": "camera module assembled outside pod before tray attachment",
+      "hits": []
+    },
+    {
+      "bolt": "OEM_WINDOW_0_M2x10",
+      "condition": "endcap assembled on flange before installation in chassis",
+      "hits": []
+    },
+    {
+      "bolt": "OEM_WINDOW_1_M2x10",
+      "condition": "endcap assembled on flange before installation in chassis",
+      "hits": []
+    },
+    {
+      "bolt": "OEM_WINDOW_2_M2x10",
+      "condition": "endcap assembled on flange before installation in chassis",
+      "hits": []
+    },
+    {
+      "bolt": "OEM_WINDOW_3_M2x10",
+      "condition": "endcap assembled on flange before installation in chassis",
+      "hits": []
+    },
+    {
+      "bolt": "OEM_WINDOW_4_M2x10",
+      "condition": "endcap assembled on flange before installation in chassis",
+      "hits": []
+    },
+    {
+      "bolt": "OEM_WINDOW_5_M2x10",
+      "condition": "endcap assembled on flange before installation in chassis",
+      "hits": []
+    }
+  ],
+  "blocked_drivers": [],
+  "vertical_corridors": [
+    {
+      "axis_y_mm": -62,
+      "clear_54mm_diameter_corridor_Z_mm": [
+        -140,
+        120
+      ],
+      "hits": []
+    },
+    {
+      "axis_y_mm": 62,
+      "clear_54mm_diameter_corridor_Z_mm": [
+        -140,
+        120
+      ],
+      "hits": []
+    }
+  ],
+  "camera_rays": [
+    {
+      "horizontal_deg": -40,
+      "vertical_deg": -32,
+      "blocked_by_prints": []
+    },
+    {
+      "horizontal_deg": -40,
+      "vertical_deg": 0,
+      "blocked_by_prints": []
+    },
+    {
+      "horizontal_deg": -40,
+      "vertical_deg": 32,
+      "blocked_by_prints": []
+    },
+    {
+      "horizontal_deg": 0,
+      "vertical_deg": -32,
+      "blocked_by_prints": []
+    },
+    {
+      "horizontal_deg": 0,
+      "vertical_deg": 0,
+      "blocked_by_prints": []
+    },
+    {
+      "horizontal_deg": 0,
+      "vertical_deg": 32,
+      "blocked_by_prints": []
+    },
+    {
+      "horizontal_deg": 40,
+      "vertical_deg": -32,
+      "blocked_by_prints": []
+    },
+    {
+      "horizontal_deg": 40,
+      "vertical_deg": 0,
+      "blocked_by_prints": []
+    },
+    {
+      "horizontal_deg": 40,
+      "vertical_deg": 32,
+      "blocked_by_prints": []
+    }
+  ],
+  "physical_tested": false,
+  "scope": "Nominal geometry: prints versus all parts, suppliers versus suppliers, hardware versus suppliers, straps versus all parts. Metal-to-metal thread engagement is not an interference test; no OEM X2 internal solid is available. Boolean volume reporting threshold0.03mm3. Not strength, physical fit, manufacturing process, sealing or CFD validation.",
+  "source_sha256": {
+    "build.py": "c380bf73f9d8ee3393fb28b8dbf0138a8dc8e896dea178fb2a804ea97b0809e7",
+    "parameters.json": "1e06442b497e83284f4aa5ada5eedbb110d39a4cf5adffab36e9a26a90a10c48"
+  }
+}

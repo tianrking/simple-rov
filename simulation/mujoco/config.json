@@ -1,0 +1,55 @@
+{
+  "water_density_kg_m3": 997.0,
+  "assumed_dry_mass_kg": 1.4,
+  "assumed_CG_m": [
+    0,
+    0,
+    0.005
+  ],
+  "assumed_CB_m": [
+    0,
+    0,
+    0.035
+  ],
+  "assumed_inertia_kg_m2": [
+    0.009,
+    0.01,
+    0.012
+  ],
+  "assumed_positive_buoyancy_fraction": 0.01,
+  "assumed_linear_drag": [
+    3,
+    4,
+    5
+  ],
+  "assumed_quadratic_drag": [
+    18,
+    22,
+    26
+  ],
+  "assumed_angular_linear_drag": [
+    0.03,
+    0.03,
+    0.04
+  ],
+  "assumed_angular_quadratic_drag": [
+    0.06,
+    0.06,
+    0.08
+  ],
+  "assumed_motor_time_constant_s": 0.12,
+  "assumed_reaction_torque_per_newton_m": 0.012,
+  "forward_limit_N": 20.593965,
+  "assumed_reverse_limit_N": 10.0,
+  "fully_submerged_only": true,
+  "status": "UNCALIBRATED ENGINEERING DEMONSTRATOR; not a hydrodynamic prediction or strength/sealing proof",
+  "must_measure": [
+    "mass/CG/CB and available displacement",
+    "inertia/added mass",
+    "forward and reverse thrust curves and reaction torque",
+    "motor lag",
+    "drag coefficients, tether loads and current response"
+  ],
+  "source_maximum_thrust": "APISQUEEN X2 claimed 2.1kgf maximum; continuous and reverse values not supplied. Reverse 10N is an editable placeholder, not manufacturer specification.",
+  "assumed_displaced_volume_m3": 0.0014182547642928786
+}

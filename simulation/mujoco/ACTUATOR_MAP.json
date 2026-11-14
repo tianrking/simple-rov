@@ -1,0 +1,161 @@
+{
+  "axes": "X forward,Y left,Z up; rows Fx,Fy,Fz,Mx,My,Mz; commands Newton",
+  "sites": [
+    {
+      "name": "H_LEFT",
+      "position_m": [
+        -0.078,
+        0.074,
+        0.018
+      ],
+      "thrust_direction": [
+        1,
+        0,
+        0
+      ],
+      "reaction_m_per_N": [
+        0.012,
+        0.0,
+        0.0
+      ],
+      "wrench_about_CG": [
+        1.0,
+        0.0,
+        0.0,
+        0.012,
+        0.012999999999999998,
+        -0.074
+      ]
+    },
+    {
+      "name": "H_RIGHT",
+      "position_m": [
+        -0.078,
+        -0.074,
+        0.018
+      ],
+      "thrust_direction": [
+        1,
+        0,
+        0
+      ],
+      "reaction_m_per_N": [
+        -0.012,
+        -0.0,
+        -0.0
+      ],
+      "wrench_about_CG": [
+        1.0,
+        0.0,
+        0.0,
+        -0.012,
+        0.012999999999999998,
+        0.074
+      ]
+    },
+    {
+      "name": "V_LEFT",
+      "position_m": [
+        0,
+        0.062,
+        -0.04
+      ],
+      "thrust_direction": [
+        0,
+        0,
+        1
+      ],
+      "reaction_m_per_N": [
+        0.0,
+        0.0,
+        0.012
+      ],
+      "wrench_about_CG": [
+        0.0,
+        0.0,
+        1.0,
+        0.062,
+        0.0,
+        0.012
+      ]
+    },
+    {
+      "name": "V_RIGHT",
+      "position_m": [
+        0,
+        -0.062,
+        -0.04
+      ],
+      "thrust_direction": [
+        0,
+        0,
+        1
+      ],
+      "reaction_m_per_N": [
+        -0.0,
+        -0.0,
+        -0.012
+      ],
+      "wrench_about_CG": [
+        0.0,
+        0.0,
+        1.0,
+        -0.062,
+        -0.0,
+        -0.012
+      ]
+    }
+  ],
+  "allocation_matrix": [
+    [
+      1.0,
+      1.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      1.0,
+      1.0
+    ],
+    [
+      0.012,
+      -0.012,
+      0.062,
+      -0.062
+    ],
+    [
+      0.012999999999999998,
+      0.012999999999999998,
+      0.0,
+      -0.0
+    ],
+    [
+      -0.074,
+      0.074,
+      0.012,
+      -0.012
+    ]
+  ],
+  "controlled_rows": [
+    0,
+    2,
+    3,
+    5
+  ],
+  "rank": 4,
+  "controlled_rank": 4,
+  "passive_axes": [
+    "sway",
+    "pitch"
+  ],
+  "CAD_parameters_sha256": "1e06442b497e83284f4aa5ada5eedbb110d39a4cf5adffab36e9a26a90a10c48",
+  "CAD_parts_sha256": "8071431b8b6f99f3b87243dc656362ef4fa67111b5d15008bd85dbb62c7f5dcc"
+}

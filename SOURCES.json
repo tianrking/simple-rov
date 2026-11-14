@@ -1,0 +1,36 @@
+{
+  "original_design": "MANTA V5 mechanical parts and simulation sources authored for this project; not a copy of a complete ROV CAD",
+  "standard_layout": "https://ardupilot.org/sub/docs/sub-frames.html",
+  "sources": [
+    {
+      "name": "X2 official product/dimension drawing",
+      "url": "https://www.underwaterthruster.com/products/apisqueen-12-16v-2-1kg-thrust-84w-x2-freshwater-brushless-dc-waterproof-thrusters",
+      "CAD_status": "dimension-reconstructed reference; no OEM X2 solid"
+    },
+    {
+      "name": "Blue Robotics native pressure/camera CAD",
+      "url": "https://bluerobotics.com/learn/technical-reference/",
+      "CAD_status": "unaltered supplier solids; rigid transforms including locking-entry alignment and window hole phase"
+    },
+    {
+      "name": "Original acrylic endcap CAD attribution",
+      "url": "https://bluerobotics.com/our-original-watertight-enclosure-designs-are-now-open-source/",
+      "attribution": "Blue Robotics; supplier distributes original endcap designs under CC BY4.0; no blanket license claim for all modern supplier CAD"
+    },
+    {
+      "name": "MuJoCo XML reference",
+      "url": "https://mujoco.readthedocs.io/en/stable/XMLreference.html"
+    }
+  ],
+  "supplier_SHA256": {
+    "BR-102922-009_RevC.step": "08a35969d2acdd22b12e749499ba35a68f1b1530a21737e4cbb48822b01ddf6c",
+    "BR-102922-998_RevB.step": "c95389e3704c78fb1005b2a4c031f68f8446d2dc8e00b6e657c43d04bf7f3240",
+    "BR-106277-150_RevB.STEP": "51688825e19e85106a61f3f449aeac81757640be976ec9f8f3437a9d6b0739c0",
+    "LOW-LIGHT-HD-USB-CAMERA-R1.STEP": "2dc1767d9b595dd73abe3947902cc5bf25fe88ab296293e65117810ef6033f31",
+    "WTE2-P-END-CAP-R2.STEP": "cde9ef0e0ac6557b613643da9af10780f97b8022bef5141771bc6855ceb7cb6d"
+  },
+  "sim_meshes": "Derived simplified visual meshes only; native STEP and printing STL remain separate. Collision proxies are approximate.",
+  "local_reference": {
+    "references/X2_官方尺寸图.png": "https://cdn.shopify.com/s/files/1/0621/5493/2452/files/X2_Underwater_Thruster_Dimensions_2048x2048.png?v=1761040266"
+  }
+}

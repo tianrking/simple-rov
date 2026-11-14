@@ -1,0 +1,122 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>SimpleROV工程资料</title><style>body{font-family:system-ui,sans-serif;max-width:1050px;margin:36px auto;padding:0 24px;color:#173d46;line-height:1.8;background:#f5f9fa}main{background:#fff;padding:30px;border-radius:12px}h1,h2{line-height:1.4}h2{border-top:2px solid #e0ecee;padding-top:22px;margin-top:36px}table{border-collapse:collapse;width:100%;font-size:14px}td,th{border:1px solid #cbdade;padding:8px;text-align:left}th{background:#e8f1f3}pre{overflow:auto;padding:18px;background:#173d46;color:#effbff;border-radius:8px}img,video{display:block;max-width:100%;max-height:700px;margin:auto}blockquote{background:#fff0da;padding:10px 16px;border-left:4px solid #df8b31}a{color:#006980} @media print{body,main{margin:0;padding:0}h2{break-before:page}nav{display:none}}</style><main><nav><a href="index.html">工程入口</a> · <a href="assembly.html">装配</a> · <a href="simulation.html">仿真</a> · <a href="build-plan.html">实机</a></nav><h1>V5 从数字结构到第一台实机</h1>
+<p>详细图文操作入口：<a href="assembly.html">V5详细组装说明</a> · <a href="assembly.pdf">PDF</a> · <a href="assembly.html">网页</a>。</p>
+<p>本路线以淡水泳池、有线遥控、可回收的浅水样机为目标。当前213×210×185mm是机械模型外包，不包含最终接头、线缆和电气扩容。结构、相机接口和仿真已有数字检查；电气、穿舱线束、实际重量、热管理和完整实物装配尚未冻结。暂不生产PCB。</p>
+<h2>先解决两项接口</h2>
+<p><strong>电机接口。</strong> X2是成品防水推进器，采购桨/导流罩/电机一体件；先买1台和匹配的双向电调做接口样件。向厂家确认四孔型/孔深、14/8十字孔方向、轴心到安装面偏距及出线形态；打印H/V两个试片，通过后再补其余3台。先不要批量打印十个主体件。</p>
+<p><strong>舱内空间。</strong> 当前50mm系列150mm管只核对了相机、镜头与托板。四电调、控制器、稳压/配电、保险保护、电池、USB插头和弯线空间没有完整封装模型。必须收集具体商品的长宽高、接插件、线缆弯曲半径、重量、功耗、散热及采购链接，用1:1实物/打印替身做舱外堆叠，并在CAD中装配。全部放得下、能接线、可拆装、温升可接受后，才冻结机舱。放不下就明确修改舱和夹座，不能靠压线或删除防护来维持当前尺寸。</p>
+<h2>最小系统与连接关系</h2>
+<p>岸上电脑/手柄 → 有线通信链路 → 水下控制器 → 4路双向电调 → 4台推进器。</p>
+<p>机载供电 → 可达的断电装置、主保护、配电和分路保护 → 电调；独立稳压给控制器/相机供电。IMU提供姿态，适配浅水量程的压力传感器提供深度，漏水检测用于告警/失效处理。USB相机需要有USB主机能力的设备接收图像，不能只接到普通PWM飞控就默认视频可用；这会增加舱内体积、功耗与温升。</p>
+<p>首台建议采用受ArduSub支持的现成控制器/固件和经典定深定向控制；在确认当前固件的SimpleROV-4混控、输出协议和双向电调兼容性后选具体板卡。仿真Python代码不是已经可烧录的实机固件。电气器件型号、供电保护参数和连接器仍需单独冻结，现有机械采购表不是完整可下单的整机BOM。</p>
+<p>不要默认无线电/Wi-Fi能承担水下遥控与视频。系缆包含通信线和独立受力路径，穿舱接头及导线不承拉。电机三根线没有完整外护套时，普通单孔压盖不能默认密封，需用适配的原厂灌封穿舱件/线束方案，并逐个验证。</p>
+<h2>当前可采购的样件与暂缓项</h2>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>物料</th>
+<th style="text-align: right;">数量</th>
+<th>采购前条件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>电机试装</td>
+<td>APISQUEEN X2成品推进器</td>
+<td style="text-align: right;">1</td>
+<td>明确淡水用途，确认全部安装孔与出线</td>
+</tr>
+<tr>
+<td>单电机台架</td>
+<td>与X2匹配的双向电调</td>
+<td style="text-align: right;">1</td>
+<td>厂家确认正/反转、输入电压、信号协议、额定电流和配置方法</td>
+</tr>
+<tr>
+<td>打印试片</td>
+<td>H_mount_fit与V_mount_fit</td>
+<td style="text-align: right;">各1</td>
+<td>按实物孔深选M3长度；不触底</td>
+</tr>
+<tr>
+<td>密封样舱</td>
+<td>50mm/150mm兼容原厂舱组件</td>
+<td style="text-align: right;">1套</td>
+<td>先通过整套电气堆叠评估再下单；包括密封圈、锁止件、堵头</td>
+</tr>
+<tr>
+<td>整机补购</td>
+<td>剩余推进器/电调</td>
+<td style="text-align: right;">各3</td>
+<td>单机正反推、安装与供电验证通过后；两轴各相反旋向一对</td>
+</tr>
+<tr>
+<td>结构装配</td>
+<td>10个PETG主体、紧固件、闭孔衬垫、浮材与绑带</td>
+<td style="text-align: right;">按机械BOM</td>
+<td>通过试片及电气空间检查后</td>
+</tr>
+<tr>
+<td>暂缓冻结</td>
+<td>电池、飞控/计算模块、稳压/配电、系缆/穿舱件、压力与漏水传感器</td>
+<td style="text-align: right;">待选</td>
+<td>必须有尺寸、重量、功耗、协议与相互兼容性资料</td>
+</tr>
+</tbody>
+</table>
+<p>X2官方当前列出每台重量117g，四台合计468g；最大15A、连续7A，四台名义合计分别60A/28A，尚未计其他负载，且工况和连续性需实测。不能按一个小电机或84W标题来直接选整机供电。厂家同时写12–16V和3–4S LiPo；4S满电16.8V高于所列16V，必须让厂家确认允许的最高电压，不能自行把“4S”视作已解决。单电机台架先使用匹配电压、可限流的直流电源和水中固定夹具，电机按厂家要求浸水运行，勿徒手靠近桨或用空气长时间试转。</p>
+<h2>制造与验收关卡</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">顺序</th>
+<th>做什么</th>
+<th>通过依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">1</td>
+<td>单电机＋试片＋电调</td>
+<td>孔位/深度/贴合正确；正反推方向、指令中位、死区和电流有记录</td>
+</tr>
+<tr>
+<td style="text-align: right;">2</td>
+<td>完整电气1:1堆叠</td>
+<td>装得下，线能弯，接头可插拔，电池可取出；CAD与实物一致，有重量与温升记录</td>
+</tr>
+<tr>
+<td style="text-align: right;">3</td>
+<td>打印主体并干装</td>
+<td>10件装配与拆卸可完成；支架/舱夹/系缆眼按装配验收文件验证，无裂纹、滑移或不可接受残变</td>
+</tr>
+<tr>
+<td style="text-align: right;">4</td>
+<td>带真实接头的空舱验漏</td>
+<td>按厂家完整密封/真空流程通过；不带电做浅水浸泡，内置吸水纸/指示件，接头弯动后复验</td>
+</tr>
+<tr>
+<td style="text-align: right;">5</td>
+<td>带假负载的无动力配平</td>
+<td>按最终真实质量放配重替身，完全浸没时略正浮，前后近水平，浮心在重心上方；记录断推后姿态</td>
+</tr>
+<tr>
+<td style="text-align: right;">6</td>
+<td>低功率首次动力下水</td>
+<td>可回收、受控浅水；逐台确认推力方向，再验证升降、转向、定深。设置电流限制及岸上可达断电方式</td>
+</tr>
+<tr>
+<td style="text-align: right;">7</td>
+<td>短时航行后复查</td>
+<td>漏水、接头、支架、松动、温升与电流检查通过，才逐步扩大持续时间/推力</td>
+</tr>
+</tbody>
+</table>
+<p>原厂真空指南对适配舱体给出的流程包括约15inHg、观察10–15分钟、下降不超过0.5inHg；使用前确认该完整舱组件和测试工具适用，先测工具自身泄漏。真空验漏不是额定潜深或结构耐压认证；不能以一次浅水无漏代替深水耐压试验。首次下水目标先设为能随时回收的淡水浅池，不赋予未经验证的潜深。</p>
+<p>每次称重需包含电池、全部线缆、穿舱件、系缆头、紧固件和配重。完全浸没的排水体积按实际密闭空间与材料排水计算；自由进水的外罩不能当作密闭浮体。仿真1.4kg和1%正浮力是占位假设，不是实机称重或配平结论。</p>
+<h2>算法和仿真如何跟着实机更新</h2>
+<p>先完成中位/失联停推、推力方向、IMU姿态和压力传感器校准，再做经典定深/定向。把实际总质量、重心、浮心、正反推力曲线、死区、响应时间和拖曳阻力回填仿真。系缆扰动另建模型。实机失效处理独立于上层算法：通信中断或检测漏水后如何停推/回收需在浅水前验证。</p>
+<p>强化学习放在这套基准之后，先离线训练与独立测试；不将未标定仿真中学习的策略直接替换实机基础稳定与失效处理。</p>
+<h2>记录文件</h2>
+<p>使用<a href="../bom/component-confirmation.csv">样机接口确认表.csv</a>记录真实部件和是否通过。具体孔位与装配顺序见<a href="acceptance.html">装配与验收</a>。本路线是工程推进顺序，不是已经完成的整机定版/认证。</p>
+<p>来源：<a href="https://www.underwaterthruster.com/products/apisqueen-12-16v-2-1kg-thrust-84w-x2-freshwater-brushless-dc-waterproof-thrusters">X2官方规格</a>、<a href="https://bluerobotics.com/learn/watertight-enclosure-wte-assembly-new/">原厂舱装配</a>、<a href="https://bluerobotics.com/learn/using-the-vacuum-test-plug/">原厂真空验漏</a>、<a href="https://ardupilot.org/sub/docs/sub-frames.html">ArduSub布局与欠驱动轴</a>。</p></main></html>

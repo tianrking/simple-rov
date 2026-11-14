@@ -1,0 +1,14 @@
+﻿item,quantity,specification,note,source
+APISQUEEN X2,4,2CW+2CCW; one opposite pair per propulsion axis,Official drawing reference only; verify all four M3/depth/cables before buying full set,https://www.underwaterthruster.com/products/apisqueen-12-16v-2-1kg-thrust-84w-x2-freshwater-brushless-dc-waterproof-thrusters
+BR50mm 150mm tube,1,CAD BR-106277-150 RevB,Current compatible complete kit,https://bluerobotics.com/learn/technical-reference/
+BR50mm RAILS front flange,1,CAD BR-102922-998 RevB,O-rings/locking cord per manufacturer,https://bluerobotics.com/learn/technical-reference/
+BR50mm transparent endcap,1,BR-100094 / WTE2-P-END-CAP-R2;6OEM M2x10,Factory seal assembly; do not add unapproved washer stack,https://bluerobotics.com/wp-content/uploads/2025/02/WTE-DATASHEET-RevC.2-FEB2025.pdf
+BR50mm rear flange cap,1,CAD BR-102922-009 RevC;1M10+8M6,Penetrators/plugs not yet selected; capacity is not a sealed harness,https://bluerobotics.com/learn/technical-reference/
+Blue Robotics low-light HD USB camera,1,32x32 PCB;28x28 holes;native STEP,Install PCB rotated180 degrees; correct image in capture pipeline,https://bluerobotics.com/store/sensors-cameras/cameras/cam-usb-low-light-r1/
+Suitable closed-cell buoyancy foam,2,Cut62x160x35mm;4D12 tool reliefs total,Grade/depth rating/density to select; actual buoyancy trim unverified,
+Releasable retention strap,4,Approx450x4.8mm;band thickness<=1.2mm,Slots3x7;place lockheads on top; wet retention trial required,
+Closed-cell EPDM saddle liner,2,1mm thick x12mm width;trim approximate185mm length,Butt joint without overlap; nominal compressed radial gap0.8mm,
+Closed-cell tray foot pads,2,Thin liner cut to actual fit,Nominal radial gap0.8mm at R24.2 feet; physical retention unknown,
+O-rings/locking cords/window factory fasteners,1,Complete compatible supplier kit,Use supplier kit BOM and assembly instructions; additional seal parts not modeled,
+Cable penetrators and unused-port plugs,0,TBD after actual motor cable/host selection,Loose wires/bundles cannot assume single-cable compression seal; do not claim harness complete,
+Ballast,0,TBD after weighing;2M3 slots12x3.4,No ballast load or completed trim claimed,

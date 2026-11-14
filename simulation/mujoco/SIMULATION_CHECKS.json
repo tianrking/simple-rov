@@ -1,0 +1,55 @@
+{
+  "physical_site_wrench_matches_CAD_map_max_error": 1.249000902703301e-16,
+  "allocation_rank": 4,
+  "forward": {
+    "signed_change": 0.4559575240008881,
+    "unit": "m"
+  },
+  "reverse": {
+    "signed_change": -0.4559575240008881,
+    "unit": "m"
+  },
+  "up": {
+    "signed_change": 0.36967555526898466,
+    "unit": "m"
+  },
+  "down": {
+    "signed_change": -0.3330422835558098,
+    "unit": "m"
+  },
+  "yaw": {
+    "signed_change": 0.8855081111356794,
+    "unit": "rad"
+  },
+  "roll": {
+    "signed_change": 0.0949422798100368,
+    "unit": "rad"
+  },
+  "hover_20s": {
+    "depth_error_m": -6.057376822354854e-13,
+    "roll_rad": 1.4457936000447557e-16,
+    "pitch_rad": -4.031545843297215e-33
+  },
+  "depth_step": {
+    "target_m": 0.9,
+    "final_m": 0.9001078269384561
+  },
+  "roll_recovery": {
+    "initial_rad": 0.2,
+    "final_rad": -9.603805283528765e-15
+  },
+  "roll_recovery_at_rotated_heading": {
+    "initial_roll_rad": 0.2,
+    "target_yaw_rad": 1.0,
+    "final_roll_rad": -9.603796443139301e-15,
+    "final_yaw_rad": 0.9999999999999979
+  },
+  "scope": "Functional checks under assumed uncalibrated mass/CG/CB/thrust/drag. Does not validate a physical robot, pressure depth, structure or optical performance.",
+  "source_sha256": {
+    "config.json": "2dc7a517708ea4c481cb3456a4166c5c38dbfeba5c7094545777c420ad4de88f",
+    "manta_v5.xml": "299dde328745529040b229cb953dfcf3f33268c3c870f5b075f779cfc8537d10",
+    "ACTUATOR_MAP.json": "76c7f48da35adf771679411891a8e39364da6e38add724d1694f206f7186c32b",
+    "environment.py": "3957bdb9d1e42cf6e4cec8fc01b66ecdcd6992615a35fb8d4dbd19ad478b417c"
+  },
+  "passed": true
+}

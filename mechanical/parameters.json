@@ -1,0 +1,24 @@
+{
+  "revision": "V5-01",
+  "units": "mm",
+  "frame_length": 210,
+  "frame_width": 210,
+  "frame_floor": 6,
+  "horizontal_X": -78,
+  "thruster_half_spacing": 74,
+  "horizontal_Z": 18,
+  "vertical_Z": -40,
+  "vertical_bracket_thickness": 8,
+  "vertical_bracket_width": 32,
+  "motor_cross": [
+    14,
+    8
+  ],
+  "M3_clearance": 3.4,
+  "pod_bore": 59.6,
+  "foam_length": 62,
+  "foam_width": 160,
+  "foam_height": 35,
+  "note": "X forward, Y left, Z up. Motor holes/face offset reconstructed from official X2 drawing; all four hole types/depth and motor axial datum await sample confirmation. No OEM X2 solid.",
+  "vertical_half_spacing": 62
+}

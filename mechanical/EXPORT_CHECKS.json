@@ -1,0 +1,162 @@
+[
+  {
+    "part": "V5_01_LOAD_CHASSIS",
+    "passed": true,
+    "STL_watertight": true,
+    "STL_components": 1,
+    "print_dimensions_mm": [
+      210.0,
+      210.0,
+      40.0
+    ],
+    "STEP_valid": true,
+    "STEP_roundtrip_volume_difference_mm3": 0.043594583141384646,
+    "tolerance_mm3": 2.211608426699919,
+    "STEP_bounding_box_difference_mm": 0.0,
+    "STEP_bounding_box_tolerance_mm": 0.005
+  },
+  {
+    "part": "V5_02_UPPER_FAIRING",
+    "passed": true,
+    "STL_watertight": true,
+    "STL_components": 1,
+    "print_dimensions_mm": [
+      210.0,
+      210.0,
+      66.0
+    ],
+    "STEP_valid": true,
+    "STEP_roundtrip_volume_difference_mm3": 0.32521370839094743,
+    "tolerance_mm3": 1.367074357960136,
+    "STEP_bounding_box_difference_mm": 1.687538997430238e-14,
+    "STEP_bounding_box_tolerance_mm": 0.005
+  },
+  {
+    "part": "V5_03_SKID_-97",
+    "passed": true,
+    "STL_watertight": true,
+    "STL_components": 1,
+    "print_dimensions_mm": [
+      210.0,
+      70.0,
+      12.0
+    ],
+    "STEP_valid": true,
+    "STEP_roundtrip_volume_difference_mm3": 1.4551915228366852e-09,
+    "tolerance_mm3": 0.5046401893457342,
+    "STEP_bounding_box_difference_mm": 0.0,
+    "STEP_bounding_box_tolerance_mm": 0.005
+  },
+  {
+    "part": "V5_03_SKID_97",
+    "passed": true,
+    "STL_watertight": true,
+    "STL_components": 1,
+    "print_dimensions_mm": [
+      210.0,
+      70.0,
+      12.0
+    ],
+    "STEP_valid": true,
+    "STEP_roundtrip_volume_difference_mm3": 2.546585164964199e-10,
+    "tolerance_mm3": 0.5046401893457342,
+    "STEP_bounding_box_difference_mm": 0.0,
+    "STEP_bounding_box_tolerance_mm": 0.005
+  },
+  {
+    "part": "V5_04_POD_CLAMP_-50",
+    "passed": true,
+    "STL_watertight": true,
+    "STL_components": 1,
+    "print_dimensions_mm": [
+      33.4898681640625,
+      88.0,
+      12.0
+    ],
+    "STEP_valid": true,
+    "STEP_roundtrip_volume_difference_mm3": 4.092726157978177e-11,
+    "tolerance_mm3": 0.05357779087507183,
+    "STEP_bounding_box_difference_mm": 0.0,
+    "STEP_bounding_box_tolerance_mm": 0.005
+  },
+  {
+    "part": "V5_04_POD_CLAMP_50",
+    "passed": true,
+    "STL_watertight": true,
+    "STL_components": 1,
+    "print_dimensions_mm": [
+      33.4898681640625,
+      88.0,
+      12.0
+    ],
+    "STEP_valid": true,
+    "STEP_roundtrip_volume_difference_mm3": 4.092726157978177e-11,
+    "tolerance_mm3": 0.05357779087507183,
+    "STEP_bounding_box_difference_mm": 0.0,
+    "STEP_bounding_box_tolerance_mm": 0.005
+  },
+  {
+    "part": "V5_05_VERTICAL_CARRIER_-62",
+    "passed": true,
+    "STL_watertight": true,
+    "STL_components": 1,
+    "print_dimensions_mm": [
+      48.0,
+      52.0,
+      30.0
+    ],
+    "STEP_valid": true,
+    "STEP_roundtrip_volume_difference_mm3": 5.602487362921238e-10,
+    "tolerance_mm3": 0.21843648044757824,
+    "STEP_bounding_box_difference_mm": 1.5027978861326119e-12,
+    "STEP_bounding_box_tolerance_mm": 0.005
+  },
+  {
+    "part": "V5_05_VERTICAL_CARRIER_62",
+    "passed": true,
+    "STL_watertight": true,
+    "STL_components": 1,
+    "print_dimensions_mm": [
+      48.0,
+      52.0,
+      29.999999999999996
+    ],
+    "STEP_valid": true,
+    "STEP_roundtrip_volume_difference_mm3": 2.3283064365386963e-10,
+    "tolerance_mm3": 0.21843648044757824,
+    "STEP_bounding_box_difference_mm": 1.0658141036401503e-14,
+    "STEP_bounding_box_tolerance_mm": 0.005
+  },
+  {
+    "part": "V5_06_MODULE_TRAY",
+    "passed": true,
+    "STL_watertight": true,
+    "STL_components": 1,
+    "print_dimensions_mm": [
+      100.0,
+      35.0,
+      10.192740440368652
+    ],
+    "STEP_valid": true,
+    "STEP_roundtrip_volume_difference_mm3": 3.383320290595293e-10,
+    "tolerance_mm3": 0.09847431107893125,
+    "STEP_bounding_box_difference_mm": 6.696865284538944e-12,
+    "STEP_bounding_box_tolerance_mm": 0.005
+  },
+  {
+    "part": "V5_07_CAMERA_CARRIER",
+    "passed": true,
+    "STL_watertight": true,
+    "STL_components": 1,
+    "print_dimensions_mm": [
+      34.0,
+      34.0,
+      16.0
+    ],
+    "STEP_valid": true,
+    "STEP_roundtrip_volume_difference_mm3": 2.4101609596982598e-11,
+    "tolerance_mm3": 0.05,
+    "STEP_bounding_box_difference_mm": 0.0,
+    "STEP_bounding_box_tolerance_mm": 0.005
+  }
+]

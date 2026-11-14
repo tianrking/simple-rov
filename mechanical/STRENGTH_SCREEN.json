@@ -1,0 +1,22 @@
+{
+  "revision": "V5-01",
+  "scope": "Main vertical wall only; ideal full-solid rectangular section, NOT FEA or a safety factor",
+  "wall_mm": [
+    32,
+    8
+  ],
+  "load_N": 20.593965,
+  "eccentricity_mm": 35,
+  "nominal_service_MPa": 2.1921310400390626,
+  "nominal_3x_analysis_load_MPa": 6.576393120117188,
+  "not_included": [
+    "gusset stiffness",
+    "root/hole stress concentrations",
+    "joint prying/bolt preload",
+    "wet anisotropic FDM strength",
+    "creep/fatigue/impact",
+    "complete chassis simultaneous thrust loads"
+  ],
+  "physical_tested": false,
+  "judgment": "REQUIRES PHYSICAL LOAD AND FIT TEST; no certified load or depth rating"
+}

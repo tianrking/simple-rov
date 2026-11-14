@@ -1,0 +1,95 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>SimpleROV工程资料</title><style>body{font-family:system-ui,sans-serif;max-width:1050px;margin:36px auto;padding:0 24px;color:#173d46;line-height:1.8;background:#f5f9fa}main{background:#fff;padding:30px;border-radius:12px}h1,h2{line-height:1.4}h2{border-top:2px solid #e0ecee;padding-top:22px;margin-top:36px}table{border-collapse:collapse;width:100%;font-size:14px}td,th{border:1px solid #cbdade;padding:8px;text-align:left}th{background:#e8f1f3}pre{overflow:auto;padding:18px;background:#173d46;color:#effbff;border-radius:8px}img,video{display:block;max-width:100%;max-height:700px;margin:auto}blockquote{background:#fff0da;padding:10px 16px;border-left:4px solid #df8b31}a{color:#006980} @media print{body,main{margin:0;padding:0}h2{break-before:page}nav{display:none}}</style><main><nav><a href="index.html">工程入口</a> · <a href="assembly.html">装配</a> · <a href="simulation.html">仿真</a> · <a href="build-plan.html">实机</a></nav><h1>SimpleROV</h1>
+<p><strong>小型四推进器水下机器人 · V5-01 结构工程与 MuJoCo 仿真</strong></p>
+<p>A compact, four-thruster underwater robot engineering prototype: original mechanical structure, assembly documentation, BOM, and an editable MuJoCo simulator.</p>
+<p><img alt="V5 CAD总装" src="../docs/assets/images/assembly_guide/04_完整总装.png" /></p>
+<p>当前名义尺寸约 <strong>213 × 210 × 185 mm</strong>。两台水平直装推进器负责前后与转向，左右两台竖直推进器负责升降和横滚纠偏。原型面向淡水浅池、有线遥控和经典控制开发。</p>
+<blockquote>
+<p><strong>工程试装版，尚未实物验证。</strong> 数字装配与软件功能检查不能证明结构强度、水密、额定潜深或实机性能。电机孔深、MCU适配板、托板锁止、穿舱线束、完整电气空间和散热仍需完成。仿真质量、水动力和推力反向上限未标定。</p>
+</blockquote>
+<h2>快速入口</h2>
+<table>
+<thead>
+<tr>
+<th>想做什么</th>
+<th>入口</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>看每个零件的作用与装配步骤</td>
+<td><a href="../docs/assembly.html">11页图文组装说明</a> · <a href="../docs/assembly.pdf">PDF</a> · <a href="../docs/assembly.html">网页</a></td>
+</tr>
+<tr>
+<td>打印10个主体件、2个试片</td>
+<td><a href="../mechanical/stl/">独立STL</a> · <a href="../mechanical/fit_coupons/">接口试片</a> · <a href="../bom/PRINT_MANIFEST.csv">打印清单</a></td>
+</tr>
+<tr>
+<td>编辑结构</td>
+<td><a href="../mechanical/step_parts/">独立STEP</a> · <a href="../mechanical/parameters.json">参数</a> · <a href="../mechanical/build.py">CadQuery源</a></td>
+</tr>
+<tr>
+<td>找总装或在线CAD</td>
+<td><a href="../mechanical/MANTA_V5_CORE.step">结构总装</a> · <a href="../mechanical/MANTA_V5_WITH_FASTENERS.step">含名义紧固件总装</a> · <a href="https://cad.onshape.com/documents/256f9be06adfdc472f7aac06/w/aefb43ce726d3d5c24877f23/e/1186baa4f5bb2c01f6be971a">Onshape</a></td>
+</tr>
+<tr>
+<td>买零件</td>
+<td><a href="../bom/README.md">BOM说明</a> · <a href="../bom/BOM_FASTENERS.csv">紧固件</a> · <a href="../bom/BOM_PURCHASED.csv">商用件</a></td>
+</tr>
+<tr>
+<td>运行仿真</td>
+<td><a href="../docs/simulation.html">仿真说明</a> · <a href="../simulation/mujoco/V5_sim_demo.mp4">演示录像</a></td>
+</tr>
+<tr>
+<td>做第一台实机</td>
+<td><a href="../docs/build-plan.html">落地路线</a> · <a href="../docs/acceptance.html">验收条件</a> · <a href="../bom/component-confirmation.csv">接口确认表</a></td>
+</tr>
+<tr>
+<td>后续PCB与固件</td>
+<td><a href="../electronics/README.md">电子硬件规划</a> · <a href="../firmware/README.md">固件规划</a></td>
+</tr>
+</tbody>
+</table>
+<h2>目录</h2>
+<pre><code class="language-text">mechanical/          参数化CAD、独立STEP/STL、总装、原厂参考与几何报告
+simulation/mujoco/   水下受力环境、经典控制、独立驾驶窗口、验证与模型网格
+bom/                 打印、紧固件、商用件与实物接口确认清单
+electronics/         后续KiCad项目与机械接口约束；当前没有PCB设计
+firmware/            实机控制与失效处理的后续规划；当前没有可烧录固件
+docs/                装配、设计、验收、仿真、开发文档和图示
+references/          厂家尺寸参考；权利和来源另行注明
+tools/               文档生成、完整性检查与发布打包
+validation/          发布检查与文档检查记录
+requirements/        按用途固定的Python依赖
+runs/                本机仿真日志/录像/测试临时输出，默认不提交
+</code></pre>
+<h2>运行仿真</h2>
+<p>建议 Python 3.12。先在仓库根目录安装仿真依赖：</p>
+<pre><code class="language-bash">python3 -m venv .venv
+source .venv/bin/activate
+python -m pip install -r requirements/sim.txt
+python simulation/mujoco/verify.py
+python simulation/mujoco/verify_manual.py
+python simulation/mujoco/run.py --viewer --manual --seconds 300
+</code></pre>
+<p>Windows激活命令为 <code>.venv\Scripts\activate</code>。Mac也可在安装依赖后双击 <code>launch-macos.command</code>。</p>
+<p><strong>独立驾驶窗口不使用MuJoCo自带查看器的字母热键。</strong> 按住 <strong>W/S</strong> 前后推进，松开或窗口失焦后取消前后推力；<strong>A/D</strong> 调整航向15°，<strong>U/J</strong> 调整深度0.1m，<strong>X</strong> 保持当前深度和航向，<strong>Esc</strong> 退出。鼠标左键拖动旋转视角，滚轮缩放。取消推力不等于立即刹停或锁住水平位置。</p>
+<p>离线自动演示与录像：</p>
+<pre><code class="language-bash">python simulation/mujoco/run.py --render --output-dir runs/demo
+</code></pre>
+<p>结果写入独立的 <code>runs/</code> 子目录。浮力、水阻和电机滞后由Python计算，必须通过 <code>run.py</code> 运行；只打开XML缺少这些水下外力。当前未包含Gymnasium训练接口、训练策略、海流、海浪、系缆力或自由液面穿越。</p>
+<h2>复建与检查</h2>
+<pre><code class="language-bash">python -m pip install -r requirements/cad.txt
+python mechanical/build.py
+python mechanical/build_fit_coupons.py
+python mechanical/verify.py
+python mechanical/export_metadata.py
+python simulation/mujoco/build_model.py
+python simulation/mujoco/verify.py
+python simulation/mujoco/verify_manual.py
+python tools/validate_repository.py
+</code></pre>
+<p>修改CAD后应同步更新孔位、BOM、仿真和文档。<a href="../docs/development.html">开发与复建说明</a>解释检查范围和可复现输出；<a href="../STATUS.json">项目状态</a>、<a href="../CHANGELOG.md">变更记录</a>和<a href="../docs/roadmap.html">路线图</a>标明当前与未来工作。</p>
+<h2>控制与可靠性边界</h2>
+<p>当前示例控制器为比例/微分反馈与浮力前馈，可用于定深、定向和横滚研究；前后输入为合力。四输入布局无法独立横移或主动控制俯仰，也不提供绝对水平位置悬停。实机先做接口试装、密封与配平，再用经典控制调试；强化学习属于后续研究。</p>
+<h2>权利与署名</h2>
+<p><strong>公开仓库，原创内容保留全部权利；暂未授予开源许可。</strong> 详见 <a href="../LICENSE">LICENSE</a>。第三方CAD、厂家图纸及依赖保留原作者权利，见 <a href="../THIRD_PARTY_NOTICES.md">THIRD_PARTY_NOTICES.md</a> 与 <a href="../SOURCES.json">SOURCES.json</a>。</p></main></html>

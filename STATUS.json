@@ -1,0 +1,49 @@
+{
+  "revision": "V5-01",
+  "status": "ENGINEERING_PROTOTYPE_DIGITAL_CHECKS_ONLY",
+  "original_design": [
+    "chassis",
+    "fairing",
+    "skids",
+    "pod mounts and stops",
+    "vertical carriers",
+    "tray",
+    "camera carrier",
+    "hydrodynamic demonstrator/controller code"
+  ],
+  "purchased_references": [
+    "4commercial X2 thrusters",
+    "Blue Robotics pressure hardware/camera"
+  ],
+  "printed_assembly_parts": 10,
+  "optional_fit_coupons": 2,
+  "modeled_metal_fasteners": 134,
+  "modeled_straps": 4,
+  "geometry_interferences": 0,
+  "blocked_driver_paths": 0,
+  "driver_paths": 48,
+  "physical_tested": false,
+  "PCB_in_scope": false,
+  "motor_internal_thread_depth_verified": false,
+  "electrical_payload_and_penetrators_frozen": false,
+  "Onshape_assembly": "https://cad.onshape.com/documents/256f9be06adfdc472f7aac06/w/aefb43ce726d3d5c24877f23/e/1186baa4f5bb2c01f6be971a",
+  "nominal_size_mm": [
+    213,
+    210,
+    184.7
+  ],
+  "simulation_functional_checks_passed": true,
+  "hydrodynamics_calibrated": false,
+  "Onshape_editable_parts": "https://cad.onshape.com/documents/256f9be06adfdc472f7aac06/w/aefb43ce726d3d5c24877f23/e/a67cf4b0d49c88632ddbc09a",
+  "Onshape_printed_roundtrip_passed": true,
+  "Onshape_purchased_reference_limitation": "Rear pressure cap imported as open shell (480 faces); local OEM STEP retained as solid. All 10 printed parts remain solids.",
+  "manual_viewer_backend": "dedicated GLFW; no mujoco.viewer hotkey dispatch",
+  "manual_control_regression_passed": true,
+  "complete_electrical_packaging_verified": false,
+  "repository": "https://github.com/tianrking/simple-rov",
+  "license": "All rights reserved for original work; third-party rights retained",
+  "pcb_status": "PLANNED_NO_DESIGN",
+  "firmware_status": "PLANNED_NO_FIRMWARE",
+  "release": "v0.5.0",
+  "mechanical_revision": "V5-01"
+}
