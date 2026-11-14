@@ -28,7 +28,7 @@ try:
     window.draw(state);window.draw(state)
     width,height=glfw.get_framebuffer_size(window.window);rgb=np.zeros((height,width,3),np.uint8)
     mujoco.mjr_readPixels(rgb,None,mujoco.MjrRect(0,0,width,height),window.context)
-    Image.fromarray(rgb[::-1]).save(S.parents[1]/'docs/assets/images/独立驾驶窗口_渲染.png')
+    Image.fromarray(rgb[::-1]).save(S.parents[1]/'docs/assets/images/driving-window.png')
     assert np.max(rgb)>100 and np.std(rgb)>10
     window.on_key(window.window,glfw.KEY_ESCAPE,0,glfw.PRESS,0)
     assert glfw.window_should_close(window.window)

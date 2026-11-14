@@ -1,319 +1,330 @@
-<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>SimpleROV 项目文档</title><style>body{font-family:system-ui,sans-serif;max-width:1050px;margin:36px auto;padding:0 24px;color:#173d46;line-height:1.8;background:#f5f9fa}main{background:#fff;padding:30px;border-radius:12px}h1,h2{line-height:1.4}h2{border-top:2px solid #e0ecee;padding-top:22px;margin-top:36px}table{border-collapse:collapse;width:100%;font-size:14px}td,th{border:1px solid #cbdade;padding:8px;text-align:left}th{background:#e8f1f3}pre{overflow:auto;padding:18px;background:#173d46;color:#effbff;border-radius:8px}img,video{display:block;max-width:100%;max-height:700px;margin:auto}blockquote{background:#fff0da;padding:10px 16px;border-left:4px solid #df8b31}a{color:#006980} @media print{body,main{margin:0;padding:0}h2{break-before:page}nav{display:none}}</style><main><nav><a href="index.html">项目入口</a> · <a href="assembly.html">装配</a> · <a href="simulation.html">仿真</a> · <a href="build-plan.html">实机</a></nav><h1>SimpleROV</h1>
-<p>小型四推进器水下机器人，包含可打印的机械结构、装配说明、物料清单和 MuJoCo 仿真。适合从机械试装开始，逐步完成有线遥控、定深和定向控制。</p>
-<p><a href="https://github.com/tianrking/simple-rov/actions/workflows/verify.yml"><img alt="Checks" src="https://github.com/tianrking/simple-rov/actions/workflows/verify.yml/badge.svg" /></a></p>
-<p><img alt="SimpleROV 标准装配" src="../docs/assets/gallery/hero.png" /></p>
-<p><strong>标准装配不包含顶部浮力块或绑带，外包尺寸约 213 × 210 × 148 mm。</strong> 机架保留浮力模块的安装位置，可根据实际重量和水中配平结果增加浮材。图像由本项目 CAD 生成，尚未选定的电子模块和线束没有画入；这些不是实物照片。</p>
-<p><a href="../docs/assembly.html">装配说明</a> · <a href="../mechanical/stl/">打印文件</a> · <a href="../bom/README.md">物料清单</a> · <a href="../docs/simulation.html">运行仿真</a> · <a href="../docs/gallery.html">图像与视图</a> · <a href="https://github.com/tianrking/simple-rov/releases">版本下载</a></p>
-<h2>项目概览</h2>
-<p>SimpleROV 采用两个水平推进器和两个竖直推进器。承力底架连接推进器、中央密封舱和滑橇，上罩负责外部保护；电子设备安装在密封舱内。默认配置保留完整的四推进器布局，不安装额外的浮力模块。</p>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>SimpleROV | Project documentation</title><style>
+:root{--ink:#183d46;--muted:#5d7480;--line:#dbe6e9;--accent:#176271;--orange:#ed8a24}
+*{box-sizing:border-box}body{margin:0;background:#f3f7f8;color:var(--ink);font:16px/1.8 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+header{background:#fff;border-bottom:1px solid var(--line)}nav{max-width:1100px;margin:auto;padding:18px 28px;display:flex;gap:22px;align-items:center;flex-wrap:wrap}nav strong{margin-right:auto;letter-spacing:-.5px;font-size:22px}nav a{font-size:14px;text-decoration:none}
+main{max-width:1100px;margin:32px auto 70px;background:#fff;border:1px solid var(--line);border-radius:16px;padding:42px 48px;box-shadow:0 8px 35px #183d4608}
+h1{font-size:42px;letter-spacing:-1.3px;line-height:1.2;margin-top:0}h2{font-size:26px;border-top:1px solid var(--line);padding-top:30px;margin-top:44px;line-height:1.35}h3{font-size:20px;margin-top:30px;line-height:1.4}p{margin:16px 0}a{color:var(--accent);text-underline-offset:3px}img,video{max-width:100%;height:auto;border-radius:8px}p>img{display:block;margin:22px auto}table{border-collapse:collapse;width:100%;font-size:14px;margin:20px 0}th,td{border:1px solid var(--line);padding:12px 15px;text-align:left;vertical-align:top}th{background:#eaf2f4;font-weight:600}tr:nth-child(even){background:#fafcfc}td img{width:100%}pre{overflow:auto;background:#163843;color:#edf6f8;padding:22px;border-radius:10px;font-size:13px;line-height:1.7}code{font-family:ui-monospace,SFMono-Regular,Consolas,monospace}p code,td code{background:#edf3f5;padding:2px 5px;border-radius:4px;font-size:.88em}blockquote{margin:20px 0;padding:1px 20px;background:#fff5e7;border-left:3px solid var(--orange)}details{border:1px solid var(--line);border-radius:10px;padding:12px 18px;margin:20px 0}summary{cursor:pointer}footer{color:var(--muted);font-size:12px;text-align:center;margin:35px auto}
+@media(max-width:700px){main{margin:12px 8px;padding:24px 18px;border-radius:10px}h1{font-size:34px}h2{font-size:23px}table{font-size:12px}th,td{padding:8px}nav{gap:12px;padding:14px 20px}pre{font-size:11px}}
+@media print{body,main{margin:0;padding:0;background:#fff;border:0;box-shadow:none}header,footer{display:none}h2{break-before:page}}
+</style></head><body><header><nav><strong>SimpleROV</strong><a href="index.html">Overview</a><a href="assembly.html">Assembly</a><a href="gallery.html">Gallery</a><a href="simulation.html">Simulation</a><a href="index.es.html">ES</a><a href="index.zh-CN.html">中文</a></nav></header><main><div align="center">
+<h1>SimpleROV</h1>
+<p><strong>A compact four-thruster underwater robot.</strong></p>
+<p>Printable mechanics · Documented assembly · MuJoCo simulation</p>
+<p><a href="index.html"><strong>English</strong></a> · <a href="index.es.html">Español</a> · <a href="index.zh-CN.html">简体中文</a></p>
+<p><a href="https://github.com/tianrking/simple-rov/actions/workflows/verify.yml"><img alt="Checks" src="https://github.com/tianrking/simple-rov/actions/workflows/verify.yml/badge.svg" /></a>
+<a href="https://github.com/tianrking/simple-rov/releases/tag/v0.5.2"><img alt="Release" src="https://img.shields.io/badge/release-v0.5.2-176271" /></a>
+<a href="https://github.com/tianrking/simple-rov/blob/main/mechanical/README.md"><img alt="CAD" src="https://img.shields.io/badge/CAD-STEP%20%2B%20STL-f29932" /></a>
+<a href="https://github.com/tianrking/simple-rov/blob/main/docs/simulation.md"><img alt="Simulation" src="https://img.shields.io/badge/simulation-MuJoCo-176271" /></a></p>
+<p><img alt="SimpleROV standard assembly" src="assets/gallery/hero.png" /></p>
+<p><strong>213 × 210 × 148 mm</strong> &nbsp; · &nbsp; <strong>4 thrusters</strong> &nbsp; · &nbsp; <strong>10 printed parts</strong></p>
+<p><a href="assembly.html">Assembly guide</a> · <a href="https://github.com/tianrking/simple-rov/releases">Download</a> · <a href="../mechanical/README.md">CAD files</a> · <a href="simulation.html">Simulation</a> · <a href="gallery.html">Gallery</a></p>
+</div>
+<p>SimpleROV brings the frame, thruster mounts, camera carrier, enclosure mounts and simulation into one reproducible project. Start with a mechanical fit check, then develop tethered remote control, depth hold and heading hold around the same coordinate system.</p>
+<p>The <strong>standard assembly has no top buoyancy foam or retention straps</strong>. Mounting routes remain available for an optional buoyancy module, selected after measuring the completed vehicle's mass and trim. These images are CAD renderings, not photographs of tested hardware.</p>
+<h2>At a glance</h2>
 <table>
 <thead>
 <tr>
-<th>项目</th>
-<th>内容</th>
+<th>Mechanics</th>
+<th>Propulsion</th>
+<th>Development</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>运动方式</td>
-<td>前进、后退、上升、下降、偏航；竖推差动辅助保持横滚水平</td>
+<td>Compact load-bearing frame</td>
+<td>Two horizontal + two vertical thrusters</td>
+<td>Editable CadQuery source and STEP</td>
 </tr>
 <tr>
-<td>推进器布局</td>
-<td>水平直装 2 台，左右竖直安装 2 台</td>
+<td>Commercial central dry enclosure</td>
+<td>Forward/reverse, ascent/descent, yaw</td>
+<td>Independent, bed-oriented STL files</td>
 </tr>
 <tr>
-<td>标准外包尺寸</td>
-<td>约 213 × 210 × 148 mm，长 × 宽 × 高</td>
+<td>Removable fairing and skids</td>
+<td>Differential vertical thrust assists roll</td>
+<td>MuJoCo environment and classical control</td>
 </tr>
 <tr>
-<td>加装现有浮力模块后</td>
-<td>约 213 × 210 × 185 mm</td>
+<td>Optional top buoyancy module</td>
+<td>Four independent force commands</td>
+<td>Illustrated assembly, BOM and checks</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Specification</th>
+<th>Current reference</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Standard envelope, L × W × H</td>
+<td><strong>213 × 210 × 148 mm</strong></td>
 </tr>
 <tr>
-<td>主体打印件</td>
-<td>10 件，另有 2 个电机接口试片</td>
+<td>With the reference buoyancy module</td>
+<td>213 × 210 × 184.7 mm</td>
 </tr>
 <tr>
-<td>中央舱参考</td>
-<td>50 mm 系列、150 mm 管，外径 58 mm</td>
+<td>Main printed parts</td>
+<td>10, plus 2 separate motor-fit coupons</td>
 </tr>
 <tr>
-<td>推进器参考</td>
-<td>APISQUEEN X2 成品防水推进器，实际孔深与出线待样件核对</td>
+<td>Thruster reference</td>
+<td>4 × APISQUEEN X2 complete waterproof thrusters</td>
 </tr>
 <tr>
-<td>相机参考</td>
+<td>Central enclosure reference</td>
+<td>Blue Robotics 50 mm series, 150 mm tube, 58 mm outside diameter</td>
+</tr>
+<tr>
+<td>Camera reference</td>
 <td>Blue Robotics Low-Light HD USB Camera</td>
 </tr>
 <tr>
-<td>机械源文件</td>
-<td>CadQuery Python、参数文件、独立 STEP 与 STL</td>
-</tr>
-<tr>
-<td>仿真</td>
-<td>MuJoCo 刚体模型、四路推力、浮力和水阻近似、经典反馈控制</td>
+<td>Coordinates</td>
+<td>X forward, Y left, Z up; CAD in mm, simulation in m</td>
 </tr>
 </tbody>
 </table>
-<p>上述尺寸不包含后续选定的线缆、穿舱接头、系缆头及配重。系统没有独立横移和主动俯仰控制；“保持深度和航向”也不等于锁定水平位置。</p>
-<h2>多视角查看结构</h2>
-<p>以下六个方向采用一致的正投影视图，方便检查推进器方向、机架轮廓、滑橇和中央舱的位置。坐标约定为 <strong>X 向前、Y 向左、Z 向上</strong>。</p>
-<p><img alt="标准装配六向视图" src="../docs/assets/gallery/overview.png" /></p>
+<p>Dimensions exclude the final cables, penetrators, tether termination, strap buckles and ballast. Sway and pitch have no independent actuators. Actual motor threads, cable exits and the complete electrical packaging still need physical confirmation.</p>
+<h2>Explore the structure</h2>
+<p><img alt="Six orthographic views of the standard assembly" src="assets/gallery/overview.png" /></p>
 <table>
 <thead>
 <tr>
-<th>前视</th>
-<th>后视</th>
+<th style="text-align: center;">Inside the frame</th>
+<th style="text-align: center;">Optional buoyancy module</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><img alt="前视" src="../docs/assets/gallery/front.png" /></td>
-<td><img alt="后视" src="../docs/assets/gallery/rear.png" /></td>
+<td style="text-align: center;"><img alt="Interior: fairing and pressure enclosure components hidden" src="assets/gallery/interior.png" /></td>
+<td style="text-align: center;"><img alt="Optional buoyancy module" src="assets/gallery/buoyancy-option.png" /></td>
+</tr>
+</tbody>
+</table>
+<p>The interior view removes the fairing and pressure enclosure components to show the camera carrier, tray and mounts. It does not imply that the final battery, controller, four ESCs and video host have been packaged.</p>
+<details>
+<summary><strong>Open the six individual views</strong></summary>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Front</th>
+<th style="text-align: center;">Rear</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><img alt="Front" src="assets/gallery/front.png" /></td>
+<td style="text-align: center;"><img alt="Rear" src="assets/gallery/rear.png" /></td>
 </tr>
 </tbody>
 </table>
 <table>
 <thead>
 <tr>
-<th>左视</th>
-<th>右视</th>
+<th style="text-align: center;">Left</th>
+<th style="text-align: center;">Right</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><img alt="左视" src="../docs/assets/gallery/left.png" /></td>
-<td><img alt="右视" src="../docs/assets/gallery/right.png" /></td>
+<td style="text-align: center;"><img alt="Left" src="assets/gallery/left.png" /></td>
+<td style="text-align: center;"><img alt="Right" src="assets/gallery/right.png" /></td>
 </tr>
 </tbody>
 </table>
 <table>
 <thead>
 <tr>
-<th>俯视</th>
-<th>底视</th>
+<th style="text-align: center;">Top</th>
+<th style="text-align: center;">Bottom</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><img alt="俯视" src="../docs/assets/gallery/top.png" /></td>
-<td><img alt="底视" src="../docs/assets/gallery/bottom.png" /></td>
+<td style="text-align: center;"><img alt="Top" src="assets/gallery/top.png" /></td>
+<td style="text-align: center;"><img alt="Bottom" src="assets/gallery/bottom.png" /></td>
 </tr>
 </tbody>
 </table>
-<p><a href="../docs/gallery.html">查看内部安装、选装配置及原分辨率图片</a>。</p>
-<h2>每个部分的用途</h2>
+</details>
+<h3>In Onshape</h3>
+<p>These are <strong>actual screenshots of the historical cloud assembly</strong>, shown with the optional foam and straps fitted. The repository's standard STEP remains the reference for the default, foam-free configuration.</p>
 <table>
 <thead>
 <tr>
-<th>部分</th>
-<th style="text-align: right;">数量</th>
-<th>用途</th>
+<th style="text-align: center;">Assembly workspace</th>
+<th style="text-align: center;">Profile detail</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>承力底架</td>
+<td style="text-align: center;"><img alt="Actual Onshape assembly viewport with optional buoyancy fitted" src="assets/onshape/assembly-isometric.jpg" /></td>
+<td style="text-align: center;"><img alt="Actual Onshape profile view with optional buoyancy fitted" src="assets/onshape/assembly-profile.jpg" /></td>
+</tr>
+</tbody>
+</table>
+<p><a href="https://cad.onshape.com/documents/256f9be06adfdc472f7aac06/w/aefb43ce726d3d5c24877f23/e/1186baa4f5bb2c01f6be971a">Open the public Onshape assembly</a> · <a href="gallery.html#onshape-screenshots">View provenance and import limitations</a></p>
+<h2>What each part does</h2>
+<table>
+<thead>
+<tr>
+<th>Part</th>
+<th style="text-align: right;">Qty.</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Load chassis</td>
 <td style="text-align: right;">1</td>
-<td>连接推进器、舱座、滑橇和上罩，承受推进力；保留系缆、配重与选装绑带位置</td>
+<td>Carries thrust loads and joins the skids, enclosure, mounts and fairing; provides tether and ballast interfaces</td>
 </tr>
 <tr>
-<td>上罩</td>
+<td>Upper fairing</td>
 <td style="text-align: right;">1</td>
-<td>保护内部结构并整理外形，留出推进器水路、相机观察口和螺钉工具通道；允许进水</td>
+<td>Protects the structure and defines its outline; freely floods and is not a pressure vessel</td>
 </tr>
 <tr>
-<td>左右滑橇</td>
+<td>Skids</td>
 <td style="text-align: right;">2</td>
-<td>放置和落地支承，保护下方结构</td>
+<td>Support the vehicle on a bench or pool floor and protect its underside</td>
 </tr>
 <tr>
-<td>舱压环</td>
+<td>Enclosure clamps</td>
 <td style="text-align: right;">2</td>
-<td>配合软衬固定中央密封舱，不承担端盖密封</td>
+<td>Retain the commercial tube with soft liners; do not seal the endcaps</td>
 </tr>
 <tr>
-<td>竖推支架</td>
+<td>Vertical carriers</td>
 <td style="text-align: right;">2</td>
-<td>固定左右竖直推进器，并把推力传到承力底架</td>
+<td>Mount the vertical thrusters and transfer their loads to the chassis</td>
 </tr>
 <tr>
-<td>内部托板</td>
+<td>Internal tray</td>
 <td style="text-align: right;">1</td>
-<td>支持相机架和后续电子模块安装，最终板卡适配及机械锁止需要按实物补完</td>
+<td>Supports the camera carrier and future electronics adapters; positive axial retention remains to be designed</td>
 </tr>
 <tr>
-<td>相机架</td>
+<td>Camera carrier</td>
 <td style="text-align: right;">1</td>
-<td>固定相机板，提供镜头和 USB 接口让位</td>
+<td>Positions the camera board and provides lens, USB and fastener clearance</td>
 </tr>
 <tr>
-<td>密封舱组件</td>
-<td style="text-align: right;">1 套</td>
-<td>为控制器、电调等电子设备提供干燥空间，使用匹配的商用密封组件</td>
+<td>Commercial pressure enclosure</td>
+<td style="text-align: right;">1 set</td>
+<td>Keeps ordinary electronics dry when correctly assembled and leak-tested</td>
 </tr>
 <tr>
-<td>推进器</td>
+<td>Commercial thrusters</td>
 <td style="text-align: right;">4</td>
-<td>购买带电机、桨和导流罩的完整防水推进器；不作为本项目打印件</td>
+<td>Complete motor, propeller and duct assemblies; not printed by this project</td>
 </tr>
 <tr>
-<td>浮力模块</td>
-<td style="text-align: right;">选装</td>
-<td>提供额外净浮力并辅助配平；标准配置不安装</td>
+<td>Buoyancy foam and straps</td>
+<td style="text-align: right;">Optional</td>
+<td>Add buoyancy and adjust trim after measurement</td>
 </tr>
 </tbody>
 </table>
-<p><img alt="内部安装视图" src="../docs/assets/gallery/interior.png" /></p>
-<p>内部图隐藏上罩与压力舱组件，展示已有相机、托板和机架关系。图中空出的空间不是“所有电子设备已装得下”的证明。</p>
-<h2>浮力模块为什么是选装</h2>
-<p>标准装配便于先做机械试装、确认推进器接口和测量整机重量。之后可以根据电池、电子模块、线束和实际排水量选择浮材，不把顶部两块浮材固定成每台机器都必须安装的部分。</p>
-<p><img alt="标准配置与选装浮力模块对比" src="../docs/assets/gallery/configuration-comparison.png" /></p>
+<h2>Choose an assembly</h2>
+<p><img alt="Standard assembly compared with the optional buoyancy module" src="assets/gallery/configuration-comparison.png" /></p>
 <table>
 <thead>
 <tr>
-<th>配置</th>
-<th>默认安装</th>
-<th>CAD 总装</th>
+<th>Configuration</th>
+<th>Top foam / straps</th>
+<th>Assembly STEP</th>
+<th>With nominal metal fasteners</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>标准配置 <code>base</code></td>
-<td>不安装浮材与绑带</td>
+<td><strong>Standard</strong> <code>base</code></td>
+<td>None</td>
 <td><a href="../mechanical/assemblies/simple-rov.step">simple-rov.step</a></td>
+<td><a href="../mechanical/assemblies/simple-rov-with-fasteners.step">Fastener assembly</a></td>
 </tr>
 <tr>
-<td>浮力模块配置 <code>with-buoyancy</code></td>
-<td>在标准机体上增加两块浮材和四条绑带</td>
-<td><a href="../mechanical/assemblies/simple-rov-with-buoyancy.step">simple-rov-with-buoyancy.step</a></td>
+<td>Optional <code>with-buoyancy</code></td>
+<td>2 foam pieces / 4 straps</td>
+<td><a href="../mechanical/assemblies/simple-rov-with-buoyancy.step">Buoyancy assembly</a></td>
+<td><a href="../mechanical/assemblies/simple-rov-buoyancy-with-fasteners.step">Buoyancy + fasteners</a></td>
 </tr>
 </tbody>
 </table>
-<p>现有浮材参考为前后两块闭孔材料，每块名义尺寸 62 × 160 × 35 mm。它们是采购后切割的材料，<strong>不需要和上罩一体打印</strong>。BOM 中浮材和绑带的默认数量为 0，选装数量单独列出。</p>
-<p>是否可以不装浮材，要在完整装机后称重、测排水量并试水判断。默认不安装不代表裸机已具备正浮力，也不保证断推后上浮。材料尺寸、位置和配重都应按实际配平调整。<a href="../docs/buoyancy.html">浮力模块与配平说明</a>。</p>
-<h2>获取文件</h2>
-<table>
-<thead>
-<tr>
-<th>文件</th>
-<th>位置</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>默认完整总装</td>
-<td><a href="../mechanical/assemblies/simple-rov.step">mechanical/assemblies/simple-rov.step</a></td>
-</tr>
-<tr>
-<td>默认总装，含名义紧固件</td>
-<td><a href="../mechanical/assemblies/simple-rov-with-fasteners.step">simple-rov-with-fasteners.step</a></td>
-</tr>
-<tr>
-<td>选装浮力模块总装</td>
-<td><a href="../mechanical/assemblies/simple-rov-with-buoyancy.step">simple-rov-with-buoyancy.step</a></td>
-</tr>
-<tr>
-<td>10 个独立打印件</td>
-<td><a href="../mechanical/stl/">mechanical/stl/</a></td>
-</tr>
-<tr>
-<td>10 个独立可编辑实体</td>
-<td><a href="../mechanical/step_parts/">mechanical/step_parts/</a></td>
-</tr>
-<tr>
-<td>两个电机接口试片</td>
-<td><a href="../mechanical/fit_coupons/">mechanical/fit_coupons/</a></td>
-</tr>
-<tr>
-<td>参数化结构源</td>
-<td><a href="../mechanical/build.py">build.py</a> · <a href="../mechanical/parameters.json">parameters.json</a></td>
-</tr>
-<tr>
-<td>装配说明</td>
-<td><a href="../docs/assembly.html">图文说明</a> · <a href="../docs/assembly.pdf">PDF</a></td>
-</tr>
-<tr>
-<td>打印、螺丝与采购清单</td>
-<td><a href="../bom/">bom/</a></td>
-</tr>
-<tr>
-<td>具体配置、尺寸和部件列表</td>
-<td><a href="../mechanical/configurations.json">configurations.json</a></td>
-</tr>
-</tbody>
-</table>
-<p>文件名中的既有零件编号保留，方便对照孔位和已有打印资料。默认与选装总装使用同一套 10 个主体打印件。</p>
-<h2>从打印到首次下水</h2>
+<p>Both configurations share the same ten printed parts. Foam is cut from suitable closed-cell material; it is <strong>not printed as part of the fairing</strong>. Its default purchase quantity is zero, with optional quantities recorded separately.</p>
+<p>Omitting foam does not establish positive buoyancy or guarantee a passive ascent. Weigh the complete vehicle, measure displacement and check fully submerged trim before deciding whether to add foam or ballast. See <a href="buoyancy.html">buoyancy and trim</a>.</p>
+<h2>Build a first prototype</h2>
 <ol>
-<li><strong>核对电机接口。</strong> 先用一台实物推进器和两个试片检查孔距、底脚、孔深与出线，确认后再打印主体。</li>
-<li><strong>确定舱内摆放。</strong> 收集电池、四路电调、控制器、相机主机、连接器及线束的真实尺寸，先完成 1:1 试装。</li>
-<li><strong>安装机械骨架。</strong> 底架与滑橇先装，再装竖推支架、四台推进器和中央舱。</li>
-<li><strong>安装干舱模块。</strong> 控制板通过适配安装板和绝缘隔柱固定到托板；电机线经合适的密封穿舱件进入舱内电调。</li>
-<li><strong>验漏与配平。</strong> 使用真实接头和堵头测试空舱，装齐负载后确定是否需要浮材和配重。</li>
-<li><strong>浅水低功率验证。</strong> 在可随时回收的场地逐台核对推力方向，再调试升降、转向、定深和失联停推。</li>
+<li><strong>Check one motor first.</strong> Buy one reference thruster and a matching bidirectional ESC. Test both <a href="../mechanical/fit_coupons">fit coupons</a> against the actual mounting face, holes, blind depth and cable exit.</li>
+<li><strong>Check the dry payload.</strong> Lay out the real battery, four ESCs, controller, video host, connectors and wiring at full scale before assuming they fit the tube.</li>
+<li><strong>Print and assemble.</strong> Use the <a href="../bom/PRINT_MANIFEST.csv">print manifest</a>, <a href="../bom/BOM_FASTENERS.csv">fastener BOM</a> and <a href="assembly.html">illustrated guide</a>. Install skids before horizontal thrusters obstruct their tool paths.</li>
+<li><strong>Complete retention and wiring.</strong> Add board-specific insulated adapters and positive tray retention. Select penetrators for the actual cable construction.</li>
+<li><strong>Leak-test and trim.</strong> Test the complete empty enclosure, then use representative payload mass to establish buoyancy and balance.</li>
+<li><strong>Run controlled shallow-water checks.</strong> Verify individual thrust directions, remote commands, depth/heading hold and loss-of-command shutdown in a recoverable setting.</li>
 </ol>
-<p>完整的螺钉方向、垫片位置、装配顺序和停点见 <a href="../docs/assembly.html">组装说明</a>。制造与验收条件见 <a href="../docs/acceptance.html">装配验收</a> 和 <a href="../docs/build-plan.html">实机路线</a>。</p>
-<h2>运行 MuJoCo</h2>
-<p>推荐 Python 3.12。从仓库根目录安装依赖：</p>
+<p>The guide specifies screw directions, washers, quantities and inspection hold points. Start with <a href="assembly.html">assembly</a>, <a href="acceptance.html">acceptance</a> and the <a href="build-plan.html">prototype build plan</a>.</p>
+<h2>Run the simulation</h2>
+<p>From the repository root, using Python 3.12:</p>
 <pre><code class="language-bash">git clone https://github.com/tianrking/simple-rov.git
 cd simple-rov
 python3 -m venv .venv
 source .venv/bin/activate
 python -m pip install -r requirements/sim.txt
+python simulation/mujoco/run.py --viewer --manual --seconds 300
 </code></pre>
-<p>Windows 激活命令为 <code>.venv\Scripts\activate</code>。Mac 安装依赖后也可双击 <code>launch-macos.command</code>。</p>
-<p>启动默认、不带浮材的键盘驾驶：</p>
-<pre><code class="language-bash">python simulation/mujoco/run.py --viewer --manual --seconds 300
-</code></pre>
-<p>查看带选装浮力模块的装配：</p>
-<pre><code class="language-bash">python simulation/mujoco/run.py --viewer --manual --configuration with-buoyancy --seconds 300
-</code></pre>
+<p>On Windows, activate with <code>.venv\Scripts\activate</code>. On macOS, after installing dependencies, you can also open <code>launch-macos.command</code>.</p>
 <table>
 <thead>
 <tr>
-<th>操作</th>
-<th>按键</th>
+<th>Control</th>
+<th>Input</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>前进 / 后退</td>
-<td>按住 W / S，松开取消前后推力</td>
+<td>Forward / reverse</td>
+<td>Hold W / S; release to cancel surge thrust</td>
 </tr>
 <tr>
-<td>左转 / 右转</td>
-<td>A / D，每次调整航向目标 15°</td>
+<td>Turn left / right</td>
+<td>A / D; change heading target by 15°</td>
 </tr>
 <tr>
-<td>上升 / 下降</td>
-<td>U / J，每次调整目标深度 0.1 m</td>
+<td>Ascend / descend</td>
+<td>U / J; change depth target by 0.1 m</td>
 </tr>
 <tr>
-<td>保持当前深度和航向</td>
-<td>X</td>
+<td>Hold current depth and heading</td>
+<td>X; does not lock horizontal position</td>
 </tr>
 <tr>
-<td>旋转视角 / 缩放</td>
-<td>鼠标左键拖动 / 滚轮</td>
+<td>Orbit / zoom</td>
+<td>Left mouse drag / scroll wheel</td>
 </tr>
 <tr>
-<td>退出</td>
-<td>Esc 或关闭窗口</td>
+<td>Quit</td>
+<td>Esc or close the window</td>
 </tr>
 </tbody>
 </table>
-<p>驾驶窗口独立处理按键，不使用 MuJoCo 自带查看器的字母热键。窗口失焦后取消前后推力；取消推力仍可能有惯性滑行。</p>
-<p>离线自动演示与录像：</p>
-<pre><code class="language-bash">python simulation/mujoco/run.py --render --output-dir runs/demo
+<p>The dedicated driving window isolates these keys from MuJoCo's built-in viewer shortcuts. Losing focus cancels surge thrust; the vehicle can still coast.</p>
+<pre><code class="language-bash"># Display the optional assembly
+python simulation/mujoco/run.py --viewer --manual --configuration with-buoyancy --seconds 300
+
+# Record an automatic demonstration, state CSV and camera views
+python simulation/mujoco/run.py --render --output-dir runs/demo
 </code></pre>
-<p><code>runs/demo/</code> 中包含录像、状态 CSV 和图像。省略输出目录时，程序创建带 UTC 时间戳的运行目录。</p>
-<h3>仿真计算什么</h3>
-<p>模型包含当前 CAD 外观、刚体质量与惯量、四个真实位置的推力作用点、Python 浮力和阻力、电机响应延迟，以及定深、定向和横滚的经典反馈控制。坐标、推力单位和控制分配见 <a href="../docs/simulation.html">仿真说明</a>。</p>
-<p><strong>质量、重心、浮心、排水量、阻力和反向推力目前是示例参数。</strong> 切换浮材装配只改变可见几何和对应碰撞体，不会自动根据材料计算净浮力或重心。两种装配都需要实测标定后才能用于性能比较。</p>
-<p>当前没有海浪、海流、自由液面穿越、系缆拉力、CFD 或真实水下成像模型。只打开 XML 不会执行 Python 中的水下外力，正常运行请使用 <code>run.py</code>。</p>
-<h3>在代码中使用控制接口</h3>
+<h3>Physics and control</h3>
+<p>The model includes the CAD appearance, rigid-body dynamics, four thrust locations, explicit buoyancy and drag, motor lag, and classical depth, roll and heading control. <strong>Mass, inertia, centers of gravity/buoyancy, displacement, drag and reverse thrust are uncalibrated example parameters.</strong> Changing the assembly changes visuals and associated collision proxies; it does not automatically recalculate those parameters.</p>
+<p>This is a fully submerged, still-water model. It does not include waves, currents, free-surface transitions, tether forces, CFD or realistic underwater optics. Open it through <code>run.py</code>: loading an XML alone omits the Python underwater forces.</p>
 <pre><code class="language-python">from simulation.mujoco.environment import ROV
 
 rov = ROV(configuration=&quot;base&quot;)
@@ -321,8 +332,48 @@ for _ in range(1000):
     forces = rov.controller(depth=1.2, surge_N=2.0, yaw=0.0)
     position, attitude, velocity, angular_velocity = rov.step(forces)
 </code></pre>
-<p><code>step()</code> 的四个输入依次对应水平左、水平右、竖直左、竖直右，单位为牛顿，不是 PWM 或电机转速。实机首先采用经典控制完成遥控与稳定，再考虑自主任务或强化学习；仓库目前没有训练好的策略或可烧录固件。</p>
-<h2>修改结构与复建</h2>
+<p>Commands are forces in newtons, ordered horizontal-left, horizontal-right, vertical-left, vertical-right. They are not PWM or RPM. The project provides classical control examples; firmware, a Gymnasium wrapper and trained reinforcement-learning policies are not included. <a href="simulation.html">Full simulation documentation</a>.</p>
+<h2>Edit and reproduce</h2>
+<table>
+<thead>
+<tr>
+<th>Need</th>
+<th>Entry point</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ten bed-oriented prints</td>
+<td><a href="../mechanical/stl">mechanical/stl/</a></td>
+</tr>
+<tr>
+<td>Ten editable STEP parts</td>
+<td><a href="../mechanical/step_parts">mechanical/step_parts/</a></td>
+</tr>
+<tr>
+<td>Dimensions and CAD source</td>
+<td><a href="../mechanical/parameters.json">parameters.json</a> · <a href="../mechanical/build.py">build.py</a></td>
+</tr>
+<tr>
+<td>Configuration inventory</td>
+<td><a href="../mechanical/configurations.json">configurations.json</a></td>
+</tr>
+<tr>
+<td>Printed, purchased and metal parts</td>
+<td><a href="../bom">bom/</a></td>
+</tr>
+<tr>
+<td>Installation instructions</td>
+<td><a href="assembly.html">Assembly guide</a> · <a href="assembly.pdf">PDF</a></td>
+</tr>
+<tr>
+<td>Change workflow and checks</td>
+<td><a href="development.html">Development guide</a></td>
+</tr>
+</tbody>
+</table>
+<details>
+<summary><strong>CAD and simulation rebuild commands</strong></summary>
 <pre><code class="language-bash">python -m pip install -r requirements/cad.txt
 python mechanical/build.py
 python mechanical/build_fit_coupons.py
@@ -333,54 +384,45 @@ python simulation/mujoco/build_model.py
 python simulation/mujoco/verify.py
 python simulation/mujoco/verify_manual.py
 </code></pre>
-<p>CAD 构建会同时输出标准和选装装配。修改推进器时，应同时核对外形、安装面、孔距、孔深、出线、桨水路和螺钉长度，不能只改孔距。CAD、BOM、装配文档和仿真应保持同一版本。<a href="../docs/development.html">开发说明</a>。</p>
-<h2>目录结构</h2>
-<pre><code class="language-text">mechanical/          参数化 CAD、独立零件、两种总装、原厂参考和几何检查
-simulation/mujoco/   水下受力模型、经典控制、键盘驾驶和验证
-bom/                 默认及选装物料、打印清单、接口记录
-electronics/         后续 KiCad 项目与机械接口约束
-firmware/            后续实机固件与失效处理要求
-docs/                装配、设计、配平、仿真、开发文档和多视角图像
-tools/               图像与文档生成、检查、清单和打包工具
-validation/          检查记录；历史 Onshape 回导记录单独保存
-requirements/        按用途固定的 Python 依赖
-runs/                本地运行结果，默认不提交
+</details>
+<p>When changing motors, check the full envelope, mounting-face offset, hole pattern, depth, cable exit, propeller flow paths and screw length. Keep CAD, BOM, documents and simulation in sync. Existing part IDs are retained for compatibility with printed parts and hole tables.</p>
+<pre><code class="language-text">mechanical/          Parametric CAD, separate parts, assemblies and supplier references
+simulation/mujoco/   Underwater forces, classical control, driving and checks
+bom/                 Print, purchase, fastener and interface records
+electronics/         Future KiCad work and mechanical interface constraints
+firmware/            Future onboard implementation and failure handling
+docs/                Assembly, design, trim, simulation, development and images
+validation/          Digital check records and historical Onshape import records
+requirements/        Dependencies grouped by purpose
+runs/                Local outputs; excluded from version control
 </code></pre>
-<h2>当前状态</h2>
+<h2>Project status</h2>
 <table>
 <thead>
 <tr>
-<th>内容</th>
-<th>状态</th>
+<th>Available now</th>
+<th>Still to validate or develop</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>参数化机械结构、10 个打印件与两种装配</td>
-<td>已提供，可开始接口与机械试装</td>
+<td>Parametric mechanics, separate prints and two assembly variants</td>
+<td>Actual motor mounting depth, cable exits and print load capacity</td>
 </tr>
 <tr>
-<td>装配说明、机械 BOM、孔位表</td>
-<td>已提供；电机孔深需实物确认</td>
+<td>Illustrated guide, mechanical BOM and hole coordinates</td>
+<td>Full electronics packaging, tray retention, penetrators and thermal management</td>
 </tr>
 <tr>
-<td>MuJoCo 及经典控制示例</td>
-<td>已提供，水动力参数待标定</td>
+<td>MuJoCo demonstrator and classical control</td>
+<td>Measured mass, trim, thrust and hydrodynamic calibration</td>
 </tr>
 <tr>
-<td>完整电子模块摆放、托板锁止、穿舱线束和散热</td>
-<td>待确定</td>
-</tr>
-<tr>
-<td>PCB、实机固件</td>
-<td>后续开发目录已预留，尚未实现</td>
-</tr>
-<tr>
-<td>实物装配、承载、水密、配平与下水测试</td>
-<td>尚未完成</td>
+<td>Digital consistency and regression checks</td>
+<td>Physical assembly, sealing and shallow-water trials</td>
 </tr>
 </tbody>
 </table>
-<p>自动检查用于验证文件、几何与程序的一致性，不代表整机通过了可靠性或潜深认证。<a href="../.github/workflows/verify.yml">检查流程</a> · <a href="../STATUS.json">详细状态</a> · <a href="../docs/roadmap.html">路线图</a> · <a href="../CHANGELOG.md">变更记录</a>。</p>
-<h2>权利与第三方资料</h2>
-<p>本仓库公开展示，原创内容保留全部权利，暂未授予开源许可。第三方 CAD、厂家图纸及依赖保留原作者权利。<a href="../LICENSE">LICENSE</a> · <a href="../THIRD_PARTY_NOTICES.md">第三方说明</a> · <a href="../SOURCES.json">资料来源</a>。</p></main></html>
+<p>PCB manufacturing files and flashable firmware are future work. Digital checks are evidence about files, geometry and software, not a reliability or depth certification. <a href="../STATUS.json">Status</a> · <a href="roadmap.html">Roadmap</a> · <a href="../CHANGELOG.md">Changelog</a>.</p>
+<h2>Rights and sources</h2>
+<p>This repository is public for review. <strong>All rights reserved for original content; no open-source license is granted.</strong> Third-party CAD, manufacturer drawings and dependencies retain their owners' rights. <a href="../LICENSE">License</a> · <a href="../THIRD_PARTY_NOTICES.md">Third-party notices</a> · <a href="../SOURCES.json">Sources</a>.</p></main><footer>SimpleROV · Prototype documentation · Original content all rights reserved</footer></body></html>

@@ -1,7 +1,7 @@
-# 实机固件 / 后续工作
+# Onboard firmware: future work
 
-**状态：规划；本仓库当前没有可烧录的实机固件。** `simulation/mujoco/environment.py`是Python仿真和控制示例，不是MCU程序。
+**Planned. There is no flashable vehicle firmware in this repository.** `simulation/mujoco/environment.py` is a Python simulation and controller example, not an MCU application.
 
-第一台样机优先采用支持SimpleROV-4的成熟现成控制系统与经典反馈控制。选定板卡后再加入板级配置、构建方式、参数、通信协议、信号映射及台架测试记录。
+For the first prototype, evaluate an established controller that supports the actual four-thruster allocation and use classical feedback. After selecting hardware, add board configuration, build instructions, parameters, communication protocol, signal mapping and bench-test evidence.
 
-实机要求包含：独立4路双向电调、IMU/深度采样、中位/死区/推力标定、限幅、失联停推、漏水处理、岸上可达断电及日志。舱内空间与电气方案未冻结前，不给出虚假的可烧录目标或引脚图。
+Requirements include four independent bidirectional ESC outputs, IMU/depth acquisition, neutral/deadband/thrust calibration, saturation limits, loss-of-command shutdown, leak handling, an accessible power disconnect and logs. Do not publish an invented pinout or flash target before packaging and electronics are defined.

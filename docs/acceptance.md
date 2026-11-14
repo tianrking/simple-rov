@@ -1,58 +1,54 @@
-# 装配、采购接口与实物验收
+# Assembly interfaces and physical acceptance
 
-详细图文操作入口：[详细组装说明](assembly.md) · [PDF](assembly.pdf) · [网页](assembly.html)。
+[Step-by-step assembly](assembly.md) · [PDF](assembly.pdf)
 
-本文件配合本版CAD；所有载荷与潜深结论仍待实测。装机10个打印件，另有两个电机孔位试片。模型中电机是商用尺寸重建参考，不打印电机或桨。
+Ten main prints and two separate fit coupons are provided. Commercial motor/propeller references are not printable project parts. Digital checks do not establish physical fit, load capacity, sealing or operating depth.
 
-## 先核对接口，再打印主体
+## Before printing the main parts
 
-1. 采购前向X2厂家确认：四孔是否均为M3、14/8十字孔方向、有效螺纹深度、安装面到轴心的31mm推算值及孔心到前后端的精确尺寸；核对三根引线的外径、是否有连续外护套及可用穿舱方式。单根电线/三线束不能默认可用普通单孔电缆压盖密封。
-2. 打印`mechanical/fit_coupons/H_mount_fit.stl`与`V_mount_fit.stl`。用实物核对孔位、底座贴合及螺钉啮合。H试片5mm、底部0.5mm垫片沉台，配0.5mm垫片和M3×8，以3mm啮合作目标。V试片8mm配0.5mm垫片及M3×12，以3.5mm啮合作目标。孔深不符时换螺钉/修改安装件，不能旋到底硬压。
-3. 压力舱按Blue Robotics当前50mm系列套件核对：150mm透明管、前RAILS法兰、BR-100094透明端盖、后1M10/8M6法兰盖、对应密封圈/锁止绳。CAD零件号和当前目录商品号可能不同，按几何与套件兼容性核对。
-4. 后盖采用多口型号，为四电机、系缆及后续传感器提供接口容量；**穿舱件尚未冻结**。需按实际线径、护套及厂家密封方式选定合格件，未使用端口用配套堵头封闭。不要把螺纹孔、空心螺钉或扎带当作防水连接。
+1. Confirm all four X2 hole types, the 14/8 mm cross orientation, usable blind depths, inferred 31 mm face offset and axial datums. Check the actual three-phase cable construction and sealing options; loose wires do not automatically seal in a single-cable gland.
+2. Test H_mount_fit and V_mount_fit with one real thruster. Horizontal effective clamping plus washer is about 5 mm; M3 × 8 targets 3 mm engagement. Vertical wall plus washer is about 8.5 mm; M3 × 12 targets 3.5 mm. Change screw length or geometry when needed; do not bottom a screw.
+3. Confirm the real electrical stack and service access before committing to the enclosure. Complete a board adapter and positive axial tray retention.
+4. Slice PETG prints with at least six walls, 0.2 mm layers and solid load paths. Check orientation, local supports, warping, nut pockets and dimensional coupons. Printed M3/M2 clearances are nominally 3.4/2.2 mm.
 
-## 打印与配合
+## Assembly interfaces
 
-主体STL在`mechanical/stl/`，已落床，单位mm。建议PETG、0.2mm层高、6道壁；承力支架和连接区按实心打印。主件210mm平面尺寸，应核对打印机实际有效范围、裙边与支撑。外罩、支架法兰外耳和相机架需按切片预览设置局部支撑。不要用支撑堵住工具井、绑带槽和螺母窝。
+| Module | Installation and inspection |
+|---|---|
+| Skids | Four M3 × 16 from above, top washers and side-loaded nuts. Install before horizontal motors; remove obstructing horizontal motors for skid service. |
+| Vertical carriers | Four M3 × 20 per side, upward through the flange/chassis, washers both sides and nuts above. Two X-separated rows and ribs transmit the moment. Each motor uses four side-entering M3 × 12. |
+| Horizontal motors | Four M3 × 8 and recessed washers per motor, from below; attach the OEM foot, never the rotor, shaft, propeller or thin duct. |
+| Camera | Four M2 × 10, front washers and rear-pocket nuts. Rotate the board 180° for USB clearance. Two M3 × 12 with washers both sides attach the carrier to the tray. Assemble outside the tube. |
+| Tray | Curved feet with closed-cell pads are provisional fit retention. Confirm pad compression and add positive axial retention; final module space, heat and shock retention are pending. |
+| Enclosure | Follow the compatible supplier system. Align locking entry, tube cutout and six window holes. Use six OEM M2 × 0.4-10 screws without extra washers in the original stack. |
+| Tube clamps / stops | About 1 mm EPDM liners; four M3 × 16 with washers both sides and nuts. Stop at the clamp hard stops. End slots contact metal flange projections with about 0.6 mm axial clearance, not the window or seal/locking surfaces. |
+| Wiring / tether | Route away from propellers, flow paths and cover lips. Strain-relieve independently. Use the rear 6 mm eye for a separately engineered load path; its recovery rating is untested. |
+| Fairing | Seat the locating lip and fit four M3 × 25 with washers both sides and nuts. Four 8 mm wells admit long hex tools. The cover is neither a pressure vessel nor a lifting handle. |
+| Optional foam | Default: absent. If needed, fit two closed-cell blanks and four releasable straps; see [buoyancy](buoyancy.md). Remove optional foam before accessing cover screws. |
+| Trim | Weigh the complete payload and measure displacement. Use the bottom M3 slots for engineered ballast. Establish appropriate CG/CB and near-level trim with the heave line near the real CG. |
 
-M3打印通孔3.4mm，M2打印通孔2.2mm；先用试片标定孔径。去毛刺后试穿金属件，不强拉翘曲零件。浮材是另外采购切割的闭孔材料，不用普通FDM零件替代。
+[Fastener BOM](../bom/BOM_FASTENERS.csv) · [Bolt datums](../mechanical/bolt_locations.json). No common torque or thread-locking process is frozen. Respect supplier requirements and actual printed-joint tests; metal-joint torque assumptions do not apply to acrylic or FDM parts. Check chemical compatibility before using locking products.
 
-## 装配顺序
+## Completed digital checks
 
-1. **滑橇**：在每侧两个侧向螺母槽放入M3螺母，用4颗M3×16和顶部垫片连接底架。先装滑橇，再装水平推进器；拆滑橇时需要取下遮挡上方工具路径的水平推进器。底架四个沉台让螺钉/垫片落在承力平面。
-2. **竖推支架**：每侧4颗M3×20从底部穿过8mm法兰和底架，上面装垫片/螺母。法兰两排孔沿X分开，双侧肋传递弯矩。两台竖推分别用4颗M3×12从侧面固定。该4颗电机螺钉可以独立拆装；先确认厂家孔深。
-3. **水平推进器**：各用4颗M3×8和沉台内垫片从下方安装，轴心为(−78,±74,18)。固定厂家底脚，不夹外转子、桨轴或桨叶。
-4. **相机**：把4个M2螺母放入相机架背部六角窝，先装相机及4颗M2×10/前垫片。相机板相对基准绕光轴旋转180°，让USB线接口在上侧让位口中。使用2颗M3×12及两面垫片/螺母，把相机架固定到托板。相机及托板在舱外装好，再放入压力舱。
-5. **内部托板**：两只弧形脚配闭孔软垫试装；实际内壁与软垫压缩量须实测。通用长圆孔只负责固定现成模块；最终电池/电调/控制器的空间、散热和保持力需按选型确认。托板当前保持方式尚未通过湿态/冲击验证。
-6. **压力舱**：原厂管体与端盖按厂家指南组装。前法兰锁止入口对准管体缺口，前透明盖六孔对齐，使用厂家规定6颗M2×0.4−10原装螺钉；不要自行增加垫片改变该原装堆叠。参考CAD的姿态已对齐。密封圈及锁止绳按厂家完整装配，单独完成验漏。
-7. **舱夹与限位**：两舱座配约1mm闭孔EPDM软衬，压环止挡处贴合后停止挤压。4颗M3×16、两面垫片及螺母固定。底架两端的侧向槽接纳金属法兰外伸部，提供约0.6mm轴向余量；接触位置只针对金属法兰，不向透明窗、密封槽或锁止入口施压。用实际件验证槽位和轴向保持，不能强压端盖入槽。
-8. **线束与系缆**：沿底架避开桨叶、进排水口和定位沿布线，单独应力释放。系缆通过后部专用6mm眼位建立承力连接，电线及穿舱件不承拉。系缆头、护弯及穿舱件未选择，需核对安装后弯曲空间。后盖接口孔不代表接头已选型或已经防水。
-9. **上罩**：自由进排水的保护罩通过浅定位沿落座，以4颗M3×25、两面垫片与螺母固定。4个8mm井供长杆内六角进入。外罩不作提手、不承受回收拉力。
-10. **选装浮材**：默认不安装。需要补浮力或调整配平时，可选两块62×160×35闭孔浮材，前后放置。各两条可释放绑带沿X方向绕过浮材和底架，带宽约4.8mm、厚度不超过1.2mm、长度约450mm；3×7导向槽和纵向通路已建模。锁头放在可达顶部，远离工具井。模型只画带身及路径，未画厂家锁头。若安装浮材，检修先释放绑带、移走浮材，再拆罩和舱夹。配置、尺寸与选用条件见[浮力模块说明](buoyancy.md)。
-11. **配平**：装实际模块、线束与穿舱件后称重并测排水量。底部M3长圆孔用于固定后续配重；浮材按材料密度和目标水深选定，调整厚度/位置。优先让重心在浮心下方，前后配平使升降推力线靠近实际重心。原型建议略正浮力，不能用仿真假设代替实测。
+- Nominal printed-part / hardware / supplier interferences, supplier-to-supplier interference and optional strap paths.
+- 48 screw-driver paths, evaluated in appropriate assembly states. These do not cover every wrench, finger or tool brand.
+- Two D54 mm vertical corridors from Z = -140 to +120 mm: geometric clearance, not thrust or flow-efficiency validation.
+- Sampled central/boundary camera rays at horizontal ±40° and vertical ±32°, without printed-part blockage. This is not full optical validation; refraction, distortion, lighting and the final USB cable are absent.
+- Ten watertight, single-component print STLs and STEP volume/envelope readback; standard/optional assembly STEP envelopes and solid counts.
 
-完整安装量和实例位置见`bom/BOM_FASTENERS.csv`、`bolt_locations.json`。紧固件为普通螺母/垫片的名义几何，未选择防松工艺或统一拧紧扭矩；扭矩必须分别服从电机/压力舱厂家和实物打印连接试验。M2原厂透明盖按厂家交叉顺序紧固，禁止把适用于金属的扭矩直接用于透明盖或打印件。
+## Strength-screen limits
 
-## 已做的数字检查
+The vertical carrier uses an 8 mm main wall, two ribs and four foot connections. An ideal 32 × 8 mm solid section at 35 mm eccentricity under the supplier's 20.59 N maximum-thrust reference gives about 2.2 MPa nominal stress, or 6.6 MPa at three times that analysis load. Ribs are not credited. This is not FEA, a complete joint check or an established safety factor; hole/root stress concentration, wet anisotropy, creep, fatigue and impact are excluded.
 
-- 打印实体与名义硬件、商用参考件的干涉；供应件彼此的干涉；绑带路径与周边零件的干涉。
-- 48条实际螺钉工具路径，按本装配顺序区分完整装配/拆罩/舱外相机装配等状态；这不是扳手、手指或所有品牌工具的完整可达性证明。
-- 两条直径54mm、Z−140至+120mm的竖直净空通道。这只证明几何净空，不证明喷流、吸入效率或推力性能。
-- 相机水平±40°、垂直±32°中心及边界取样线未被打印件遮挡；不等于完整光学视场验证，玻璃折射、畸变、灯光反射和USB线未仿真。
-- 10个主体独立STL的封闭/单连通与STEP体积、边界复核。
+Proposed physical gates, not yet performed:
 
-## 强度评估的边界与实测要求
+1. Measure actual interfaces, gaps and blind depths on this print batch.
+2. Using a rigid substitute fixture at the real thrust axis, load each mount in both directions at a provisional 41 N, hold five minutes and repeat three times. This is a project test proposal, not a certification standard. Record displacement, residual deformation, cracks, layer separation, nut-pocket damage and slip. Allowed displacement must be below half the actual minimum clearance.
+3. Validate chassis, one-sided support, enclosure retention and tether eye against the eventual vehicle weight and simultaneous thrust combinations. No whole-vehicle payload or recovery rating is assigned.
+4. Repeat critical retention/load checks wet, and inspect after repeated assembly, reversals and starts/stops. Short tests do not establish lifetime.
+5. Leak-test the completed enclosure/penetrators using the supplier process, then perform recoverable shallow-water trim and low-thrust trials.
 
-8mm双肋支架替代V4的4mm单壁支架，并改为两排四点连接。单独按32×8mm完整主壁、35mm偏心、厂家最大宣称20.59N作简化估算，名义应力约2.2MPa，3倍分析工况约6.6MPa；加强肋未计入该截面估算。**这不是有限元分析、完整连接校核或已经证明的安全系数**，没有纳入根部/孔边集中、实际打印层间性能、蠕变、疲劳、冲击和密封性能。
+Without physical evidence, no rated depth, full-power endurance or service life is claimed.
 
-定版需完成：
-
-- 使用本批打印工艺和样件，先核孔位、安装面、实际最小间隙及螺纹深度。
-- 用刚性替身夹具在真实推进轴位置，分别向两个方向对每个安装模块施加暂定约41N（2倍厂家最大宣称推力）的静载，保持5分钟、重复3次；检查加载位移、残余变形、裂纹/分层、螺母槽和滑移。该数值是拟定项目验收工况，未实际执行，也非认证标准。允许位移应小于实际最小间隙的一半，不能以“看起来没断”判合格。
-- 按最终整机重量W验证底架、单侧支承、舱体保持及系缆眼；暂不赋予整机承重或回收额定值。对可能同时发生的推进力组合也需验证。
-- 湿态复测关键载荷与保持力；反复拆装、正反转及启停后检查预紧保持和裂纹。短时测试不能代表全寿命。
-- 压力舱单独按原厂流程验漏，再做可回收、受控浅水的配平与低推力运动试验，逐步核对方向、姿态及电机线应力释放。
-
-没有上述实物证据前，本版始终标为工程原型，不承诺额定潜深、满功率长期运行、寿命或“直接下水即可靠”。
-
-参考：[压力舱原厂装配指南](https://bluerobotics.com/learn/watertight-enclosure-wte-assembly-new/)；[原厂压力舱规格](https://bluerobotics.com/wp-content/uploads/2025/02/WTE-DATASHEET-RevC.2-FEB2025.pdf)；[X2规格](https://www.underwaterthruster.com/products/apisqueen-12-16v-2-1kg-thrust-84w-x2-freshwater-brushless-dc-waterproof-thrusters)。
+Sources: [enclosure assembly](https://bluerobotics.com/learn/watertight-enclosure-wte-assembly-new/), [enclosure datasheet](https://bluerobotics.com/wp-content/uploads/2025/02/WTE-DATASHEET-RevC.2-FEB2025.pdf), [X2 product reference](https://www.underwaterthruster.com/products/apisqueen-12-16v-2-1kg-thrust-84w-x2-freshwater-brushless-dc-waterproof-thrusters).

@@ -97,10 +97,10 @@ def main():
         if renderer and frames:
             from PIL import Image
             import imageio.v2 as imageio
-            Image.fromarray(frames[-1]).save(output / 'MuJoCo_V5.png')
+            Image.fromarray(frames[-1]).save(output / 'simulation.png')
             renderer.update_scene(env.data, 'front_camera', scene_option=opt)
-            Image.fromarray(renderer.render()).save(output / 'MuJoCo_前视.png')
-            imageio.mimsave(output / 'V5_sim_demo.mp4', frames, fps=10, macro_block_size=16)
+            Image.fromarray(renderer.render()).save(output / 'front-camera.png')
+            imageio.mimsave(output / 'demo.mp4', frames, fps=10, macro_block_size=16)
         print(json.dumps({'output_directory': str(output.resolve()),
                           'configuration': args.configuration,
                           'mode': 'manual_setpoints' if manual else 'automatic_demo',

@@ -7,9 +7,7 @@ from PIL import Image,ImageDraw,ImageFont
 
 R=Path(__file__).resolve().parents[2]
 S=R/'simulation/mujoco';OUT=R/'docs/assets/gallery';OUT.mkdir(exist_ok=True)
-font_path=os.environ.get('SROV_CJK_FONT','/System/Library/Fonts/STHeiti Light.ttc')
-if not Path(font_path).is_file():font_path='/usr/share/fonts/truetype/wqy/wqy-zenhei.ttc'
-font=lambda size:ImageFont.truetype(font_path,size)
+font=lambda size:ImageFont.truetype(os.environ['SROV_FONT'],size) if os.environ.get('SROV_FONT') else ImageFont.load_default(size=size)
 xml=E.parse(S/'simple_rov_with_buoyancy.xml').getroot()
 xml.find('compiler').set('meshdir',str(S/'meshes'))
 xml.find('visual/global').set('offwidth','2400');xml.find('visual/global').set('offheight','1800')
@@ -55,36 +53,36 @@ def render(name,title,azimuth,elevation,with_buoyancy=False,interior=False,ortho
     # Page framing is part of this generated technical illustration, not a photograph.
     canvas=Image.new('RGB',(2400,1800),'#f5f8fa');canvas.paste(frame,(0,100));draw=ImageDraw.Draw(canvas)
     draw.text((76,28),'SimpleROV',font=font(42),fill='#173c47');draw.text((2324,38),title,font=font(32),anchor='ra',fill='#315e6c')
-    config='选装浮力模块' if with_buoyancy else '标准装配 · 不含浮力模块'
-    if interior:config+=' · 隐藏上罩与压力舱组件'
-    draw.text((76,1736),config,font=font(28),fill='#3b6570');draw.text((2324,1736),'CAD 渲染 / 非实物照片',font=font(25),anchor='ra',fill='#687d84')
+    config='Optional buoyancy module' if with_buoyancy else 'Standard assembly | No buoyancy module'
+    if interior:config+=' | Fairing and pressure enclosure hidden'
+    draw.text((76,1736),config,font=font(28),fill='#3b6570');draw.text((2324,1736),'CAD rendering / Not a prototype photograph',font=font(25),anchor='ra',fill='#687d84')
     canvas.save(OUT/name,optimize=True)
     records.append(dict(file=name,title=title,configuration='with-buoyancy' if with_buoyancy else 'base',azimuth_deg=azimuth,elevation_deg=elevation,orthographic=ortho,interior=interior,pixels=[2400,1800],sha256=hashlib.sha256((OUT/name).read_bytes()).hexdigest()))
 
-render('hero.png','整体 / FRONT-LEFT',45,-24,distance=.44)
-render('front.png','前视 / +X',0,0,ortho=True,floor=False,distance=.43)
-render('rear.png','后视 / -X',180,0,ortho=True,floor=False,distance=.43)
-render('left.png','左视 / +Y',90,0,ortho=True,floor=False,distance=.43)
-render('right.png','右视 / -Y',270,0,ortho=True,floor=False,distance=.43)
-render('top.png','俯视 / +Z',0,-90,ortho=True,floor=False,distance=.51)
-render('bottom.png','底视 / -Z',0,90,ortho=True,floor=False,distance=.51)
-render('interior.png','内部安装 / 相机与托板',35,-17,interior=True,distance=.44)
-render('buoyancy-option.png','选装浮力模块',45,-24,with_buoyancy=True,distance=.52)
+render('hero.png','ASSEMBLY / FRONT-LEFT',45,-24,distance=.44)
+render('front.png','FRONT / +X',0,0,ortho=True,floor=False,distance=.43)
+render('rear.png','REAR / -X',180,0,ortho=True,floor=False,distance=.43)
+render('left.png','LEFT / +Y',90,0,ortho=True,floor=False,distance=.43)
+render('right.png','RIGHT / -Y',270,0,ortho=True,floor=False,distance=.43)
+render('top.png','TOP / +Z',0,-90,ortho=True,floor=False,distance=.51)
+render('bottom.png','BOTTOM / -Z',0,90,ortho=True,floor=False,distance=.51)
+render('interior.png','INTERIOR / CAMERA AND TRAY',35,-17,interior=True,distance=.44)
+render('buoyancy-option.png','Optional buoyancy module',45,-24,with_buoyancy=True,distance=.52)
 renderer.close()
 # Six consistent orthographic directions, with readable view names.
-views=[('front.png','前视'),('rear.png','后视'),('left.png','左视'),('right.png','右视'),('top.png','俯视'),('bottom.png','底视')]
+views=[('front.png','FRONT'),('rear.png','REAR'),('left.png','LEFT'),('right.png','RIGHT'),('top.png','TOP'),('bottom.png','BOTTOM')]
 contact=Image.new('RGB',(2400,1800),'#f5f8fa')
 for i,(name,title) in enumerate(views):
     im=Image.open(OUT/name).crop((0,100,2400,1700));im.thumbnail((780,760));x=(i%3)*800+(800-im.width)//2;y=(i//3)*850+70
     contact.paste(im,(x,y));ImageDraw.Draw(contact).text((i%3*800+30,i//3*850+20),title,font=font(34),fill='#173c47')
-ImageDraw.Draw(contact).text((60,1740),'标准装配 · 六向视图 · 坐标 X前 / Y左 / Z上',font=font(32),fill='#315e6c')
+ImageDraw.Draw(contact).text((60,1740),'STANDARD ASSEMBLY | SIX VIEWS | X forward / Y left / Z up',font=font(32),fill='#315e6c')
 contact.save(OUT/'overview.png',optimize=True)
 comparison=Image.new('RGB',(2400,1100),'#f5f8fa')
 for i,name in enumerate(['hero.png','buoyancy-option.png']):
     im=Image.open(OUT/name);im.thumbnail((1180,1000));comparison.paste(im,(i*1200+(1200-im.width)//2,40))
 comparison.save(OUT/'configuration-comparison.png',optimize=True)
 # The assembly manual's lead image uses the same standard configuration.
-Image.open(OUT/'hero.png').save(R/'docs/assets/images/assembly_guide/04_完整总装.png')
+Image.open(OUT/'hero.png').save(R/'docs/assets/images/assembly_guide/04_assembly.png')
 report={'source':'Current CAD assembly meshes through MuJoCo visual meshes','source_parts_sha256':hashlib.sha256((R/'mechanical/parts.json').read_bytes()).hexdigest(),'default_configuration':'base','base_dimensions_mm':configurations['base']['dimensions_mm'],'optional_dimensions_mm':configurations['with-buoyancy']['dimensions_mm'],'views':records,'notes':'Foam and straps are excluded in standard views. Renderings do not show unmodeled electronics/cables and are not physical test evidence.'}
 (R/'validation/gallery.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n')
 print('Gallery:',len(records),'views + overview + configuration comparison')

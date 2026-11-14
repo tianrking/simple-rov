@@ -15,7 +15,7 @@
   "source_sha256": {
     "desktop_viewer.py": "97dd8176c05f8e2a7762667ce9dc4279798af1461eb126087ca10ac0a54c2202",
     "manual_control.py": "3cda99617347c4b394431532e07ed472de9150880bf66d5d6a05213f9a2c83a9",
-    "run.py": "32bc4e93d523c77343b43b6e1e481bfc992c811baeca113a1dd9c49ad93a4648",
+    "run.py": "baecd07d1a5d809e3014e1a2617bdbfc37470c76f2dbc4b64c76707fce824546",
     "launch_macos.py": "0bcd2ba24478d923cc6f93f4b6fc3a0d27cd466b90c8f8f96d96f4a8109c2d94"
   },
   "passed": true

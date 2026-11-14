@@ -1,22 +1,69 @@
-<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>SimpleROV 项目文档</title><style>body{font-family:system-ui,sans-serif;max-width:1050px;margin:36px auto;padding:0 24px;color:#173d46;line-height:1.8;background:#f5f9fa}main{background:#fff;padding:30px;border-radius:12px}h1,h2{line-height:1.4}h2{border-top:2px solid #e0ecee;padding-top:22px;margin-top:36px}table{border-collapse:collapse;width:100%;font-size:14px}td,th{border:1px solid #cbdade;padding:8px;text-align:left}th{background:#e8f1f3}pre{overflow:auto;padding:18px;background:#173d46;color:#effbff;border-radius:8px}img,video{display:block;max-width:100%;max-height:700px;margin:auto}blockquote{background:#fff0da;padding:10px 16px;border-left:4px solid #df8b31}a{color:#006980} @media print{body,main{margin:0;padding:0}h2{break-before:page}nav{display:none}}</style><main><nav><a href="index.html">项目入口</a> · <a href="assembly.html">装配</a> · <a href="simulation.html">仿真</a> · <a href="build-plan.html">实机</a></nav><h1>结构视图</h1>
-<p>本页图片直接由当前CAD网格生成，分辨率为2400×1800。标准机体不安装浮力模块。正投影视图使用统一视野，坐标X向前、Y向左、Z向上。</p>
-<p>这些是结构渲染图，不是实物照片。舱件采用不透明显示材质便于辨认轮廓，颜色不作为采购或材料规格。推进器为厂家尺寸重建参考，相机和舱件来自注明来源的商用CAD。未完成的控制板、电调、电池和线束没有用虚构模型填充。</p>
-<h2>整体</h2>
-<p><img alt="标准装配" src="assets/gallery/hero.png" /></p>
-<h2>前视与后视</h2>
-<p><img alt="前视" src="assets/gallery/front.png" /></p>
-<p><img alt="后视" src="assets/gallery/rear.png" /></p>
-<h2>左视与右视</h2>
-<p><img alt="左视" src="assets/gallery/left.png" /></p>
-<p><img alt="右视" src="assets/gallery/right.png" /></p>
-<h2>俯视与底视</h2>
-<p><img alt="俯视" src="assets/gallery/top.png" /></p>
-<p><img alt="底视" src="assets/gallery/bottom.png" /></p>
-<h2>内部安装</h2>
-<p><img alt="内部安装" src="assets/gallery/interior.png" /></p>
-<p>为便于观察，此视图隐藏了上罩与全部压力舱组件，保留相机、托板、机架与推进器。最终电子布局和托板锁止仍需补完。</p>
-<h2>可选浮力模块</h2>
-<p><img alt="选装浮力模块" src="assets/gallery/buoyancy-option.png" /></p>
-<p>浮材是根据实际重量和配平选择的附件，不属于标准装配。安装方法与边界见<a href="buoyancy.html">浮力模块说明</a>。</p>
-<h2>图像来源</h2>
-<p>生成脚本：<a href="../tools/docs/render_gallery.py">render_gallery.py</a>。模型来源、配置、视角和图像哈希记录在<a href="../validation/gallery.json">gallery.json</a>。</p></main></html>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>SimpleROV | Project documentation</title><style>
+:root{--ink:#183d46;--muted:#5d7480;--line:#dbe6e9;--accent:#176271;--orange:#ed8a24}
+*{box-sizing:border-box}body{margin:0;background:#f3f7f8;color:var(--ink);font:16px/1.8 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+header{background:#fff;border-bottom:1px solid var(--line)}nav{max-width:1100px;margin:auto;padding:18px 28px;display:flex;gap:22px;align-items:center;flex-wrap:wrap}nav strong{margin-right:auto;letter-spacing:-.5px;font-size:22px}nav a{font-size:14px;text-decoration:none}
+main{max-width:1100px;margin:32px auto 70px;background:#fff;border:1px solid var(--line);border-radius:16px;padding:42px 48px;box-shadow:0 8px 35px #183d4608}
+h1{font-size:42px;letter-spacing:-1.3px;line-height:1.2;margin-top:0}h2{font-size:26px;border-top:1px solid var(--line);padding-top:30px;margin-top:44px;line-height:1.35}h3{font-size:20px;margin-top:30px;line-height:1.4}p{margin:16px 0}a{color:var(--accent);text-underline-offset:3px}img,video{max-width:100%;height:auto;border-radius:8px}p>img{display:block;margin:22px auto}table{border-collapse:collapse;width:100%;font-size:14px;margin:20px 0}th,td{border:1px solid var(--line);padding:12px 15px;text-align:left;vertical-align:top}th{background:#eaf2f4;font-weight:600}tr:nth-child(even){background:#fafcfc}td img{width:100%}pre{overflow:auto;background:#163843;color:#edf6f8;padding:22px;border-radius:10px;font-size:13px;line-height:1.7}code{font-family:ui-monospace,SFMono-Regular,Consolas,monospace}p code,td code{background:#edf3f5;padding:2px 5px;border-radius:4px;font-size:.88em}blockquote{margin:20px 0;padding:1px 20px;background:#fff5e7;border-left:3px solid var(--orange)}details{border:1px solid var(--line);border-radius:10px;padding:12px 18px;margin:20px 0}summary{cursor:pointer}footer{color:var(--muted);font-size:12px;text-align:center;margin:35px auto}
+@media(max-width:700px){main{margin:12px 8px;padding:24px 18px;border-radius:10px}h1{font-size:34px}h2{font-size:23px}table{font-size:12px}th,td{padding:8px}nav{gap:12px;padding:14px 20px}pre{font-size:11px}}
+@media print{body,main{margin:0;padding:0;background:#fff;border:0;box-shadow:none}header,footer{display:none}h2{break-before:page}}
+</style></head><body><header><nav><strong>SimpleROV</strong><a href="index.html">Overview</a><a href="assembly.html">Assembly</a><a href="gallery.html">Gallery</a><a href="simulation.html">Simulation</a><a href="index.es.html">ES</a><a href="index.zh-CN.html">中文</a></nav></header><main><h1>Structure gallery</h1>
+<p>Nine 2400 × 1800 CAD views show the current geometry. Standard views omit top foam and straps. The six orthographic views share one field of view: X forward, Y left, Z up.</p>
+<p>These are renderings, not prototype photographs. Thrusters are reconstructed dimensional references; the camera and enclosure use attributed supplier CAD. Enclosure parts use an opaque display finish for legibility; display colors are not procurement specifications. Unselected electronics and wiring are not illustrated.</p>
+<h2>Standard assembly</h2>
+<p><img alt="Standard assembly" src="assets/gallery/hero.png" /></p>
+<h2>Orthographic views</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Front</th>
+<th style="text-align: center;">Rear</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><img alt="Front" src="assets/gallery/front.png" /></td>
+<td style="text-align: center;"><img alt="Rear" src="assets/gallery/rear.png" /></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Left</th>
+<th style="text-align: center;">Right</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><img alt="Left" src="assets/gallery/left.png" /></td>
+<td style="text-align: center;"><img alt="Right" src="assets/gallery/right.png" /></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Top</th>
+<th style="text-align: center;">Bottom</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><img alt="Top" src="assets/gallery/top.png" /></td>
+<td style="text-align: center;"><img alt="Bottom" src="assets/gallery/bottom.png" /></td>
+</tr>
+</tbody>
+</table>
+<h2>Interior</h2>
+<p><img alt="Camera and tray installation" src="assets/gallery/interior.png" /></p>
+<p>The fairing and all pressure-enclosure components are hidden to expose the existing camera, tray, frame and thrusters. Final electrical layout and positive tray retention remain pending.</p>
+<h2>Optional buoyancy</h2>
+<p><img alt="Optional buoyancy module" src="assets/gallery/buoyancy-option.png" /></p>
+<p>Foam is selected from measured mass and trim. It is not part of the default assembly. See <a href="buoyancy.html">buoyancy and trim</a>.</p>
+<h2>Onshape screenshots</h2>
+<p>The following are actual captures of the historical public Onshape assembly viewport. They show the <strong>optional buoyancy foam and straps fitted</strong>; current default foam-free assemblies are defined by the repository STEP files. The screenshots retain the original geometry and view state, cropped to the CAD viewport; they are not synthetic illustrations.</p>
+<p><img alt="Actual Onshape isometric assembly view" src="assets/onshape/assembly-isometric.jpg" /></p>
+<p><img alt="Actual Onshape profile view" src="assets/onshape/assembly-profile.jpg" /></p>
+<p><a href="https://cad.onshape.com/documents/256f9be06adfdc472f7aac06/w/aefb43ce726d3d5c24877f23/e/1186baa4f5bb2c01f6be971a">Open Onshape</a>. Ten printed parts are imported editable solids without native sketch history. The commercial rear cap imported as an open reference shell; local OEM STEP remains the supplier reference. See <a href="../validation/onshape/ONSHAPE_ROUNDTRIP.json">round-trip checks</a>.</p>
+<h2>Provenance</h2>
+<p><a href="../tools/docs/render_gallery.py">Rendering source</a> · <a href="../validation/gallery.json">CAD view metadata and hashes</a> · <a href="../validation/onshape/screenshots.json">Onshape capture record</a>.</p></main><footer>SimpleROV · Prototype documentation · Original content all rights reserved</footer></body></html>

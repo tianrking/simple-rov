@@ -1,9 +1,9 @@
-# 电子硬件 / 后续KiCad工程
+# Electronics: future KiCad work
 
-**状态：规划，尚无原理图、PCB、Gerber、装配坐标或可下单电子BOM。** 旧版项目的PCB没有混入V5。
+**Planned. No schematic, PCB, Gerbers, pick-and-place files or orderable electronics BOM are included.** Previous prototype PCBs are not part of this design.
 
-本目录用于后续KiCad项目，可按 `kicad/`、`libraries/`、`bom/`、`fabrication/`、`validation/` 分层。只有在原生工程、ERC/DRC、接口/温升核对和输出一致性检查完成后，才纳入对应制造资料。
+Future work can use `kicad/`, `libraries/`, `bom/`, `fabrication/` and `validation/` directories. Include manufacturing outputs only after the native project, ERC/DRC, interfaces, thermal checks and output consistency have been reviewed.
 
-前置条件：冻结控制器、4路双向电调、相机主机、电源保护、通信、压力与漏水检测方案；收集真实外形和接头，再核对舱内摆放、维护、穿舱线束、供电电流和散热。[机械接口约束](interfaces/README.md)。
+First select the controller, four bidirectional ESCs, video host, power protection, communications, depth and leak detection. Collect real part envelopes and connectors, then check enclosure layout, service access, wiring, current and heat. See [mechanical interface constraints](interfaces/README.md).
 
-当前没有给任何现成MCU或PCB宣称已适配的孔位。通用托板只是安装基础，最终需要板卡适配板和正向锁止。
+No existing MCU or PCB is claimed to fit. The generic tray requires a board-specific adapter and positive retention.

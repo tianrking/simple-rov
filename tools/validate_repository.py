@@ -75,6 +75,18 @@ for view in gallery['views']:
  require(hashlib.sha256((ROOT/'docs/assets/gallery'/view['file']).read_bytes()).hexdigest()==view['sha256'],'Stale gallery image: '+view['file'])
 status=json.loads((ROOT/'STATUS.json').read_text());require(not status['physical_tested'] and status['pcb_status']=='PLANNED_NO_DESIGN','Maturity status mismatch')
 require('All rights reserved' in (ROOT/'LICENSE').read_text(),'Missing reserved rights notice')
+require(status.get('default_language')=='en','Default project language must be English')
+for name in ['README.md','README.es.md','README.zh-CN.md']:
+ require((ROOT/name).is_file(),'Missing README language: '+name)
+ text=(ROOT/name).read_text()
+ require(all(lang in text for lang in ['README.md','README.es.md','README.zh-CN.md']),'README language navigation: '+name)
+require('# SimpleROV illustrated assembly guide' in (ROOT/'docs/assembly.md').read_text(),'Assembly guide must default to English')
+require('<html lang="en">' in (ROOT/'docs/index.html').read_text(),'Default HTML language')
+require('<html lang="es">' in (ROOT/'docs/index.es.html').read_text(),'Spanish HTML language')
+require(all(view['title'].isascii() for view in gallery['views']),'Gallery labels must default to English')
+captures=json.loads((ROOT/'validation/onshape/screenshots.json').read_text())
+for n,h in captures['source_sha256'].items():require(hashlib.sha256((ROOT/n).read_bytes()).hexdigest()==h,'Onshape capture fingerprint: '+n)
+
 if args.manifest:
     manifest=json.loads((ROOT/'MANIFEST.sha256.json').read_text());actual={str(p.relative_to(ROOT)):hashlib.sha256(p.read_bytes()).hexdigest() for p in files};require(manifest==actual,'Manifest differs from project files; update after final verification')
 if errors:raise SystemExit('\n'.join(errors))

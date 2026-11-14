@@ -1,7 +1,7 @@
-# MuJoCo仿真
+# MuJoCo simulation
 
-可运行实现位于[mujoco/](mujoco/)，包含当前CAD外观、刚体、四个推力作用点、Python浮力/阻力、推进器响应延迟和经典控制。
+The runnable implementation in [mujoco/](mujoco/) includes the current CAD appearance, rigid body, four thrust locations, explicit Python buoyancy/drag, motor lag and classical control.
 
-[安装运行与假设](../docs/simulation.md) · [根目录快速启动](../README.md#运行仿真)
+[Installation, operation and assumptions](../docs/simulation.md) · [Quick start](../README.md#run-the-simulation)
 
-这是欠驱动、完全浸没、静水中的工程演示；尚未标定水动力，没有CFD、海流/海浪、自由液面、系缆、光学折射或强化学习环境。原型控制算法优先经典控制，后续策略训练必须有明确观察/动作/奖励、参数随机化和独立评估集。
+This is an underactuated, fully submerged, still-water demonstrator with uncalibrated hydrodynamics. It has no CFD, waves/currents, free surface, tether, optical refraction or reinforcement-learning environment. Use classical control for initial remote operation and stabilization. Later policy work needs explicit observations, actions, rewards, parameter randomization and independent evaluation.

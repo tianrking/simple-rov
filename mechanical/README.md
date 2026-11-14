@@ -1,18 +1,30 @@
-# 机械结构与可编辑源文件
+# Mechanical structure
 
-`build.py`与`parameters.json`是原始尺寸驱动源；原厂参考几何位于`supplier/`。`stl/`是已落床的10个主体打印文件；`step_parts/`是总装坐标下的10个独立可编辑实体；`fit_coupons/`包含两个电机接口试片。`assembly_meshes/`用于总装和仿真重建。
+`build.py` and `parameters.json` are the dimension-driven source. Supplier reference geometry lives in `supplier/`. CAD uses millimeters, X forward, Y left and Z up.
 
-机械几何、单位mm、X前/Y左/Z上。推进器与相机/压力件为商用参考，禁止把参考电机或压力件当作本项目打印件。[完整装配说明](../docs/assembly.md)与[验收边界](../docs/acceptance.md)。
+| Directory | Purpose |
+|---|---|
+| [stl/](stl/) | Ten individual main prints, oriented and placed on the bed |
+| [step_parts/](step_parts/) | Ten editable solids in assembly coordinates |
+| [fit_coupons/](fit_coupons/) | Two motor-interface test coupons |
+| [assembly_meshes/](assembly_meshes/) | Assembly-coordinate meshes for visualization and simulation |
+| [assemblies/](assemblies/) | Standard and optional-buoyancy assemblies |
 
-源CAD的几何哈希、0干涉与48条工具通道记录在`GEOMETRY_CHECKS.json`；这不是强度/耐压认证。`STRENGTH_SCREEN.json`只是局部理想截面估算。Onshape后端盖的曲面导入限制见[历史回导报告](../validation/onshape/ONSHAPE_ROUNDTRIP.json)。
+Commercial thrusters, camera and pressure hardware are references, not project prints. Read the [assembly guide](../docs/assembly.md), [acceptance plan](../docs/acceptance.md) and [design reference](../docs/design.md).
 
-## 总装配置
+## Assembly variants
 
-默认不安装顶部浮材及绑带，外包213×210×148mm。选装浮力模块后外包213×210×184.7mm；最大尺寸不含待定线束、接头与绑带锁头。
+The standard assembly has no top foam or straps: 213 × 210 × 148 mm. The reference buoyancy module increases height to 184.7 mm. Dimensions exclude final wiring, penetrators, ballast and strap buckles.
 
-| 配置 | 常规总装 | 含名义金属件 |
+| Configuration | Assembly | With nominal metal fasteners |
 |---|---|---|
-| 标准装配 | [simple-rov.step](assemblies/simple-rov.step) | [simple-rov-with-fasteners.step](assemblies/simple-rov-with-fasteners.step) |
-| 加装浮力模块 | [simple-rov-with-buoyancy.step](assemblies/simple-rov-with-buoyancy.step) | [simple-rov-buoyancy-with-fasteners.step](assemblies/simple-rov-buoyancy-with-fasteners.step) |
+| Standard | [simple-rov.step](assemblies/simple-rov.step) | [simple-rov-with-fasteners.step](assemblies/simple-rov-with-fasteners.step) |
+| Optional buoyancy | [simple-rov-with-buoyancy.step](assemblies/simple-rov-with-buoyancy.step) | [simple-rov-buoyancy-with-fasteners.step](assemblies/simple-rov-buoyancy-with-fasteners.step) |
 
-[configurations.json](configurations.json)列出尺寸、包围盒和所含零件；[parts.json](parts.json)保留所有零件及选装标记。10个主体打印件两种配置通用，浮材不打印。历史Onshape总装含浮材，当前默认配置以本仓库为准。详见[浮力说明](../docs/buoyancy.md)和[多视角图库](../docs/gallery.md)。
+[configurations.json](configurations.json) records envelopes and included parts; [parts.json](parts.json) contains the full inventory with optional flags. Both assemblies use the same ten printed parts. Foam is cut from suitable purchased material, not printed. See [buoyancy and trim](../docs/buoyancy.md).
+
+## Validation and cloud reference
+
+[GEOMETRY_CHECKS.json](GEOMETRY_CHECKS.json) records nominal interference and 48 driver-path checks, with source hashes. [EXPORT_CHECKS.json](EXPORT_CHECKS.json) records print readback. [STRENGTH_SCREEN.json](STRENGTH_SCREEN.json) is a local ideal-section estimate, not FEA or a physical load rating.
+
+The historical Onshape assembly includes the optional foam. Its ten printed parts are imported editable solids, without native sketch history. The rear commercial cap imported as an open reference shell; use the local OEM STEP for that reference. See the [round-trip record](../validation/onshape/ONSHAPE_ROUNDTRIP.json). Current default assemblies are defined by this repository.

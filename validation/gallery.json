@@ -15,7 +15,7 @@
   "views": [
     {
       "file": "hero.png",
-      "title": "整体 / FRONT-LEFT",
+      "title": "ASSEMBLY / FRONT-LEFT",
       "configuration": "base",
       "azimuth_deg": 45,
       "elevation_deg": -24,
@@ -25,11 +25,11 @@
         2400,
         1800
       ],
-      "sha256": "401a6c549b7bfee01c6ca0939a2a168de01d16525bb55e28cf436afc248b5210"
+      "sha256": "08fc777cafabea52b252ad9a0f1e6271c89f4402b5f905b2aa39d2e0e763cfa0"
     },
     {
       "file": "front.png",
-      "title": "前视 / +X",
+      "title": "FRONT / +X",
       "configuration": "base",
       "azimuth_deg": 0,
       "elevation_deg": 0,
@@ -39,11 +39,11 @@
         2400,
         1800
       ],
-      "sha256": "f1c60ecb84402d6c912c5238911ac02a4d7ca50feba3f34dc94d7245464a970f"
+      "sha256": "ae570570383a71bc9277d5dc7fe5bdc055f548969b15d8134384507af3afd6c4"
     },
     {
       "file": "rear.png",
-      "title": "后视 / -X",
+      "title": "REAR / -X",
       "configuration": "base",
       "azimuth_deg": 180,
       "elevation_deg": 0,
@@ -53,11 +53,11 @@
         2400,
         1800
       ],
-      "sha256": "f764ed6949507ba9fb545c83cd81187a75ab702c58ed26e7a496a27179e8038c"
+      "sha256": "2a37afb7361f52e4fe2a8bbcbb71e9a2a8288cd5808a972d49753a3eb0d5bebf"
     },
     {
       "file": "left.png",
-      "title": "左视 / +Y",
+      "title": "LEFT / +Y",
       "configuration": "base",
       "azimuth_deg": 90,
       "elevation_deg": 0,
@@ -67,11 +67,11 @@
         2400,
         1800
       ],
-      "sha256": "d84c8e58f4e4535a77db0128a587e74696a30d303ef818f9cff36fdacadea234"
+      "sha256": "4d500b194c0b5344718843b9613f2f07d24666f05db5ed22ca0a61d026ead634"
     },
     {
       "file": "right.png",
-      "title": "右视 / -Y",
+      "title": "RIGHT / -Y",
       "configuration": "base",
       "azimuth_deg": 270,
       "elevation_deg": 0,
@@ -81,11 +81,11 @@
         2400,
         1800
       ],
-      "sha256": "88bd8e928bd7520600195251450fb32e1fb048e427045292b3e6314a02f5cf10"
+      "sha256": "23533c91070526e734200457f29cbc170b63627feb5b3dad7a772336705c0531"
     },
     {
       "file": "top.png",
-      "title": "俯视 / +Z",
+      "title": "TOP / +Z",
       "configuration": "base",
       "azimuth_deg": 0,
       "elevation_deg": -90,
@@ -95,11 +95,11 @@
         2400,
         1800
       ],
-      "sha256": "31ad98887aaaf80972545cf87172f9e3aa98438becc0aeba7e4a798bd761a354"
+      "sha256": "a4cf9f153dbcb24f7415cf2900b9d426f7986877279f932e927a4040281124e1"
     },
     {
       "file": "bottom.png",
-      "title": "底视 / -Z",
+      "title": "BOTTOM / -Z",
       "configuration": "base",
       "azimuth_deg": 0,
       "elevation_deg": 90,
@@ -109,11 +109,11 @@
         2400,
         1800
       ],
-      "sha256": "2c65b4842015aa39c72d8f35692f5a038e30db1e5df47e27c2d3eae67a08fe05"
+      "sha256": "8093286c09984108e82f37d4f8430db7694f4a590836f3d0550dd806360842bc"
     },
     {
       "file": "interior.png",
-      "title": "内部安装 / 相机与托板",
+      "title": "INTERIOR / CAMERA AND TRAY",
       "configuration": "base",
       "azimuth_deg": 35,
       "elevation_deg": -17,
@@ -123,11 +123,11 @@
         2400,
         1800
       ],
-      "sha256": "ea1b0490bc8abd39deff4d1843eeed59b0a7821b63dfcee2fab6d23c6326d5d2"
+      "sha256": "2303e6a115587f1de13597e3b2ba0f2a68e72ce3f09946bf4fa1815788f78c63"
     },
     {
       "file": "buoyancy-option.png",
-      "title": "选装浮力模块",
+      "title": "Optional buoyancy module",
       "configuration": "with-buoyancy",
       "azimuth_deg": 45,
       "elevation_deg": -24,
@@ -137,7 +137,7 @@
         2400,
         1800
       ],
-      "sha256": "177d1883ce610d7c236038e8d85ecd2f47ff68744560cc417c7033e127be957d"
+      "sha256": "af7f116192ef710c60717bbf8970db1795851506e9295802138c9e4606b333e9"
     }
   ],
   "notes": "Foam and straps are excluded in standard views. Renderings do not show unmodeled electronics/cables and are not physical test evidence."

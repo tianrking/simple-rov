@@ -1,16 +1,15 @@
-# 项目状态与路线图
+# Status and roadmap
 
-|阶段|状态|完成依据|
+| Workstream | Status | Evidence / next step |
 |---|---|---|
-|机械源/打印导出|已提供，待实物验证|10个独立打印件、2个试片、STEP、源参数与数字检查|
-|标准/选装配置|已提供|默认无浮材、可加装浮力模块；CAD、BOM、仿真与图库分清配置|
-|装配说明与BOM|已提供工程试装资料|11页说明、8幅图、28个安装步骤；不是整机电子BOM|
-|MuJoCo控制与驾驶|已提供未标定模型|符号/分配/运动/定深/横滚与驾驶回调检查|
-|真实电机接口与打印载荷|未验证|先1台推进器、试片、载荷及湿态试验|
-|完整电气与穿舱方案|未冻结|真实模块尺寸、线束、重量、热管理与机舱堆叠|
-|托板适配板与可靠锁止|待设计|选定板卡和舱内布局后完成|
-|KiCad PCB与制造资料|未来规划|完成原理图/ERC、PCB/DRC、BOM/位号与制造输出一致性|
-|实机固件与浅水遥控|未来规划|台架验证、密封、配平、失联停推和低推力浅水验收|
-|强化学习|可选研究|先经典控制基准和模型标定，再做训练封装与独立评估|
+| Mechanical source and print exports | Available; physical checks pending | Ten prints, two coupons, STEP, parameters and digital checks |
+| Standard / optional assembly | Available | Foam-free default; matching optional CAD, BOM and simulation variants |
+| Documentation and presentation | Available in English | Illustrated 11-page assembly guide, gallery, actual Onshape captures; Spanish and Chinese README entry points |
+| MuJoCo control and driving | Available, uncalibrated | Allocation, motion signs, depth/roll and keyboard callback checks |
+| Motor fit and printed load capacity | Unverified | One actual motor, fit coupons, load and wet-retention tests |
+| Electronics and penetrators | Not frozen | Real envelopes, wiring, weight, heat and service layout |
+| Tray adapter and positive retention | To design | Select boards and enclosure arrangement first |
+| PCB and firmware | Planned, not implemented | Native KiCad and onboard sources will be added when developed |
+| Physical sealing, trim and shallow-water trials | Not performed | Follow the acceptance plan and record results |
 
-公开仓库不改变工程成熟度。每项实物放行条件与记录见[实机落地路线](build-plan.md)。
+English is the default for technical documentation and generated figures. [Español](../README.es.md) · [中文](../README.zh-CN.md). Public availability does not grant an open-source license. See [rights](../LICENSE).

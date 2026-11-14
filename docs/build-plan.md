@@ -1,63 +1,55 @@
-# 从数字结构到第一台实机
+# From CAD to the first prototype
 
-详细图文操作入口：[详细组装说明](assembly.md) · [PDF](assembly.pdf) · [网页](assembly.html)。
+[Assembly guide](assembly.md) · [PDF](assembly.pdf) · [Acceptance](acceptance.md)
 
-本路线以淡水泳池、有线遥控、可回收的浅水样机为目标。标准装配外包213×210×148mm，默认无顶部浮材；加装浮力模块后约213×210×185mm。上述尺寸不包含最终接头、线缆和电气扩容。结构、相机接口和仿真已有数字检查；电气、穿舱线束、实际重量、热管理和完整实物装配尚未冻结。暂不生产PCB。
+The initial target is a tethered, recoverable shallow freshwater-pool prototype. The standard 213 × 210 × 148 mm mechanical envelope omits top foam; the optional reference module raises height to 184.7 mm. Final electrical packaging, penetrators, mass and thermal behavior are not frozen. PCB fabrication is not part of this phase.
 
-## 先解决两项接口
+## Resolve two interfaces first
 
-**电机接口。** X2是成品防水推进器，采购桨/导流罩/电机一体件；先买1台和匹配的双向电调做接口样件。向厂家确认四孔型/孔深、14/8十字孔方向、轴心到安装面偏距及出线形态；打印H/V两个试片，通过后再补其余3台。先不要批量打印十个主体件。
+**Motor fit.** Buy one complete APISQUEEN X2 and a compatible bidirectional ESC. Confirm four hole types/depths, 14/8 cross orientation, inferred face offset, axial dimensions and cable construction. Pass the H/V coupons before buying the other three motors or printing all main parts.
 
-**舱内空间。** 当前50mm系列150mm管只核对了相机、镜头与托板。四电调、控制器、稳压/配电、保险保护、电池、USB插头和弯线空间没有完整封装模型。必须收集具体商品的长宽高、接插件、线缆弯曲半径、重量、功耗、散热及采购链接，用1:1实物/打印替身做舱外堆叠，并在CAD中装配。全部放得下、能接线、可拆装、温升可接受后，才冻结机舱。放不下就明确修改舱和夹座，不能靠压线或删除防护来维持当前尺寸。
+**Dry payload.** The current 150 mm tube has been checked for the camera, lens and tray only. Obtain actual dimensions, connectors, wire-bend envelopes, mass, power and heat information for the battery, four ESCs, controller, regulator/distribution/protection and USB host. Build a full-scale bench layout and CAD assembly. Freeze the enclosure only when parts fit, plugs are serviceable, the battery is removable and thermal requirements are met. If necessary, revise the tube and clamps explicitly.
 
-## 最小系统与连接关系
+## System architecture
 
-岸上电脑/手柄 → 有线通信链路 → 水下控制器 → 4路双向电调 → 4台推进器。
+Surface computer/controller → tethered communications → underwater controller → four independent bidirectional ESCs → four thrusters.
 
-机载供电 → 可达的断电装置、主保护、配电和分路保护 → 电调；独立稳压给控制器/相机供电。IMU提供姿态，适配浅水量程的压力传感器提供深度，漏水检测用于告警/失效处理。USB相机需要有USB主机能力的设备接收图像，不能只接到普通PWM飞控就默认视频可用；这会增加舱内体积、功耗与温升。
+Onboard power → accessible disconnect, main protection, distribution and branch protection → ESCs. Regulated supplies serve logic and camera. IMU supplies attitude; an appropriate pressure sensor supplies depth; leak sensing supports fault handling. The USB camera requires a USB-capable host, adding volume, power and heat.
 
-首台建议采用受ArduSub支持的现成控制器/固件和经典定深定向控制；在确认当前固件的SimpleROV-4混控、输出协议和双向电调兼容性后选具体板卡。仿真Python代码不是已经可烧录的实机固件。电气器件型号、供电保护参数和连接器仍需单独冻结，现有机械采购表不是完整可下单的整机BOM。
+For initial classical control, evaluate an established controller/firmware implementation and confirm its support for the actual SimpleROV-4 allocation, output protocol and bidirectional ESCs before selecting a board. Python simulation is not flashable firmware. Do not assume underwater Wi-Fi/radio is a working control/video link. Provide a separate tether load path; penetrators and conductors must not carry recovery tension.
 
-不要默认无线电/Wi-Fi能承担水下遥控与视频。系缆包含通信线和独立受力路径，穿舱接头及导线不承拉。电机三根线没有完整外护套时，普通单孔压盖不能默认密封，需用适配的原厂灌封穿舱件/线束方案，并逐个验证。
+## Procurement stages
 
-## 当前可采购的样件与暂缓项
+| Stage | Quantity | Gate |
+|---|---:|---|
+| Complete X2 and matched bidirectional ESC | 1 each | Manufacturer confirms mounting, cable, voltage, current, protocol, neutral and setup |
+| H/V printed fit coupons | 1 each | Measured engagement without bottoming |
+| Compatible 50 mm / 150 mm enclosure kit | 1 set | Full electrical stack assessed; include seals, locks and plugs |
+| Remaining motors / ESCs | 3 each | Single-motor mechanical, reverse-thrust and power checks passed; opposite-handed pair per axis |
+| Prints, metal hardware, liners | Per mechanical BOM | Coupons and dry-payload assessment passed |
+| Foam / straps | Optional | Measured displacement and trim |
+| Battery, controller, host, power protection, tether and sensors | To select | Actual envelope, ratings, mass, protocols and compatibility |
 
-|阶段|物料|数量|采购前条件|
-|---|---|---:|---|
-|电机试装|APISQUEEN X2成品推进器|1|明确淡水用途，确认全部安装孔与出线|
-|单电机台架|与X2匹配的双向电调|1|厂家确认正/反转、输入电压、信号协议、额定电流和配置方法|
-|打印试片|H_mount_fit与V_mount_fit|各1|按实物孔深选M3长度；不触底|
-|密封样舱|50mm/150mm兼容原厂舱组件|1套|先通过整套电气堆叠评估再下单；包括密封圈、锁止件、堵头|
-|整机补购|剩余推进器/电调|各3|单机正反推、安装与供电验证通过后；两轴各相反旋向一对|
-|结构装配|10个PETG主体、紧固件、闭孔衬垫；浮材与绑带按配平需要选装|按机械BOM|通过试片及电气空间检查后|
-|暂缓冻结|电池、飞控/计算模块、稳压/配电、系缆/穿舱件、压力与漏水传感器|待选|必须有尺寸、重量、功耗、协议与相互兼容性资料|
+The stored X2 reference lists 117 g each (468 g for four), 15 A maximum and 7 A continuous each. Four units imply nominal totals of 60/28 A before other loads, with conditions still needing measurement. The reference also lists 12-16 V and 3-4S LiPo; a fully charged 4S pack is 16.8 V, so obtain the manufacturer's allowable maximum rather than assuming compatibility. These are supplier reference values, not validated vehicle ratings. Use an appropriate current-limited bench supply and a secured submerged fixture according to motor requirements.
 
-X2官方当前列出每台重量117g，四台合计468g；最大15A、连续7A，四台名义合计分别60A/28A，尚未计其他负载，且工况和连续性需实测。不能按一个小电机或84W标题来直接选整机供电。厂家同时写12–16V和3–4S LiPo；4S满电16.8V高于所列16V，必须让厂家确认允许的最高电压，不能自行把“4S”视作已解决。单电机台架先使用匹配电压、可限流的直流电源和水中固定夹具，电机按厂家要求浸水运行，勿徒手靠近桨或用空气长时间试转。
+## Physical gates
 
-## 制造与验收关卡
+1. **One motor, coupons and ESC:** documented fit, depth, direction, neutral, deadband and current.
+2. **Complete payload mock-up:** fit, wire bends, connectors, battery access, CAD agreement, mass and thermal records.
+3. **Print and dry assemble:** assembly/service access, load and wet-retention tests without unacceptable cracking, slip or residual deformation.
+4. **Empty enclosure with real penetrators:** compatible supplier leak/vacuum procedure, unpowered shallow soak with a moisture indicator, and repeat after cable flexing or seal changes.
+5. **Unpowered representative payload:** fully submerged trim, measured net buoyancy, near-level fore/aft attitude and recorded unpowered response.
+6. **Low-power shallow-water operation:** verify each force direction, ascent/descent, yaw and depth hold; provide current limits, recovery and accessible power isolation.
+7. **Post-run inspection:** leakage, fasteners, mounts, connectors, temperature and current before increasing duration or thrust.
 
-|顺序|做什么|通过依据|
-|---:|---|---|
-|1|单电机＋试片＋电调|孔位/深度/贴合正确；正反推方向、指令中位、死区和电流有记录|
-|2|完整电气1:1堆叠|装得下，线能弯，接头可插拔，电池可取出；CAD与实物一致，有重量与温升记录|
-|3|打印主体并干装|10件装配与拆卸可完成；支架/舱夹/系缆眼按装配验收文件验证，无裂纹、滑移或不可接受残变|
-|4|带真实接头的空舱验漏|按厂家完整密封/真空流程通过；不带电做浅水浸泡，内置吸水纸/指示件，接头弯动后复验|
-|5|带假负载的无动力配平|按最终真实质量放配重替身，完全浸没时略正浮，前后近水平，浮心在重心上方；记录断推后姿态|
-|6|低功率首次动力下水|可回收、受控浅水；逐台确认推力方向，再验证升降、转向、定深。设置电流限制及岸上可达断电方式|
-|7|短时航行后复查|漏水、接头、支架、松动、温升与电流检查通过，才逐步扩大持续时间/推力|
+The supplier vacuum guide describes approximately 15 inHg, a 10-15 minute observation and no more than 0.5 inHg loss for its applicable setup. Confirm applicability to the purchased complete enclosure and tool, and rule out tool leakage first. Vacuum and a shallow soak do not certify operating depth.
 
-原厂真空指南对适配舱体给出的流程包括约15inHg、观察10–15分钟、下降不超过0.5inHg；使用前确认该完整舱组件和测试工具适用，先测工具自身泄漏。真空验漏不是额定潜深或结构耐压认证；不能以一次浅水无漏代替深水耐压试验。首次下水目标先设为能随时回收的淡水浅池，不赋予未经验证的潜深。
+Weigh everything: battery, cables, penetrators, tether termination, fasteners and ballast. Freely flooded fairing volume is not sealed displacement. Simulation's 1.4 kg and 1% positive-buoyancy assumptions are not measurements.
 
-每次称重需包含电池、全部线缆、穿舱件、系缆头、紧固件和配重。完全浸没的排水体积按实际密闭空间与材料排水计算；自由进水的外罩不能当作密闭浮体。仿真1.4kg和1%正浮力是占位假设，不是实机称重或配平结论。
+## Control and calibration
 
-## 算法和仿真如何跟着实机更新
+Establish neutral, loss-of-command shutdown, thrust signs, IMU orientation and pressure calibration before classical depth/heading control. Feed measured mass, CG/CB, forward/reverse curves, deadband, lag and drag back into simulation. Tether disturbance requires its own model. Validate fault handling before powered shallow-water trials.
 
-先完成中位/失联停推、推力方向、IMU姿态和压力传感器校准，再做经典定深/定向。把实际总质量、重心、浮心、正反推力曲线、死区、响应时间和拖曳阻力回填仿真。系缆扰动另建模型。实机失效处理独立于上层算法：通信中断或检测漏水后如何停推/回收需在浅水前验证。
+Reinforcement learning follows this baseline, with offline training and independent evaluation. An uncalibrated policy does not replace basic stabilization or failure handling.
 
-强化学习放在这套基准之后，先离线训练与独立测试；不将未标定仿真中学习的策略直接替换实机基础稳定与失效处理。
-
-## 记录文件
-
-使用[样机接口确认表.csv](../bom/component-confirmation.csv)记录真实部件和是否通过。具体孔位与装配顺序见[装配与验收](acceptance.md)。本路线是工程推进顺序，不是已经完成的整机定版/认证。
-
-来源：[X2官方规格](https://www.underwaterthruster.com/products/apisqueen-12-16v-2-1kg-thrust-84w-x2-freshwater-brushless-dc-waterproof-thrusters)、[原厂舱装配](https://bluerobotics.com/learn/watertight-enclosure-wte-assembly-new/)、[原厂真空验漏](https://bluerobotics.com/learn/using-the-vacuum-test-plug/)、[ArduSub布局与欠驱动轴](https://ardupilot.org/sub/docs/sub-frames.html)。
+Record results in [component-confirmation.csv](../bom/component-confirmation.csv). Sources: [X2](https://www.underwaterthruster.com/products/apisqueen-12-16v-2-1kg-thrust-84w-x2-freshwater-brushless-dc-waterproof-thrusters), [enclosure assembly](https://bluerobotics.com/learn/watertight-enclosure-wte-assembly-new/), [vacuum procedure](https://bluerobotics.com/learn/using-the-vacuum-test-plug/), [ArduSub frame reference](https://ardupilot.org/sub/docs/sub-frames.html).

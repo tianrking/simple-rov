@@ -1,10 +1,10 @@
-# 机械与电子接口约束
+# Mechanical and electrical interface constraints
 
-- 几何接口的单一来源：[mechanical/INTERFACES.json](../../mechanical/INTERFACES.json)。
-- 坐标：mm，X前/Y左/Z上；标准装配外包213×210×148mm，选装浮力模块后约213×210×185mm；均不含最终接头/线缆/配重。
-- 中央参考舱：50mm系列、150mm管、外径58mm；内部有效空间必须结合真实端盖、托板、连接器和弯线核对，不能直接用标称管长作为可用空间。
-- 通用托板100×35mm，长孔位于X=-40/-20/0/20、Y=±10mm；板卡隔柱/适配板和托板机械锁止未冻结。
-- 后盖参考1M10+8M6，穿舱件/堵头型号和线缆密封方式未冻结。
-- 相机参考32×32mm、28×28mm孔距，绕光轴旋转180°以让USB接口朝上；需核对USB主机与插头空间。
+- Geometry source: [mechanical/INTERFACES.json](../../mechanical/INTERFACES.json).
+- Coordinates: mm, X forward / Y left / Z up. Standard envelope 213 × 210 × 148 mm; with reference buoyancy module, 213 × 210 × 184.7 mm. Excludes final connectors, cables and ballast.
+- Enclosure reference: 50 mm series, 150 mm tube, 58 mm OD. Determine usable space with real endcaps, tray, connectors and wire bends; nominal tube length is not usable payload length.
+- Tray: 100 × 35 mm; 8 × 3.4 mm slots centered at X = -40/-20/0/20 and Y = ±10 mm. Board adapters and positive axial tray retention are pending.
+- Rear reference ports: 1 M10 + 8 M6. Penetrators, plugs and cable sealing method remain unselected.
+- Camera: 32 × 32 mm board, 28 × 28 mm holes; rotated 180° about the optical axis to place USB above the board. Check the actual host and plug envelope.
 
-新增板卡必须提交：原生KiCad工程、板框与安装孔坐标、元件高度/禁布区、插拔包络、接线与电源预算、重量/散热记录。改孔/改舱后同时更新CAD、BOM、安装说明与仿真惯性参数。
+New electronics must include native KiCad sources, board outline/hole coordinates, component heights and keepouts, connector service envelopes, power/wiring budget, mass and thermal records. If an interface changes, update CAD, BOM, assembly instructions and simulation inertial parameters together.

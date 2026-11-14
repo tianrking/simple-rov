@@ -1,63 +1,66 @@
-<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>SimpleROV 项目文档</title><style>body{font-family:system-ui,sans-serif;max-width:1050px;margin:36px auto;padding:0 24px;color:#173d46;line-height:1.8;background:#f5f9fa}main{background:#fff;padding:30px;border-radius:12px}h1,h2{line-height:1.4}h2{border-top:2px solid #e0ecee;padding-top:22px;margin-top:36px}table{border-collapse:collapse;width:100%;font-size:14px}td,th{border:1px solid #cbdade;padding:8px;text-align:left}th{background:#e8f1f3}pre{overflow:auto;padding:18px;background:#173d46;color:#effbff;border-radius:8px}img,video{display:block;max-width:100%;max-height:700px;margin:auto}blockquote{background:#fff0da;padding:10px 16px;border-left:4px solid #df8b31}a{color:#006980} @media print{body,main{margin:0;padding:0}h2{break-before:page}nav{display:none}}</style><main><nav><a href="index.html">项目入口</a> · <a href="assembly.html">装配</a> · <a href="simulation.html">仿真</a> · <a href="build-plan.html">实机</a></nav><h1>项目状态与路线图</h1>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>SimpleROV | Project documentation</title><style>
+:root{--ink:#183d46;--muted:#5d7480;--line:#dbe6e9;--accent:#176271;--orange:#ed8a24}
+*{box-sizing:border-box}body{margin:0;background:#f3f7f8;color:var(--ink);font:16px/1.8 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+header{background:#fff;border-bottom:1px solid var(--line)}nav{max-width:1100px;margin:auto;padding:18px 28px;display:flex;gap:22px;align-items:center;flex-wrap:wrap}nav strong{margin-right:auto;letter-spacing:-.5px;font-size:22px}nav a{font-size:14px;text-decoration:none}
+main{max-width:1100px;margin:32px auto 70px;background:#fff;border:1px solid var(--line);border-radius:16px;padding:42px 48px;box-shadow:0 8px 35px #183d4608}
+h1{font-size:42px;letter-spacing:-1.3px;line-height:1.2;margin-top:0}h2{font-size:26px;border-top:1px solid var(--line);padding-top:30px;margin-top:44px;line-height:1.35}h3{font-size:20px;margin-top:30px;line-height:1.4}p{margin:16px 0}a{color:var(--accent);text-underline-offset:3px}img,video{max-width:100%;height:auto;border-radius:8px}p>img{display:block;margin:22px auto}table{border-collapse:collapse;width:100%;font-size:14px;margin:20px 0}th,td{border:1px solid var(--line);padding:12px 15px;text-align:left;vertical-align:top}th{background:#eaf2f4;font-weight:600}tr:nth-child(even){background:#fafcfc}td img{width:100%}pre{overflow:auto;background:#163843;color:#edf6f8;padding:22px;border-radius:10px;font-size:13px;line-height:1.7}code{font-family:ui-monospace,SFMono-Regular,Consolas,monospace}p code,td code{background:#edf3f5;padding:2px 5px;border-radius:4px;font-size:.88em}blockquote{margin:20px 0;padding:1px 20px;background:#fff5e7;border-left:3px solid var(--orange)}details{border:1px solid var(--line);border-radius:10px;padding:12px 18px;margin:20px 0}summary{cursor:pointer}footer{color:var(--muted);font-size:12px;text-align:center;margin:35px auto}
+@media(max-width:700px){main{margin:12px 8px;padding:24px 18px;border-radius:10px}h1{font-size:34px}h2{font-size:23px}table{font-size:12px}th,td{padding:8px}nav{gap:12px;padding:14px 20px}pre{font-size:11px}}
+@media print{body,main{margin:0;padding:0;background:#fff;border:0;box-shadow:none}header,footer{display:none}h2{break-before:page}}
+</style></head><body><header><nav><strong>SimpleROV</strong><a href="index.html">Overview</a><a href="assembly.html">Assembly</a><a href="gallery.html">Gallery</a><a href="simulation.html">Simulation</a><a href="index.es.html">ES</a><a href="index.zh-CN.html">中文</a></nav></header><main><h1>Status and roadmap</h1>
 <table>
 <thead>
 <tr>
-<th>阶段</th>
-<th>状态</th>
-<th>完成依据</th>
+<th>Workstream</th>
+<th>Status</th>
+<th>Evidence / next step</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>机械源/打印导出</td>
-<td>已提供，待实物验证</td>
-<td>10个独立打印件、2个试片、STEP、源参数与数字检查</td>
+<td>Mechanical source and print exports</td>
+<td>Available; physical checks pending</td>
+<td>Ten prints, two coupons, STEP, parameters and digital checks</td>
 </tr>
 <tr>
-<td>标准/选装配置</td>
-<td>已提供</td>
-<td>默认无浮材、可加装浮力模块；CAD、BOM、仿真与图库分清配置</td>
+<td>Standard / optional assembly</td>
+<td>Available</td>
+<td>Foam-free default; matching optional CAD, BOM and simulation variants</td>
 </tr>
 <tr>
-<td>装配说明与BOM</td>
-<td>已提供工程试装资料</td>
-<td>11页说明、8幅图、28个安装步骤；不是整机电子BOM</td>
+<td>Documentation and presentation</td>
+<td>Available in English</td>
+<td>Illustrated 11-page assembly guide, gallery, actual Onshape captures; Spanish and Chinese README entry points</td>
 </tr>
 <tr>
-<td>MuJoCo控制与驾驶</td>
-<td>已提供未标定模型</td>
-<td>符号/分配/运动/定深/横滚与驾驶回调检查</td>
+<td>MuJoCo control and driving</td>
+<td>Available, uncalibrated</td>
+<td>Allocation, motion signs, depth/roll and keyboard callback checks</td>
 </tr>
 <tr>
-<td>真实电机接口与打印载荷</td>
-<td>未验证</td>
-<td>先1台推进器、试片、载荷及湿态试验</td>
+<td>Motor fit and printed load capacity</td>
+<td>Unverified</td>
+<td>One actual motor, fit coupons, load and wet-retention tests</td>
 </tr>
 <tr>
-<td>完整电气与穿舱方案</td>
-<td>未冻结</td>
-<td>真实模块尺寸、线束、重量、热管理与机舱堆叠</td>
+<td>Electronics and penetrators</td>
+<td>Not frozen</td>
+<td>Real envelopes, wiring, weight, heat and service layout</td>
 </tr>
 <tr>
-<td>托板适配板与可靠锁止</td>
-<td>待设计</td>
-<td>选定板卡和舱内布局后完成</td>
+<td>Tray adapter and positive retention</td>
+<td>To design</td>
+<td>Select boards and enclosure arrangement first</td>
 </tr>
 <tr>
-<td>KiCad PCB与制造资料</td>
-<td>未来规划</td>
-<td>完成原理图/ERC、PCB/DRC、BOM/位号与制造输出一致性</td>
+<td>PCB and firmware</td>
+<td>Planned, not implemented</td>
+<td>Native KiCad and onboard sources will be added when developed</td>
 </tr>
 <tr>
-<td>实机固件与浅水遥控</td>
-<td>未来规划</td>
-<td>台架验证、密封、配平、失联停推和低推力浅水验收</td>
-</tr>
-<tr>
-<td>强化学习</td>
-<td>可选研究</td>
-<td>先经典控制基准和模型标定，再做训练封装与独立评估</td>
+<td>Physical sealing, trim and shallow-water trials</td>
+<td>Not performed</td>
+<td>Follow the acceptance plan and record results</td>
 </tr>
 </tbody>
 </table>
-<p>公开仓库不改变工程成熟度。每项实物放行条件与记录见<a href="build-plan.html">实机落地路线</a>。</p></main></html>
+<p>English is the default for technical documentation and generated figures. <a href="index.es.html">Español</a> · <a href="index.zh-CN.html">中文</a>. Public availability does not grant an open-source license. See <a href="../LICENSE">rights</a>.</p></main><footer>SimpleROV · Prototype documentation · Original content all rights reserved</footer></body></html>

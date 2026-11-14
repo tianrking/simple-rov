@@ -1,13 +1,13 @@
-﻿模块,目标数量,型号/版本,采购链接,长mm,宽mm,高mm,重量g,接口/线径/弯曲空间,允许电压,持续/峰值电流,安装/线束验证,备注
-推进器,4,APISQUEEN X2,,,,,,,,,未验证,先1台试装；四孔和深度未实测；117g/台为厂家值
-双向电调,4,待冻结,,,,,,,,,未验证,先1台厂家匹配型号；双向中位/正反推/协议需验证
-压力舱组件,1,BR50mm系列150mm参考,,,,,,,,,未验证,包括全部密封圈锁止堵头；先完成电气堆叠
-相机,1,BR低照度HD USB参考,,,,,,,,,未验证,核对USB插头弯线和主机
-控制器,1,待冻结,,,,,,,,,未验证,当前ArduSub兼容性/尺寸需确认
-USB主机/通信计算模块,1,待冻结,,,,,,,,,未验证,视频可用性/功耗/散热
-电池及保护,1,待冻结,,,,,,,,,未验证,电压上限/尺寸/电流/保护/可拆卸
-稳压与配电保护,1,待冻结,,,,,,,,,未验证,总电流/支路/温升
-深度传感器,1,待冻结,,,,,,,,,未验证,量程/安装/压力口/协议
-漏水检测,1,待冻结,,,,,,,,,未验证,布置与失效处理
-通信系缆及穿舱线束,1,待冻结,,,,,,,,,未验证,通信/应力释放/每端口密封/堵头
-完整装配,1,V5试装版,,,,,,,,,未验证,称重/排水/浮心重心/水密/载荷均需记录
+﻿module,target_quantity,model_revision,purchase_link,length_mm,width_mm,height_mm,mass_g,interfaces_cable_bend_envelope,allowed_voltage,continuous_peak_current,fit_harness_validation,notes
+Thruster,4,APISQUEEN X2,,,,,,,,,UNVERIFIED,Start with one; mounting holes/depth unmeasured; supplier mass reference 117 g each
+Bidirectional ESC,4,To select,,,,,,,,,UNVERIFIED,"Start with one matched unit; verify neutral, reverse thrust and protocol"
+Pressure-enclosure kit,1,BR50mm / 150mm reference,,,,,,,,,UNVERIFIED,"Include seals, locks and plugs; verify full payload first"
+Camera,1,BR Low-Light HD USB reference,,,,,,,,,UNVERIFIED,"Verify USB plug, bend envelope and host"
+Controller,1,To select,,,,,,,,,UNVERIFIED,Confirm current firmware/allocation support and physical dimensions
+USB host / communications computer,1,To select,,,,,,,,,UNVERIFIED,"Video support, power and heat"
+Battery and protection,1,To select,,,,,,,,,UNVERIFIED,"Maximum voltage, dimensions, current, protection and removal"
+Regulation and power distribution,1,To select,,,,,,,,,UNVERIFIED,Total/branch current and thermal behavior
+Depth sensor,1,To select,,,,,,,,,UNVERIFIED,"Range, pressure port, mounting and protocol"
+Leak detection,1,To select,,,,,,,,,UNVERIFIED,Placement and failure response
+Tether and penetrator harness,1,To select,,,,,,,,,UNVERIFIED,"Communication, independent strain relief, each port seal and plugs"
+Complete assembly,1,Mechanical prototype,,,,,,,,,UNVERIFIED,"Record mass, displacement, CG/CB, sealing and load tests"

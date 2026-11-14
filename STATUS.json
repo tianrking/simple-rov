@@ -44,7 +44,7 @@
   "license": "All rights reserved for original work; third-party rights retained",
   "pcb_status": "PLANNED_NO_DESIGN",
   "firmware_status": "PLANNED_NO_FIRMWARE",
-  "release": "v0.5.1",
+  "release": "v0.5.2",
   "mechanical_revision": "V5-01",
   "default_configuration": "base",
   "size_with_buoyancy_mm": [
@@ -52,5 +52,11 @@
     210,
     184.7
   ],
-  "optional_buoyancy_straps": 4
+  "optional_buoyancy_straps": 4,
+  "default_language": "en",
+  "readme_languages": [
+    "en",
+    "es",
+    "zh-CN"
+  ]
 }

@@ -1,32 +1,41 @@
-# 开发、复建与发布
+# Development, reproduction and releases
 
-所有命令从仓库根目录运行，推荐Python3.12虚拟环境。安装用途依赖：`requirements/sim.txt`、`requirements/cad.txt`、`requirements/docs.txt`。不要把虚拟环境、密钥、个人配置或运行日志提交到Git。
+Run commands from the repository root in a Python 3.12 virtual environment. Dependencies are grouped into `requirements/sim.txt`, `requirements/cad.txt` and `requirements/docs.txt`. Do not commit virtual environments, credentials, personal configuration or run logs.
 
-## 仿真
+## Simulation
 
-`python simulation/mujoco/run.py --viewer --manual --seconds 300`使用独立GLFW驾驶窗口；普通Python在Mac主线程上创建窗口。自动演示的原生MuJoCo查看器在Mac可通过`python simulation/mujoco/launch_macos.py --seconds 120`启动，启动器按需补齐所选虚拟环境的libpython链接。它不修改系统Python。
+`python simulation/mujoco/run.py --viewer --manual --seconds 300` opens the dedicated GLFW driving window on the Python main thread. On macOS, the automatic native MuJoCo viewer can be launched with `python simulation/mujoco/launch_macos.py --seconds 120`; it repairs the selected virtual environment's libpython link when required, without modifying system Python.
 
-`--output-dir runs/demo`固定本次输出位置；省略时使用UTC时间戳目录。`verify.py`检查CAD推力映射、运动符号、定深和姿态恢复，`verify_manual.py`检查键盘目标/释放行为，`verify_driving_window.py`创建原生OpenGL窗口测试回调隔离及帧缓冲（需本地桌面）。后者不是操作系统级键盘事件注入。
+`--output-dir runs/demo` selects a run directory; otherwise a UTC timestamp is used. `verify.py` checks allocation, motion signs and depth/attitude response. `verify_manual.py` checks command targets and release behavior. `verify_driving_window.py` creates an OpenGL window to check callbacks and framebuffer rendering; it requires a desktop and does not inject operating-system keyboard events.
 
 ## CAD
 
-源几何位于`mechanical/build.py`，参数在`mechanical/parameters.json`。原厂STEP在`supplier/`，保持版本来源。构建命令见根目录README。几何检查涉及大量布尔运算，速度取决于平台。`export_metadata.py`重新核对打印导出，更新BOM和接口资料。随后运行`python mechanical/verify_configurations.py`回读两种总装STEP，检查实体数、外包尺寸及选装采购量，生成配置检查记录。
+Geometry is defined in `mechanical/build.py`, parameters in `mechanical/parameters.json`. Preserve supplier STEP revisions in `mechanical/supplier/`. Build commands are in the root README. Geometry boolean operations may take time.
 
-原有数字报告与源文件哈希配套；改动源参数后旧报告不再代表新几何，必须重新生成、验证和更新报告。不要为了让检查通过只改报告中的哈希。
+`export_metadata.py` reads back print exports and updates BOM/interfaces. Then run `python mechanical/verify_configurations.py` to read both assembly STEP files and check envelope, solid counts and optional purchase quantities.
 
-## 文档
+The default is `assemblies/simple-rov.step`; the optional variant is `assemblies/simple-rov-with-buoyancy.step`. Each also has a nominal-fastener version. A simulation rebuild writes both `simple_rov.xml` and `simple_rov_with_buoyancy.xml`; select with `--configuration`. Both use explicit water-model assumptions until calibrated.
 
-Markdown是阅读和编辑入口；PDF生成内容在`tools/docs/content.py`，渲染代码在同目录。文档变更时保持两者语义一致。
+Reports record source hashes. A changed source invalidates its old report; regenerate and recheck rather than merely changing the recorded hash.
+
+## Documentation and images
+
+English is the default. `README.es.md` and `README.zh-CN.md` are language entry points; technical manuals are in English. Preserve dimensions, configuration defaults, physical-validation boundaries and rights across languages.
+
+Assembly content is defined in `tools/docs/content.py`; PDF, Markdown and local HTML are generated from it. Other documents are edited as Markdown.
 
 ```bash
-python tools/docs/make_figures.py  # 包括当前配置的多视角CAD图库
+python -m pip install -r requirements/docs.txt
+python tools/docs/make_figures.py
 python tools/docs/build_pdf.py
 python tools/docs/build_web.py
 ```
 
-PDF/图示需要TrueType中文字体。Mac可自动使用系统STHeiti；Linux可安装文泉驿正黑并设置`SROV_CJK_FONT=/usr/share/fonts/truetype/wqy/wqy-zenhei.ttc`，或指定其他可读TTF/TTC。字体不随仓库分发。用`pdftoppm`渲染PDF逐页检查，不以文本抽取替代视觉检查。
+`make_figures.py` also regenerates the nine-view gallery. Run `python tools/docs/render_gallery.py` for the gallery alone. English figures use standard Latin fonts; `SROV_FONT` optionally selects a TrueType font for gallery labels. The PDF uses built-in Helvetica. Render every PDF page with `pdftoppm` and visually inspect it before recording a completed review.
 
-## 完整性与发布
+Onshape captures are real browser screenshots, not generated renders. Keep their source URL, configuration and hashes in `validation/onshape/screenshots.json`. Do not imply the historical cloud assembly is the current foam-free default.
+
+## Integrity and packaging
 
 ```bash
 python tools/validate_repository.py
@@ -35,8 +44,6 @@ python tools/validate_repository.py --manifest
 python tools/build_release.py
 ```
 
-清单覆盖项目资料，排除.git、虚拟环境、缓存与runs。发布包输出在`runs/releases/`，不会自动提交；变更版本时同步更新STATUS和CHANGELOG。标准与选装CAD均由同一源生成：默认`assemblies/simple-rov.step`，选装`assemblies/simple-rov-with-buoyancy.step`；金属件版也分为两套。图库可单独用`python tools/docs/render_gallery.py`更新，生成六向正投影、内部视图及浮力模块对比图。仿真重建同时更新`simple_rov.xml`与`simple_rov_with_buoyancy.xml`，通过`--configuration`选择；两者水动力参数均需实测标定。
+The inventory excludes Git, environments, caches and `runs/`. Release ZIPs go to `runs/releases/`; update STATUS and CHANGELOG with a new version. GitHub Actions checks repository integrity and headless simulation, not physical reliability.
 
-GitHub Actions执行仓库完整性与无窗口仿真检查，不验证实物可靠性。
-
-`requirements/lock-macos-py312.txt`记录本机完整验证环境（含CAD与文档依赖），属于macOS/Python3.12快照；Linux CI使用requirements/sim.txt，不假设跨平台原生库完全相同。CSV统一LF换行，发布哈希以Git检出后的字节为准。
+`requirements/lock-macos-py312.txt` records the original complete macOS/Python 3.12 validation environment. Linux CI installs `requirements/sim.txt`; native libraries are not assumed identical across platforms. CSV files use LF so fingerprints match a Git checkout.

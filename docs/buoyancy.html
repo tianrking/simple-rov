@@ -1,46 +1,53 @@
-<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>SimpleROV 项目文档</title><style>body{font-family:system-ui,sans-serif;max-width:1050px;margin:36px auto;padding:0 24px;color:#173d46;line-height:1.8;background:#f5f9fa}main{background:#fff;padding:30px;border-radius:12px}h1,h2{line-height:1.4}h2{border-top:2px solid #e0ecee;padding-top:22px;margin-top:36px}table{border-collapse:collapse;width:100%;font-size:14px}td,th{border:1px solid #cbdade;padding:8px;text-align:left}th{background:#e8f1f3}pre{overflow:auto;padding:18px;background:#173d46;color:#effbff;border-radius:8px}img,video{display:block;max-width:100%;max-height:700px;margin:auto}blockquote{background:#fff0da;padding:10px 16px;border-left:4px solid #df8b31}a{color:#006980} @media print{body,main{margin:0;padding:0}h2{break-before:page}nav{display:none}}</style><main><nav><a href="index.html">项目入口</a> · <a href="assembly.html">装配</a> · <a href="simulation.html">仿真</a> · <a href="build-plan.html">实机</a></nav><h1>浮力模块与配平</h1>
-<p>标准装配不安装顶部浮材和绑带，底架与上罩保留相应通道。是否增加浮材，取决于装齐电池、控制器、电调、相机主机、线束及穿舱件后的真实重量和排水量。</p>
-<p><img alt="两种配置对比" src="assets/gallery/configuration-comparison.png" /></p>
-<h2>两种装配</h2>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>SimpleROV | Project documentation</title><style>
+:root{--ink:#183d46;--muted:#5d7480;--line:#dbe6e9;--accent:#176271;--orange:#ed8a24}
+*{box-sizing:border-box}body{margin:0;background:#f3f7f8;color:var(--ink);font:16px/1.8 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+header{background:#fff;border-bottom:1px solid var(--line)}nav{max-width:1100px;margin:auto;padding:18px 28px;display:flex;gap:22px;align-items:center;flex-wrap:wrap}nav strong{margin-right:auto;letter-spacing:-.5px;font-size:22px}nav a{font-size:14px;text-decoration:none}
+main{max-width:1100px;margin:32px auto 70px;background:#fff;border:1px solid var(--line);border-radius:16px;padding:42px 48px;box-shadow:0 8px 35px #183d4608}
+h1{font-size:42px;letter-spacing:-1.3px;line-height:1.2;margin-top:0}h2{font-size:26px;border-top:1px solid var(--line);padding-top:30px;margin-top:44px;line-height:1.35}h3{font-size:20px;margin-top:30px;line-height:1.4}p{margin:16px 0}a{color:var(--accent);text-underline-offset:3px}img,video{max-width:100%;height:auto;border-radius:8px}p>img{display:block;margin:22px auto}table{border-collapse:collapse;width:100%;font-size:14px;margin:20px 0}th,td{border:1px solid var(--line);padding:12px 15px;text-align:left;vertical-align:top}th{background:#eaf2f4;font-weight:600}tr:nth-child(even){background:#fafcfc}td img{width:100%}pre{overflow:auto;background:#163843;color:#edf6f8;padding:22px;border-radius:10px;font-size:13px;line-height:1.7}code{font-family:ui-monospace,SFMono-Regular,Consolas,monospace}p code,td code{background:#edf3f5;padding:2px 5px;border-radius:4px;font-size:.88em}blockquote{margin:20px 0;padding:1px 20px;background:#fff5e7;border-left:3px solid var(--orange)}details{border:1px solid var(--line);border-radius:10px;padding:12px 18px;margin:20px 0}summary{cursor:pointer}footer{color:var(--muted);font-size:12px;text-align:center;margin:35px auto}
+@media(max-width:700px){main{margin:12px 8px;padding:24px 18px;border-radius:10px}h1{font-size:34px}h2{font-size:23px}table{font-size:12px}th,td{padding:8px}nav{gap:12px;padding:14px 20px}pre{font-size:11px}}
+@media print{body,main{margin:0;padding:0;background:#fff;border:0;box-shadow:none}header,footer{display:none}h2{break-before:page}}
+</style></head><body><header><nav><strong>SimpleROV</strong><a href="index.html">Overview</a><a href="assembly.html">Assembly</a><a href="gallery.html">Gallery</a><a href="simulation.html">Simulation</a><a href="index.es.html">ES</a><a href="index.zh-CN.html">中文</a></nav></header><main><h1>Buoyancy module and trim</h1>
+<p>The standard assembly omits top foam and straps. The chassis and fairing retain their mounting routes. Decide whether to add foam after installing the real battery, controller, ESCs, video host, wiring and penetrators, or equivalent representative mass.</p>
+<p><img alt="Assembly comparison" src="assets/gallery/configuration-comparison.png" /></p>
 <table>
 <thead>
 <tr>
-<th>配置</th>
-<th>外包尺寸，长×宽×高</th>
-<th style="text-align: right;">浮材</th>
-<th style="text-align: right;">绑带</th>
+<th>Configuration</th>
+<th>Envelope, L × W × H</th>
+<th style="text-align: right;">Foam</th>
+<th style="text-align: right;">Straps</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>默认 <code>base</code></td>
-<td>213×210×148 mm</td>
+<td>Standard <code>base</code></td>
+<td>213 × 210 × 148 mm</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">0</td>
 </tr>
 <tr>
-<td>选装 <code>with-buoyancy</code></td>
-<td>213×210×184.7 mm</td>
-<td style="text-align: right;">2块</td>
-<td style="text-align: right;">4条</td>
+<td>Optional <code>with-buoyancy</code></td>
+<td>213 × 210 × 184.7 mm</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">4</td>
 </tr>
 </tbody>
 </table>
-<p>尺寸不包括最终线缆、接头、系缆头和配重。两种配置使用同一套10个主体打印件；选装模块是独立采购材料，不和上罩一体打印。</p>
-<h2>什么时候需要浮材</h2>
-<p>完整机体在完全浸没状态下，重力由全部真实零件质量决定，浮力由实际排水体积决定。自由进水的外罩内部空间不能当作密闭排水体积。</p>
+<p>Dimensions exclude final cable exits, penetrators, tether fittings, strap buckles and ballast. Both configurations share ten main prints.</p>
+<h2>When to add foam</h2>
+<p>Total real mass determines weight; actual displaced volume determines buoyancy. Freely flooded space inside the fairing is not sealed displacement.</p>
 <ul>
-<li>净浮力不足时，需要增加适合目标水深的闭孔浮材，或调整其他部件。</li>
-<li>前后倾斜或左右不平时，应调整质量和浮力的分布，避免长期依靠推进器抵消静态配平问题。</li>
-<li>浮材过多时，下潜需要更大的持续向下推力，也会增加体积与阻力。</li>
+<li>Add depth-appropriate closed-cell foam or revise components if buoyancy is insufficient.</li>
+<li>Adjust mass and buoyancy distribution for fore/aft and left/right balance. Avoid relying on continuous thrust to correct poor static trim.</li>
+<li>Excess foam increases the continuous downward thrust needed to dive, as well as size and drag.</li>
 </ul>
-<p>默认不安装是项目的基础装配配置，<strong>不是“裸机已经能断推上浮”的结论</strong>。首次下水前必须检查实际浮态和断推行为。</p>
-<h2>现有可选模块</h2>
-<p>参考形状为前后各一块62×160×35mm闭孔材料，中心X=±69mm。四条纵向绑带经过底架和上罩预留槽固定；工具让位口保留螺钉拆装路径。具体方法见<a href="assembly.html">装配说明</a>。</p>
-<p>两块长方体毛坯总体积约0.694 L；实际切口、材料密度及吸水/压缩性能会影响净浮力，不能把毛坯体积直接当作可承载重量。材料型号与适用水深仍需选定。</p>
-<p>近似计算可用：<code>净浮力 = (水密度 - 浮材密度) × 实际体积 × 重力加速度</code>。最终以真实装配、排水量和水中测量为准。</p>
-<h2>BOM与文件</h2>
-<p><a href="../bom/BOM_PURCHASED.csv">BOM_PURCHASED.csv</a>把浮材和绑带的默认数量列为0，并单独列出选装数量。默认总装为<a href="../mechanical/assemblies/simple-rov.step">standard STEP</a>，选装总装为<a href="../mechanical/assemblies/simple-rov-with-buoyancy.step">buoyancy STEP</a>。</p>
-<h2>仿真注意事项</h2>
-<p><code>ROV(configuration="base")</code>或<code>--configuration base</code>为默认；<code>with-buoyancy</code>加载浮材外观和对应碰撞体。</p>
-<p>当前质量、惯量、重心、浮心、排水量和阻力均为显式示例参数，并不从CAD材料自动计算。因此，两种装配的演示不能证明浮材增加了多少净浮力，也不能据此预测真实机器的断推姿态。实物称重与配平后，应更新<code>simulation/mujoco/config.json</code>再进行控制性能比较。</p></main></html>
+<p>A slightly positive fully submerged trim is a prototype target, not an established property of this CAD. A foam-free default does not guarantee passive ascent. Check actual displacement and the unpowered attitude in a recoverable shallow-water test.</p>
+<h2>Reference installation</h2>
+<p>Two nominal 62 × 160 × 35 mm blanks sit fore and aft at X = ±69 mm, bottom Z = 60.5 mm. Four nominal D12 tool reliefs preserve fairing-screw access. Four releasable straps run along X at Y = ±32.5 mm through 3 × 7 mm chassis guides at X = -101/-35/35/101 mm. Reference straps are about 450 × 4.8 mm, at most 1.2 mm thick. Buckles are not modeled; place them on top, away from screw wells and flow paths.</p>
+<p>The two rectangular blanks total about 0.694 L before cutouts. Actual material density, cutouts, absorption and pressure compression determine useful buoyancy; blank volume is not a supported payload rating. Select a specific foam grade and applicable depth.</p>
+<p>For foam alone, an initial estimate is <code>net buoyancy = (water density - foam density) × actual volume × gravitational acceleration</code>. Verify the final assembly by measurement.</p>
+<h2>CAD and procurement</h2>
+<p><a href="../bom/BOM_PURCHASED.csv">BOM_PURCHASED.csv</a> separates default quantities from optional quantities. <a href="../mechanical/assemblies/simple-rov.step">Standard STEP</a> · <a href="../mechanical/assemblies/simple-rov-with-buoyancy.step">Optional STEP</a>.</p>
+<h2>Simulation boundary</h2>
+<p><code>ROV(configuration="base")</code> / <code>--configuration base</code> is the default. <code>with-buoyancy</code> adds the foam appearance and associated collision proxies.</p>
+<p>Mass, inertia, CG, CB, displacement and drag are explicit shared example parameters, not material properties derived from CAD. Switching variants does not calculate added buoyancy or altered trim. After physical measurements, update <code>simulation/mujoco/config.json</code> and rebuild before comparing performance.</p></main><footer>SimpleROV · Prototype documentation · Original content all rights reserved</footer></body></html>

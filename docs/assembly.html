@@ -1,367 +1,375 @@
-<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>SimpleROV 项目文档</title><style>body{font-family:system-ui,sans-serif;max-width:1050px;margin:36px auto;padding:0 24px;color:#173d46;line-height:1.8;background:#f5f9fa}main{background:#fff;padding:30px;border-radius:12px}h1,h2{line-height:1.4}h2{border-top:2px solid #e0ecee;padding-top:22px;margin-top:36px}table{border-collapse:collapse;width:100%;font-size:14px}td,th{border:1px solid #cbdade;padding:8px;text-align:left}th{background:#e8f1f3}pre{overflow:auto;padding:18px;background:#173d46;color:#effbff;border-radius:8px}img,video{display:block;max-width:100%;max-height:700px;margin:auto}blockquote{background:#fff0da;padding:10px 16px;border-left:4px solid #df8b31}a{color:#006980} @media print{body,main{margin:0;padding:0}h2{break-before:page}nav{display:none}}</style><main><nav><a href="index.html">项目入口</a> · <a href="assembly.html">装配</a> · <a href="simulation.html">仿真</a> · <a href="build-plan.html">实机</a></nav><h1>SimpleROV 图文组装说明</h1>
-<p>标准装配与选装附件。 <a href="assembly.pdf">PDF</a> · <a href="acceptance.html">装配验收</a> · <a href="build-plan.html">实机路线</a></p>
-<h2>01 先认识整机</h2>
-<p>SimpleROV / 图文组装说明 / 2026-11-14</p>
-<p><img alt="图1 现有CAD总装渲染。未画最终线束、穿舱接头、控制板、电调和电池。" src="assets/images/assembly_guide/04_完整总装.png" /></p>
-<p>图1 现有CAD总装渲染。未画最终线束、穿舱接头、控制板、电调和电池。</p>
-<p>本机是一台四推进器、中央干舱的机械试装原型，标准装配外包约213×210×148 mm，默认不装顶部浮材及绑带；加装浮力模块后约213×210×185 mm。两台水平推进器负责前进、后退和转向；左右两台竖直推进器负责升降并辅助保持左右水平。横移和俯仰没有独立执行器。</p>
-<p>机架、上罩、滑橇和推进器在水中工作；中央商用密封舱内部保持干燥。上罩是保护外壳，不是防水盒。电机购买完整防水推进器，不打印桨叶，不自己做旋转轴穿舱。</p>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>SimpleROV | Project documentation</title><style>
+:root{--ink:#183d46;--muted:#5d7480;--line:#dbe6e9;--accent:#176271;--orange:#ed8a24}
+*{box-sizing:border-box}body{margin:0;background:#f3f7f8;color:var(--ink);font:16px/1.8 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+header{background:#fff;border-bottom:1px solid var(--line)}nav{max-width:1100px;margin:auto;padding:18px 28px;display:flex;gap:22px;align-items:center;flex-wrap:wrap}nav strong{margin-right:auto;letter-spacing:-.5px;font-size:22px}nav a{font-size:14px;text-decoration:none}
+main{max-width:1100px;margin:32px auto 70px;background:#fff;border:1px solid var(--line);border-radius:16px;padding:42px 48px;box-shadow:0 8px 35px #183d4608}
+h1{font-size:42px;letter-spacing:-1.3px;line-height:1.2;margin-top:0}h2{font-size:26px;border-top:1px solid var(--line);padding-top:30px;margin-top:44px;line-height:1.35}h3{font-size:20px;margin-top:30px;line-height:1.4}p{margin:16px 0}a{color:var(--accent);text-underline-offset:3px}img,video{max-width:100%;height:auto;border-radius:8px}p>img{display:block;margin:22px auto}table{border-collapse:collapse;width:100%;font-size:14px;margin:20px 0}th,td{border:1px solid var(--line);padding:12px 15px;text-align:left;vertical-align:top}th{background:#eaf2f4;font-weight:600}tr:nth-child(even){background:#fafcfc}td img{width:100%}pre{overflow:auto;background:#163843;color:#edf6f8;padding:22px;border-radius:10px;font-size:13px;line-height:1.7}code{font-family:ui-monospace,SFMono-Regular,Consolas,monospace}p code,td code{background:#edf3f5;padding:2px 5px;border-radius:4px;font-size:.88em}blockquote{margin:20px 0;padding:1px 20px;background:#fff5e7;border-left:3px solid var(--orange)}details{border:1px solid var(--line);border-radius:10px;padding:12px 18px;margin:20px 0}summary{cursor:pointer}footer{color:var(--muted);font-size:12px;text-align:center;margin:35px auto}
+@media(max-width:700px){main{margin:12px 8px;padding:24px 18px;border-radius:10px}h1{font-size:34px}h2{font-size:23px}table{font-size:12px}th,td{padding:8px}nav{gap:12px;padding:14px 20px}pre{font-size:11px}}
+@media print{body,main{margin:0;padding:0;background:#fff;border:0;box-shadow:none}header,footer{display:none}h2{break-before:page}}
+</style></head><body><header><nav><strong>SimpleROV</strong><a href="index.html">Overview</a><a href="assembly.html">Assembly</a><a href="gallery.html">Gallery</a><a href="simulation.html">Simulation</a><a href="index.es.html">ES</a><a href="index.zh-CN.html">中文</a></nav></header><main><h1>SimpleROV illustrated assembly guide</h1>
+<p>Standard assembly and optional accessories. <a href="assembly.pdf">PDF</a> · <a href="acceptance.html">Acceptance</a> · <a href="build-plan.html">Prototype plan</a></p>
+<h2>01 Meet the vehicle</h2>
+<p>SimpleROV / Illustrated assembly guide / 2026-11-14</p>
+<p><img alt="Figure 1. Standard CAD assembly without optional foam or straps. Final electronics, penetrators and wiring are not shown." src="assets/images/assembly_guide/04_assembly.png" /></p>
+<p>Figure 1. Standard CAD assembly without optional foam or straps. Final electronics, penetrators and wiring are not shown.</p>
+<p>SimpleROV has four thrusters around a central dry enclosure. The standard envelope is about 213 x 210 x 148 mm; the reference buoyancy module increases height to 184.7 mm. Two horizontal thrusters provide forward/reverse and differential yaw. Two side-by-side vertical thrusters provide ascent/descent and differential roll correction. Sway and pitch are not independently actuated.</p>
+<p>The frame, fairing, skids and complete commercial thrusters operate wet. The central compatible commercial enclosure keeps electronics dry. The fairing freely floods: it is not a waterproof box. Buy the motor, propeller and duct as one complete waterproof thruster; do not print the propeller or make a rotating shaft penetration.</p>
 <blockquote>
-<p>状态：数字装配与网格检查通过；实物孔位、打印强度、湿态保持、水密和完整电气装配均未验证。本文不是潜深或可靠性认证。MCU专用安装板、托板机械锁止、穿舱线束及全部电气空间未冻结。</p>
+<p>Status: digital geometry and mesh checks are available. Physical motor fit, print load capacity, wet retention, sealing and complete electrical packaging remain unverified. Board adapters, positive axial tray retention and final penetrator wiring are pending. This is not a depth or reliability certification.</p>
 </blockquote>
-<p>阅读顺序：第2页认零件；第3页分螺丝；第4-5页装底架和推进器；第6-8页装内部模块、舱体和线束；第9页封罩与选装浮力模块；第10页验收维护；第11页查文件和待确认项。</p>
-<h2>02 每个打印件做什么</h2>
-<p>10个主体打印件 / 7类功能件 / 另有2个接口试片</p>
-<p><img alt="图2 实际打印件网格的分解示意。圆圈编号对应下表；位移仅供识别，不代表可直接按该方向抽出。" src="assets/images/assembly_guide/05_打印件分解.png" /></p>
-<p>图2 实际打印件网格的分解示意。圆圈编号对应下表；位移仅供识别，不代表可直接按该方向抽出。</p>
+<p>Reading order: parts on page 2; screws on page 3; frame and motors on pages 4-5; camera, enclosure and wiring on pages 6-8; cover and optional buoyancy on page 9; acceptance and service on page 10; files and records on page 11.</p>
+<h2>02 Identify the printed parts</h2>
+<p>10 main prints / 7 functional types / 2 additional motor-fit coupons</p>
+<p><img alt="Figure 2. Exploded identification view from the actual print meshes. Offsets help identify parts; they do not prescribe a removal direction." src="assets/images/assembly_guide/05_printed_parts.png" /></p>
+<p>Figure 2. Exploded identification view from the actual print meshes. Offsets help identify parts; they do not prescribe a removal direction.</p>
 <table>
 <thead>
 <tr>
-<th>编号 / 文件前缀</th>
-<th>数量</th>
-<th>作用与位置</th>
+<th>ID / filename prefix</th>
+<th>Qty.</th>
+<th>Purpose and location</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>1 / V5_01_LOAD_CHASSIS</td>
 <td>1</td>
-<td>承力底架。连接推进器、滑橇、舱座、上罩和系缆眼，预留选装浮材绑带通道；承受推进力。</td>
+<td>Load frame joining motors, skids, enclosure and fairing; includes tether eye and optional strap routes.</td>
 </tr>
 <tr>
 <td>2 / V5_02_UPPER_FAIRING</td>
 <td>1</td>
-<td>橙色上罩。保护与整理外形，留进排水口、观察口和4个螺钉工具井；不能作提手或密封舱。</td>
+<td>Protective orange cover with flooding/flow openings, camera opening and four screw wells. Not a lifting handle or pressure vessel.</td>
 </tr>
 <tr>
-<td>3 / V5_03_SKID_±97</td>
+<td>3 / V5_03_SKID</td>
 <td>2</td>
-<td>左右滑橇。落地支承与保护底部；每侧两条立腿接底架。</td>
+<td>Side skids with two legs each; bench/floor support and underside protection.</td>
 </tr>
 <tr>
-<td>4 / V5_04_POD_CLAMP_±50</td>
+<td>4 / V5_04_POD_CLAMP</td>
 <td>2</td>
-<td>前后两处舱压环。配软衬把密封管固定在底架舱座上；不是端盖密封件。</td>
+<td>Fore/aft tube clamps; use soft liners to retain the enclosure, not to seal its endcaps.</td>
 </tr>
 <tr>
-<td>5 / V5_05_VERTICAL_CARRIER_±62</td>
+<td>5 / V5_05_VERTICAL_CARRIER</td>
 <td>2</td>
-<td>左右竖推支架。8mm主壁、双加强肋、每侧四点接底架；侧面安装竖直推进器。</td>
+<td>Vertical motor carriers: 8 mm main wall, two ribs and four chassis connections per side.</td>
 </tr>
 <tr>
 <td>6 / V5_06_MODULE_TRAY</td>
 <td>1</td>
-<td>100×35mm内部托板。用于相机架和后续模块安装；MCU安装板与可靠锁止待补。</td>
+<td>100 x 35 mm internal tray for camera and future modules; board adapter and positive axial retention are pending.</td>
 </tr>
 <tr>
 <td>7 / V5_07_CAMERA_CARRIER</td>
 <td>1</td>
-<td>相机架。固定32×32mm相机板、提供镜头与USB让位，再连接托板。</td>
+<td>Camera-board mount with lens/USB clearance and nut pockets; attaches to the tray.</td>
 </tr>
 </tbody>
 </table>
-<p>打印文件用mechanical/stl/，已按建议姿态落床，单位mm。mechanical/assembly_meshes/用于总装/仿真，不能混作已排好方向的打印文件。压力舱、相机和推进器另购；浮材与绑带是选装附件，默认不采购。</p>
-<h2>03 螺丝、垫片与工具</h2>
-<p>下表为当前CAD安装量，不含备件；电机螺钉需先核盲孔深度</p>
+<p>Print from mechanical/stl/: files are in mm and bed-oriented. mechanical/assembly_meshes/ is for assembly and simulation, not print orientation. Buy the enclosure, camera and thrusters separately. Foam and straps are optional purchases, absent by default.</p>
+<h2>03 Fasteners and tools</h2>
+<p>Installed quantities only / verify motor blind depths before selecting screw lengths</p>
 <table>
 <thead>
 <tr>
-<th>规格</th>
-<th>数量</th>
-<th>分配位置</th>
+<th>Specification</th>
+<th>Qty.</th>
+<th>Allocation</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>M3×8 内六角圆柱头</td>
+<td>M3 x 8 socket-head screw</td>
 <td>8</td>
-<td>两台水平电机，各4颗；试装目标啮合3mm。</td>
+<td>Horizontal motors: 4 each; target trial engagement 3 mm.</td>
 </tr>
 <tr>
-<td>M3×12 内六角圆柱头</td>
+<td>M3 x 12 socket-head screw</td>
 <td>10</td>
-<td>两台竖直电机各4颗；相机架与托板连接2颗。</td>
+<td>Vertical motors: 4 each; camera carrier to tray: 2.</td>
 </tr>
 <tr>
-<td>M3×16 内六角圆柱头</td>
+<td>M3 x 16 socket-head screw</td>
 <td>8</td>
-<td>滑橇4颗；舱夹4颗。</td>
+<td>Skids: 4; tube clamps: 4.</td>
 </tr>
 <tr>
-<td>M3×20 内六角圆柱头</td>
+<td>M3 x 20 socket-head screw</td>
 <td>8</td>
-<td>两个竖推支架与底架连接，各4颗。</td>
+<td>Vertical carrier feet to chassis: 4 each.</td>
 </tr>
 <tr>
-<td>M3×25 内六角圆柱头</td>
+<td>M3 x 25 socket-head screw</td>
 <td>4</td>
-<td>上罩与底架连接。</td>
+<td>Fairing to chassis.</td>
 </tr>
 <tr>
-<td>M3六角螺母，AF5.5×厚2.4</td>
+<td>M3 hex nut, AF5.5 x 2.4 mm</td>
 <td>22</td>
-<td>滑橇4、舱夹4、竖推支架8、上罩4、相机架脚2。</td>
+<td>Skids 4; clamps 4; carrier feet 8; fairing 4; camera-carrier foot 2.</td>
 </tr>
 <tr>
-<td>M3平垫，外径7/内径3.2/厚0.5</td>
+<td>M3 washer, OD7 / ID3.2 / t0.5 mm</td>
 <td>56</td>
-<td>滑橇4；舱夹8；竖推支架16；电机16；上罩8；相机架脚4。</td>
+<td>Skids 4; clamps 8; carrier feet 16; motors 16; fairing 8; camera-carrier foot 4.</td>
 </tr>
 <tr>
-<td>M2×10 螺钉</td>
+<td>M2 x 10 screw</td>
 <td>10</td>
-<td>相机4颗；原厂透明端盖6颗，优先随套件采购。</td>
+<td>Camera 4; OEM transparent window 6, preferably supplied in its kit.</td>
 </tr>
 <tr>
-<td>M2螺母，AF4×厚1.6</td>
+<td>M2 hex nut, AF4 x 1.6 mm</td>
 <td>4</td>
-<td>相机架背部六角窝。</td>
+<td>Rear camera-carrier pockets.</td>
 </tr>
 <tr>
-<td>M2平垫，外径5/内径2.2/厚0.3</td>
+<td>M2 washer, OD5 / ID2.2 / t0.3 mm</td>
 <td>4</td>
-<td>仅相机板正面；不加到原厂透明端盖堆叠。</td>
+<td>Camera-board front only; do not add to the OEM window screw stack.</td>
 </tr>
 </tbody>
 </table>
-<p>M3×12表示公称螺纹直径3mm、头下长度12mm；AF表示螺母对边宽度。M3紧固件按A4-70、M2按316不锈钢名义规格选购，原厂压力件紧固件服从厂家要求。可另备少量同规格备件，实际包装数量自行取整。</p>
-<p>工具：适配螺钉头的长杆内六角、适配M3/M2螺母的扳手或套筒、卡尺、孔深量具、去毛刺工具、平整装配台、标签、匹配密封材料的清洁用品与原厂指定润滑脂。后续还需万用表、限流台架电源、真空测试工具和可回收浅水测试场地。</p>
+<p>M3 x 12 means nominal 3 mm thread diameter and 12 mm length under the head. AF is nut width across flats. Nominal hardware references are A4-70 for M3 and 316 stainless for M2; supplier pressure-hardware requirements take precedence. Quantities exclude spares and must not duplicate screws already in the enclosure kit.</p>
+<p>Tools: long hex drivers matched to the actual heads, suitable M3/M2 nut tools, calipers, blind-depth gauge, deburring tools, a flat bench, labels, compatible seal-cleaning materials and supplier-approved lubricant. Later stages require a meter, current-limited bench supply, leak-test tools and a recoverable shallow-water site.</p>
 <blockquote>
-<p>本版没有统一拧紧扭矩或防松工艺。不要用金属连接的经验扭矩硬压打印件或透明窗；防松剂与丙烯酸/塑料的兼容性、原厂允许范围必须确认。</p>
+<p>No universal torque or locking process is specified. Do not apply metal-joint torque assumptions to printed parts or acrylic windows. Confirm seal/plastic compatibility and supplier approval before using locking chemicals.</p>
 </blockquote>
-<h2>04 第一步：底架、滑橇和竖推支架</h2>
-<p>先在干燥台面装机械骨架 / 全程不通电</p>
-<p><img alt="图3 隐藏上罩、浮材与中央舱后的承力布局。电机为尺寸重建参考，不是打印件。" src="assets/images/assembly_guide/06_底架推进器.png" /></p>
-<p>图3 隐藏上罩、浮材与中央舱后的承力布局。电机为尺寸重建参考，不是打印件。</p>
+<h2>04 Assemble the frame</h2>
+<p>Dry bench assembly / power disconnected</p>
+<p><img alt="Figure 3. Frame and propulsion layout with fairing, buoyancy and central enclosure hidden. Motors are reconstructed commercial references, not prints." src="assets/images/assembly_guide/06_frame_thrusters.png" /></p>
+<p>Figure 3. Frame and propulsion layout with fairing, buoyancy and central enclosure hidden. Motors are reconstructed commercial references, not prints.</p>
 <ol>
 <li>
-<p>先用1台实物推进器核对H_mount_fit与V_mount_fit两个试片。确认四孔是否均为M3、14/8十字孔方向、孔深、底脚贴合和出线。通过前不要批量打印主体。H试片有效夹持加垫片约5mm，V试片加垫片约8.5mm。</p>
+<p>Test one real motor with H_mount_fit and V_mount_fit first. Confirm all four M3 interpretations, 14/8 mm cross orientation, hole depths, foot contact and cable exit. Horizontal effective grip plus washer is about 5 mm; vertical grip plus washer about 8.5 mm. Do not batch-print the main parts before this check.</p>
 </li>
 <li>
-<p>打印主体后去除支撑、毛刺和残丝。建议PETG、0.2mm层高、至少6道壁，连接区充分实心；逐件检查分层、翘曲、堵孔和螺母窝。最大件210×210mm，先核打印机有效范围。先试穿螺钉，不用螺钉强拉翘曲零件。</p>
+<p>Remove supports, burrs and strings. Initial settings: PETG, 0.2 mm layers, at least six walls and solid load paths. Inspect layer separation, warping, holes and nut pockets. The largest bed footprint is about 210 x 210 mm. Test fastener passage without forcing warped parts into alignment.</p>
 </li>
 <li>
-<p>底架平放，辨认前后：相机朝前，后部有专用系缆眼。+X向前、+Y向左、+Z向上；左右均按机器人面向前方定义。</p>
+<p>Identify the front by the camera and the rear by the tether eye. X points forward, Y left, Z up. Left/right are defined while facing forward with the vehicle.</p>
 </li>
 <li>
-<p>滑橇放在底架两侧下方，Y=±97mm。每条滑橇的两个侧开口先放M3螺母；M3×16从底架上方向下穿入，头下各放1片M3垫片。两侧共4颗螺钉、4片垫片、4个螺母。先对齐再逐步紧固。</p>
+<p>Fit skids beneath the chassis at Y = +/-97 mm. Load M3 nuts through the side openings. Insert four M3 x 16 downward from above, with one washer under each head. Total: 4 screws, 4 washers, 4 nuts. Align before tightening progressively.</p>
 </li>
 <li>
-<p>左右竖推支架位于Y=±62mm。每侧四孔对齐底架，M3×20从底部向上穿过支架法兰和底架，上下各1片M3垫片、上方M3螺母。两侧共8颗螺钉、16片垫片、8个螺母。加强肋朝后侧安装面，不侵入竖推水路。</p>
+<p>Place vertical carriers at Y = +/-62 mm. Per side, insert four M3 x 20 upward through the foot flange and chassis, with washers above/below and nuts above. Total: 8 screws, 16 washers, 8 nuts. Ribs face the rear mounting side and must not enter the vertical flow corridor.</p>
 </li>
 </ol>
 <blockquote>
-<p>检查：滑橇落地平稳，支架贴合，无需掰弯强装。滑橇上方工具路径会被水平推进器遮挡，所以必须先装滑橇。</p>
+<p>Check flat skid support and full carrier seating without bending parts into place. Horizontal motors obstruct the upper skid tool paths, so install skids first.</p>
 </blockquote>
-<h2>05 第二步：四台推进器怎样固定</h2>
-<p>推进器在舱外浸水工作 / 桨、导流罩和电机购买成套</p>
-<p><img alt="图4 安装层次与名义螺钉啮合示意。尺寸解释尚待实物验证。" src="assets/images/assembly_guide/02_电机螺钉层次.png" /></p>
-<p>图4 安装层次与名义螺钉啮合示意。尺寸解释尚待实物验证。</p>
+<h2>05 Install the four thrusters</h2>
+<p>Complete waterproof motors, propellers and ducts / independent bidirectional ESC per motor</p>
+<p><img alt="Figure 4. Nominal motor screw stacks and engagement targets. The OEM foot geometry and blind depths require physical verification." src="assets/images/assembly_guide/02_motor_fasteners.png" /></p>
+<p>Figure 4. Nominal motor screw stacks and engagement targets. The OEM foot geometry and blind depths require physical verification.</p>
 <ol>
 <li>
-<p>水平推进器：两台轴线沿X，位于后部左右两侧，轴心(−78,±74,18)mm。原厂固定底脚贴合底架安装台；从底下用每台4颗M3×8和4片M3垫片向上固定。垫片落入底架预留沉台；不夹外转子、桨轴、桨叶或导流罩薄壁。</p>
+<p>Horizontal motors: axes (-78, +/-74, 18) mm, along X. Seat each OEM foot on its chassis mounting pad. Install four M3 x 8 and four M3 washers upward from below per motor. Washers sit in recessed seats. Do not clamp the rotor, propeller shaft, blades or thin duct wall.</p>
 </li>
 <li>
-<p>竖直推进器：左右轴心(0,±62,−40)mm，轴线沿Z。把原厂底脚贴在竖推支架安装侧面，每台4颗M3×12、4片M3垫片从支架背面沿X方向进入电机底脚。固定面和朝向以当前总装及图8顶视定位图核对。</p>
+<p>Vertical motors: axes (0, +/-62, -40) mm, along Z. Seat the OEM foot against the carrier mounting face. Insert four M3 x 12 and four washers per motor from the back of the carrier along X. Confirm orientation against the assembly and Figure 8 top-layout diagram.</p>
 </li>
 <li>
-<p>每组优先配相反旋向的成品推进器，后续校准使水平同推能前进、竖直同推能上升。CW/CCW不是接线或推力正负的完整定义；必须在水中低推力逐台标定。每台需要独立双向电调。</p>
+<p>Use an opposite-handed commercial pair for each axis where available. Calibrate signs so common horizontal force moves forward and common vertical force moves upward. CW/CCW alone does not define command polarity. Each motor requires its own compatible bidirectional ESC; verify directions submerged at low thrust.</p>
 </li>
 <li>
-<p>理顺电机线，预留可拆卸余量，先用临时可释放束带固定在底架。任何位置都不允许电线接触桨、被上罩夹住或横跨进排水口。导线出线位置未建成原厂完整几何，必须实物核对。</p>
+<p>Route motor wires along the chassis with service slack and provisional releasable ties. Keep all wires clear of propellers, cover pinch points and flow paths. OEM cable-exit geometry is incomplete in the model and must be checked against actual motors.</p>
 </li>
 </ol>
 <blockquote>
-<p>放行条件：螺钉未触底、底脚贴合、推进器无松动、桨与周边无干涉。现有直径54mm贯通通道只是几何净空检查，不代表已验证水流效率。图中M3×8/12不应替代孔深实测。</p>
+<p>Release gate: screws do not bottom, feet sit flat, motors cannot shift and propellers have clearance. The D54 mm geometric corridor is not a validated flow-efficiency result. Nominal M3 x 8/12 lengths do not replace depth measurement.</p>
 </blockquote>
-<h2>06 第三步：相机、托板和MCU安装关系</h2>
-<p>相机架已经建模 / MCU专用安装板与托板正向锁止尚待设计</p>
-<p><img alt="图5 当前相机与托板CAD局部。相机主机、MCU、四路电调及电池没有在此图中占位。" src="assets/images/assembly_guide/07_相机托板.png" /></p>
-<p>图5 当前相机与托板CAD局部。相机主机、MCU、四路电调及电池没有在此图中占位。</p>
+<h2>06 Camera, tray and controller</h2>
+<p>Camera mount modeled / board adapter and positive axial tray retention still required</p>
+<p><img alt="Figure 5. Existing camera/tray module. Video host, MCU, four ESCs, battery and final USB plug are not included in this view." src="assets/images/assembly_guide/07_camera_tray.png" /></p>
+<p>Figure 5. Existing camera/tray module. Video host, MCU, four ESCs, battery and final USB plug are not included in this view.</p>
 <ol>
 <li>
-<p>相机架背部4个六角窝各放1个M2螺母。相机板28×28mm孔距与支架四孔对齐，镜头朝前，每孔从相机正面放M2薄垫片，再装M2×10螺钉。共4颗螺钉、4片垫片、4个螺母；不得用螺钉把PCB压弯。</p>
+<p>Place four M2 nuts in the carrier rear hex pockets. Align the camera 28 x 28 mm pattern, lens forward. Fit an M2 thin washer at each front hole, then four M2 x 10 screws. Do not bend the PCB with screw preload.</p>
 </li>
 <li>
-<p>当前相机板绕镜头轴旋转180°，让USB接口进入上侧让位口；采集端相应旋转图像180°。实际USB插头/弯头尚未选定，必须核对插拔和弯线空间。</p>
+<p>The camera board is rotated 180 degrees about the optical axis so USB enters the upper relief. Rotate acquired images 180 degrees in software. Verify the real plug, removal and cable-bend space; no final plug or elbow is selected.</p>
 </li>
 <li>
-<p>相机架脚与托板前端X=42、Y=±10mm的两个孔对齐，2颗M3×12从上向下，头下和下方各放垫片，再装M3螺母。共2颗螺钉、4片M3垫片、2个M3螺母。此模块先在舱外装好。</p>
+<p>Align the carrier feet with tray holes at X = 42, Y = +/-10 mm. Two M3 x 12 enter downward; fit washers under heads and below the tray, then nuts. Total: 2 screws, 4 M3 washers, 2 M3 nuts. Assemble outside the enclosure.</p>
 </li>
 <li>
-<p>普通MCU/控制板保持干燥，先用绝缘隔柱固定在按该板孔位设计的小安装板上，再把安装板连接托板长圆孔；不是把裸板直接丢进舱里。托板预留8个8×3.4mm长孔，孔中心X=−40/−20/0/20、Y=±10mm。不要为固定板卡在压力管壁打孔。</p>
+<p>Keep ordinary MCU/controller boards dry. Mount each on a board-specific insulated adapter using suitable standoffs, then attach the adapter to the tray slots. Eight 8 x 3.4 mm slots are centered at X = -40/-20/0/20, Y = +/-10 mm. Do not drill the pressure tube to hold electronics.</p>
 </li>
 <li>
-<p>当前托板两只弧形脚仅是配软垫的试装保持。必须增加并验证明确的轴向机械锁止，避免线束拉动、碰撞时模块滑动。锁止形式取决于最终舱组件和可用安装面，尚未建模，不能按已完成处理。</p>
+<p>Two curved tray feet with soft pads provide provisional fit retention only. Add and validate positive axial retention against wiring pull and impact. Its form depends on the final enclosure and available interfaces; it is not yet modeled.</p>
 </li>
 </ol>
 <blockquote>
-<p>本步骤的停点：相机架可试装；最终MCU板、USB主机、电调、电池、连接器的1:1摆放及托板锁止未确认前，不封装整套带电电子设备。150mm舱长不代表必然全部装得下。</p>
+<p>Hold point: do not seal a complete powered payload until board adapters, tray retention and full-scale battery/ESC/controller/video-host/connector placement have been checked. A 150 mm tube designation does not prove that everything fits.</p>
 </blockquote>
-<h2>07 第四步：密封舱与舱夹</h2>
-<p>密封由商用舱组件承担 / 打印压环只负责固定外部管体</p>
-<p><img alt="图6 密封舱组件分解示意：两端为端盖组件，中间为管体，下方为相机托板模块。未画O形圈、锁止绳和最终线束。" src="assets/images/assembly_guide/08_密封舱分解.png" /></p>
-<p>图6 密封舱组件分解示意：两端为端盖组件，中间为管体，下方为相机托板模块。未画O形圈、锁止绳和最终线束。</p>
+<h2>07 Pressure enclosure and clamps</h2>
+<p>Commercial seals keep the interior dry / printed clamps retain only the outer tube</p>
+<p><img alt="Figure 6. Enclosure relationship diagram, not a seal-groove section or manufacturing drawing. Seals, locking cords and final wiring are omitted." src="assets/images/assembly_guide/08_enclosure.png" /></p>
+<p>Figure 6. Enclosure relationship diagram, not a seal-groove section or manufacturing drawing. Seals, locking cords and final wiring are omitted.</p>
 <ol>
 <li>
-<p>核对同一兼容系列的150mm管、前RAILS法兰、前透明端盖、后1M10+8M6法兰盖，以及全套O形圈、锁止件、堵头和穿舱件。当前参考CAD的外径58mm；不要只按“50mm”字样采购不兼容系列。</p>
+<p>Obtain a compatible 150 mm tube, front RAILS flange/window, rear 1 M10 + 8 M6 flange cap, and matching seals, locks, plugs and penetrators. The reference tube OD is 58 mm; the label "50 mm" alone does not establish compatibility.</p>
 </li>
 <li>
-<p>按原厂指南清洁并检查密封面、密封圈及锁止结构，使用厂家允许的润滑材料；锁止入口与管体缺口对准。前透明盖六孔按原厂堆叠，用6颗M2×0.4−10配套螺钉，不自行增加垫片。此处不是通用M3结构连接，不能套用其扭矩。</p>
+<p>Follow the supplier process for cleaning, inspecting and lubricating seals. Align locking entries with tube cutouts. Use the OEM six M2 x 0.4-10 window screws and original stack, without added washers. Do not apply general M3 joint torque assumptions to this assembly.</p>
 </li>
 <li>
-<p>先在舱外完成托板模块装配和可拆线束，确认不会挤到密封面后放入。电子模块最终装舱应在全套空舱、接头和线束验漏合格后进行。频繁维护优先按原厂流程拆端盖总成，勿无必要反复拆透明窗本体。</p>
+<p>Assemble the tray module and removable wiring outside the tube. Insert without crowding sealing surfaces. Install final electronics only after the complete empty enclosure, connectors and wiring pass leak checks. Prefer the supplier endcap-service method rather than repeatedly dismantling the acrylic window.</p>
 </li>
 <li>
-<p>两个下舱座各放一条约1mm厚、12mm宽的闭孔EPDM软衬，长度按实际圆周裁切，对接不搭层。名义径向空间约0.8mm，需要实测压缩与贴合；软衬不是密封圈。</p>
+<p>Place about 1 mm thick, 12 mm wide closed-cell EPDM in each lower saddle, cut to actual circumference with a butt joint and no overlap. Nominal compressed radial allowance is about 0.8 mm. Measure compression and seating; this liner is not a seal.</p>
 </li>
 <li>
-<p>管体放入前后舱座；底架两端侧槽接纳金属法兰外伸部，提供轴向限位。不要向透明端盖、密封槽或锁止入口施压，不强压端盖入槽。模型预留约0.6mm轴向余量，需实物确认。</p>
+<p>Seat the tube in both saddles. Chassis end slots receive the metal flange projections for axial restraint, with about 0.6 mm nominal axial clearance. Do not load the acrylic window, seal grooves or lock entries, or force an endcap into the slot.</p>
 </li>
 <li>
-<p>两个上舱夹置于X=±50mm，对齐四个连接孔。4颗M3×16从上向下，头下及下方各1片M3垫片，再装M3螺母。共4颗螺钉、8片垫片、4个螺母。压环硬止挡贴合后停止继续挤压，不以压扁管体来防滑。</p>
+<p>Fit upper clamps at X = +/-50 mm. Four M3 x 16 enter downward with washers under heads and below the chassis, then nuts: 4 screws, 8 washers, 4 nuts. Stop at the clamp hard stops; do not crush the tube to prevent slip.</p>
 </li>
 </ol>
 <blockquote>
-<p>压力舱和穿舱件按原厂适配流程单独验漏。原厂真空指南示例为约15inHg、观察10-15分钟、下降不超过0.5inHg，须确认适用于所购完整组件与测试工具。先排除测试工具自身泄漏；真空通过不等于通过目标潜深耐压。</p>
+<p>Leak-test the complete compatible system per supplier instructions. Its vacuum guide describes about 15 inHg, 10-15 minutes and no more than 0.5 inHg loss for an applicable setup. Confirm applicability and tool integrity first. Vacuum acceptance is not operating-depth certification.</p>
 </blockquote>
-<p>原厂来源：bluerobotics.com/learn/watertight-enclosure-wte-assembly-new/；bluerobotics.com/learn/using-the-vacuum-test-plug/。原厂流程与材料说明优先于本说明的示意。</p>
-<h2>08 第五步：线怎么进去，控制板怎么保持干燥</h2>
-<p>干湿边界图 / 不是已完成的电气原理图或线束生产图</p>
-<p><img alt="图7 机架与电机在湿区；电调、控制器等按最终方案固定在干舱中。" src="assets/images/assembly_guide/03_干湿边界.png" /></p>
-<p>图7 机架与电机在湿区；电调、控制器等按最终方案固定在干舱中。</p>
+<p>Supplier guides: bluerobotics.com/learn/watertight-enclosure-wte-assembly-new/ and bluerobotics.com/learn/using-the-vacuum-test-plug/.</p>
+<h2>08 Wiring and the wet/dry boundary</h2>
+<p>System relationship only / not a frozen schematic or production harness</p>
+<p><img alt="Figure 7. Thrusters and frame are wet. ESCs, controller and other ordinary electronics belong in a verified dry enclosure." src="assets/images/assembly_guide/03_wet_dry.png" /></p>
+<p>Figure 7. Thrusters and frame are wet. ESCs, controller and other ordinary electronics belong in a verified dry enclosure.</p>
 <ol>
 <li>
-<p>每台无刷推进器的三相线接一路匹配双向电调，MCU向电调发送控制信号。电机不能直接接MCU引脚。电调、供电保护、稳压及具体信号协议未冻结，不按本示意直接焊线。</p>
+<p>Connect each three-phase brushless motor to one matched bidirectional ESC. The controller sends the selected control signal to each ESC; motors do not connect directly to MCU pins. ESCs, power protection, regulation and signal protocol remain unselected.</p>
 </li>
 <li>
-<p>电机线经匹配的密封穿舱件进入后盖。必须先确认电缆是否有连续外护套、外径、材料和厂家允许的密封方式。三根散线/多股线束不能默认通过普通单孔压盖获得密封；必要时采购适配的原厂灌封线束。</p>
+<p>Pass motor cables through penetrators suited to their real construction, outside diameter and jacket material. Loose conductors or multiwire bundles do not automatically seal in a single-cable compression gland. A compatible factory-potted harness may be necessary.</p>
 </li>
 <li>
-<p>已用端口装配匹配穿舱件，未用端口装配套堵头，所有密封面按厂家要求处理。后盖有1M10+8M6口只是接口容量，不代表任意接头可直接兼容或已经密封。不要把螺纹本身、扎带或外涂胶当作已验证的密封系统。</p>
+<p>Fit compatible penetrators in used ports and matching plugs in every unused port. Assemble sealing interfaces per supplier requirements. The rear 1 M10 + 8 M6 pattern is port capacity, not proof of connector compatibility or a completed waterproof harness.</p>
 </li>
 <li>
-<p>舱内线束留检修余量并应力释放，不能碰桨、锐边、密封面、锁止件或夹在端盖中。系缆承力连接到后部6mm专用眼位；该眼位尚无额定回收载荷，不让穿舱线承拉，不以相机USB线承拉。</p>
+<p>Leave service slack and provide strain relief without contacting propellers, sharp edges, seals or locks. Do not pinch wires in the endcap. Terminate the independent tether load path at the rear 6 mm eye; its recovery load is untested. Do not load penetrators, conductors or the camera USB lead in tension.</p>
 </li>
 <li>
-<p>关闭舱前，逐项确认电池/保护、控制器、四电调、稳压、USB主机、传感器、线头和插拔空间。相机是USB设备，需要适配USB主机接收图像；一般MCU的PWM输出不等于视频主机。</p>
+<p>Before closure, confirm battery/protection, controller, four ESCs, regulator, USB host, sensors, connectors and service space. The USB camera requires a suitable host to receive video. An MCU PWM output does not provide a video host.</p>
 </li>
 </ol>
 <blockquote>
-<p>防水对象是整个舱体、接头和线束组合，普通MCU板只需在合格干舱内工作。当前完整电气堆叠、线束图、保护参数与空间还未完成；本页的逻辑连接不能替代这些工作。</p>
+<p>Waterproofing belongs to the complete enclosure, penetrators and cable system. An ordinary MCU can operate inside a proven dry enclosure. Full electrical packaging, wiring, protection and heat management remain pending; this relationship diagram does not replace them.</p>
 </blockquote>
-<h2>09 第六步：上罩、选装浮力模块与配重</h2>
-<p>标准装配不装浮材和绑带 / 是否加装由实测配平决定</p>
-<p><img alt="图8 顶视辨认前后与左右。水平方向箭头表示正向受力约定，不是水流箭头。" src="assets/images/assembly_guide/01_顶视定位.png" /></p>
-<p>图8 顶视辨认前后与左右。水平方向箭头表示正向受力约定，不是水流箭头。</p>
+<h2>09 Fairing, optional foam and trim</h2>
+<p>Standard assembly omits top foam and straps / select additions from measured trim</p>
+<p><img alt="Figure 8. Top layout with the cover hidden. Horizontal arrows indicate the positive force convention, not water flow." src="assets/images/assembly_guide/01_top_layout.png" /></p>
+<p>Figure 8. Top layout with the cover hidden. Horizontal arrows indicate the positive force convention, not water flow.</p>
 <ol>
 <li>
-<p>上罩浅定位沿与底架对齐落座。四个工具井对应X=±95、Y=±18mm连接点；4颗M3×25从上方经工具井装入，头下和底架下方各1片M3垫片，下面装M3螺母。共4颗螺钉、8片垫片、4个螺母。线束不可夹在定位沿内，上罩不作为密封面。</p>
+<p>Seat the fairing locating lip. Four tool wells align with X = +/-95, Y = +/-18 mm connections. Insert four M3 x 25 from above, washers under heads and below the chassis, then nuts: 4 screws, 8 washers, 4 nuts. Do not pinch wires in the lip. It is not a sealing surface.</p>
 </li>
 <li>
-<p>选装浮材时，前后各放1块名义62×160×35mm闭孔浮材，中心X=±69mm、底面Z=60.5mm。材料需适合目标水深，按真实密度选，不用普通FDM空心块或吸水泡棉替代。工具让位口总计4处、名义D12，先确认不遮挡螺钉井。</p>
+<p>Optional only: place two nominal 62 x 160 x 35 mm closed-cell foam pieces fore/aft, centered X = +/-69 mm, bottom Z = 60.5 mm. Select a material for the intended depth and actual density, not hollow FDM or absorbent foam. Four nominal D12 tool reliefs must preserve screw-well access.</p>
 </li>
 <li>
-<p>仅随浮材选装4条可释放绑带按纵向X绕浮材和承力底架，Y=±32.5mm。后段经过X=−101/−35导向槽，前段经过X=35/101导向槽；槽宽3×7mm。名义带宽4.8mm、厚不超过1.2mm、长约450mm；实际锁头未建模，放在可达顶部、远离工具井和桨水路。</p>
+<p>Optional with foam: run four releasable straps along X around foam and load chassis at Y = +/-32.5 mm. Rear guides: X = -101/-35; front guides: X = 35/101 mm; slots 3 x 7 mm. Reference band 4.8 mm wide, at most 1.2 mm thick and about 450 mm long. Buckles are unmodeled; keep them accessible on top and clear of tools and propeller flow.</p>
 </li>
 <li>
-<p>标准装配跳过26-27。完整装配并称重、测排水和水中姿态后，按需加浮材或通过底部两条12×3.4mm长圆孔固定配重。调整浮材和配重使浮心高于重心、前后平衡，并在完全浸没时略正浮。不要把仿真的1.4kg和1%正浮力作为实测结果。</p>
+<p>Skip steps 26-27 for the standard assembly. Weigh the complete vehicle and measure displacement and submerged attitude. Add suitable foam or engineered ballast through the two bottom 12 x 3.4 mm slots as required. Establish CG below CB, fore/aft balance and a measured slightly positive submerged trim. Simulation values of 1.4 kg and 1% positive buoyancy are assumptions, not measurements.</p>
 </li>
 </ol>
-<h2>10 装好以后怎样检查、拆卸和维护</h2>
-<p>先干装与空舱验证，再进行可回收浅水低功率试验</p>
+<h2>10 Inspection and service</h2>
+<p>Dry fit and empty-enclosure checks before recoverable, low-power shallow-water trials</p>
 <table>
 <thead>
 <tr>
-<th>关卡</th>
-<th>检查内容</th>
-<th>尚未通过时</th>
+<th>Gate</th>
+<th>Check</th>
+<th>If incomplete</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>干装</td>
-<td>每个螺钉/螺母可达；推进器、舱体、相机和托板不松动；线不碰桨，定位沿不夹线。</td>
-<td>停止封装，修正干涉、孔深、保持和线束。</td>
+<td>Dry fit</td>
+<td>Fasteners accessible; motors, tube, camera and tray retained; wiring clear of propellers and lips.</td>
+<td>Correct gaps, blind depths, retention and routing before closure.</td>
 </tr>
 <tr>
-<td>结构加载</td>
-<td>按装配验收文件对真实打印件、支架、舱夹和系缆眼做载荷与湿态保持测试。</td>
-<td>数字检查不能代替承载证据；不赋予额定载荷。</td>
+<td>Physical loading</td>
+<td>Test actual prints, carriers, clamps and tether eye, including wet retention.</td>
+<td>Digital checks cannot provide a physical load rating.</td>
 </tr>
 <tr>
-<td>空舱验漏</td>
-<td>真实穿舱件、堵头、线束安装后，按原厂流程验漏；改变接头/密封后重测。</td>
-<td>不装带电电子设备下水。</td>
+<td>Empty enclosure</td>
+<td>Real penetrators, plugs and harness assembled and tested by the compatible supplier procedure.</td>
+<td>Do not immerse powered electronics.</td>
 </tr>
 <tr>
-<td>无动力配平</td>
-<td>用最终质量的假负载，测完全浸没状态、断推姿态、前后平衡与净浮力。</td>
-<td>调浮材/配重；控制器不承担机械配平缺陷。</td>
+<td>Unpowered trim</td>
+<td>Representative final mass; fully submerged net buoyancy, attitude and fore/aft balance.</td>
+<td>Adjust mass/foam rather than using control thrust to mask static trim.</td>
 </tr>
 <tr>
-<td>动力浅水</td>
-<td>可回收、受控场地，逐台低推力确认方向，验证失联停推、升降、转向和定深。</td>
-<td>保持低功率，不扩大深度、持续时间或电流。</td>
+<td>Shallow powered trial</td>
+<td>Recoverable site, individual signs, loss-of-command stop, ascent/descent, yaw and depth hold.</td>
+<td>Keep power and depth bounded; investigate before expanding tests.</td>
 </tr>
 </tbody>
 </table>
-<p>结构验收文件暂拟每个电机安装模块约41N双向静载、保持5分钟、重复3次，是项目拟定工况，尚未执行，也不是认证标准。用刚性替身夹具加载，不损伤推进器本体；位移不能侵入实际最小间隙，检查裂纹、分层、滑移与残余变形。完整底架的同时推进工况和实际材料性能仍需另核。</p>
-<p>拆罩顺序：断电并确认桨不会启动 → 若装有浮材，先释放绑带并移开浮材 → 经4个工具井拆上罩 → 释放舱夹 → 按原厂流程取舱检修。拆滑橇前，还需取下挡住上方工具路径的水平推进器。竖推电机的侧向螺钉可独立维护。</p>
-<p>使用后检查漏水、线缆磨损、穿舱件松动、打印层间裂纹和螺母槽。维护密封圈或更换穿舱件后重新验漏。任何发生过触底、撞击、过热或进水的部件重新评估，不能只复位继续运行。</p>
+<p>The acceptance plan proposes about 41 N in both directions per motor mounting module, held five minutes and repeated three times. This is an unperformed project test, not a certification standard. Use a rigid substitute fixture at the motor thrust axis. Displacement must remain below half the actual minimum gap; inspect cracks, layer separation, slip and residual deformation. Whole-frame combined loads and actual material properties require separate validation.</p>
+<p>Service sequence: disconnect power and prevent motor start; if foam is installed, release straps and remove foam; remove the cover through its four wells; release clamps and service the enclosure per supplier instructions. Remove obstructing horizontal thrusters before skid service. Vertical motor side screws can be serviced independently.</p>
+<p>After use inspect moisture, cable wear, penetrators, print layers and nut pockets. Repeat leak checks after seal or penetrator changes. Reassess components after bottom strikes, collision, overheating or water ingress.</p>
 <blockquote>
-<p>不能据此承诺满功率长期工作、额定潜深或使用寿命。当前需要完成的仍包括托板机械锁止、电气空间/散热、穿舱线束、电机原厂接口实测和全部物理测试。</p>
+<p>No full-power endurance, service-life or depth rating is claimed. Remaining work includes positive tray retention, complete electrical space/heat assessment, penetrator wiring, actual motor interfaces and all physical trials.</p>
 </blockquote>
-<h2>11 文件、未完成项与装配记录</h2>
-<p>让打印件、采购件和实际样机保持同一版本</p>
+<h2>11 Files and build records</h2>
+<p>Keep prints, purchased revisions and test evidence tied to the same vehicle revision</p>
 <table>
 <thead>
 <tr>
-<th>要找什么</th>
-<th>文件入口</th>
+<th>Need</th>
+<th>Repository location</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>10个主体打印文件</td>
-<td>mechanical/stl/；名称对应第2页。</td>
+<td>Ten main prints</td>
+<td>mechanical/stl/; IDs correspond to page 2.</td>
 </tr>
 <tr>
-<td>2个电机试片</td>
-<td>mechanical/fit_coupons/H_mount_fit.stl；V_mount_fit.stl。</td>
+<td>Motor fit coupons</td>
+<td>mechanical/fit_coupons/H_mount_fit.stl and V_mount_fit.stl.</td>
 </tr>
 <tr>
-<td>可编辑结构</td>
-<td>mechanical/step_parts/；参数化源mechanical/build.py与parameters.json。</td>
+<td>Editable structure</td>
+<td>mechanical/step_parts/; source mechanical/build.py and parameters.json.</td>
 </tr>
 <tr>
-<td>带参考件总装</td>
-<td>mechanical/assemblies/simple-rov.step为默认无浮材总装；同目录含with-fasteners及with-buoyancy配置。</td>
+<td>Assembly variants</td>
+<td>mechanical/assemblies/: simple-rov.step is standard; filenames with buoyancy or fasteners identify the other variants.</td>
 </tr>
 <tr>
-<td>打印和紧固件清单</td>
-<td>bom/PRINT_MANIFEST.csv；BOM_FASTENERS.csv；FASTENER_INSTANCES.csv。</td>
+<td>Print / fastener quantities</td>
+<td>bom/PRINT_MANIFEST.csv; BOM_FASTENERS.csv; FASTENER_INSTANCES.csv.</td>
 </tr>
 <tr>
-<td>采购件/孔位</td>
-<td>bom/BOM_PURCHASED.csv；KEY_HOLES.csv；INTERFACES.json。</td>
+<td>Purchased parts / interfaces</td>
+<td>bom/BOM_PURCHASED.csv; KEY_HOLES.csv; mechanical/INTERFACES.json.</td>
 </tr>
 <tr>
-<td>实机推进与记录</td>
-<td>docs/build-plan.html；bom/component-confirmation.csv；docs/acceptance.html。</td>
+<td>Prototype and acceptance</td>
+<td>docs/build-plan.md; bom/component-confirmation.csv; docs/acceptance.md.</td>
 </tr>
 <tr>
-<td>仿真和已做检查</td>
-<td>docs/simulation.html；simulation/mujoco/；mechanical/GEOMETRY_CHECKS.json、EXPORT_CHECKS.json。</td>
+<td>Simulation / digital evidence</td>
+<td>docs/simulation.md; simulation/mujoco/; mechanical/GEOMETRY_CHECKS.json and EXPORT_CHECKS.json.</td>
 </tr>
 </tbody>
 </table>
-<p>必须补完：①电机原厂孔型/孔深/出线；②具体控制板及安装板；③托板可靠锁止；④电池、四电调、USB主机和线束空间及散热；⑤实际穿舱件/堵头；⑥整机称重、浮心重心、推力标定；⑦打印载荷、湿态保持、水密和浅水试验。</p>
-<p>记录建议：样机编号、打印材料批次、层高/方向/壁数、螺丝规格及实际啮合、采购件版本、实际重量、电机推力方向/中位/电流、验漏日期/结果、载荷试验、断推姿态与检修记录。不同批次打印件不能直接沿用上一批的强度结论。</p>
-<p>历史Onshape参考中10个主体为可直接编辑的导入实体，没有原生草图历史；完整尺寸驱动源是Python。云端后端盖导入为曲面参考，本地原厂STEP仍为实体；不要用云端曲面参考制造承压件。云端历史总装含浮材，不作为当前默认配置；以本仓库assemblies为准。修改后须统一更新CAD、孔位清单、文档及仿真。</p>
-<p>来源：X2官方产品页与尺寸图；Blue Robotics原厂压力舱/相机STEP；原厂装配与真空验漏指南。电机参考网格和示意图不替代厂家安装图。原厂装配：www.bluerobotics.com/learn/watertight-enclosure-wte-assembly-new/；真空验漏：bluerobotics.com/learn/using-the-vacuum-test-plug/；电机：underwaterthruster.com（APISQUEEN X2产品页）。</p>
+<p>Complete before a finished vehicle: motor hole/depth/cable verification; specific boards and adapters; positive tray retention; full battery/ESC/video-host/wiring layout and heat assessment; actual penetrators/plugs; mass, CG/CB and thrust calibration; printed load/wet retention, sealing and shallow-water trials.</p>
+<p>Record vehicle ID, print batch/material, orientation/layers/walls, fastener grade and measured engagement, purchased revisions, actual mass, motor signs/neutral/current, leak-test date/results, load evidence, unpowered trim and service events. A previous print batch does not establish the strength of a new one.</p>
+<p>Historical Onshape prints are imported editable solids without native sketch history; Python is the dimension-driven source. The rear supplier cap imported as an open shell; local OEM STEP remains solid. Historical cloud assembly includes optional foam. Current defaults are the repository assemblies; synchronize CAD, hole lists, documents and simulation after changes.</p>
+<p>Sources: X2 manufacturer dimensions; attributed Blue Robotics enclosure/camera STEP; supplier enclosure and vacuum guides. Reference motor meshes and diagrams are not OEM manufacturing data. Full source links and rights are recorded in SOURCES.json and THIRD_PARTY_NOTICES.md.</p>
 <blockquote>
-<p>下一步实际执行：先做1台电机＋2个接口试片，同时完成电气1:1堆叠；通过后再批量打印主体和补购电机。不要把“有STL和螺丝表”当作完整成熟整机已定版。</p>
+<p>First physical action: one motor and both fit coupons, alongside a full-scale electrical layout. Only after those pass should the main prints and remaining motors be ordered. STL files and a screw list alone do not establish a mature, validated vehicle.</p>
 </blockquote>
-<h2>原厂资料</h2>
-<p><a href="https://bluerobotics.com/learn/watertight-enclosure-wte-assembly-new/">压力舱装配指南</a> · <a href="https://bluerobotics.com/learn/using-the-vacuum-test-plug/">真空验漏指南</a></p></main></html>
+<h2>Supplier instructions</h2>
+<p><a href="https://bluerobotics.com/learn/watertight-enclosure-wte-assembly-new/">Enclosure assembly</a> · <a href="https://bluerobotics.com/learn/using-the-vacuum-test-plug/">Vacuum leak testing</a></p></main><footer>SimpleROV · Prototype documentation · Original content all rights reserved</footer></body></html>

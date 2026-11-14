@@ -1,9 +1,10 @@
-# 工程修改约定
+# Engineering changes
 
-当前原创内容保留全部权利；本文件不授予开源许可或额外使用权。外部使用和贡献请先联系权利人；若已有授权，按以下工程约定准备修改。
+Original content is all rights reserved. This document does not grant an open-source license or additional usage rights. Contact the rights holder before external use or contribution; if already authorized, follow these conventions.
 
-1. 改动尺寸时明确单位、坐标与基准，并同步更新参数、孔位、BOM、装配说明和受影响的仿真参数。
-2. 记录制造工艺与实测证据。不得把数字检查或仿真假设写成实物验证。
-3. 运行 `python tools/validate_repository.py` 以及受影响模块的验证；CAD改动还需完整几何/导出检查。
-4. 原厂件保持来源、版本、哈希与署名；不把参考网格作为制造数据，不覆盖第三方许可。
-5. PCB与固件只有实际生成并检查的资料才能标为完成；保留原生工程。
+1. State units, coordinates and datums when changing dimensions. Update parameters, hole tables, BOM, assembly instructions and affected simulation parameters together.
+2. Record manufacturing settings and measured evidence. Do not describe digital checks or assumed simulation parameters as physical validation.
+3. Run `python tools/validate_repository.py` and relevant module checks. CAD changes require geometry and export checks, including configuration readback.
+4. Preserve supplier provenance, revisions, fingerprints and attribution. Reference meshes are not manufacturing data; third-party rights remain unchanged.
+5. Mark PCB or firmware work complete only when the native project and checked outputs actually exist.
+6. English is the default project language. Keep Spanish and Chinese README entry points aligned with the current assembly, dimensions, maturity and rights statements. Preserve existing mechanical part IDs.

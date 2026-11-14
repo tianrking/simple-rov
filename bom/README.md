@@ -1,14 +1,20 @@
-# BOM与采购状态
+# Bill of materials
 
-这里是当前机械试装版的物料清单，不是已冻结的整机电子BOM。
+These are mechanical prototype quantities, not a frozen whole-vehicle electrical BOM.
 
-- [PRINT_MANIFEST.csv](PRINT_MANIFEST.csv)：10个主体打印件与独立STEP/STL路径；另有2个试片。
-- [BOM_FASTENERS.csv](BOM_FASTENERS.csv)：当前名义安装量，共38颗M3与10颗M2螺钉，配套螺母和垫片；134个金属件实例。原厂透明盖6颗M2螺钉不要重复采购。
-- [BOM_PURCHASED.csv](BOM_PURCHASED.csv)：推进器、舱件、相机、浮材、衬垫与绑带；穿舱件、配重等未冻结项已标记。
-- [FASTENER_INSTANCES.csv](FASTENER_INSTANCES.csv)：48颗螺钉的头部基准位置。
-- [KEY_HOLES.csv](KEY_HOLES.csv)：关键孔位与坐标约定。
-- [component-confirmation.csv](component-confirmation.csv)：记录真实型号、外形、重量、接头、功耗及实测结果。
+| File | Contents |
+|---|---|
+| [PRINT_MANIFEST.csv](PRINT_MANIFEST.csv) | Ten main prints and their STEP/STL paths; two fit coupons are separate |
+| [BOM_FASTENERS.csv](BOM_FASTENERS.csv) | 38 M3 and 10 M2 screws, matching nuts and washers; 134 metal instances in total |
+| [BOM_PURCHASED.csv](BOM_PURCHASED.csv) | Thrusters, enclosure, camera, liners and optional foam/straps; pending penetrators and ballast are marked |
+| [FASTENER_INSTANCES.csv](FASTENER_INSTANCES.csv) | Head-seat datums for 48 screws |
+| [KEY_HOLES.csv](KEY_HOLES.csv) | Key holes and coordinate conventions |
+| [component-confirmation.csv](component-confirmation.csv) | Worksheet for actual part revisions, dimensions, mass, cables, ratings and fit evidence |
 
-先买1台推进器和匹配双向电调，验证两个试片；电机螺纹孔深未测前不能按名义螺钉长度硬拧。电池、四电调、控制器与USB主机需先完成机舱空间/温升核对，之后再冻结电子BOM。
+The six OEM acrylic-window screws may already be in the supplier kit; do not double-order them. Installed quantities exclude spares.
 
-采购表中的`quantity`是标准装配数量，`optional_quantity`是选装附件数量，`configuration`说明适用配置。顶部浮材默认0块、选装2块；绑带默认0条、选装4条。浮材与绑带不改变10个主体打印件和134个名义金属件数量。是否加装要依据实际重量、排水量和水中配平，见[浮力模块说明](../docs/buoyancy.md)。
+## Default and optional quantities
+
+In the purchased BOM, `quantity` is the standard assembly quantity, `optional_quantity` is the add-on quantity, and `configuration` identifies its use. Top foam: **0 default / 2 optional**. Straps: **0 default / 4 optional**. Neither changes the ten prints or 134 nominal metal fasteners. Select foam only after weighing and checking submerged trim; see [buoyancy](../docs/buoyancy.md).
+
+Start with one thruster and a matched bidirectional ESC, then test both coupons. Do not tighten a nominal screw into an unmeasured blind hole. Confirm the full battery/controller/four-ESC/video-host arrangement and thermal requirements before freezing an electrical BOM.

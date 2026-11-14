@@ -1,43 +1,49 @@
-# 结构视图
+# Structure gallery
 
-本页图片直接由当前CAD网格生成，分辨率为2400×1800。标准机体不安装浮力模块。正投影视图使用统一视野，坐标X向前、Y向左、Z向上。
+Nine 2400 × 1800 CAD views show the current geometry. Standard views omit top foam and straps. The six orthographic views share one field of view: X forward, Y left, Z up.
 
-这些是结构渲染图，不是实物照片。舱件采用不透明显示材质便于辨认轮廓，颜色不作为采购或材料规格。推进器为厂家尺寸重建参考，相机和舱件来自注明来源的商用CAD。未完成的控制板、电调、电池和线束没有用虚构模型填充。
+These are renderings, not prototype photographs. Thrusters are reconstructed dimensional references; the camera and enclosure use attributed supplier CAD. Enclosure parts use an opaque display finish for legibility; display colors are not procurement specifications. Unselected electronics and wiring are not illustrated.
 
-## 整体
+## Standard assembly
 
-![标准装配](assets/gallery/hero.png)
+![Standard assembly](assets/gallery/hero.png)
 
-## 前视与后视
+## Orthographic views
 
-![前视](assets/gallery/front.png)
+| Front | Rear |
+|:---:|:---:|
+| ![Front](assets/gallery/front.png) | ![Rear](assets/gallery/rear.png) |
 
-![后视](assets/gallery/rear.png)
+| Left | Right |
+|:---:|:---:|
+| ![Left](assets/gallery/left.png) | ![Right](assets/gallery/right.png) |
 
-## 左视与右视
+| Top | Bottom |
+|:---:|:---:|
+| ![Top](assets/gallery/top.png) | ![Bottom](assets/gallery/bottom.png) |
 
-![左视](assets/gallery/left.png)
+## Interior
 
-![右视](assets/gallery/right.png)
+![Camera and tray installation](assets/gallery/interior.png)
 
-## 俯视与底视
+The fairing and all pressure-enclosure components are hidden to expose the existing camera, tray, frame and thrusters. Final electrical layout and positive tray retention remain pending.
 
-![俯视](assets/gallery/top.png)
+## Optional buoyancy
 
-![底视](assets/gallery/bottom.png)
+![Optional buoyancy module](assets/gallery/buoyancy-option.png)
 
-## 内部安装
+Foam is selected from measured mass and trim. It is not part of the default assembly. See [buoyancy and trim](buoyancy.md).
 
-![内部安装](assets/gallery/interior.png)
+## Onshape screenshots
 
-为便于观察，此视图隐藏了上罩与全部压力舱组件，保留相机、托板、机架与推进器。最终电子布局和托板锁止仍需补完。
+The following are actual captures of the historical public Onshape assembly viewport. They show the **optional buoyancy foam and straps fitted**; current default foam-free assemblies are defined by the repository STEP files. The screenshots retain the original geometry and view state, cropped to the CAD viewport; they are not synthetic illustrations.
 
-## 可选浮力模块
+![Actual Onshape isometric assembly view](assets/onshape/assembly-isometric.jpg)
 
-![选装浮力模块](assets/gallery/buoyancy-option.png)
+![Actual Onshape profile view](assets/onshape/assembly-profile.jpg)
 
-浮材是根据实际重量和配平选择的附件，不属于标准装配。安装方法与边界见[浮力模块说明](buoyancy.md)。
+[Open Onshape](https://cad.onshape.com/documents/256f9be06adfdc472f7aac06/w/aefb43ce726d3d5c24877f23/e/1186baa4f5bb2c01f6be971a). Ten printed parts are imported editable solids without native sketch history. The commercial rear cap imported as an open reference shell; local OEM STEP remains the supplier reference. See [round-trip checks](../validation/onshape/ONSHAPE_ROUNDTRIP.json).
 
-## 图像来源
+## Provenance
 
-生成脚本：[render_gallery.py](../tools/docs/render_gallery.py)。模型来源、配置、视角和图像哈希记录在[gallery.json](../validation/gallery.json)。
+[Rendering source](../tools/docs/render_gallery.py) · [CAD view metadata and hashes](../validation/gallery.json) · [Onshape capture record](../validation/onshape/screenshots.json).
