@@ -202,11 +202,13 @@ if __name__=='__main__':
  for folder in ['stl','step_parts','assembly_meshes']:
   (D/folder).mkdir(exist_ok=True)
   for old in (D/folder).glob('*'):old.unlink()
- ass=cq.Assembly(name='MANTA_V5_SIMPLEROV4');full=cq.Assembly(name='MANTA_V5_FASTENERS');hg=cq.Assembly(name='HARDWARE');manifest=[]
+ ass=cq.Assembly(name='SimpleROV_Base');option=cq.Assembly(name='SimpleROV_WithBuoyancy');full=cq.Assembly(name='SimpleROV_BaseWithFasteners');optional_full=cq.Assembly(name='SimpleROV_WithBuoyancyAndFasteners');hg=cq.Assembly(name='Fasteners');manifest=[]
  for it in parts:
-  n,p=it['name'],it['p'];b=p.val().BoundingBox()
+  n,p=it['name'],it['p'];b=p.val().BoundingBox();optional=it['kind'] in ('FOAM','SOFT_HARDWARE')
   if it['kind']=='HARDWARE':hg.add(p,name=n,color=cq.Color(*it['color']))
-  else:ass.add(p,name=n,color=cq.Color(*it['color']))
+  else:
+   option.add(p,name=n,color=cq.Color(*it['color']))
+   if not optional:ass.add(p,name=n,color=cq.Color(*it['color']))
   if it['kind']=='PRINT':
    cq.exporters.export(p,str(D/'step_parts'/(n+'.step')));q=p
    if it['pose']=='flip':q=q.rotate((0,0,0),(1,0,0),180)
@@ -215,6 +217,17 @@ if __name__=='__main__':
    bb=q.val().BoundingBox();q=q.translate((-(bb.xmin+bb.xmax)/2,-(bb.ymin+bb.ymax)/2,-bb.zmin))
    cq.exporters.export(q,str(D/'stl'/(n+'.stl')),tolerance=.08);m=trimesh.load_mesh(D/'stl'/(n+'.stl'));m.apply_translation([0,0,-float(m.bounds[0,2])]);m.export(D/'stl'/(n+'.stl'));assert m.is_watertight and len(m.split())==1,n
   if it['kind']!='HARDWARE':cq.exporters.export(p,str(D/'assembly_meshes'/(n+'.stl')),tolerance=.15)
-  manifest.append(dict(name=n,kind=it['kind'],color=it['color'],bounds=[b.xmin,b.xmax,b.ymin,b.ymax,b.zmin,b.zmax],volume_mm3=p.val().Volume(),solids=len(p.solids().vals()),print_pose=it['pose']))
- ass.export(str(D/'MANTA_V5_CORE.step'));full.add(ass,name='CORE');full.add(hg,name='HARDWARE');full.export(str(D/'MANTA_V5_WITH_FASTENERS.step'))
- (D/'parts.json').write_text(json.dumps(manifest,indent=2));(D/'bolt_locations.json').write_text(json.dumps(bolts,indent=2));print('EXPORTED',len(parts),'prints',sum(i['kind']=='PRINT' for i in parts),flush=True)
+  manifest.append(dict(name=n,kind=it['kind'],color=it['color'],bounds=[b.xmin,b.xmax,b.ymin,b.ymax,b.zmin,b.zmax],volume_mm3=p.val().Volume(),solids=len(p.solids().vals()),print_pose=it['pose'],optional_buoyancy=optional))
+ folder=D/'assemblies';folder.mkdir(exist_ok=True)
+ ass.export(str(folder/'simple-rov.step'));option.export(str(folder/'simple-rov-with-buoyancy.step'))
+ full.add(ass,name='Robot');full.add(hg,name='Fasteners');full.export(str(folder/'simple-rov-with-fasteners.step'))
+ optional_full.add(option,name='Robot');optional_full.add(hg,name='Fasteners');optional_full.export(str(folder/'simple-rov-buoyancy-with-fasteners.step'))
+ (D/'parts.json').write_text(json.dumps(manifest,indent=2));(D/'bolt_locations.json').write_text(json.dumps(bolts,indent=2))
+ configurations={'default':'base','units':'mm','base':{'label':'Standard assembly','optional_buoyancy':False,'step':'assemblies/simple-rov.step'},'with-buoyancy':{'label':'Optional buoyancy module fitted','optional_buoyancy':True,'step':'assemblies/simple-rov-with-buoyancy.step'}}
+ for key in ('base','with-buoyancy'):
+  selection=[x for x in manifest if x['kind']!='HARDWARE' and (key=='with-buoyancy' or not x['optional_buoyancy'])]
+  bounds=[v for j in range(3) for v in (min(x['bounds'][2*j] for x in selection),max(x['bounds'][2*j+1] for x in selection))]
+  configurations[key]['bounds_mm']=bounds;configurations[key]['dimensions_mm']=[round(bounds[2*j+1]-bounds[2*j],2) for j in range(3)]
+  configurations[key]['included_parts']=[x['name'] for x in selection]
+ (D/'configurations.json').write_text(json.dumps(configurations,indent=2)+'\n')
+ print('EXPORTED',len(parts),'prints',sum(i['kind']=='PRINT' for i in parts),'default: base, optional: with-buoyancy',flush=True)

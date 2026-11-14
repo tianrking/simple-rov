@@ -13,6 +13,7 @@ from manual_control import ManualControl
 
 def main():
     parser = argparse.ArgumentParser()
+    parser.add_argument('--configuration', choices=['base','with-buoyancy'], default='base')
     parser.add_argument('--viewer', action='store_true')
     parser.add_argument('--manual', action='store_true', help='Keyboard setpoints; requires --viewer')
     parser.add_argument('--render', action='store_true')
@@ -25,7 +26,7 @@ def main():
         parser.error('--seconds must be positive')
     output = args.output_dir or S.parents[1] / 'runs' / datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%S_%fZ')
     output.mkdir(parents=True, exist_ok=True)
-    env = ROV()
+    env = ROV(configuration=args.configuration)
     dt = env.model.opt.timestep
     manual = ManualControl() if args.manual else None
     rows, frames = [], []
@@ -101,6 +102,7 @@ def main():
             Image.fromarray(renderer.render()).save(output / 'MuJoCo_前视.png')
             imageio.mimsave(output / 'V5_sim_demo.mp4', frames, fps=10, macro_block_size=16)
         print(json.dumps({'output_directory': str(output.resolve()),
+                          'configuration': args.configuration,
                           'mode': 'manual_setpoints' if manual else 'automatic_demo',
                           'simulated_seconds': env.data.time,
                           'final_position_m': state[0].tolist(),

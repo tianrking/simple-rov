@@ -5,14 +5,16 @@
   "numbered_assembly_steps": 28,
   "printed_parts": 10,
   "modeled_metal_fasteners": 134,
-  "pdf_render_review": "All11pages rendered and reviewed; no clipping or overflow.",
+  "pdf_render_review": "All 11 updated pages rendered and visually reviewed; no clipping or overflow.",
   "physical_tested": false,
   "source_sha256": {
-    "docs/assembly.pdf": "ccdee006752d04df0c18664fe0dfa41f0905c6be17221af086300d64a39d8848",
-    "docs/assembly.md": "028993c5dbe6b5cd102090b11ad43711ffa8124d4ce3a3a4303f7a8aec8ab67a",
-    "mechanical/parts.json": "8071431b8b6f99f3b87243dc656362ef4fa67111b5d15008bd85dbb62c7f5dcc",
+    "docs/assembly.pdf": "9c838c610ae189a921120333f404687f1de967fd29dc1405991cf7dbde29c543",
+    "docs/assembly.md": "7ff429f4a6f218d13b16f85f86a739e3a3c2d553e1dad4a3d0834c7959ce476f",
+    "mechanical/parts.json": "159ff3250d0ab5670ee69a24f069e64e2f93f741c49f19d8564b32f5a59fbabd",
     "bom/BOM_FASTENERS.csv": "e69339e66175324b449ad5b602d01c4f33adb4841e14e3c18d8c55eacd21316a"
   },
   "passed": true,
-  "CSV_format": "LF normalized for Git; quantities unchanged"
+  "CSV_format": "LF normalized for Git; quantities unchanged",
+  "default_configuration": "base",
+  "optional_buoyancy_documented": true
 }

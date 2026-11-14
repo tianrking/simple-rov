@@ -1,0 +1,46 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>SimpleROV 项目文档</title><style>body{font-family:system-ui,sans-serif;max-width:1050px;margin:36px auto;padding:0 24px;color:#173d46;line-height:1.8;background:#f5f9fa}main{background:#fff;padding:30px;border-radius:12px}h1,h2{line-height:1.4}h2{border-top:2px solid #e0ecee;padding-top:22px;margin-top:36px}table{border-collapse:collapse;width:100%;font-size:14px}td,th{border:1px solid #cbdade;padding:8px;text-align:left}th{background:#e8f1f3}pre{overflow:auto;padding:18px;background:#173d46;color:#effbff;border-radius:8px}img,video{display:block;max-width:100%;max-height:700px;margin:auto}blockquote{background:#fff0da;padding:10px 16px;border-left:4px solid #df8b31}a{color:#006980} @media print{body,main{margin:0;padding:0}h2{break-before:page}nav{display:none}}</style><main><nav><a href="index.html">项目入口</a> · <a href="assembly.html">装配</a> · <a href="simulation.html">仿真</a> · <a href="build-plan.html">实机</a></nav><h1>浮力模块与配平</h1>
+<p>标准装配不安装顶部浮材和绑带，底架与上罩保留相应通道。是否增加浮材，取决于装齐电池、控制器、电调、相机主机、线束及穿舱件后的真实重量和排水量。</p>
+<p><img alt="两种配置对比" src="assets/gallery/configuration-comparison.png" /></p>
+<h2>两种装配</h2>
+<table>
+<thead>
+<tr>
+<th>配置</th>
+<th>外包尺寸，长×宽×高</th>
+<th style="text-align: right;">浮材</th>
+<th style="text-align: right;">绑带</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>默认 <code>base</code></td>
+<td>213×210×148 mm</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr>
+<td>选装 <code>with-buoyancy</code></td>
+<td>213×210×184.7 mm</td>
+<td style="text-align: right;">2块</td>
+<td style="text-align: right;">4条</td>
+</tr>
+</tbody>
+</table>
+<p>尺寸不包括最终线缆、接头、系缆头和配重。两种配置使用同一套10个主体打印件；选装模块是独立采购材料，不和上罩一体打印。</p>
+<h2>什么时候需要浮材</h2>
+<p>完整机体在完全浸没状态下，重力由全部真实零件质量决定，浮力由实际排水体积决定。自由进水的外罩内部空间不能当作密闭排水体积。</p>
+<ul>
+<li>净浮力不足时，需要增加适合目标水深的闭孔浮材，或调整其他部件。</li>
+<li>前后倾斜或左右不平时，应调整质量和浮力的分布，避免长期依靠推进器抵消静态配平问题。</li>
+<li>浮材过多时，下潜需要更大的持续向下推力，也会增加体积与阻力。</li>
+</ul>
+<p>默认不安装是项目的基础装配配置，<strong>不是“裸机已经能断推上浮”的结论</strong>。首次下水前必须检查实际浮态和断推行为。</p>
+<h2>现有可选模块</h2>
+<p>参考形状为前后各一块62×160×35mm闭孔材料，中心X=±69mm。四条纵向绑带经过底架和上罩预留槽固定；工具让位口保留螺钉拆装路径。具体方法见<a href="assembly.html">装配说明</a>。</p>
+<p>两块长方体毛坯总体积约0.694 L；实际切口、材料密度及吸水/压缩性能会影响净浮力，不能把毛坯体积直接当作可承载重量。材料型号与适用水深仍需选定。</p>
+<p>近似计算可用：<code>净浮力 = (水密度 - 浮材密度) × 实际体积 × 重力加速度</code>。最终以真实装配、排水量和水中测量为准。</p>
+<h2>BOM与文件</h2>
+<p><a href="../bom/BOM_PURCHASED.csv">BOM_PURCHASED.csv</a>把浮材和绑带的默认数量列为0，并单独列出选装数量。默认总装为<a href="../mechanical/assemblies/simple-rov.step">standard STEP</a>，选装总装为<a href="../mechanical/assemblies/simple-rov-with-buoyancy.step">buoyancy STEP</a>。</p>
+<h2>仿真注意事项</h2>
+<p><code>ROV(configuration="base")</code>或<code>--configuration base</code>为默认；<code>with-buoyancy</code>加载浮材外观和对应碰撞体。</p>
+<p>当前质量、惯量、重心、浮心、排水量和阻力均为显式示例参数，并不从CAD材料自动计算。因此，两种装配的演示不能证明浮材增加了多少净浮力，也不能据此预测真实机器的断推姿态。实物称重与配平后，应更新<code>simulation/mujoco/config.json</code>再进行控制性能比较。</p></main></html>

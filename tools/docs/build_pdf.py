@@ -42,7 +42,7 @@ for page in PAGES:
  ht=sum(x.wrap(usable,H)[1]+getattr(x,'spaceBefore',0)+getattr(x,'spaceAfter',0) for x in blocks);heights.append(round(ht,1));story.extend(blocks);story.append(PageBreak())
 story.pop()
 def chrome(c,doc):
- c.saveState();c.setFont('GuideCJK',8);c.setFillColor(ink);c.drawString(38,H-24,'SimpleROV-4  /  V5-01  /  机械试装说明');c.setStrokeColor(accent);c.setLineWidth(1.4);c.line(38,H-31,W-38,H-31);c.setFillColor(colors.HexColor('#667e85'));c.drawString(38,22,'工程原型 · 未经实物可靠性与水密验证');c.drawRightString(W-38,22,f'{doc.page} / {len(PAGES)}');c.restoreState()
-doc=SimpleDocTemplate(str(file),pagesize=A4,rightMargin=38,leftMargin=38,topMargin=45,bottomMargin=36,title='SimpleROV-4 V5 详细组装说明',author='SimpleROV-4工程资料')
+ c.saveState();c.setFont('GuideCJK',8);c.setFillColor(ink);c.drawString(38,H-24,'SimpleROV  /  图文组装说明');c.setStrokeColor(accent);c.setLineWidth(1.4);c.line(38,H-31,W-38,H-31);c.setFillColor(colors.HexColor('#667e85'));c.drawString(38,22,'工程原型 · 未经实物可靠性与水密验证');c.drawRightString(W-38,22,f'{doc.page} / {len(PAGES)}');c.restoreState()
+doc=SimpleDocTemplate(str(file),pagesize=A4,rightMargin=38,leftMargin=38,topMargin=45,bottomMargin=36,title='SimpleROV 图文组装说明',author='SimpleROV 项目文档')
 doc.build(story,onFirstPage=chrome,onLaterPages=chrome)
 reader=PdfReader(str(file));report={'pages':len(reader.pages),'expected_pages':len(PAGES),'content_height_estimates_pt':heights,'all_pages_text_nonempty':all(len(p.extract_text())>80 for p in reader.pages)};print(json.dumps(report,ensure_ascii=False,indent=2));assert len(reader.pages)==len(PAGES), 'Unexpected overflow pages';assert report['all_pages_text_nonempty'];(R/'validation/assembly_pdf.json').write_text(json.dumps(report,indent=2))

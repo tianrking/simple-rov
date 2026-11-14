@@ -18,7 +18,7 @@
   "printed_assembly_parts": 10,
   "optional_fit_coupons": 2,
   "modeled_metal_fasteners": 134,
-  "modeled_straps": 4,
+  "modeled_straps": 0,
   "geometry_interferences": 0,
   "blocked_driver_paths": 0,
   "driver_paths": 48,
@@ -30,7 +30,7 @@
   "nominal_size_mm": [
     213,
     210,
-    184.7
+    148
   ],
   "simulation_functional_checks_passed": true,
   "hydrodynamics_calibrated": false,
@@ -44,6 +44,13 @@
   "license": "All rights reserved for original work; third-party rights retained",
   "pcb_status": "PLANNED_NO_DESIGN",
   "firmware_status": "PLANNED_NO_FIRMWARE",
-  "release": "v0.5.0",
-  "mechanical_revision": "V5-01"
+  "release": "v0.5.1",
+  "mechanical_revision": "V5-01",
+  "default_configuration": "base",
+  "size_with_buoyancy_mm": [
+    213,
+    210,
+    184.7
+  ],
+  "optional_buoyancy_straps": 4
 }

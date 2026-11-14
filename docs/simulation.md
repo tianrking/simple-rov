@@ -1,6 +1,6 @@
-# V5 MuJoCo仿真
+# MuJoCo 仿真与键盘驾驶
 
-这是与V5 CAD坐标对应的四推进器刚体仿真，提供运动、控制分配和相机视角的开发起点。使用当前交付的STL外观网格，另有简化碰撞体；不把STL网格当作水动力模型。
+这是与当前CAD坐标对应的四推进器刚体仿真，提供运动、控制分配和相机视角的开发起点。使用当前交付的STL外观网格，另有简化碰撞体；不把STL网格当作水动力模型。
 
 ## 运行
 
@@ -31,6 +31,16 @@ mjpython simulation/mujoco/run.py --viewer --seconds 120
 其他平台可使用`python simulation/mujoco/run.py --viewer`。直接运行run.py默认是定深、升降、前进和转向的自动演示；加`--manual --viewer`启用键盘驾驶。根目录Mac启动脚本默认启用键盘驾驶。不含已连接的游戏手柄或真实机器人控制固件。`--render`在无交互窗口下生成每次runs/输出目录中的录像、CSV和视图。
 
 **请通过`run.py`运行。** 外加浮力、阻力和电机滞后在`environment.py`中实现。单独把XML拖进通用MuJoCo查看器只有模型、重力和接触，缺少这些水下外力。
+
+## 两种装配配置
+
+默认`--configuration base`加载无顶部浮材的`simple_rov.xml`，尺寸213×210×148mm。选装配置加载`simple_rov_with_buoyancy.xml`，外包高度约185mm：
+
+```bash
+python simulation/mujoco/run.py --viewer --manual --configuration with-buoyancy --seconds 120
+```
+
+Python接口为`ROV(configuration="base")`或`ROV(configuration="with-buoyancy")`。切换配置会改变外观与相应碰撞体，**不会自动重算质量、惯量、重心、浮心或排水量**。两者共享明确的示例参数；真实配平后应修改`config.json`并重建，见[浮力模块与配平](buoyancy.md)。
 
 ## 控制接口
 

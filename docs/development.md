@@ -10,7 +10,7 @@
 
 ## CAD
 
-源几何位于`mechanical/build.py`，参数在`mechanical/parameters.json`。原厂STEP在`supplier/`，保持版本来源。构建命令见根目录README。几何检查涉及大量布尔运算，速度取决于平台。`export_metadata.py`重新核对打印导出，更新BOM和接口资料。
+源几何位于`mechanical/build.py`，参数在`mechanical/parameters.json`。原厂STEP在`supplier/`，保持版本来源。构建命令见根目录README。几何检查涉及大量布尔运算，速度取决于平台。`export_metadata.py`重新核对打印导出，更新BOM和接口资料。随后运行`python mechanical/verify_configurations.py`回读两种总装STEP，检查实体数、外包尺寸及选装采购量，生成配置检查记录。
 
 原有数字报告与源文件哈希配套；改动源参数后旧报告不再代表新几何，必须重新生成、验证和更新报告。不要为了让检查通过只改报告中的哈希。
 
@@ -19,7 +19,7 @@
 Markdown是阅读和编辑入口；PDF生成内容在`tools/docs/content.py`，渲染代码在同目录。文档变更时保持两者语义一致。
 
 ```bash
-python tools/docs/make_figures.py
+python tools/docs/make_figures.py  # 包括当前配置的多视角CAD图库
 python tools/docs/build_pdf.py
 python tools/docs/build_web.py
 ```
@@ -35,6 +35,8 @@ python tools/validate_repository.py --manifest
 python tools/build_release.py
 ```
 
-清单覆盖项目资料，排除.git、虚拟环境、缓存与runs。发布包输出在`runs/releases/`，不会自动提交；变更版本时同步更新STATUS和CHANGELOG。GitHub Actions执行仓库完整性与无窗口仿真检查，不验证实物可靠性。
+清单覆盖项目资料，排除.git、虚拟环境、缓存与runs。发布包输出在`runs/releases/`，不会自动提交；变更版本时同步更新STATUS和CHANGELOG。标准与选装CAD均由同一源生成：默认`assemblies/simple-rov.step`，选装`assemblies/simple-rov-with-buoyancy.step`；金属件版也分为两套。图库可单独用`python tools/docs/render_gallery.py`更新，生成六向正投影、内部视图及浮力模块对比图。仿真重建同时更新`simple_rov.xml`与`simple_rov_with_buoyancy.xml`，通过`--configuration`选择；两者水动力参数均需实测标定。
+
+GitHub Actions执行仓库完整性与无窗口仿真检查，不验证实物可靠性。
 
 `requirements/lock-macos-py312.txt`记录本机完整验证环境（含CAD与文档依赖），属于macOS/Python3.12快照；Linux CI使用requirements/sim.txt，不假设跨平台原生库完全相同。CSV统一LF换行，发布哈希以Git检出后的字节为准。

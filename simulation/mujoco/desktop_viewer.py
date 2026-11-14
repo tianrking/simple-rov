@@ -8,7 +8,7 @@ class DrivingWindow:
         self.model, self.data, self.controls = model, data, controls
         if not glfw.init():
             raise RuntimeError('GLFW initialization failed; run on a local desktop.')
-        self.window = glfw.create_window(1200, 850, 'SimpleROV-4 | Dedicated Driving Window', None, None)
+        self.window = glfw.create_window(1200, 850, 'SimpleROV | Keyboard control', None, None)
         if not self.window:
             glfw.terminate()
             raise RuntimeError('Cannot create OpenGL window.')

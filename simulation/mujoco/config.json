@@ -51,5 +51,6 @@
     "drag coefficients, tether loads and current response"
   ],
   "source_maximum_thrust": "APISQUEEN X2 claimed 2.1kgf maximum; continuous and reverse values not supplied. Reverse 10N is an editable placeholder, not manufacturer specification.",
-  "assumed_displaced_volume_m3": 0.0014182547642928786
+  "assumed_displaced_volume_m3": 0.0014182547642928786,
+  "assembly_note": "Default visual assembly omits optional foam and straps. Mass, inertia, CG, CB and displacement are independent unmeasured assumptions; neither assembly has validated buoyancy."
 }

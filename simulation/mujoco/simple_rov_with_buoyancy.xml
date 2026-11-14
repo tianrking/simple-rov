@@ -1,9 +1,9 @@
 <?xml version='1.0' encoding='utf-8'?>
-<mujoco model="MANTA_V5_SimpleROV4">
+<mujoco model="SimpleROV_with-buoyancy">
   <compiler angle="radian" meshdir="meshes" inertiafromgeom="false" />
   <option timestep=".002" gravity="0 0 -9.80665" density="0" viscosity="0" integrator="implicitfast" />
   <visual>
-    <global offwidth="1280" offheight="960" />
+    <global offwidth="2400" offheight="1800" />
     <headlight ambient=".5 .5 .5" diffuse=".8 .8 .8" />
   </visual>
   <statistic center="0 0 -1" extent="2" />

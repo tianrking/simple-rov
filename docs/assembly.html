@@ -1,15 +1,15 @@
-<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>SimpleROV工程资料</title><style>body{font-family:system-ui,sans-serif;max-width:1050px;margin:36px auto;padding:0 24px;color:#173d46;line-height:1.8;background:#f5f9fa}main{background:#fff;padding:30px;border-radius:12px}h1,h2{line-height:1.4}h2{border-top:2px solid #e0ecee;padding-top:22px;margin-top:36px}table{border-collapse:collapse;width:100%;font-size:14px}td,th{border:1px solid #cbdade;padding:8px;text-align:left}th{background:#e8f1f3}pre{overflow:auto;padding:18px;background:#173d46;color:#effbff;border-radius:8px}img,video{display:block;max-width:100%;max-height:700px;margin:auto}blockquote{background:#fff0da;padding:10px 16px;border-left:4px solid #df8b31}a{color:#006980} @media print{body,main{margin:0;padding:0}h2{break-before:page}nav{display:none}}</style><main><nav><a href="index.html">工程入口</a> · <a href="assembly.html">装配</a> · <a href="simulation.html">仿真</a> · <a href="build-plan.html">实机</a></nav><h1>SimpleROV-4 V5 详细组装说明</h1>
-<p>V5-01 · 工程试装版。 <a href="assembly.pdf">PDF</a> · <a href="acceptance.html">装配验收</a> · <a href="build-plan.html">实机路线</a></p>
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>SimpleROV 项目文档</title><style>body{font-family:system-ui,sans-serif;max-width:1050px;margin:36px auto;padding:0 24px;color:#173d46;line-height:1.8;background:#f5f9fa}main{background:#fff;padding:30px;border-radius:12px}h1,h2{line-height:1.4}h2{border-top:2px solid #e0ecee;padding-top:22px;margin-top:36px}table{border-collapse:collapse;width:100%;font-size:14px}td,th{border:1px solid #cbdade;padding:8px;text-align:left}th{background:#e8f1f3}pre{overflow:auto;padding:18px;background:#173d46;color:#effbff;border-radius:8px}img,video{display:block;max-width:100%;max-height:700px;margin:auto}blockquote{background:#fff0da;padding:10px 16px;border-left:4px solid #df8b31}a{color:#006980} @media print{body,main{margin:0;padding:0}h2{break-before:page}nav{display:none}}</style><main><nav><a href="index.html">项目入口</a> · <a href="assembly.html">装配</a> · <a href="simulation.html">仿真</a> · <a href="build-plan.html">实机</a></nav><h1>SimpleROV 图文组装说明</h1>
+<p>标准装配与选装附件。 <a href="assembly.pdf">PDF</a> · <a href="acceptance.html">装配验收</a> · <a href="build-plan.html">实机路线</a></p>
 <h2>01 先认识整机</h2>
-<p>SimpleROV-4 / V5-01 / 装配说明书 / 2026-11-14</p>
+<p>SimpleROV / 图文组装说明 / 2026-11-14</p>
 <p><img alt="图1 现有CAD总装渲染。未画最终线束、穿舱接头、控制板、电调和电池。" src="assets/images/assembly_guide/04_完整总装.png" /></p>
 <p>图1 现有CAD总装渲染。未画最终线束、穿舱接头、控制板、电调和电池。</p>
-<p>本机是一台四推进器、中央干舱的机械试装原型，名义外包约213×210×185 mm。两台水平推进器负责前进、后退和转向；左右两台竖直推进器负责升降并辅助保持左右水平。横移和俯仰没有独立执行器。</p>
+<p>本机是一台四推进器、中央干舱的机械试装原型，标准装配外包约213×210×148 mm，默认不装顶部浮材及绑带；加装浮力模块后约213×210×185 mm。两台水平推进器负责前进、后退和转向；左右两台竖直推进器负责升降并辅助保持左右水平。横移和俯仰没有独立执行器。</p>
 <p>机架、上罩、滑橇和推进器在水中工作；中央商用密封舱内部保持干燥。上罩是保护外壳，不是防水盒。电机购买完整防水推进器，不打印桨叶，不自己做旋转轴穿舱。</p>
 <blockquote>
 <p>状态：数字装配与网格检查通过；实物孔位、打印强度、湿态保持、水密和完整电气装配均未验证。本文不是潜深或可靠性认证。MCU专用安装板、托板机械锁止、穿舱线束及全部电气空间未冻结。</p>
 </blockquote>
-<p>阅读顺序：第2页认零件；第3页分螺丝；第4-5页装底架和推进器；第6-8页装内部模块、舱体和线束；第9页封罩与浮材；第10页验收维护；第11页查文件和待确认项。</p>
+<p>阅读顺序：第2页认零件；第3页分螺丝；第4-5页装底架和推进器；第6-8页装内部模块、舱体和线束；第9页封罩与选装浮力模块；第10页验收维护；第11页查文件和待确认项。</p>
 <h2>02 每个打印件做什么</h2>
 <p>10个主体打印件 / 7类功能件 / 另有2个接口试片</p>
 <p><img alt="图2 实际打印件网格的分解示意。圆圈编号对应下表；位移仅供识别，不代表可直接按该方向抽出。" src="assets/images/assembly_guide/05_打印件分解.png" /></p>
@@ -26,7 +26,7 @@
 <tr>
 <td>1 / V5_01_LOAD_CHASSIS</td>
 <td>1</td>
-<td>承力底架。连接推进器、滑橇、舱座、上罩、浮材绑带和系缆眼；承受推进力。</td>
+<td>承力底架。连接推进器、滑橇、舱座、上罩和系缆眼，预留选装浮材绑带通道；承受推进力。</td>
 </tr>
 <tr>
 <td>2 / V5_02_UPPER_FAIRING</td>
@@ -60,7 +60,7 @@
 </tr>
 </tbody>
 </table>
-<p>打印文件用mechanical/stl/，已按建议姿态落床，单位mm。mechanical/assembly_meshes/用于总装/仿真，不能混作已排好方向的打印文件。压力舱、相机、推进器、浮材和绑带均另购。</p>
+<p>打印文件用mechanical/stl/，已按建议姿态落床，单位mm。mechanical/assembly_meshes/用于总装/仿真，不能混作已排好方向的打印文件。压力舱、相机和推进器另购；浮材与绑带是选装附件，默认不采购。</p>
 <h2>03 螺丝、垫片与工具</h2>
 <p>下表为当前CAD安装量，不含备件；电机螺钉需先核盲孔深度</p>
 <table>
@@ -162,7 +162,7 @@
 <p>水平推进器：两台轴线沿X，位于后部左右两侧，轴心(−78,±74,18)mm。原厂固定底脚贴合底架安装台；从底下用每台4颗M3×8和4片M3垫片向上固定。垫片落入底架预留沉台；不夹外转子、桨轴、桨叶或导流罩薄壁。</p>
 </li>
 <li>
-<p>竖直推进器：左右轴心(0,±62,−40)mm，轴线沿Z。把原厂底脚贴在竖推支架安装侧面，每台4颗M3×12、4片M3垫片从支架背面沿X方向进入电机底脚。固定面和朝向以当前总装及图5定位图核对。</p>
+<p>竖直推进器：左右轴心(0,±62,−40)mm，轴线沿Z。把原厂底脚贴在竖推支架安装侧面，每台4颗M3×12、4片M3垫片从支架背面沿X方向进入电机底脚。固定面和朝向以当前总装及图8顶视定位图核对。</p>
 </li>
 <li>
 <p>每组优先配相反旋向的成品推进器，后续校准使水平同推能前进、竖直同推能上升。CW/CCW不是接线或推力正负的完整定义；必须在水中低推力逐台标定。每台需要独立双向电调。</p>
@@ -250,8 +250,8 @@
 <blockquote>
 <p>防水对象是整个舱体、接头和线束组合，普通MCU板只需在合格干舱内工作。当前完整电气堆叠、线束图、保护参数与空间还未完成；本页的逻辑连接不能替代这些工作。</p>
 </blockquote>
-<h2>09 第六步：上罩、浮材、绑带和配重</h2>
-<p>确认所有管线通道后，再完成外部装配</p>
+<h2>09 第六步：上罩、选装浮力模块与配重</h2>
+<p>标准装配不装浮材和绑带 / 是否加装由实测配平决定</p>
 <p><img alt="图8 顶视辨认前后与左右。水平方向箭头表示正向受力约定，不是水流箭头。" src="assets/images/assembly_guide/01_顶视定位.png" /></p>
 <p>图8 顶视辨认前后与左右。水平方向箭头表示正向受力约定，不是水流箭头。</p>
 <ol>
@@ -259,13 +259,13 @@
 <p>上罩浅定位沿与底架对齐落座。四个工具井对应X=±95、Y=±18mm连接点；4颗M3×25从上方经工具井装入，头下和底架下方各1片M3垫片，下面装M3螺母。共4颗螺钉、8片垫片、4个螺母。线束不可夹在定位沿内，上罩不作为密封面。</p>
 </li>
 <li>
-<p>前后各放1块名义62×160×35mm闭孔浮材，中心X=±69mm、底面Z=60.5mm。材料需适合目标水深，按真实密度选，不用普通FDM空心块或吸水泡棉替代。工具让位口总计4处、名义D12，先确认不遮挡螺钉井。</p>
+<p>选装浮材时，前后各放1块名义62×160×35mm闭孔浮材，中心X=±69mm、底面Z=60.5mm。材料需适合目标水深，按真实密度选，不用普通FDM空心块或吸水泡棉替代。工具让位口总计4处、名义D12，先确认不遮挡螺钉井。</p>
 </li>
 <li>
-<p>4条可释放绑带按纵向X绕浮材和承力底架，Y=±32.5mm。后段经过X=−101/−35导向槽，前段经过X=35/101导向槽；槽宽3×7mm。名义带宽4.8mm、厚不超过1.2mm、长约450mm；实际锁头未建模，放在可达顶部、远离工具井和桨水路。</p>
+<p>仅随浮材选装4条可释放绑带按纵向X绕浮材和承力底架，Y=±32.5mm。后段经过X=−101/−35导向槽，前段经过X=35/101导向槽；槽宽3×7mm。名义带宽4.8mm、厚不超过1.2mm、长约450mm；实际锁头未建模，放在可达顶部、远离工具井和桨水路。</p>
 </li>
 <li>
-<p>完整装配并称重后，再通过底部两条12×3.4mm长圆孔固定配重。调整浮材和配重使浮心高于重心、前后平衡，并在完全浸没时略正浮。不要把仿真的1.4kg和1%正浮力作为实测结果。</p>
+<p>标准装配跳过26-27。完整装配并称重、测排水和水中姿态后，按需加浮材或通过底部两条12×3.4mm长圆孔固定配重。调整浮材和配重使浮心高于重心、前后平衡，并在完全浸没时略正浮。不要把仿真的1.4kg和1%正浮力作为实测结果。</p>
 </li>
 </ol>
 <h2>10 装好以后怎样检查、拆卸和维护</h2>
@@ -307,7 +307,7 @@
 </tbody>
 </table>
 <p>结构验收文件暂拟每个电机安装模块约41N双向静载、保持5分钟、重复3次，是项目拟定工况，尚未执行，也不是认证标准。用刚性替身夹具加载，不损伤推进器本体；位移不能侵入实际最小间隙，检查裂纹、分层、滑移与残余变形。完整底架的同时推进工况和实际材料性能仍需另核。</p>
-<p>拆罩顺序：断电并确认桨不会启动 → 释放4条浮材绑带 → 移开浮材 → 经4个工具井拆上罩 → 释放舱夹 → 按原厂流程取舱检修。拆滑橇前，还需取下挡住上方工具路径的水平推进器。竖推电机的侧向螺钉可独立维护。</p>
+<p>拆罩顺序：断电并确认桨不会启动 → 若装有浮材，先释放绑带并移开浮材 → 经4个工具井拆上罩 → 释放舱夹 → 按原厂流程取舱检修。拆滑橇前，还需取下挡住上方工具路径的水平推进器。竖推电机的侧向螺钉可独立维护。</p>
 <p>使用后检查漏水、线缆磨损、穿舱件松动、打印层间裂纹和螺母槽。维护密封圈或更换穿舱件后重新验漏。任何发生过触底、撞击、过热或进水的部件重新评估，不能只复位继续运行。</p>
 <blockquote>
 <p>不能据此承诺满功率长期工作、额定潜深或使用寿命。当前需要完成的仍包括托板机械锁止、电气空间/散热、穿舱线束、电机原厂接口实测和全部物理测试。</p>
@@ -336,7 +336,7 @@
 </tr>
 <tr>
 <td>带参考件总装</td>
-<td>mechanical/MANTA_V5_CORE.step；含名义金属件的版本为MANTA_V5_WITH_FASTENERS.step。</td>
+<td>mechanical/assemblies/simple-rov.step为默认无浮材总装；同目录含with-fasteners及with-buoyancy配置。</td>
 </tr>
 <tr>
 <td>打印和紧固件清单</td>
@@ -358,7 +358,7 @@
 </table>
 <p>必须补完：①电机原厂孔型/孔深/出线；②具体控制板及安装板；③托板可靠锁止；④电池、四电调、USB主机和线束空间及散热；⑤实际穿舱件/堵头；⑥整机称重、浮心重心、推力标定；⑦打印载荷、湿态保持、水密和浅水试验。</p>
 <p>记录建议：样机编号、打印材料批次、层高/方向/壁数、螺丝规格及实际啮合、采购件版本、实际重量、电机推力方向/中位/电流、验漏日期/结果、载荷试验、断推姿态与检修记录。不同批次打印件不能直接沿用上一批的强度结论。</p>
-<p>Onshape中10个主体为可直接编辑的导入实体，没有原生草图历史；完整尺寸驱动源是Python。云端后端盖导入为曲面参考，本地原厂STEP仍为实体；不要用云端曲面参考制造承压件。修改后须统一更新CAD、孔位清单、文档及仿真。</p>
+<p>历史Onshape参考中10个主体为可直接编辑的导入实体，没有原生草图历史；完整尺寸驱动源是Python。云端后端盖导入为曲面参考，本地原厂STEP仍为实体；不要用云端曲面参考制造承压件。云端历史总装含浮材，不作为当前默认配置；以本仓库assemblies为准。修改后须统一更新CAD、孔位清单、文档及仿真。</p>
 <p>来源：X2官方产品页与尺寸图；Blue Robotics原厂压力舱/相机STEP；原厂装配与真空验漏指南。电机参考网格和示意图不替代厂家安装图。原厂装配：www.bluerobotics.com/learn/watertight-enclosure-wte-assembly-new/；真空验漏：bluerobotics.com/learn/using-the-vacuum-test-plug/；电机：underwaterthruster.com（APISQUEEN X2产品页）。</p>
 <blockquote>
 <p>下一步实际执行：先做1台电机＋2个接口试片，同时完成电气1:1堆叠；通过后再批量打印主体和补购电机。不要把“有STL和螺丝表”当作完整成熟整机已定版。</p>

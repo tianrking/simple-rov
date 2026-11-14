@@ -313,7 +313,7 @@
   "physical_tested": false,
   "scope": "Nominal geometry: prints versus all parts, suppliers versus suppliers, hardware versus suppliers, straps versus all parts. Metal-to-metal thread engagement is not an interference test; no OEM X2 internal solid is available. Boolean volume reporting threshold0.03mm3. Not strength, physical fit, manufacturing process, sealing or CFD validation.",
   "source_sha256": {
-    "build.py": "c380bf73f9d8ee3393fb28b8dbf0138a8dc8e896dea178fb2a804ea97b0809e7",
+    "build.py": "94faef641c97841ce7e1f66223bdcc30254042e682dc51c97b9d25862150c8d4",
     "parameters.json": "1e06442b497e83284f4aa5ada5eedbb110d39a4cf5adffab36e9a26a90a10c48"
   }
 }

@@ -12,9 +12,9 @@
     2.5
   ],
   "source_sha256": {
-    "run.py": "67e4fedcd6f6da0329db44ad55e71c4f127bc4344dd03e8c53c6bb76f339e72a",
+    "run.py": "32bc4e93d523c77343b43b6e1e481bfc992c811baeca113a1dd9c49ad93a4648",
     "manual_control.py": "3cda99617347c4b394431532e07ed472de9150880bf66d5d6a05213f9a2c83a9",
-    "environment.py": "3957bdb9d1e42cf6e4cec8fc01b66ecdcd6992615a35fb8d4dbd19ad478b417c"
+    "environment.py": "24d5db1ec9dc4ec080e90a33853f5e58940fc21793042b8db9ce84325a36d746"
   },
   "scope": "Keyboard command mapping and response under the existing assumed water model. Not physical robot validation.",
   "passed": true

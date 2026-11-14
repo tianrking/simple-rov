@@ -1,5 +1,5 @@
-<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>SimpleROV工程资料</title><style>body{font-family:system-ui,sans-serif;max-width:1050px;margin:36px auto;padding:0 24px;color:#173d46;line-height:1.8;background:#f5f9fa}main{background:#fff;padding:30px;border-radius:12px}h1,h2{line-height:1.4}h2{border-top:2px solid #e0ecee;padding-top:22px;margin-top:36px}table{border-collapse:collapse;width:100%;font-size:14px}td,th{border:1px solid #cbdade;padding:8px;text-align:left}th{background:#e8f1f3}pre{overflow:auto;padding:18px;background:#173d46;color:#effbff;border-radius:8px}img,video{display:block;max-width:100%;max-height:700px;margin:auto}blockquote{background:#fff0da;padding:10px 16px;border-left:4px solid #df8b31}a{color:#006980} @media print{body,main{margin:0;padding:0}h2{break-before:page}nav{display:none}}</style><main><nav><a href="index.html">工程入口</a> · <a href="assembly.html">装配</a> · <a href="simulation.html">仿真</a> · <a href="build-plan.html">实机</a></nav><h1>V5 MuJoCo仿真</h1>
-<p>这是与V5 CAD坐标对应的四推进器刚体仿真，提供运动、控制分配和相机视角的开发起点。使用当前交付的STL外观网格，另有简化碰撞体；不把STL网格当作水动力模型。</p>
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>SimpleROV 项目文档</title><style>body{font-family:system-ui,sans-serif;max-width:1050px;margin:36px auto;padding:0 24px;color:#173d46;line-height:1.8;background:#f5f9fa}main{background:#fff;padding:30px;border-radius:12px}h1,h2{line-height:1.4}h2{border-top:2px solid #e0ecee;padding-top:22px;margin-top:36px}table{border-collapse:collapse;width:100%;font-size:14px}td,th{border:1px solid #cbdade;padding:8px;text-align:left}th{background:#e8f1f3}pre{overflow:auto;padding:18px;background:#173d46;color:#effbff;border-radius:8px}img,video{display:block;max-width:100%;max-height:700px;margin:auto}blockquote{background:#fff0da;padding:10px 16px;border-left:4px solid #df8b31}a{color:#006980} @media print{body,main{margin:0;padding:0}h2{break-before:page}nav{display:none}}</style><main><nav><a href="index.html">项目入口</a> · <a href="assembly.html">装配</a> · <a href="simulation.html">仿真</a> · <a href="build-plan.html">实机</a></nav><h1>MuJoCo 仿真与键盘驾驶</h1>
+<p>这是与当前CAD坐标对应的四推进器刚体仿真，提供运动、控制分配和相机视角的开发起点。使用当前交付的STL外观网格，另有简化碰撞体；不把STL网格当作水动力模型。</p>
 <h2>运行</h2>
 <p>推荐Python 3.11/3.12虚拟环境，安装项目根目录的<code>requirements/sim.txt</code>，例如：</p>
 <pre><code class="language-bash">python3 -m venv .venv
@@ -17,6 +17,11 @@ python simulation/mujoco/run.py --render
 </code></pre>
 <p>其他平台可使用<code>python simulation/mujoco/run.py --viewer</code>。直接运行run.py默认是定深、升降、前进和转向的自动演示；加<code>--manual --viewer</code>启用键盘驾驶。根目录Mac启动脚本默认启用键盘驾驶。不含已连接的游戏手柄或真实机器人控制固件。<code>--render</code>在无交互窗口下生成每次runs/输出目录中的录像、CSV和视图。</p>
 <p><strong>请通过<code>run.py</code>运行。</strong> 外加浮力、阻力和电机滞后在<code>environment.py</code>中实现。单独把XML拖进通用MuJoCo查看器只有模型、重力和接触，缺少这些水下外力。</p>
+<h2>两种装配配置</h2>
+<p>默认<code>--configuration base</code>加载无顶部浮材的<code>simple_rov.xml</code>，尺寸213×210×148mm。选装配置加载<code>simple_rov_with_buoyancy.xml</code>，外包高度约185mm：</p>
+<pre><code class="language-bash">python simulation/mujoco/run.py --viewer --manual --configuration with-buoyancy --seconds 120
+</code></pre>
+<p>Python接口为<code>ROV(configuration="base")</code>或<code>ROV(configuration="with-buoyancy")</code>。切换配置会改变外观与相应碰撞体，<strong>不会自动重算质量、惯量、重心、浮心或排水量</strong>。两者共享明确的示例参数；真实配平后应修改<code>config.json</code>并重建，见<a href="buoyancy.html">浮力模块与配平</a>。</p>
 <h2>控制接口</h2>
 <pre><code class="language-python">from environment import ROV
 e = ROV()

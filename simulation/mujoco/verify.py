@@ -22,5 +22,11 @@ results['roll_recovery']={'initial_rad':.2,'final_rad':float(r[0])};assert abs(r
 e.reset(roll=.2,yaw=1.0)
 for _ in range(4000):p,r,_,_=e.step(e.controller(yaw=1.0))
 results['roll_recovery_at_rotated_heading']={'initial_roll_rad':.2,'target_yaw_rad':1.0,'final_roll_rad':float(r[0]),'final_yaw_rad':float(r[2])};assert abs(r[0])<.02 and abs(r[2]-1)<.02
+configurations={}
+for configuration in ('base','with-buoyancy'):
+ env=ROV(configuration=configuration);foam=[mujoco.mj_name2id(env.model,mujoco.mjtObj.mjOBJ_GEOM,n)>=0 for n in ('BUY_TRIM_FOAM_-69','BUY_TRIM_FOAM_69')];assert all(foam) if configuration=='with-buoyancy' else not any(foam)
+ for _ in range(250):env.step(env.controller())
+ configurations[configuration]={'foam_present':all(foam),'state_finite':bool(np.isfinite(env.data.qpos).all())}
+results['assembly_configurations']=configurations
 results['scope']='Functional checks under assumed uncalibrated mass/CG/CB/thrust/drag. Does not validate a physical robot, pressure depth, structure or optical performance.'
-results['source_sha256']={p.name:hashlib.sha256(p.read_bytes()).hexdigest() for p in [S/'config.json',S/'manta_v5.xml',S/'ACTUATOR_MAP.json',S/'environment.py']};results['passed']=True;(S/'SIMULATION_CHECKS.json').write_text(json.dumps(results,indent=2));print(json.dumps(results,indent=2))
+results['source_sha256']={p.name:hashlib.sha256(p.read_bytes()).hexdigest() for p in [S/'config.json',S/'simple_rov.xml',S/'simple_rov_with_buoyancy.xml',S/'ACTUATOR_MAP.json',S/'environment.py']};results['passed']=True;(S/'SIMULATION_CHECKS.json').write_text(json.dumps(results,indent=2));print(json.dumps(results,indent=2))

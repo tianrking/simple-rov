@@ -1,0 +1,144 @@
+{
+  "source": "Current CAD assembly meshes through MuJoCo visual meshes",
+  "source_parts_sha256": "159ff3250d0ab5670ee69a24f069e64e2f93f741c49f19d8564b32f5a59fbabd",
+  "default_configuration": "base",
+  "base_dimensions_mm": [
+    213.0,
+    210.0,
+    148.0
+  ],
+  "optional_dimensions_mm": [
+    213.0,
+    210.0,
+    184.7
+  ],
+  "views": [
+    {
+      "file": "hero.png",
+      "title": "整体 / FRONT-LEFT",
+      "configuration": "base",
+      "azimuth_deg": 45,
+      "elevation_deg": -24,
+      "orthographic": false,
+      "interior": false,
+      "pixels": [
+        2400,
+        1800
+      ],
+      "sha256": "401a6c549b7bfee01c6ca0939a2a168de01d16525bb55e28cf436afc248b5210"
+    },
+    {
+      "file": "front.png",
+      "title": "前视 / +X",
+      "configuration": "base",
+      "azimuth_deg": 0,
+      "elevation_deg": 0,
+      "orthographic": true,
+      "interior": false,
+      "pixels": [
+        2400,
+        1800
+      ],
+      "sha256": "f1c60ecb84402d6c912c5238911ac02a4d7ca50feba3f34dc94d7245464a970f"
+    },
+    {
+      "file": "rear.png",
+      "title": "后视 / -X",
+      "configuration": "base",
+      "azimuth_deg": 180,
+      "elevation_deg": 0,
+      "orthographic": true,
+      "interior": false,
+      "pixels": [
+        2400,
+        1800
+      ],
+      "sha256": "f764ed6949507ba9fb545c83cd81187a75ab702c58ed26e7a496a27179e8038c"
+    },
+    {
+      "file": "left.png",
+      "title": "左视 / +Y",
+      "configuration": "base",
+      "azimuth_deg": 90,
+      "elevation_deg": 0,
+      "orthographic": true,
+      "interior": false,
+      "pixels": [
+        2400,
+        1800
+      ],
+      "sha256": "d84c8e58f4e4535a77db0128a587e74696a30d303ef818f9cff36fdacadea234"
+    },
+    {
+      "file": "right.png",
+      "title": "右视 / -Y",
+      "configuration": "base",
+      "azimuth_deg": 270,
+      "elevation_deg": 0,
+      "orthographic": true,
+      "interior": false,
+      "pixels": [
+        2400,
+        1800
+      ],
+      "sha256": "88bd8e928bd7520600195251450fb32e1fb048e427045292b3e6314a02f5cf10"
+    },
+    {
+      "file": "top.png",
+      "title": "俯视 / +Z",
+      "configuration": "base",
+      "azimuth_deg": 0,
+      "elevation_deg": -90,
+      "orthographic": true,
+      "interior": false,
+      "pixels": [
+        2400,
+        1800
+      ],
+      "sha256": "31ad98887aaaf80972545cf87172f9e3aa98438becc0aeba7e4a798bd761a354"
+    },
+    {
+      "file": "bottom.png",
+      "title": "底视 / -Z",
+      "configuration": "base",
+      "azimuth_deg": 0,
+      "elevation_deg": 90,
+      "orthographic": true,
+      "interior": false,
+      "pixels": [
+        2400,
+        1800
+      ],
+      "sha256": "2c65b4842015aa39c72d8f35692f5a038e30db1e5df47e27c2d3eae67a08fe05"
+    },
+    {
+      "file": "interior.png",
+      "title": "内部安装 / 相机与托板",
+      "configuration": "base",
+      "azimuth_deg": 35,
+      "elevation_deg": -17,
+      "orthographic": false,
+      "interior": true,
+      "pixels": [
+        2400,
+        1800
+      ],
+      "sha256": "ea1b0490bc8abd39deff4d1843eeed59b0a7821b63dfcee2fab6d23c6326d5d2"
+    },
+    {
+      "file": "buoyancy-option.png",
+      "title": "选装浮力模块",
+      "configuration": "with-buoyancy",
+      "azimuth_deg": 45,
+      "elevation_deg": -24,
+      "orthographic": false,
+      "interior": false,
+      "pixels": [
+        2400,
+        1800
+      ],
+      "sha256": "177d1883ce610d7c236038e8d85ecd2f47ff68744560cc417c7033e127be957d"
+    }
+  ],
+  "notes": "Foam and straps are excluded in standard views. Renderings do not show unmodeled electronics/cables and are not physical test evidence."
+}

@@ -1,9 +1,9 @@
 {
-  "version": "v0.5.0",
+  "version": "v0.5.1",
   "mechanical_revision": "V5-01",
   "repository": "https://github.com/tianrking/simple-rov",
   "rights": "Original work all rights reserved; third-party rights retained",
-  "validated_in_fresh_venv": true,
+  "validated_in_fresh_venv": false,
   "local_platform": "macOS arm64 / Python3.12.9",
   "checks": {
     "repository_paths_and_secret_patterns": "PASS",
@@ -12,10 +12,14 @@
     "keyboard_control_and_release": "PASS",
     "dedicated_GLFW_callback_and_render": "PASS",
     "one_second_headless_run": "PASS",
-    "assembly_pdf_11_pages_rendered_and_reviewed": "PASS"
+    "assembly_pdf_11_pages_rendered_and_reviewed": "PASS",
+    "STEP_variants_dimensions_and_BOM": "PASS",
+    "nine_CAD_views_and_six_view_overview": "PASS"
   },
   "engineering_scope": "Digitally checked mechanical prototype and uncalibrated water-model demonstrator. No physical assembly/strength/sealing/trim validation.",
   "electronics": "PLANNED_NO_PCB_DESIGN",
   "firmware": "PLANNED_NO_FIRMWARE",
-  "physical_tested": false
+  "physical_tested": false,
+  "default_configuration": "base",
+  "validation_environment": "Existing complete .venv from v0.5.0; current sources and generated assets rechecked"
 }

@@ -44,12 +44,23 @@
     "final_roll_rad": -9.603796443139301e-15,
     "final_yaw_rad": 0.9999999999999979
   },
+  "assembly_configurations": {
+    "base": {
+      "foam_present": false,
+      "state_finite": true
+    },
+    "with-buoyancy": {
+      "foam_present": true,
+      "state_finite": true
+    }
+  },
   "scope": "Functional checks under assumed uncalibrated mass/CG/CB/thrust/drag. Does not validate a physical robot, pressure depth, structure or optical performance.",
   "source_sha256": {
-    "config.json": "2dc7a517708ea4c481cb3456a4166c5c38dbfeba5c7094545777c420ad4de88f",
-    "manta_v5.xml": "299dde328745529040b229cb953dfcf3f33268c3c870f5b075f779cfc8537d10",
-    "ACTUATOR_MAP.json": "76c7f48da35adf771679411891a8e39364da6e38add724d1694f206f7186c32b",
-    "environment.py": "3957bdb9d1e42cf6e4cec8fc01b66ecdcd6992615a35fb8d4dbd19ad478b417c"
+    "config.json": "8eea99dd1d6d09579e46b8acfbeb7307b6f2c7d5e5f8442bea1b285ca9a5e844",
+    "simple_rov.xml": "e07a4ff03a6f9b4b66c45d2d85399a02cd889de7f31124d280dfc5cc73190437",
+    "simple_rov_with_buoyancy.xml": "8138497016c5ffd1854d3d155d1edd1868d46e829accead5aa900f34c22f61d8",
+    "ACTUATOR_MAP.json": "afa0f4f0b0bb384daa62282e789e097b8203c855ce194f8cd00a79dc02490984",
+    "environment.py": "24d5db1ec9dc4ec080e90a33853f5e58940fc21793042b8db9ce84325a36d746"
   },
   "passed": true
 }

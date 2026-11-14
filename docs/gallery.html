@@ -1,0 +1,22 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>SimpleROV 项目文档</title><style>body{font-family:system-ui,sans-serif;max-width:1050px;margin:36px auto;padding:0 24px;color:#173d46;line-height:1.8;background:#f5f9fa}main{background:#fff;padding:30px;border-radius:12px}h1,h2{line-height:1.4}h2{border-top:2px solid #e0ecee;padding-top:22px;margin-top:36px}table{border-collapse:collapse;width:100%;font-size:14px}td,th{border:1px solid #cbdade;padding:8px;text-align:left}th{background:#e8f1f3}pre{overflow:auto;padding:18px;background:#173d46;color:#effbff;border-radius:8px}img,video{display:block;max-width:100%;max-height:700px;margin:auto}blockquote{background:#fff0da;padding:10px 16px;border-left:4px solid #df8b31}a{color:#006980} @media print{body,main{margin:0;padding:0}h2{break-before:page}nav{display:none}}</style><main><nav><a href="index.html">项目入口</a> · <a href="assembly.html">装配</a> · <a href="simulation.html">仿真</a> · <a href="build-plan.html">实机</a></nav><h1>结构视图</h1>
+<p>本页图片直接由当前CAD网格生成，分辨率为2400×1800。标准机体不安装浮力模块。正投影视图使用统一视野，坐标X向前、Y向左、Z向上。</p>
+<p>这些是结构渲染图，不是实物照片。舱件采用不透明显示材质便于辨认轮廓，颜色不作为采购或材料规格。推进器为厂家尺寸重建参考，相机和舱件来自注明来源的商用CAD。未完成的控制板、电调、电池和线束没有用虚构模型填充。</p>
+<h2>整体</h2>
+<p><img alt="标准装配" src="assets/gallery/hero.png" /></p>
+<h2>前视与后视</h2>
+<p><img alt="前视" src="assets/gallery/front.png" /></p>
+<p><img alt="后视" src="assets/gallery/rear.png" /></p>
+<h2>左视与右视</h2>
+<p><img alt="左视" src="assets/gallery/left.png" /></p>
+<p><img alt="右视" src="assets/gallery/right.png" /></p>
+<h2>俯视与底视</h2>
+<p><img alt="俯视" src="assets/gallery/top.png" /></p>
+<p><img alt="底视" src="assets/gallery/bottom.png" /></p>
+<h2>内部安装</h2>
+<p><img alt="内部安装" src="assets/gallery/interior.png" /></p>
+<p>为便于观察，此视图隐藏了上罩与全部压力舱组件，保留相机、托板、机架与推进器。最终电子布局和托板锁止仍需补完。</p>
+<h2>可选浮力模块</h2>
+<p><img alt="选装浮力模块" src="assets/gallery/buoyancy-option.png" /></p>
+<p>浮材是根据实际重量和配平选择的附件，不属于标准装配。安装方法与边界见<a href="buoyancy.html">浮力模块说明</a>。</p>
+<h2>图像来源</h2>
+<p>生成脚本：<a href="../tools/docs/render_gallery.py">render_gallery.py</a>。模型来源、配置、视角和图像哈希记录在<a href="../validation/gallery.json">gallery.json</a>。</p></main></html>

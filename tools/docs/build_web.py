@@ -4,7 +4,7 @@ import re,posixpath
 import markdown
 from content import PAGES
 R=Path(__file__).resolve().parents[2]
-lines=['# SimpleROV-4 V5 详细组装说明','','V5-01 · 工程试装版。 [PDF](assembly.pdf) · [装配验收](acceptance.md) · [实机路线](build-plan.md)','']
+lines=['# SimpleROV 图文组装说明','','标准装配与选装附件。 [PDF](assembly.pdf) · [装配验收](acceptance.md) · [实机路线](build-plan.md)','']
 for page in PAGES:
     lines+=['## '+page['title'],'',page['subtitle'],'']
     for b in page['blocks']:
@@ -29,5 +29,5 @@ for source in [R/'README.md',*sorted((R/'docs').glob('*.md'))]:
     for md in (R/'docs').glob('*.md'):
         text=text.replace(md.name,md.with_suffix('.html').name)
     body=markdown.markdown(text,extensions=['tables','fenced_code'])
-    target.write_text('<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>SimpleROV工程资料</title><style>'+css+'</style><main><nav><a href="index.html">工程入口</a> · <a href="assembly.html">装配</a> · <a href="simulation.html">仿真</a> · <a href="build-plan.html">实机</a></nav>'+body+'</main></html>')
+    target.write_text('<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>SimpleROV 项目文档</title><style>'+css+'</style><main><nav><a href="index.html">项目入口</a> · <a href="assembly.html">装配</a> · <a href="simulation.html">仿真</a> · <a href="build-plan.html">实机</a></nav>'+body+'</main></html>')
 print('Generated assembly Markdown and HTML reading pages')

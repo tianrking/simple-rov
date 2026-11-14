@@ -5,8 +5,10 @@ from pathlib import Path
 import json,numpy as np,mujoco,math
 S=Path(__file__).resolve().parent
 class ROV:
- def __init__(self):
-  self.k=json.loads((S/'config.json').read_text());self.map=json.loads((S/'ACTUATOR_MAP.json').read_text());self.model=mujoco.MjModel.from_xml_path(str(S/'manta_v5.xml'));self.data=mujoco.MjData(self.model);self.bid=mujoco.mj_name2id(self.model,mujoco.mjtObj.mjOBJ_BODY,'rov');self.A=np.array(self.map['allocation_matrix'])[[0,2,3,5]];self.force=np.zeros(4);self.reset()
+ def __init__(self,configuration="base"):
+  if configuration not in ('base','with-buoyancy'):raise ValueError('Unknown assembly configuration: '+configuration)
+  self.configuration=configuration
+  self.k=json.loads((S/'config.json').read_text());self.map=json.loads((S/'ACTUATOR_MAP.json').read_text());self.model=mujoco.MjModel.from_xml_path(str(S/('simple_rov_with_buoyancy.xml' if configuration=='with-buoyancy' else 'simple_rov.xml')));self.data=mujoco.MjData(self.model);self.bid=mujoco.mj_name2id(self.model,mujoco.mjtObj.mjOBJ_BODY,'rov');self.A=np.array(self.map['allocation_matrix'])[[0,2,3,5]];self.force=np.zeros(4);self.reset()
  def reset(self,roll=0,yaw=0):
   mujoco.mj_resetData(self.model,self.data);self.data.qpos[3:7]=[np.cos(yaw/2)*np.cos(roll/2),np.cos(yaw/2)*np.sin(roll/2),np.sin(yaw/2)*np.sin(roll/2),np.sin(yaw/2)*np.cos(roll/2)];self.force[:]=0;mujoco.mj_forward(self.model,self.data)
  def state(self):

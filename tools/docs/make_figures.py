@@ -25,7 +25,7 @@ label(ax,'左侧 / Y+',0,124);label(ax,'右侧 / Y-',0,-124)
 ax.annotate('后部穿舱端盖',xy=(-78,-12),xytext=(-157,-35),fontsize=12,color='#173a43',arrowprops=dict(arrowstyle='->'))
 ax.annotate('竖推：轴线垂直纸面',xy=(16,67),xytext=(46,98),fontsize=12,color='#173a43',arrowprops=dict(arrowstyle='->'))
 ax.annotate('水平推进器：轴向前后',xy=(-82,-78),xytext=(-148,-109),fontsize=12,color='#173a43',arrowprops=dict(arrowstyle='->'))
-f.suptitle('V5 顶视定位图（隐藏上罩、浮材；位置来自 CAD）',fontsize=17,color='#173a43');f.savefig(O/'01_顶视定位.png',dpi=180,bbox_inches='tight',facecolor='white');plt.close(f)
+f.suptitle('顶视定位图（隐藏上罩；位置来自 CAD）',fontsize=17,color='#173a43');f.savefig(O/'01_顶视定位.png',dpi=180,bbox_inches='tight',facecolor='white');plt.close(f)
 # Motor screw stack, schematic with actual nominal lengths.
 f,axs=plt.subplots(1,2,figsize=(12,5))
 for ax in axs:clean(ax,(-6,24),(-4,24))
@@ -41,7 +41,7 @@ label(ax,'电机三相线',34,26,10);label(ax,'控制信号',87,27,10);label(ax,
 label(ax,'机架与上罩可进水',17,15,13);label(ax,'边界与连接关系示意；不是已冻结的电气接线图',60,57,13)
 f.savefig(O/'03_干湿边界.png',dpi=180,bbox_inches='tight',facecolor='white');plt.close(f)
 # CAD-based 3D renders. Move actual visual meshes, do not invent hardware.
-model=mujoco.MjModel.from_xml_path(str(R/'simulation/mujoco/manta_v5.xml'));data=mujoco.MjData(model);renderer=mujoco.Renderer(model,height=900,width=1200)
+model=mujoco.MjModel.from_xml_path(str(R/'simulation/mujoco/simple_rov_with_buoyancy.xml'));data=mujoco.MjData(model);renderer=mujoco.Renderer(model,height=900,width=1200)
 base_rgba=model.geom_rgba.copy();base_pos=model.geom_pos.copy();base_group=model.geom_group.copy()
 P=json.loads((R/'mechanical/parts.json').read_text());names=[p['name'] for p in P if p['kind']!='HARDWARE']
 def render(file,include,shifts=None,lookat=(0,0,0),distance=.62,elevation=-24,azimuth=135):
@@ -71,7 +71,7 @@ def render(file,include,shifts=None,lookat=(0,0,0),distance=.62,elevation=-24,az
  if file.startswith(('04_','05_','06_','07_','08_')):
   arr=np.asarray(im);mask=np.max(arr,axis=2)>25;ys,xs=np.where(mask);im=im.crop((max(0,int(xs.min())-28),max(0,int(ys.min())-28),min(im.width,int(xs.max())+29),min(im.height,int(ys.max())+29)))
  im.save(O/file)
-render('04_完整总装.png',names,lookat=(0,0,.005),distance=.54,azimuth=45)
+render('04_完整总装.png',[p['name'] for p in P if p['kind']!='HARDWARE' and not p.get('optional_buoyancy')],lookat=(0,0,.005),distance=.54,azimuth=45)
 prints=[p['name'] for p in P if p['kind']=='PRINT'];shifts={}
 for n in prints:
  if 'UPPER' in n:shifts[n]=[0,0,125]
@@ -97,3 +97,7 @@ for x,tx,t in [(-118,-130,'后盖 / 穿舱口'),(0,0,'150 mm 管体'),(115,105,'
 rect(ax,(-50,-84),100,5,COL['mount']);rect(ax,(43,-79),5,30,COL['mount']);rect(ax,(49,-75),15,22,'#8cafad');ax.annotate('内部托板 + 相机模块',xy=(0,-80),xytext=(-90,-101),fontsize=13,ha='center',color='#173a43',arrowprops=dict(arrowstyle='->'))
 ax.annotate('',xy=(0,-31),xytext=(0,-70),arrowprops=dict(arrowstyle='->',lw=2,color='#ed8a24'));label(ax,'在舱外装好后放入；最终锁止与电气布局待补',80,-99,10)
 f.suptitle('密封舱结构关系示意（非密封槽截面或加工图）',fontsize=17,color='#173a43');f.savefig(O/'08_密封舱分解.png',dpi=180,bbox_inches='tight',facecolor='white');plt.close(f)
+
+# Keep the manual lead image synchronized with the current configuration gallery.
+import runpy
+runpy.run_path(str(Path(__file__).with_name('render_gallery.py')),run_name='__main__')

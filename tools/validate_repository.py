@@ -49,8 +49,30 @@ guide=json.loads((ROOT/'validation/assembly_guide.json').read_text());require(gu
 for n,h in guide['source_sha256'].items():require(hashlib.sha256((ROOT/n).read_bytes()).hexdigest()==h,'Stale assembly guide source '+n)
 act=json.loads((ROOT/'simulation/mujoco/ACTUATOR_MAP.json').read_text())
 for k,path in [('CAD_parameters_sha256','mechanical/parameters.json'),('CAD_parts_sha256','mechanical/parts.json')]:require(hashlib.sha256((ROOT/path).read_bytes()).hexdigest()==act[k],'Stale actuator map: '+path)
-root=ET.parse(ROOT/'simulation/mujoco/manta_v5.xml').getroot()
-for mesh in root.findall('./asset/mesh'):require((ROOT/'simulation/mujoco/meshes'/mesh.attrib['file']).is_file(),'Missing XML mesh')
+for name in ['simple_rov.xml','simple_rov_with_buoyancy.xml']:
+ root=ET.parse(ROOT/'simulation/mujoco'/name).getroot()
+ for mesh in root.findall('./asset/mesh'):require((ROOT/'simulation/mujoco/meshes'/mesh.attrib['file']).is_file(),'Missing XML mesh')
+configs=json.loads((ROOT/'mechanical/configurations.json').read_text());require(configs['default']=='base','Default must omit buoyancy')
+for key in ['base','with-buoyancy']:require((ROOT/'mechanical'/configs[key]['step']).is_file(),'Missing assembly variant')
+configuration_report=json.loads((ROOT/'validation/configurations.json').read_text())
+require(configuration_report['passed'],'STEP configuration readback failed')
+for n,h in configuration_report['source_sha256'].items():require(hashlib.sha256((ROOT/n).read_bytes()).hexdigest()==h,'Stale configuration source: '+n)
+require(configs['base']['dimensions_mm']==[213,210,148],'Standard size mismatch')
+require(configs['with-buoyancy']['dimensions_mm']==[213,210,184.7],'Optional size mismatch')
+optional={p['name'] for p in parts if p['optional_buoyancy']}
+require(len(optional)==6 and not optional.intersection(configs['base']['included_parts']),'Optional geometry in base CAD')
+require(optional <= set(configs['with-buoyancy']['included_parts']),'Missing optional CAD geometry')
+for name,expected in [('simple_rov.xml',False),('simple_rov_with_buoyancy.xml',True)]:
+ root=ET.parse(ROOT/'simulation/mujoco'/name).getroot()
+ names={g.attrib.get('name','') for g in root.findall('.//geom')}
+ require(optional.issubset(names) if expected else not optional.intersection(names),'XML optional visual configuration: '+name)
+ require(any(n.startswith('proxy_foam') for n in names)==expected,'XML foam collision configuration: '+name)
+gallery=json.loads((ROOT/'validation/gallery.json').read_text())
+require(hashlib.sha256((ROOT/'mechanical/parts.json').read_bytes()).hexdigest()==gallery['source_parts_sha256'],'Stale gallery CAD source')
+require(len(gallery['views'])==9 and gallery['default_configuration']=='base','Gallery view inventory')
+for view in gallery['views']:
+ require(view['pixels']==[2400,1800],'Gallery image dimensions')
+ require(hashlib.sha256((ROOT/'docs/assets/gallery'/view['file']).read_bytes()).hexdigest()==view['sha256'],'Stale gallery image: '+view['file'])
 status=json.loads((ROOT/'STATUS.json').read_text());require(not status['physical_tested'] and status['pcb_status']=='PLANNED_NO_DESIGN','Maturity status mismatch')
 require('All rights reserved' in (ROOT/'LICENSE').read_text(),'Missing reserved rights notice')
 if args.manifest:

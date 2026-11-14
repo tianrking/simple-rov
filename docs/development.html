@@ -1,14 +1,14 @@
-<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>SimpleROV工程资料</title><style>body{font-family:system-ui,sans-serif;max-width:1050px;margin:36px auto;padding:0 24px;color:#173d46;line-height:1.8;background:#f5f9fa}main{background:#fff;padding:30px;border-radius:12px}h1,h2{line-height:1.4}h2{border-top:2px solid #e0ecee;padding-top:22px;margin-top:36px}table{border-collapse:collapse;width:100%;font-size:14px}td,th{border:1px solid #cbdade;padding:8px;text-align:left}th{background:#e8f1f3}pre{overflow:auto;padding:18px;background:#173d46;color:#effbff;border-radius:8px}img,video{display:block;max-width:100%;max-height:700px;margin:auto}blockquote{background:#fff0da;padding:10px 16px;border-left:4px solid #df8b31}a{color:#006980} @media print{body,main{margin:0;padding:0}h2{break-before:page}nav{display:none}}</style><main><nav><a href="index.html">工程入口</a> · <a href="assembly.html">装配</a> · <a href="simulation.html">仿真</a> · <a href="build-plan.html">实机</a></nav><h1>开发、复建与发布</h1>
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>SimpleROV 项目文档</title><style>body{font-family:system-ui,sans-serif;max-width:1050px;margin:36px auto;padding:0 24px;color:#173d46;line-height:1.8;background:#f5f9fa}main{background:#fff;padding:30px;border-radius:12px}h1,h2{line-height:1.4}h2{border-top:2px solid #e0ecee;padding-top:22px;margin-top:36px}table{border-collapse:collapse;width:100%;font-size:14px}td,th{border:1px solid #cbdade;padding:8px;text-align:left}th{background:#e8f1f3}pre{overflow:auto;padding:18px;background:#173d46;color:#effbff;border-radius:8px}img,video{display:block;max-width:100%;max-height:700px;margin:auto}blockquote{background:#fff0da;padding:10px 16px;border-left:4px solid #df8b31}a{color:#006980} @media print{body,main{margin:0;padding:0}h2{break-before:page}nav{display:none}}</style><main><nav><a href="index.html">项目入口</a> · <a href="assembly.html">装配</a> · <a href="simulation.html">仿真</a> · <a href="build-plan.html">实机</a></nav><h1>开发、复建与发布</h1>
 <p>所有命令从仓库根目录运行，推荐Python3.12虚拟环境。安装用途依赖：<code>requirements/sim.txt</code>、<code>requirements/cad.txt</code>、<code>requirements/docs.txt</code>。不要把虚拟环境、密钥、个人配置或运行日志提交到Git。</p>
 <h2>仿真</h2>
 <p><code>python simulation/mujoco/run.py --viewer --manual --seconds 300</code>使用独立GLFW驾驶窗口；普通Python在Mac主线程上创建窗口。自动演示的原生MuJoCo查看器在Mac可通过<code>python simulation/mujoco/launch_macos.py --seconds 120</code>启动，启动器按需补齐所选虚拟环境的libpython链接。它不修改系统Python。</p>
 <p><code>--output-dir runs/demo</code>固定本次输出位置；省略时使用UTC时间戳目录。<code>verify.py</code>检查CAD推力映射、运动符号、定深和姿态恢复，<code>verify_manual.py</code>检查键盘目标/释放行为，<code>verify_driving_window.py</code>创建原生OpenGL窗口测试回调隔离及帧缓冲（需本地桌面）。后者不是操作系统级键盘事件注入。</p>
 <h2>CAD</h2>
-<p>源几何位于<code>mechanical/build.py</code>，参数在<code>mechanical/parameters.json</code>。原厂STEP在<code>supplier/</code>，保持版本来源。构建命令见根目录README。几何检查涉及大量布尔运算，速度取决于平台。<code>export_metadata.py</code>重新核对打印导出，更新BOM和接口资料。</p>
+<p>源几何位于<code>mechanical/build.py</code>，参数在<code>mechanical/parameters.json</code>。原厂STEP在<code>supplier/</code>，保持版本来源。构建命令见根目录README。几何检查涉及大量布尔运算，速度取决于平台。<code>export_metadata.py</code>重新核对打印导出，更新BOM和接口资料。随后运行<code>python mechanical/verify_configurations.py</code>回读两种总装STEP，检查实体数、外包尺寸及选装采购量，生成配置检查记录。</p>
 <p>原有数字报告与源文件哈希配套；改动源参数后旧报告不再代表新几何，必须重新生成、验证和更新报告。不要为了让检查通过只改报告中的哈希。</p>
 <h2>文档</h2>
 <p>Markdown是阅读和编辑入口；PDF生成内容在<code>tools/docs/content.py</code>，渲染代码在同目录。文档变更时保持两者语义一致。</p>
-<pre><code class="language-bash">python tools/docs/make_figures.py
+<pre><code class="language-bash">python tools/docs/make_figures.py  # 包括当前配置的多视角CAD图库
 python tools/docs/build_pdf.py
 python tools/docs/build_web.py
 </code></pre>
@@ -19,5 +19,6 @@ python tools/update_manifest.py
 python tools/validate_repository.py --manifest
 python tools/build_release.py
 </code></pre>
-<p>清单覆盖项目资料，排除.git、虚拟环境、缓存与runs。发布包输出在<code>runs/releases/</code>，不会自动提交；变更版本时同步更新STATUS和CHANGELOG。GitHub Actions执行仓库完整性与无窗口仿真检查，不验证实物可靠性。</p>
+<p>清单覆盖项目资料，排除.git、虚拟环境、缓存与runs。发布包输出在<code>runs/releases/</code>，不会自动提交；变更版本时同步更新STATUS和CHANGELOG。标准与选装CAD均由同一源生成：默认<code>assemblies/simple-rov.step</code>，选装<code>assemblies/simple-rov-with-buoyancy.step</code>；金属件版也分为两套。图库可单独用<code>python tools/docs/render_gallery.py</code>更新，生成六向正投影、内部视图及浮力模块对比图。仿真重建同时更新<code>simple_rov.xml</code>与<code>simple_rov_with_buoyancy.xml</code>，通过<code>--configuration</code>选择；两者水动力参数均需实测标定。</p>
+<p>GitHub Actions执行仓库完整性与无窗口仿真检查，不验证实物可靠性。</p>
 <p><code>requirements/lock-macos-py312.txt</code>记录本机完整验证环境（含CAD与文档依赖），属于macOS/Python3.12快照；Linux CI使用requirements/sim.txt，不假设跨平台原生库完全相同。CSV统一LF换行，发布哈希以Git检出后的字节为准。</p></main></html>

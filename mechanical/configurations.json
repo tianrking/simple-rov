@@ -1,0 +1,88 @@
+{
+  "default": "base",
+  "units": "mm",
+  "base": {
+    "label": "Standard assembly",
+    "optional_buoyancy": false,
+    "step": "assemblies/simple-rov.step",
+    "bounds_mm": [
+      -108.0,
+      105.0000001,
+      -105.0000001,
+      105.0000001,
+      -88.0,
+      60.0000001
+    ],
+    "dimensions_mm": [
+      213.0,
+      210.0,
+      148.0
+    ],
+    "included_parts": [
+      "V5_01_LOAD_CHASSIS",
+      "V5_02_UPPER_FAIRING",
+      "V5_03_SKID_-97",
+      "V5_03_SKID_97",
+      "V5_04_POD_CLAMP_-50",
+      "V5_04_POD_CLAMP_50",
+      "V5_05_VERTICAL_CARRIER_-62",
+      "V5_05_VERTICAL_CARRIER_62",
+      "BUY_TUBE",
+      "BUY_FRONT_FLANGE",
+      "BUY_FRONT_WINDOW",
+      "BUY_REAR_CAP",
+      "BUY_CAMERA_HD_USB",
+      "V5_06_MODULE_TRAY",
+      "V5_07_CAMERA_CARRIER",
+      "REF_X2_H_LEFT",
+      "REF_X2_H_RIGHT",
+      "REF_X2_V_LEFT",
+      "REF_X2_V_RIGHT"
+    ]
+  },
+  "with-buoyancy": {
+    "label": "Optional buoyancy module fitted",
+    "optional_buoyancy": true,
+    "step": "assemblies/simple-rov-with-buoyancy.step",
+    "bounds_mm": [
+      -108.0,
+      105.0000001,
+      -105.0000001,
+      105.0000001,
+      -88.0,
+      96.7
+    ],
+    "dimensions_mm": [
+      213.0,
+      210.0,
+      184.7
+    ],
+    "included_parts": [
+      "V5_01_LOAD_CHASSIS",
+      "V5_02_UPPER_FAIRING",
+      "V5_03_SKID_-97",
+      "V5_03_SKID_97",
+      "V5_04_POD_CLAMP_-50",
+      "V5_04_POD_CLAMP_50",
+      "V5_05_VERTICAL_CARRIER_-62",
+      "V5_05_VERTICAL_CARRIER_62",
+      "BUY_TUBE",
+      "BUY_FRONT_FLANGE",
+      "BUY_FRONT_WINDOW",
+      "BUY_REAR_CAP",
+      "BUY_CAMERA_HD_USB",
+      "V5_06_MODULE_TRAY",
+      "V5_07_CAMERA_CARRIER",
+      "REF_X2_H_LEFT",
+      "REF_X2_H_RIGHT",
+      "REF_X2_V_LEFT",
+      "REF_X2_V_RIGHT",
+      "BUY_TRIM_FOAM_-69",
+      "BUY_TRIM_FOAM_69",
+      "BUY_FOAM_STRAP_-1_-32.5",
+      "BUY_FOAM_STRAP_-1_32.5",
+      "BUY_FOAM_STRAP_1_-32.5",
+      "BUY_FOAM_STRAP_1_32.5"
+    ]
+  }
+}

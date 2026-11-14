@@ -17,7 +17,8 @@
     ],
     "volume_mm3": 221160.84266999186,
     "solids": 1,
-    "print_pose": null
+    "print_pose": null,
+    "optional_buoyancy": false
   },
   {
     "name": "V5_02_UPPER_FAIRING",
@@ -37,7 +38,8 @@
     ],
     "volume_mm3": 136707.4357960136,
     "solids": 1,
-    "print_pose": "flip"
+    "print_pose": "flip",
+    "optional_buoyancy": false
   },
   {
     "name": "V5_03_SKID_-97",
@@ -57,7 +59,8 @@
     ],
     "volume_mm3": 50464.01893457342,
     "solids": 1,
-    "print_pose": "side_y"
+    "print_pose": "side_y",
+    "optional_buoyancy": false
   },
   {
     "name": "V5_03_SKID_97",
@@ -77,7 +80,8 @@
     ],
     "volume_mm3": 50464.01893457342,
     "solids": 1,
-    "print_pose": "side_y"
+    "print_pose": "side_y",
+    "optional_buoyancy": false
   },
   {
     "name": "V5_04_POD_CLAMP_-50",
@@ -97,7 +101,8 @@
     ],
     "volume_mm3": 5357.779087507182,
     "solids": 1,
-    "print_pose": "end_x"
+    "print_pose": "end_x",
+    "optional_buoyancy": false
   },
   {
     "name": "V5_04_POD_CLAMP_50",
@@ -117,7 +122,8 @@
     ],
     "volume_mm3": 5357.779087507182,
     "solids": 1,
-    "print_pose": "end_x"
+    "print_pose": "end_x",
+    "optional_buoyancy": false
   },
   {
     "name": "V5_05_VERTICAL_CARRIER_-62",
@@ -137,7 +143,8 @@
     ],
     "volume_mm3": 21843.64804475782,
     "solids": 1,
-    "print_pose": "end_x"
+    "print_pose": "end_x",
+    "optional_buoyancy": false
   },
   {
     "name": "V5_05_VERTICAL_CARRIER_62",
@@ -157,7 +164,8 @@
     ],
     "volume_mm3": 21843.64804475782,
     "solids": 1,
-    "print_pose": "end_x"
+    "print_pose": "end_x",
+    "optional_buoyancy": false
   },
   {
     "name": "BUY_TUBE",
@@ -177,7 +185,8 @@
     ],
     "volume_mm3": 96539.95777187786,
     "solids": 1,
-    "print_pose": null
+    "print_pose": null,
+    "optional_buoyancy": false
   },
   {
     "name": "BUY_FRONT_FLANGE",
@@ -197,7 +206,8 @@
     ],
     "volume_mm3": 13045.985685398598,
     "solids": 1,
-    "print_pose": null
+    "print_pose": null,
+    "optional_buoyancy": false
   },
   {
     "name": "BUY_FRONT_WINDOW",
@@ -217,7 +227,8 @@
     ],
     "volume_mm3": 16595.914534732634,
     "solids": 1,
-    "print_pose": null
+    "print_pose": null,
+    "optional_buoyancy": false
   },
   {
     "name": "BUY_REAR_CAP",
@@ -237,7 +248,8 @@
     ],
     "volume_mm3": 20999.310882830396,
     "solids": 1,
-    "print_pose": null
+    "print_pose": null,
+    "optional_buoyancy": false
   },
   {
     "name": "BUY_CAMERA_HD_USB",
@@ -257,7 +269,8 @@
     ],
     "volume_mm3": 6237.464320257151,
     "solids": 2,
-    "print_pose": null
+    "print_pose": null,
+    "optional_buoyancy": false
   },
   {
     "name": "V5_06_MODULE_TRAY",
@@ -277,7 +290,8 @@
     ],
     "volume_mm3": 9847.431107893124,
     "solids": 1,
-    "print_pose": null
+    "print_pose": null,
+    "optional_buoyancy": false
   },
   {
     "name": "V5_07_CAMERA_CARRIER",
@@ -297,7 +311,8 @@
     ],
     "volume_mm3": 2617.89144566642,
     "solids": 1,
-    "print_pose": "end_x"
+    "print_pose": "end_x",
+    "optional_buoyancy": false
   },
   {
     "name": "REF_X2_H_LEFT",
@@ -317,7 +332,8 @@
     ],
     "volume_mm3": 40135.9762585444,
     "solids": 2,
-    "print_pose": null
+    "print_pose": null,
+    "optional_buoyancy": false
   },
   {
     "name": "REF_X2_H_RIGHT",
@@ -337,7 +353,8 @@
     ],
     "volume_mm3": 40135.9762585444,
     "solids": 2,
-    "print_pose": null
+    "print_pose": null,
+    "optional_buoyancy": false
   },
   {
     "name": "REF_X2_V_LEFT",
@@ -357,7 +374,8 @@
     ],
     "volume_mm3": 40135.97625854444,
     "solids": 2,
-    "print_pose": null
+    "print_pose": null,
+    "optional_buoyancy": false
   },
   {
     "name": "REF_X2_V_RIGHT",
@@ -377,7 +395,8 @@
     ],
     "volume_mm3": 40135.976258544455,
     "solids": 2,
-    "print_pose": null
+    "print_pose": null,
+    "optional_buoyancy": false
   },
   {
     "name": "BUY_TRIM_FOAM_-69",
@@ -397,7 +416,8 @@
     ],
     "volume_mm3": 338847.18897773244,
     "solids": 1,
-    "print_pose": null
+    "print_pose": null,
+    "optional_buoyancy": true
   },
   {
     "name": "BUY_TRIM_FOAM_69",
@@ -417,7 +437,8 @@
     ],
     "volume_mm3": 338847.1889777324,
     "solids": 1,
-    "print_pose": null
+    "print_pose": null,
+    "optional_buoyancy": true
   },
   {
     "name": "BUY_FOAM_STRAP_-1_-32.5",
@@ -437,7 +458,8 @@
     ],
     "volume_mm3": 1967.903999999994,
     "solids": 1,
-    "print_pose": null
+    "print_pose": null,
+    "optional_buoyancy": true
   },
   {
     "name": "BUY_FOAM_STRAP_-1_32.5",
@@ -457,7 +479,8 @@
     ],
     "volume_mm3": 1967.903999999994,
     "solids": 1,
-    "print_pose": null
+    "print_pose": null,
+    "optional_buoyancy": true
   },
   {
     "name": "BUY_FOAM_STRAP_1_-32.5",
@@ -477,7 +500,8 @@
     ],
     "volume_mm3": 1967.903999999994,
     "solids": 1,
-    "print_pose": null
+    "print_pose": null,
+    "optional_buoyancy": true
   },
   {
     "name": "BUY_FOAM_STRAP_1_32.5",
@@ -497,7 +521,8 @@
     ],
     "volume_mm3": 1967.903999999994,
     "solids": 1,
-    "print_pose": null
+    "print_pose": null,
+    "optional_buoyancy": true
   },
   {
     "name": "COVER_-95_-18_M3x25",
@@ -517,7 +542,8 @@
     ],
     "volume_mm3": 247.98947009274428,
     "solids": 1,
-    "print_pose": null
+    "print_pose": null,
+    "optional_buoyancy": false
   },
   {
     "name": "COVER_-95_-18_W_TOP",
@@ -537,7 +563,8 @@
     ],
     "volume_mm3": 15.221016406642565,
     "solids": 1,
-    "print_pose": null
+    "print_pose": null,
+    "optional_buoyancy": false
   },
   {
     "name": "COVER_-95_-18_W_BOTTOM",
@@ -557,7 +584,8 @@
     ],
     "volume_mm3": 15.221016406642565,
     "solids": 1,
-    "print_pose": null
+    "print_pose": null,
+    "optional_buoyancy": false
   },
   {
     "name": "COVER_-95_-18_NUT",
@@ -577,7 +605,8 @@
     ],
     "volume_mm3": 51.09247186378845,
     "solids": 1,
-    "print_pose": null
+    "print_pose": null,
+    "optional_buoyancy": false
   },
   {
     "name": "COVER_-95_18_M3x25",
@@ -597,7 +626,8 @@
     ],
     "volume_mm3": 247.98947009274428,
     "solids": 1,
-    "print_pose": null
+    "print_pose": null,
+    "optional_buoyancy": false
   },
   {
     "name": "COVER_-95_18_W_TOP",
@@ -617,7 +647,8 @@
     ],
     "volume_mm3": 15.221016406642565,
     "solids": 1,
-    "print_pose": null
+    "print_pose": null,
+    "optional_buoyancy": false
   },
   {
     "name": "COVER_-95_18_W_BOTTOM",
@@ -637,7 +668,8 @@
     ],
     "volume_mm3": 15.221016406642565,
     "solids": 1,
-    "print_pose": null
+    "print_pose": null,
+    "optional_buoyancy": false
   },
   {
     "name": "COVER_-95_18_NUT",
@@ -657,7 +689,8 @@
     ],
     "volume_mm3": 51.09247186378845,
     "solids": 1,
-    "print_pose": null
+    "print_pose": null,
+    "optional_buoyancy": false
   },
   {
     "name": "COVER_95_-18_M3x25",
@@ -677,7 +710,8 @@
     ],
     "volume_mm3": 247.98947009274428,
     "solids": 1,
-    "print_pose": null
+    "print_pose": null,
+    "optional_buoyancy": false
   },
   {
     "name": "COVER_95_-18_W_TOP",
@@ -697,7 +731,8 @@
     ],
     "volume_mm3": 15.221016406642565,
     "solids": 1,
-    "print_pose": null
+    "print_pose": null,
+    "optional_buoyancy": false
   },
   {
     "name": "COVER_95_-18_W_BOTTOM",
@@ -717,7 +752,8 @@
     ],
     "volume_mm3": 15.221016406642562,
     "solids": 1,
-    "print_pose": null
+    "print_pose": null,
+    "optional_buoyancy": false
   },
   {
     "name": "COVER_95_-18_NUT",
@@ -737,7 +773,8 @@
     ],
     "volume_mm3": 51.09247186378845,
     "solids": 1,
-    "print_pose": null
+    "print_pose": null,
+    "optional_buoyancy": false
   },
   {
     "name": "COVER_95_18_M3x25",
@@ -757,7 +794,8 @@
     ],
     "volume_mm3": 247.98947009274428,
     "solids": 1,
-    "print_pose": null
+    "print_pose": null,
+    "optional_buoyancy": false
   },
   {
     "name": "COVER_95_18_W_TOP",
@@ -777,7 +815,8 @@
     ],
     "volume_mm3": 15.221016406642562,
     "solids": 1,
-    "print_pose": null
+    "print_pose": null,
+    "optional_buoyancy": false
   },
   {
     "name": "COVER_95_18_W_BOTTOM",
@@ -797,7 +836,8 @@
     ],
     "volume_mm3": 15.221016406642565,
     "solids": 1,
-    "print_pose": null
+    "print_pose": null,
+    "optional_buoyancy": false
   },
   {
     "name": "COVER_95_18_NUT",
@@ -817,7 +857,8 @@
     ],
     "volume_mm3": 51.09247186378845,
     "solids": 1,
-    "print_pose": null
+    "print_pose": null,
+    "optional_buoyancy": false
   },
   {
     "name": "SKID_-80_-97_M3x16",
@@ -837,7 +878,8 @@
     ],
     "volume_mm3": 184.37221885755102,
     "solids": 1,
-    "print_pose": null
+    "print_pose": null,
+    "optional_buoyancy": false
   },
   {
     "name": "SKID_-80_-97_W_TOP",
@@ -857,7 +899,8 @@
     ],
     "volume_mm3": 15.221016406642557,
     "solids": 1,
-    "print_pose": null
+    "print_pose": null,
+    "optional_buoyancy": false
   },
   {
     "name": "SKID_-80_-97_NUT",
@@ -877,7 +920,8 @@
     ],
     "volume_mm3": 51.092471863788454,
     "solids": 1,
-    "print_pose": null
+    "print_pose": null,
+    "optional_buoyancy": false
   },
   {
     "name": "SKID_-80_97_M3x16",
@@ -897,7 +941,8 @@
     ],
     "volume_mm3": 184.37221885755102,
     "solids": 1,
-    "print_pose": null
+    "print_pose": null,
+    "optional_buoyancy": false
   },
   {
     "name": "SKID_-80_97_W_TOP",
@@ -917,7 +962,8 @@
     ],
     "volume_mm3": 15.221016406642557,
     "solids": 1,
-    "print_pose": null
+    "print_pose": null,
+    "optional_buoyancy": false
   },
   {
     "name": "SKID_-80_97_NUT",
@@ -937,7 +983,8 @@
     ],
     "volume_mm3": 51.092471863788454,
     "solids": 1,
-    "print_pose": null
+    "print_pose": null,
+    "optional_buoyancy": false
   },
   {
     "name": "SKID_80_-97_M3x16",
@@ -957,7 +1004,8 @@
     ],
     "volume_mm3": 184.37221885755102,
     "solids": 1,
-    "print_pose": null
+    "print_pose": null,
+    "optional_buoyancy": false
   },
   {
     "name": "SKID_80_-97_W_TOP",
@@ -977,7 +1025,8 @@
     ],
     "volume_mm3": 15.221016406642557,
     "solids": 1,
-    "print_pose": null
+    "print_pose": null,
+    "optional_buoyancy": false
   },
   {
     "name": "SKID_80_-97_NUT",
@@ -997,7 +1046,8 @@
     ],
     "volume_mm3": 51.092471863788454,
     "solids": 1,
-    "print_pose": null
+    "print_pose": null,
+    "optional_buoyancy": false
   },
   {
     "name": "SKID_80_97_M3x16",
@@ -1017,7 +1067,8 @@
     ],
     "volume_mm3": 184.37221885755102,
     "solids": 1,
-    "print_pose": null
+    "print_pose": null,
+    "optional_buoyancy": false
   },
   {
     "name": "SKID_80_97_W_TOP",
@@ -1037,7 +1088,8 @@
     ],
     "volume_mm3": 15.221016406642557,
     "solids": 1,
-    "print_pose": null
+    "print_pose": null,
+    "optional_buoyancy": false
   },
   {
     "name": "SKID_80_97_NUT",
@@ -1057,7 +1109,8 @@
     ],
     "volume_mm3": 51.092471863788454,
     "solids": 1,
-    "print_pose": null
+    "print_pose": null,
+    "optional_buoyancy": false
   },
   {
     "name": "CLAMP_-50_-38_M3x16",
@@ -1077,7 +1130,8 @@
     ],
     "volume_mm3": 184.37221885755096,
     "solids": 1,
-    "print_pose": null
+    "print_pose": null,
+    "optional_buoyancy": false
   },
   {
     "name": "CLAMP_-50_-38_W_TOP",
@@ -1097,7 +1151,8 @@
     ],
     "volume_mm3": 15.221016406642544,
     "solids": 1,
-    "print_pose": null
+    "print_pose": null,
+    "optional_buoyancy": false
   },
   {
     "name": "CLAMP_-50_-38_W_BOTTOM",
@@ -1117,7 +1172,8 @@
     ],
     "volume_mm3": 15.221016406642544,
     "solids": 1,
-    "print_pose": null
+    "print_pose": null,
+    "optional_buoyancy": false
   },
   {
     "name": "CLAMP_-50_-38_NUT",
@@ -1137,7 +1193,8 @@
     ],
     "volume_mm3": 51.09247186378847,
     "solids": 1,
-    "print_pose": null
+    "print_pose": null,
+    "optional_buoyancy": false
   },
   {
     "name": "CLAMP_-50_38_M3x16",
@@ -1157,7 +1214,8 @@
     ],
     "volume_mm3": 184.37221885755096,
     "solids": 1,
-    "print_pose": null
+    "print_pose": null,
+    "optional_buoyancy": false
   },
   {
     "name": "CLAMP_-50_38_W_TOP",
@@ -1177,7 +1235,8 @@
     ],
     "volume_mm3": 15.221016406642544,
     "solids": 1,
-    "print_pose": null
+    "print_pose": null,
+    "optional_buoyancy": false
   },
   {
     "name": "CLAMP_-50_38_W_BOTTOM",
@@ -1197,7 +1256,8 @@
     ],
     "volume_mm3": 15.221016406642544,
     "solids": 1,
-    "print_pose": null
+    "print_pose": null,
+    "optional_buoyancy": false
   },
   {
     "name": "CLAMP_-50_38_NUT",
@@ -1217,7 +1277,8 @@
     ],
     "volume_mm3": 51.09247186378847,
     "solids": 1,
-    "print_pose": null
+    "print_pose": null,
+    "optional_buoyancy": false
   },
   {
     "name": "CLAMP_50_-38_M3x16",
@@ -1237,7 +1298,8 @@
     ],
     "volume_mm3": 184.37221885755096,
     "solids": 1,
-    "print_pose": null
+    "print_pose": null,
+    "optional_buoyancy": false
   },
   {
     "name": "CLAMP_50_-38_W_TOP",
@@ -1257,7 +1319,8 @@
     ],
     "volume_mm3": 15.221016406642544,
     "solids": 1,
-    "print_pose": null
+    "print_pose": null,
+    "optional_buoyancy": false
   },
   {
     "name": "CLAMP_50_-38_W_BOTTOM",
@@ -1277,7 +1340,8 @@
     ],
     "volume_mm3": 15.221016406642544,
     "solids": 1,
-    "print_pose": null
+    "print_pose": null,
+    "optional_buoyancy": false
   },
   {
     "name": "CLAMP_50_-38_NUT",
@@ -1297,7 +1361,8 @@
     ],
     "volume_mm3": 51.09247186378847,
     "solids": 1,
-    "print_pose": null
+    "print_pose": null,
+    "optional_buoyancy": false
   },
   {
     "name": "CLAMP_50_38_M3x16",
@@ -1317,7 +1382,8 @@
     ],
     "volume_mm3": 184.37221885755096,
     "solids": 1,
-    "print_pose": null
+    "print_pose": null,
+    "optional_buoyancy": false
   },
   {
     "name": "CLAMP_50_38_W_TOP",
@@ -1337,7 +1403,8 @@
     ],
     "volume_mm3": 15.221016406642544,
     "solids": 1,
-    "print_pose": null
+    "print_pose": null,
+    "optional_buoyancy": false
   },
   {
     "name": "CLAMP_50_38_W_BOTTOM",
@@ -1357,7 +1424,8 @@
     ],
     "volume_mm3": 15.221016406642544,
     "solids": 1,
-    "print_pose": null
+    "print_pose": null,
+    "optional_buoyancy": false
   },
   {
     "name": "CLAMP_50_38_NUT",
@@ -1377,7 +1445,8 @@
     ],
     "volume_mm3": 51.09247186378847,
     "solids": 1,
-    "print_pose": null
+    "print_pose": null,
+    "optional_buoyancy": false
   },
   {
     "name": "VFOOT_-44_-83_M3x20",
@@ -1397,7 +1466,8 @@
     ],
     "volume_mm3": 212.64655273985917,
     "solids": 1,
-    "print_pose": null
+    "print_pose": null,
+    "optional_buoyancy": false
   },
   {
     "name": "VFOOT_-44_-83_W_BOTTOM",
@@ -1417,7 +1487,8 @@
     ],
     "volume_mm3": 15.221016406642542,
     "solids": 1,
-    "print_pose": null
+    "print_pose": null,
+    "optional_buoyancy": false
   },
   {
     "name": "VFOOT_-44_-83_W_TOP",
@@ -1437,7 +1508,8 @@
     ],
     "volume_mm3": 15.221016406642542,
     "solids": 1,
-    "print_pose": null
+    "print_pose": null,
+    "optional_buoyancy": false
   },
   {
     "name": "VFOOT_-44_-83_NUT",
@@ -1457,7 +1529,8 @@
     ],
     "volume_mm3": 51.092471863788475,
     "solids": 1,
-    "print_pose": null
+    "print_pose": null,
+    "optional_buoyancy": false
   },
   {
     "name": "VFOOT_-44_-41_M3x20",
@@ -1477,7 +1550,8 @@
     ],
     "volume_mm3": 212.64655273985917,
     "solids": 1,
-    "print_pose": null
+    "print_pose": null,
+    "optional_buoyancy": false
   },
   {
     "name": "VFOOT_-44_-41_W_BOTTOM",
@@ -1497,7 +1571,8 @@
     ],
     "volume_mm3": 15.221016406642544,
     "solids": 1,
-    "print_pose": null
+    "print_pose": null,
+    "optional_buoyancy": false
   },
   {
     "name": "VFOOT_-44_-41_W_TOP",
@@ -1517,7 +1592,8 @@
     ],
     "volume_mm3": 15.221016406642544,
     "solids": 1,
-    "print_pose": null
+    "print_pose": null,
+    "optional_buoyancy": false
   },
   {
     "name": "VFOOT_-44_-41_NUT",
@@ -1537,7 +1613,8 @@
     ],
     "volume_mm3": 51.09247186378848,
     "solids": 1,
-    "print_pose": null
+    "print_pose": null,
+    "optional_buoyancy": false
   },
   {
     "name": "VFOOT_-30_-83_M3x20",
@@ -1557,7 +1634,8 @@
     ],
     "volume_mm3": 212.64655273985917,
     "solids": 1,
-    "print_pose": null
+    "print_pose": null,
+    "optional_buoyancy": false
   },
   {
     "name": "VFOOT_-30_-83_W_BOTTOM",
@@ -1577,7 +1655,8 @@
     ],
     "volume_mm3": 15.221016406642542,
     "solids": 1,
-    "print_pose": null
+    "print_pose": null,
+    "optional_buoyancy": false
   },
   {
     "name": "VFOOT_-30_-83_W_TOP",
@@ -1597,7 +1676,8 @@
     ],
     "volume_mm3": 15.221016406642542,
     "solids": 1,
-    "print_pose": null
+    "print_pose": null,
+    "optional_buoyancy": false
   },
   {
     "name": "VFOOT_-30_-83_NUT",
@@ -1617,7 +1697,8 @@
     ],
     "volume_mm3": 51.0924718637885,
     "solids": 1,
-    "print_pose": null
+    "print_pose": null,
+    "optional_buoyancy": false
   },
   {
     "name": "VFOOT_-30_-41_M3x20",
@@ -1637,7 +1718,8 @@
     ],
     "volume_mm3": 212.64655273985915,
     "solids": 1,
-    "print_pose": null
+    "print_pose": null,
+    "optional_buoyancy": false
   },
   {
     "name": "VFOOT_-30_-41_W_BOTTOM",
@@ -1657,7 +1739,8 @@
     ],
     "volume_mm3": 15.221016406642544,
     "solids": 1,
-    "print_pose": null
+    "print_pose": null,
+    "optional_buoyancy": false
   },
   {
     "name": "VFOOT_-30_-41_W_TOP",
@@ -1677,7 +1760,8 @@
     ],
     "volume_mm3": 15.221016406642544,
     "solids": 1,
-    "print_pose": null
+    "print_pose": null,
+    "optional_buoyancy": false
   },
   {
     "name": "VFOOT_-30_-41_NUT",
@@ -1697,7 +1781,8 @@
     ],
     "volume_mm3": 51.09247186378849,
     "solids": 1,
-    "print_pose": null
+    "print_pose": null,
+    "optional_buoyancy": false
   },
   {
     "name": "VFOOT_-44_41_M3x20",
@@ -1717,7 +1802,8 @@
     ],
     "volume_mm3": 212.64655273985917,
     "solids": 1,
-    "print_pose": null
+    "print_pose": null,
+    "optional_buoyancy": false
   },
   {
     "name": "VFOOT_-44_41_W_BOTTOM",
@@ -1737,7 +1823,8 @@
     ],
     "volume_mm3": 15.221016406642544,
     "solids": 1,
-    "print_pose": null
+    "print_pose": null,
+    "optional_buoyancy": false
   },
   {
     "name": "VFOOT_-44_41_W_TOP",
@@ -1757,7 +1844,8 @@
     ],
     "volume_mm3": 15.221016406642544,
     "solids": 1,
-    "print_pose": null
+    "print_pose": null,
+    "optional_buoyancy": false
   },
   {
     "name": "VFOOT_-44_41_NUT",
@@ -1777,7 +1865,8 @@
     ],
     "volume_mm3": 51.09247186378848,
     "solids": 1,
-    "print_pose": null
+    "print_pose": null,
+    "optional_buoyancy": false
   },
   {
     "name": "VFOOT_-44_83_M3x20",
@@ -1797,7 +1886,8 @@
     ],
     "volume_mm3": 212.64655273985917,
     "solids": 1,
-    "print_pose": null
+    "print_pose": null,
+    "optional_buoyancy": false
   },
   {
     "name": "VFOOT_-44_83_W_BOTTOM",
@@ -1817,7 +1907,8 @@
     ],
     "volume_mm3": 15.221016406642542,
     "solids": 1,
-    "print_pose": null
+    "print_pose": null,
+    "optional_buoyancy": false
   },
   {
     "name": "VFOOT_-44_83_W_TOP",
@@ -1837,7 +1928,8 @@
     ],
     "volume_mm3": 15.221016406642542,
     "solids": 1,
-    "print_pose": null
+    "print_pose": null,
+    "optional_buoyancy": false
   },
   {
     "name": "VFOOT_-44_83_NUT",
@@ -1857,7 +1949,8 @@
     ],
     "volume_mm3": 51.092471863788475,
     "solids": 1,
-    "print_pose": null
+    "print_pose": null,
+    "optional_buoyancy": false
   },
   {
     "name": "VFOOT_-30_41_M3x20",
@@ -1877,7 +1970,8 @@
     ],
     "volume_mm3": 212.64655273985915,
     "solids": 1,
-    "print_pose": null
+    "print_pose": null,
+    "optional_buoyancy": false
   },
   {
     "name": "VFOOT_-30_41_W_BOTTOM",
@@ -1897,7 +1991,8 @@
     ],
     "volume_mm3": 15.221016406642544,
     "solids": 1,
-    "print_pose": null
+    "print_pose": null,
+    "optional_buoyancy": false
   },
   {
     "name": "VFOOT_-30_41_W_TOP",
@@ -1917,7 +2012,8 @@
     ],
     "volume_mm3": 15.221016406642544,
     "solids": 1,
-    "print_pose": null
+    "print_pose": null,
+    "optional_buoyancy": false
   },
   {
     "name": "VFOOT_-30_41_NUT",
@@ -1937,7 +2033,8 @@
     ],
     "volume_mm3": 51.09247186378849,
     "solids": 1,
-    "print_pose": null
+    "print_pose": null,
+    "optional_buoyancy": false
   },
   {
     "name": "VFOOT_-30_83_M3x20",
@@ -1957,7 +2054,8 @@
     ],
     "volume_mm3": 212.64655273985917,
     "solids": 1,
-    "print_pose": null
+    "print_pose": null,
+    "optional_buoyancy": false
   },
   {
     "name": "VFOOT_-30_83_W_BOTTOM",
@@ -1977,7 +2075,8 @@
     ],
     "volume_mm3": 15.221016406642542,
     "solids": 1,
-    "print_pose": null
+    "print_pose": null,
+    "optional_buoyancy": false
   },
   {
     "name": "VFOOT_-30_83_W_TOP",
@@ -1997,7 +2096,8 @@
     ],
     "volume_mm3": 15.221016406642542,
     "solids": 1,
-    "print_pose": null
+    "print_pose": null,
+    "optional_buoyancy": false
   },
   {
     "name": "VFOOT_-30_83_NUT",
@@ -2017,7 +2117,8 @@
     ],
     "volume_mm3": 51.0924718637885,
     "solids": 1,
-    "print_pose": null
+    "print_pose": null,
+    "optional_buoyancy": false
   },
   {
     "name": "HMOTOR_LEFT_0_M3x8",
@@ -2037,7 +2138,8 @@
     ],
     "volume_mm3": 127.82355109293472,
     "solids": 1,
-    "print_pose": null
+    "print_pose": null,
+    "optional_buoyancy": false
   },
   {
     "name": "HMOTOR_LEFT_0_W",
@@ -2057,7 +2159,8 @@
     ],
     "volume_mm3": 15.221016406642557,
     "solids": 1,
-    "print_pose": null
+    "print_pose": null,
+    "optional_buoyancy": false
   },
   {
     "name": "HMOTOR_LEFT_1_M3x8",
@@ -2077,7 +2180,8 @@
     ],
     "volume_mm3": 127.82355109293472,
     "solids": 1,
-    "print_pose": null
+    "print_pose": null,
+    "optional_buoyancy": false
   },
   {
     "name": "HMOTOR_LEFT_1_W",
@@ -2097,7 +2201,8 @@
     ],
     "volume_mm3": 15.221016406642557,
     "solids": 1,
-    "print_pose": null
+    "print_pose": null,
+    "optional_buoyancy": false
   },
   {
     "name": "HMOTOR_LEFT_2_M3x8",
@@ -2117,7 +2222,8 @@
     ],
     "volume_mm3": 127.82355109293472,
     "solids": 1,
-    "print_pose": null
+    "print_pose": null,
+    "optional_buoyancy": false
   },
   {
     "name": "HMOTOR_LEFT_2_W",
@@ -2137,7 +2243,8 @@
     ],
     "volume_mm3": 15.221016406642557,
     "solids": 1,
-    "print_pose": null
+    "print_pose": null,
+    "optional_buoyancy": false
   },
   {
     "name": "HMOTOR_LEFT_3_M3x8",
@@ -2157,7 +2264,8 @@
     ],
     "volume_mm3": 127.82355109293472,
     "solids": 1,
-    "print_pose": null
+    "print_pose": null,
+    "optional_buoyancy": false
   },
   {
     "name": "HMOTOR_LEFT_3_W",
@@ -2177,7 +2285,8 @@
     ],
     "volume_mm3": 15.221016406642557,
     "solids": 1,
-    "print_pose": null
+    "print_pose": null,
+    "optional_buoyancy": false
   },
   {
     "name": "HMOTOR_RIGHT_0_M3x8",
@@ -2197,7 +2306,8 @@
     ],
     "volume_mm3": 127.82355109293472,
     "solids": 1,
-    "print_pose": null
+    "print_pose": null,
+    "optional_buoyancy": false
   },
   {
     "name": "HMOTOR_RIGHT_0_W",
@@ -2217,7 +2327,8 @@
     ],
     "volume_mm3": 15.221016406642557,
     "solids": 1,
-    "print_pose": null
+    "print_pose": null,
+    "optional_buoyancy": false
   },
   {
     "name": "HMOTOR_RIGHT_1_M3x8",
@@ -2237,7 +2348,8 @@
     ],
     "volume_mm3": 127.82355109293472,
     "solids": 1,
-    "print_pose": null
+    "print_pose": null,
+    "optional_buoyancy": false
   },
   {
     "name": "HMOTOR_RIGHT_1_W",
@@ -2257,7 +2369,8 @@
     ],
     "volume_mm3": 15.221016406642557,
     "solids": 1,
-    "print_pose": null
+    "print_pose": null,
+    "optional_buoyancy": false
   },
   {
     "name": "HMOTOR_RIGHT_2_M3x8",
@@ -2277,7 +2390,8 @@
     ],
     "volume_mm3": 127.82355109293472,
     "solids": 1,
-    "print_pose": null
+    "print_pose": null,
+    "optional_buoyancy": false
   },
   {
     "name": "HMOTOR_RIGHT_2_W",
@@ -2297,7 +2411,8 @@
     ],
     "volume_mm3": 15.221016406642557,
     "solids": 1,
-    "print_pose": null
+    "print_pose": null,
+    "optional_buoyancy": false
   },
   {
     "name": "HMOTOR_RIGHT_3_M3x8",
@@ -2317,7 +2432,8 @@
     ],
     "volume_mm3": 127.82355109293472,
     "solids": 1,
-    "print_pose": null
+    "print_pose": null,
+    "optional_buoyancy": false
   },
   {
     "name": "HMOTOR_RIGHT_3_W",
@@ -2337,7 +2453,8 @@
     ],
     "volume_mm3": 15.221016406642557,
     "solids": 1,
-    "print_pose": null
+    "print_pose": null,
+    "optional_buoyancy": false
   },
   {
     "name": "VMOTOR_LEFT_0_M3x12",
@@ -2357,7 +2474,8 @@
     ],
     "volume_mm3": 156.09788497524286,
     "solids": 1,
-    "print_pose": null
+    "print_pose": null,
+    "optional_buoyancy": false
   },
   {
     "name": "VMOTOR_LEFT_0_W",
@@ -2377,7 +2495,8 @@
     ],
     "volume_mm3": 15.221016406642544,
     "solids": 1,
-    "print_pose": null
+    "print_pose": null,
+    "optional_buoyancy": false
   },
   {
     "name": "VMOTOR_LEFT_1_M3x12",
@@ -2397,7 +2516,8 @@
     ],
     "volume_mm3": 156.09788497524286,
     "solids": 1,
-    "print_pose": null
+    "print_pose": null,
+    "optional_buoyancy": false
   },
   {
     "name": "VMOTOR_LEFT_1_W",
@@ -2417,7 +2537,8 @@
     ],
     "volume_mm3": 15.22101640664254,
     "solids": 1,
-    "print_pose": null
+    "print_pose": null,
+    "optional_buoyancy": false
   },
   {
     "name": "VMOTOR_LEFT_2_M3x12",
@@ -2437,7 +2558,8 @@
     ],
     "volume_mm3": 156.09788497524286,
     "solids": 1,
-    "print_pose": null
+    "print_pose": null,
+    "optional_buoyancy": false
   },
   {
     "name": "VMOTOR_LEFT_2_W",
@@ -2457,7 +2579,8 @@
     ],
     "volume_mm3": 15.221016406642544,
     "solids": 1,
-    "print_pose": null
+    "print_pose": null,
+    "optional_buoyancy": false
   },
   {
     "name": "VMOTOR_LEFT_3_M3x12",
@@ -2477,7 +2600,8 @@
     ],
     "volume_mm3": 156.09788497524286,
     "solids": 1,
-    "print_pose": null
+    "print_pose": null,
+    "optional_buoyancy": false
   },
   {
     "name": "VMOTOR_LEFT_3_W",
@@ -2497,7 +2621,8 @@
     ],
     "volume_mm3": 15.221016406642542,
     "solids": 1,
-    "print_pose": null
+    "print_pose": null,
+    "optional_buoyancy": false
   },
   {
     "name": "VMOTOR_RIGHT_0_M3x12",
@@ -2517,7 +2642,8 @@
     ],
     "volume_mm3": 156.09788497524286,
     "solids": 1,
-    "print_pose": null
+    "print_pose": null,
+    "optional_buoyancy": false
   },
   {
     "name": "VMOTOR_RIGHT_0_W",
@@ -2537,7 +2663,8 @@
     ],
     "volume_mm3": 15.221016406642544,
     "solids": 1,
-    "print_pose": null
+    "print_pose": null,
+    "optional_buoyancy": false
   },
   {
     "name": "VMOTOR_RIGHT_1_M3x12",
@@ -2557,7 +2684,8 @@
     ],
     "volume_mm3": 156.09788497524286,
     "solids": 1,
-    "print_pose": null
+    "print_pose": null,
+    "optional_buoyancy": false
   },
   {
     "name": "VMOTOR_RIGHT_1_W",
@@ -2577,7 +2705,8 @@
     ],
     "volume_mm3": 15.22101640664254,
     "solids": 1,
-    "print_pose": null
+    "print_pose": null,
+    "optional_buoyancy": false
   },
   {
     "name": "VMOTOR_RIGHT_2_M3x12",
@@ -2597,7 +2726,8 @@
     ],
     "volume_mm3": 156.09788497524286,
     "solids": 1,
-    "print_pose": null
+    "print_pose": null,
+    "optional_buoyancy": false
   },
   {
     "name": "VMOTOR_RIGHT_2_W",
@@ -2617,7 +2747,8 @@
     ],
     "volume_mm3": 15.221016406642542,
     "solids": 1,
-    "print_pose": null
+    "print_pose": null,
+    "optional_buoyancy": false
   },
   {
     "name": "VMOTOR_RIGHT_3_M3x12",
@@ -2637,7 +2768,8 @@
     ],
     "volume_mm3": 156.09788497524286,
     "solids": 1,
-    "print_pose": null
+    "print_pose": null,
+    "optional_buoyancy": false
   },
   {
     "name": "VMOTOR_RIGHT_3_W",
@@ -2657,7 +2789,8 @@
     ],
     "volume_mm3": 15.221016406642544,
     "solids": 1,
-    "print_pose": null
+    "print_pose": null,
+    "optional_buoyancy": false
   },
   {
     "name": "CAMFOOT_-10_M3x12",
@@ -2677,7 +2810,8 @@
     ],
     "volume_mm3": 156.0978849752428,
     "solids": 1,
-    "print_pose": null
+    "print_pose": null,
+    "optional_buoyancy": false
   },
   {
     "name": "CAMFOOT_-10_W_TOP",
@@ -2697,7 +2831,8 @@
     ],
     "volume_mm3": 15.221016406642551,
     "solids": 1,
-    "print_pose": null
+    "print_pose": null,
+    "optional_buoyancy": false
   },
   {
     "name": "CAMFOOT_-10_W_BOTTOM",
@@ -2717,7 +2852,8 @@
     ],
     "volume_mm3": 15.221016406642551,
     "solids": 1,
-    "print_pose": null
+    "print_pose": null,
+    "optional_buoyancy": false
   },
   {
     "name": "CAMFOOT_-10_NUT",
@@ -2737,7 +2873,8 @@
     ],
     "volume_mm3": 51.09247186378846,
     "solids": 1,
-    "print_pose": null
+    "print_pose": null,
+    "optional_buoyancy": false
   },
   {
     "name": "CAMFOOT_10_M3x12",
@@ -2757,7 +2894,8 @@
     ],
     "volume_mm3": 156.0978849752428,
     "solids": 1,
-    "print_pose": null
+    "print_pose": null,
+    "optional_buoyancy": false
   },
   {
     "name": "CAMFOOT_10_W_TOP",
@@ -2777,7 +2915,8 @@
     ],
     "volume_mm3": 15.221016406642551,
     "solids": 1,
-    "print_pose": null
+    "print_pose": null,
+    "optional_buoyancy": false
   },
   {
     "name": "CAMFOOT_10_W_BOTTOM",
@@ -2797,7 +2936,8 @@
     ],
     "volume_mm3": 15.221016406642551,
     "solids": 1,
-    "print_pose": null
+    "print_pose": null,
+    "optional_buoyancy": false
   },
   {
     "name": "CAMFOOT_10_NUT",
@@ -2817,7 +2957,8 @@
     ],
     "volume_mm3": 51.09247186378846,
     "solids": 1,
-    "print_pose": null
+    "print_pose": null,
+    "optional_buoyancy": false
   },
   {
     "name": "CAMERA_-14_8_M2x10",
@@ -2837,7 +2978,8 @@
     ],
     "volume_mm3": 54.09822549481624,
     "solids": 1,
-    "print_pose": null
+    "print_pose": null,
+    "optional_buoyancy": false
   },
   {
     "name": "CAMERA_-14_8_W_FRONT",
@@ -2857,7 +2999,8 @@
     ],
     "volume_mm3": 4.7500880922277515,
     "solids": 1,
-    "print_pose": null
+    "print_pose": null,
+    "optional_buoyancy": false
   },
   {
     "name": "CAMERA_-14_8_NUT",
@@ -2877,7 +3020,8 @@
     ],
     "volume_mm3": 19.342816948650825,
     "solids": 1,
-    "print_pose": null
+    "print_pose": null,
+    "optional_buoyancy": false
   },
   {
     "name": "CAMERA_-14_36_M2x10",
@@ -2897,7 +3041,8 @@
     ],
     "volume_mm3": 54.09822549481619,
     "solids": 1,
-    "print_pose": null
+    "print_pose": null,
+    "optional_buoyancy": false
   },
   {
     "name": "CAMERA_-14_36_W_FRONT",
@@ -2917,7 +3062,8 @@
     ],
     "volume_mm3": 4.750088092227751,
     "solids": 1,
-    "print_pose": null
+    "print_pose": null,
+    "optional_buoyancy": false
   },
   {
     "name": "CAMERA_-14_36_NUT",
@@ -2937,7 +3083,8 @@
     ],
     "volume_mm3": 19.342816948650842,
     "solids": 1,
-    "print_pose": null
+    "print_pose": null,
+    "optional_buoyancy": false
   },
   {
     "name": "CAMERA_14_8_M2x10",
@@ -2957,7 +3104,8 @@
     ],
     "volume_mm3": 54.09822549481624,
     "solids": 1,
-    "print_pose": null
+    "print_pose": null,
+    "optional_buoyancy": false
   },
   {
     "name": "CAMERA_14_8_W_FRONT",
@@ -2977,7 +3125,8 @@
     ],
     "volume_mm3": 4.7500880922277515,
     "solids": 1,
-    "print_pose": null
+    "print_pose": null,
+    "optional_buoyancy": false
   },
   {
     "name": "CAMERA_14_8_NUT",
@@ -2997,7 +3146,8 @@
     ],
     "volume_mm3": 19.342816948650825,
     "solids": 1,
-    "print_pose": null
+    "print_pose": null,
+    "optional_buoyancy": false
   },
   {
     "name": "CAMERA_14_36_M2x10",
@@ -3017,7 +3167,8 @@
     ],
     "volume_mm3": 54.09822549481619,
     "solids": 1,
-    "print_pose": null
+    "print_pose": null,
+    "optional_buoyancy": false
   },
   {
     "name": "CAMERA_14_36_W_FRONT",
@@ -3037,7 +3188,8 @@
     ],
     "volume_mm3": 4.750088092227752,
     "solids": 1,
-    "print_pose": null
+    "print_pose": null,
+    "optional_buoyancy": false
   },
   {
     "name": "CAMERA_14_36_NUT",
@@ -3057,7 +3209,8 @@
     ],
     "volume_mm3": 19.342816948650846,
     "solids": 1,
-    "print_pose": null
+    "print_pose": null,
+    "optional_buoyancy": false
   },
   {
     "name": "OEM_WINDOW_0_M2x10",
@@ -3077,7 +3230,8 @@
     ],
     "volume_mm3": 54.09822549481624,
     "solids": 1,
-    "print_pose": null
+    "print_pose": null,
+    "optional_buoyancy": false
   },
   {
     "name": "OEM_WINDOW_1_M2x10",
@@ -3097,7 +3251,8 @@
     ],
     "volume_mm3": 54.09822549481623,
     "solids": 1,
-    "print_pose": null
+    "print_pose": null,
+    "optional_buoyancy": false
   },
   {
     "name": "OEM_WINDOW_2_M2x10",
@@ -3117,7 +3272,8 @@
     ],
     "volume_mm3": 54.09822549481624,
     "solids": 1,
-    "print_pose": null
+    "print_pose": null,
+    "optional_buoyancy": false
   },
   {
     "name": "OEM_WINDOW_3_M2x10",
@@ -3137,7 +3293,8 @@
     ],
     "volume_mm3": 54.098225494816205,
     "solids": 1,
-    "print_pose": null
+    "print_pose": null,
+    "optional_buoyancy": false
   },
   {
     "name": "OEM_WINDOW_4_M2x10",
@@ -3157,7 +3314,8 @@
     ],
     "volume_mm3": 54.09822549481621,
     "solids": 1,
-    "print_pose": null
+    "print_pose": null,
+    "optional_buoyancy": false
   },
   {
     "name": "OEM_WINDOW_5_M2x10",
@@ -3177,6 +3335,7 @@
     ],
     "volume_mm3": 54.098225494816205,
     "solids": 1,
-    "print_pose": null
+    "print_pose": null,
+    "optional_buoyancy": false
   }
 ]

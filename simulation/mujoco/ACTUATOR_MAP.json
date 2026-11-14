@@ -156,6 +156,12 @@
     "sway",
     "pitch"
   ],
+  "configurations": {
+    "base": "simple_rov.xml",
+    "with-buoyancy": "simple_rov_with_buoyancy.xml"
+  },
+  "default_configuration": "base",
+  "mass_and_hydrodynamics": "Explicit assumed parameters; not recalculated from optional visual module",
   "CAD_parameters_sha256": "1e06442b497e83284f4aa5ada5eedbb110d39a4cf5adffab36e9a26a90a10c48",
-  "CAD_parts_sha256": "8071431b8b6f99f3b87243dc656362ef4fa67111b5d15008bd85dbb62c7f5dcc"
+  "CAD_parts_sha256": "159ff3250d0ab5670ee69a24f069e64e2f93f741c49f19d8564b32f5a59fbabd"
 }
