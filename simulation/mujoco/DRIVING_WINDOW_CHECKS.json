@@ -1,0 +1,22 @@
+{
+  "dedicated_native_GLFW_window_created": true,
+  "uses_mujoco_viewer_Simulate_hotkeys": false,
+  "driving_keys_do_not_change_render_flags": true,
+  "WS_release_zeros_surge": true,
+  "losing_focus_zeros_surge": true,
+  "ESC_closes_window": true,
+  "forward_response_m": 0.45059789412969276,
+  "framebuffer_rendered": true,
+  "framebuffer_size": [
+    2400,
+    1700
+  ],
+  "scope": "Native window creation, direct callback tests (not OS key injection), water-model response and framebuffer render.",
+  "source_sha256": {
+    "desktop_viewer.py": "97dd8176c05f8e2a7762667ce9dc4279798af1461eb126087ca10ac0a54c2202",
+    "manual_control.py": "3cda99617347c4b394431532e07ed472de9150880bf66d5d6a05213f9a2c83a9",
+    "run.py": "260dd7dc94994555b07d2a128a1b8df1891b8db82532fac9f9882407d070177f",
+    "launch_macos.py": "0bcd2ba24478d923cc6f93f4b6fc3a0d27cd466b90c8f8f96d96f4a8109c2d94"
+  },
+  "passed": true
+}

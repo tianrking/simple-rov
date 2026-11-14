@@ -1,0 +1,11 @@
+{
+  "source_url": "https://cad.onshape.com/documents/256f9be06adfdc472f7aac06/w/aefb43ce726d3d5c24877f23/e/1186baa4f5bb2c01f6be971a",
+  "captured_utc": "2026-11-14T06:57:30.729202+00:00",
+  "capture_type": "Actual browser viewport screenshots; cropped to CAD area; no synthetic geometry",
+  "configuration": "Historical cloud reference with optional foam and straps fitted",
+  "default_reference": "Repository mechanical/assemblies/simple-rov.step is foam-free; screenshot is not the default assembly",
+  "source_sha256": {
+    "docs/assets/onshape/assembly-isometric.jpg": "35f28a523a6b027642c42b1d77d3c8755bba6d1c2456d077b48e64091572ab83",
+    "docs/assets/onshape/assembly-profile.jpg": "f9b5e6236b64c4a21be428a01ad32ee6d64d7908bc295384b8277183aae95b71"
+  }
+}

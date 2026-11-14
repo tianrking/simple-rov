@@ -1,0 +1,314 @@
+{
+  "revision": "V5-01",
+  "units": "mm",
+  "axes": "Xforward,Yleft,Zup",
+  "thrusters": {
+    "H_LEFT": {
+      "axis_position": [
+        -78,
+        74,
+        18
+      ],
+      "positive_thrust": [
+        1,
+        0,
+        0
+      ],
+      "mount_plane_Z": -13,
+      "holes": [
+        [
+          -85.0,
+          74,
+          -13
+        ],
+        [
+          -71.0,
+          74,
+          -13
+        ],
+        [
+          -78,
+          70.0,
+          -13
+        ],
+        [
+          -78,
+          78.0,
+          -13
+        ]
+      ],
+      "clearance": 3.4,
+      "trial_bolt": "M3x8",
+      "trial_engagement": 3.0
+    },
+    "H_RIGHT": {
+      "axis_position": [
+        -78,
+        -74,
+        18
+      ],
+      "positive_thrust": [
+        1,
+        0,
+        0
+      ],
+      "mount_plane_Z": -13,
+      "holes": [
+        [
+          -85.0,
+          -74,
+          -13
+        ],
+        [
+          -71.0,
+          -74,
+          -13
+        ],
+        [
+          -78,
+          -78.0,
+          -13
+        ],
+        [
+          -78,
+          -70.0,
+          -13
+        ]
+      ],
+      "clearance": 3.4,
+      "trial_bolt": "M3x8",
+      "trial_engagement": 3.0
+    },
+    "V_LEFT": {
+      "axis_position": [
+        0,
+        62,
+        -40
+      ],
+      "positive_thrust": [
+        0,
+        0,
+        1
+      ],
+      "mount_plane_X": -31,
+      "holes": [
+        [
+          -31,
+          62,
+          -47.0
+        ],
+        [
+          -31,
+          62,
+          -33.0
+        ],
+        [
+          -31,
+          58.0,
+          -40
+        ],
+        [
+          -31,
+          66.0,
+          -40
+        ]
+      ],
+      "clearance": 3.4,
+      "trial_bolt": "M3x12",
+      "trial_engagement": 3.5
+    },
+    "V_RIGHT": {
+      "axis_position": [
+        0,
+        -62,
+        -40
+      ],
+      "positive_thrust": [
+        0,
+        0,
+        1
+      ],
+      "mount_plane_X": -31,
+      "holes": [
+        [
+          -31,
+          -62,
+          -47.0
+        ],
+        [
+          -31,
+          -62,
+          -33.0
+        ],
+        [
+          -31,
+          -66.0,
+          -40
+        ],
+        [
+          -31,
+          -58.0,
+          -40
+        ]
+      ],
+      "clearance": 3.4,
+      "trial_bolt": "M3x12",
+      "trial_engagement": 3.5
+    }
+  },
+  "cover_bolts_XY": [
+    [
+      -95,
+      -18
+    ],
+    [
+      -95,
+      18
+    ],
+    [
+      95,
+      -18
+    ],
+    [
+      95,
+      18
+    ]
+  ],
+  "skid_mounts_XY": [
+    [
+      -80,
+      -97
+    ],
+    [
+      -80,
+      97
+    ],
+    [
+      80,
+      -97
+    ],
+    [
+      80,
+      97
+    ]
+  ],
+  "pod_axis": [
+    0,
+    0,
+    22
+  ],
+  "pod_clamps_X": [
+    -50,
+    50
+  ],
+  "foam_strap_slots_XY": [
+    [
+      -101,
+      -32.5
+    ],
+    [
+      -101,
+      32.5
+    ],
+    [
+      -35,
+      -32.5
+    ],
+    [
+      -35,
+      32.5
+    ],
+    [
+      35,
+      -32.5
+    ],
+    [
+      35,
+      32.5
+    ],
+    [
+      101,
+      -32.5
+    ],
+    [
+      101,
+      32.5
+    ]
+  ],
+  "strap_slot_size_XY": [
+    3,
+    7
+  ],
+  "camera_board_plane_X": 54,
+  "camera_holes_YZ": [
+    [
+      -14,
+      8
+    ],
+    [
+      -14,
+      36
+    ],
+    [
+      14,
+      8
+    ],
+    [
+      14,
+      36
+    ]
+  ],
+  "camera_mount_print_clearance": 2.2,
+  "camera_OEM_hole": 2.44,
+  "camera_board_rotation_deg_about_optical_axis": 180,
+  "tether_eye": {
+    "center": [
+      -96,
+      0,
+      0
+    ],
+    "diameter": 6,
+    "axis": "Y",
+    "load_rating": "UNTESTED"
+  },
+  "module_slots_XY": [
+    [
+      -40,
+      -10
+    ],
+    [
+      -40,
+      10
+    ],
+    [
+      -20,
+      -10
+    ],
+    [
+      -20,
+      10
+    ],
+    [
+      0,
+      -10
+    ],
+    [
+      0,
+      10
+    ],
+    [
+      20,
+      -10
+    ],
+    [
+      20,
+      10
+    ]
+  ],
+  "module_slot_size": [
+    8,
+    3.4
+  ],
+  "pressure_ports": "1M10+8M6; no penetrator selection frozen",
+  "physical_tested": false
+}

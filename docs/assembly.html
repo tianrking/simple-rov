@@ -1,0 +1,375 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>SimpleROV | Project documentation</title><style>
+:root{--ink:#183d46;--muted:#5d7480;--line:#dbe6e9;--accent:#176271;--orange:#ed8a24}
+*{box-sizing:border-box}body{margin:0;background:#f3f7f8;color:var(--ink);font:16px/1.8 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+header{background:#fff;border-bottom:1px solid var(--line)}nav{max-width:1100px;margin:auto;padding:18px 28px;display:flex;gap:22px;align-items:center;flex-wrap:wrap}nav strong{margin-right:auto;letter-spacing:-.5px;font-size:22px}nav a{font-size:14px;text-decoration:none}
+main{max-width:1100px;margin:32px auto 70px;background:#fff;border:1px solid var(--line);border-radius:16px;padding:42px 48px;box-shadow:0 8px 35px #183d4608}
+h1{font-size:42px;letter-spacing:-1.3px;line-height:1.2;margin-top:0}h2{font-size:26px;border-top:1px solid var(--line);padding-top:30px;margin-top:44px;line-height:1.35}h3{font-size:20px;margin-top:30px;line-height:1.4}p{margin:16px 0}a{color:var(--accent);text-underline-offset:3px}img,video{max-width:100%;height:auto;border-radius:8px}p>img{display:block;margin:22px auto}table{border-collapse:collapse;width:100%;font-size:14px;margin:20px 0}th,td{border:1px solid var(--line);padding:12px 15px;text-align:left;vertical-align:top}th{background:#eaf2f4;font-weight:600}tr:nth-child(even){background:#fafcfc}td img{width:100%}pre{overflow:auto;background:#163843;color:#edf6f8;padding:22px;border-radius:10px;font-size:13px;line-height:1.7}code{font-family:ui-monospace,SFMono-Regular,Consolas,monospace}p code,td code{background:#edf3f5;padding:2px 5px;border-radius:4px;font-size:.88em}blockquote{margin:20px 0;padding:1px 20px;background:#fff5e7;border-left:3px solid var(--orange)}details{border:1px solid var(--line);border-radius:10px;padding:12px 18px;margin:20px 0}summary{cursor:pointer}footer{color:var(--muted);font-size:12px;text-align:center;margin:35px auto}
+@media(max-width:700px){main{margin:12px 8px;padding:24px 18px;border-radius:10px}h1{font-size:34px}h2{font-size:23px}table{font-size:12px}th,td{padding:8px}nav{gap:12px;padding:14px 20px}pre{font-size:11px}}
+@media print{body,main{margin:0;padding:0;background:#fff;border:0;box-shadow:none}header,footer{display:none}h2{break-before:page}}
+</style></head><body><header><nav><strong>SimpleROV</strong><a href="index.html">Overview</a><a href="assembly.html">Assembly</a><a href="gallery.html">Gallery</a><a href="simulation.html">Simulation</a><a href="index.es.html">ES</a><a href="index.zh-CN.html">中文</a></nav></header><main><h1 id="simplerov-illustrated-assembly-guide">SimpleROV illustrated assembly guide</h1>
+<p>Standard assembly and optional accessories. <a href="assembly.pdf">PDF</a> · <a href="acceptance.html">Acceptance</a> · <a href="build-plan.html">Prototype plan</a></p>
+<h2 id="01-meet-the-vehicle">01 Meet the vehicle</h2>
+<p>SimpleROV / Illustrated assembly guide / 2026-11-14</p>
+<p><img alt="Figure 1. Standard CAD assembly without optional foam or straps. Final electronics, penetrators and wiring are not shown." src="assets/images/assembly_guide/04_assembly.png" /></p>
+<p>Figure 1. Standard CAD assembly without optional foam or straps. Final electronics, penetrators and wiring are not shown.</p>
+<p>SimpleROV has four thrusters around a central dry enclosure. The standard envelope is about 213 x 210 x 148 mm; the reference buoyancy module increases height to 184.7 mm. Two horizontal thrusters provide forward/reverse and differential yaw. Two side-by-side vertical thrusters provide ascent/descent and differential roll correction. Sway and pitch are not independently actuated.</p>
+<p>The frame, fairing, skids and complete commercial thrusters operate wet. The central compatible commercial enclosure keeps electronics dry. The fairing freely floods: it is not a waterproof box. Buy the motor, propeller and duct as one complete waterproof thruster; do not print the propeller or make a rotating shaft penetration.</p>
+<blockquote>
+<p>Status: digital geometry and mesh checks are available. Physical motor fit, print load capacity, wet retention, sealing and complete electrical packaging remain unverified. Board adapters, positive axial tray retention and final penetrator wiring are pending. This is not a depth or reliability certification.</p>
+</blockquote>
+<p>Reading order: parts on page 2; screws on page 3; frame and motors on pages 4-5; camera, enclosure and wiring on pages 6-8; cover and optional buoyancy on page 9; acceptance and service on page 10; files and records on page 11.</p>
+<h2 id="02-identify-the-printed-parts">02 Identify the printed parts</h2>
+<p>10 main prints / 7 functional types / 2 additional motor-fit coupons</p>
+<p><img alt="Figure 2. Exploded identification view from the actual print meshes. Offsets help identify parts; they do not prescribe a removal direction." src="assets/images/assembly_guide/05_printed_parts.png" /></p>
+<p>Figure 2. Exploded identification view from the actual print meshes. Offsets help identify parts; they do not prescribe a removal direction.</p>
+<table>
+<thead>
+<tr>
+<th>ID / filename prefix</th>
+<th>Qty.</th>
+<th>Purpose and location</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1 / V5_01_LOAD_CHASSIS</td>
+<td>1</td>
+<td>Load frame joining motors, skids, enclosure and fairing; includes tether eye and optional strap routes.</td>
+</tr>
+<tr>
+<td>2 / V5_02_UPPER_FAIRING</td>
+<td>1</td>
+<td>Protective orange cover with flooding/flow openings, camera opening and four screw wells. Not a lifting handle or pressure vessel.</td>
+</tr>
+<tr>
+<td>3 / V5_03_SKID</td>
+<td>2</td>
+<td>Side skids with two legs each; bench/floor support and underside protection.</td>
+</tr>
+<tr>
+<td>4 / V5_04_POD_CLAMP</td>
+<td>2</td>
+<td>Fore/aft tube clamps; use soft liners to retain the enclosure, not to seal its endcaps.</td>
+</tr>
+<tr>
+<td>5 / V5_05_VERTICAL_CARRIER</td>
+<td>2</td>
+<td>Vertical motor carriers: 8 mm main wall, two ribs and four chassis connections per side.</td>
+</tr>
+<tr>
+<td>6 / V5_06_MODULE_TRAY</td>
+<td>1</td>
+<td>100 x 35 mm internal tray for camera and future modules; board adapter and positive axial retention are pending.</td>
+</tr>
+<tr>
+<td>7 / V5_07_CAMERA_CARRIER</td>
+<td>1</td>
+<td>Camera-board mount with lens/USB clearance and nut pockets; attaches to the tray.</td>
+</tr>
+</tbody>
+</table>
+<p>Print from mechanical/stl/: files are in mm and bed-oriented. mechanical/assembly_meshes/ is for assembly and simulation, not print orientation. Buy the enclosure, camera and thrusters separately. Foam and straps are optional purchases, absent by default.</p>
+<h2 id="03-fasteners-and-tools">03 Fasteners and tools</h2>
+<p>Installed quantities only / verify motor blind depths before selecting screw lengths</p>
+<table>
+<thead>
+<tr>
+<th>Specification</th>
+<th>Qty.</th>
+<th>Allocation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>M3 x 8 socket-head screw</td>
+<td>8</td>
+<td>Horizontal motors: 4 each; target trial engagement 3 mm.</td>
+</tr>
+<tr>
+<td>M3 x 12 socket-head screw</td>
+<td>10</td>
+<td>Vertical motors: 4 each; camera carrier to tray: 2.</td>
+</tr>
+<tr>
+<td>M3 x 16 socket-head screw</td>
+<td>8</td>
+<td>Skids: 4; tube clamps: 4.</td>
+</tr>
+<tr>
+<td>M3 x 20 socket-head screw</td>
+<td>8</td>
+<td>Vertical carrier feet to chassis: 4 each.</td>
+</tr>
+<tr>
+<td>M3 x 25 socket-head screw</td>
+<td>4</td>
+<td>Fairing to chassis.</td>
+</tr>
+<tr>
+<td>M3 hex nut, AF5.5 x 2.4 mm</td>
+<td>22</td>
+<td>Skids 4; clamps 4; carrier feet 8; fairing 4; camera-carrier foot 2.</td>
+</tr>
+<tr>
+<td>M3 washer, OD7 / ID3.2 / t0.5 mm</td>
+<td>56</td>
+<td>Skids 4; clamps 8; carrier feet 16; motors 16; fairing 8; camera-carrier foot 4.</td>
+</tr>
+<tr>
+<td>M2 x 10 screw</td>
+<td>10</td>
+<td>Camera 4; OEM transparent window 6, preferably supplied in its kit.</td>
+</tr>
+<tr>
+<td>M2 hex nut, AF4 x 1.6 mm</td>
+<td>4</td>
+<td>Rear camera-carrier pockets.</td>
+</tr>
+<tr>
+<td>M2 washer, OD5 / ID2.2 / t0.3 mm</td>
+<td>4</td>
+<td>Camera-board front only; do not add to the OEM window screw stack.</td>
+</tr>
+</tbody>
+</table>
+<p>M3 x 12 means nominal 3 mm thread diameter and 12 mm length under the head. AF is nut width across flats. Nominal hardware references are A4-70 for M3 and 316 stainless for M2; supplier pressure-hardware requirements take precedence. Quantities exclude spares and must not duplicate screws already in the enclosure kit.</p>
+<p>Tools: long hex drivers matched to the actual heads, suitable M3/M2 nut tools, calipers, blind-depth gauge, deburring tools, a flat bench, labels, compatible seal-cleaning materials and supplier-approved lubricant. Later stages require a meter, current-limited bench supply, leak-test tools and a recoverable shallow-water site.</p>
+<blockquote>
+<p>No universal torque or locking process is specified. Do not apply metal-joint torque assumptions to printed parts or acrylic windows. Confirm seal/plastic compatibility and supplier approval before using locking chemicals.</p>
+</blockquote>
+<h2 id="04-assemble-the-frame">04 Assemble the frame</h2>
+<p>Dry bench assembly / power disconnected</p>
+<p><img alt="Figure 3. Frame and propulsion layout with fairing, buoyancy and central enclosure hidden. Motors are reconstructed commercial references, not prints." src="assets/images/assembly_guide/06_frame_thrusters.png" /></p>
+<p>Figure 3. Frame and propulsion layout with fairing, buoyancy and central enclosure hidden. Motors are reconstructed commercial references, not prints.</p>
+<ol>
+<li>
+<p>Test one real motor with H_mount_fit and V_mount_fit first. Confirm all four M3 interpretations, 14/8 mm cross orientation, hole depths, foot contact and cable exit. Horizontal effective grip plus washer is about 5 mm; vertical grip plus washer about 8.5 mm. Do not batch-print the main parts before this check.</p>
+</li>
+<li>
+<p>Remove supports, burrs and strings. Initial settings: PETG, 0.2 mm layers, at least six walls and solid load paths. Inspect layer separation, warping, holes and nut pockets. The largest bed footprint is about 210 x 210 mm. Test fastener passage without forcing warped parts into alignment.</p>
+</li>
+<li>
+<p>Identify the front by the camera and the rear by the tether eye. X points forward, Y left, Z up. Left/right are defined while facing forward with the vehicle.</p>
+</li>
+<li>
+<p>Fit skids beneath the chassis at Y = +/-97 mm. Load M3 nuts through the side openings. Insert four M3 x 16 downward from above, with one washer under each head. Total: 4 screws, 4 washers, 4 nuts. Align before tightening progressively.</p>
+</li>
+<li>
+<p>Place vertical carriers at Y = +/-62 mm. Per side, insert four M3 x 20 upward through the foot flange and chassis, with washers above/below and nuts above. Total: 8 screws, 16 washers, 8 nuts. Ribs face the rear mounting side and must not enter the vertical flow corridor.</p>
+</li>
+</ol>
+<blockquote>
+<p>Check flat skid support and full carrier seating without bending parts into place. Horizontal motors obstruct the upper skid tool paths, so install skids first.</p>
+</blockquote>
+<h2 id="05-install-the-four-thrusters">05 Install the four thrusters</h2>
+<p>Complete waterproof motors, propellers and ducts / independent bidirectional ESC per motor</p>
+<p><img alt="Figure 4. Nominal motor screw stacks and engagement targets. The OEM foot geometry and blind depths require physical verification." src="assets/images/assembly_guide/02_motor_fasteners.png" /></p>
+<p>Figure 4. Nominal motor screw stacks and engagement targets. The OEM foot geometry and blind depths require physical verification.</p>
+<ol>
+<li>
+<p>Horizontal motors: axes (-78, +/-74, 18) mm, along X. Seat each OEM foot on its chassis mounting pad. Install four M3 x 8 and four M3 washers upward from below per motor. Washers sit in recessed seats. Do not clamp the rotor, propeller shaft, blades or thin duct wall.</p>
+</li>
+<li>
+<p>Vertical motors: axes (0, +/-62, -40) mm, along Z. Seat the OEM foot against the carrier mounting face. Insert four M3 x 12 and four washers per motor from the back of the carrier along X. Confirm orientation against the assembly and Figure 8 top-layout diagram.</p>
+</li>
+<li>
+<p>Use an opposite-handed commercial pair for each axis where available. Calibrate signs so common horizontal force moves forward and common vertical force moves upward. CW/CCW alone does not define command polarity. Each motor requires its own compatible bidirectional ESC; verify directions submerged at low thrust.</p>
+</li>
+<li>
+<p>Route motor wires along the chassis with service slack and provisional releasable ties. Keep all wires clear of propellers, cover pinch points and flow paths. OEM cable-exit geometry is incomplete in the model and must be checked against actual motors.</p>
+</li>
+</ol>
+<blockquote>
+<p>Release gate: screws do not bottom, feet sit flat, motors cannot shift and propellers have clearance. The D54 mm geometric corridor is not a validated flow-efficiency result. Nominal M3 x 8/12 lengths do not replace depth measurement.</p>
+</blockquote>
+<h2 id="06-camera-tray-and-controller">06 Camera, tray and controller</h2>
+<p>Camera mount modeled / board adapter and positive axial tray retention still required</p>
+<p><img alt="Figure 5. Existing camera/tray module. Video host, MCU, four ESCs, battery and final USB plug are not included in this view." src="assets/images/assembly_guide/07_camera_tray.png" /></p>
+<p>Figure 5. Existing camera/tray module. Video host, MCU, four ESCs, battery and final USB plug are not included in this view.</p>
+<ol>
+<li>
+<p>Place four M2 nuts in the carrier rear hex pockets. Align the camera 28 x 28 mm pattern, lens forward. Fit an M2 thin washer at each front hole, then four M2 x 10 screws. Do not bend the PCB with screw preload.</p>
+</li>
+<li>
+<p>The camera board is rotated 180 degrees about the optical axis so USB enters the upper relief. Rotate acquired images 180 degrees in software. Verify the real plug, removal and cable-bend space; no final plug or elbow is selected.</p>
+</li>
+<li>
+<p>Align the carrier feet with tray holes at X = 42, Y = +/-10 mm. Two M3 x 12 enter downward; fit washers under heads and below the tray, then nuts. Total: 2 screws, 4 M3 washers, 2 M3 nuts. Assemble outside the enclosure.</p>
+</li>
+<li>
+<p>Keep ordinary MCU/controller boards dry. Mount each on a board-specific insulated adapter using suitable standoffs, then attach the adapter to the tray slots. Eight 8 x 3.4 mm slots are centered at X = -40/-20/0/20, Y = +/-10 mm. Do not drill the pressure tube to hold electronics.</p>
+</li>
+<li>
+<p>Two curved tray feet with soft pads provide provisional fit retention only. Add and validate positive axial retention against wiring pull and impact. Its form depends on the final enclosure and available interfaces; it is not yet modeled.</p>
+</li>
+</ol>
+<blockquote>
+<p>Hold point: do not seal a complete powered payload until board adapters, tray retention and full-scale battery/ESC/controller/video-host/connector placement have been checked. A 150 mm tube designation does not prove that everything fits.</p>
+</blockquote>
+<h2 id="07-pressure-enclosure-and-clamps">07 Pressure enclosure and clamps</h2>
+<p>Commercial seals keep the interior dry / printed clamps retain only the outer tube</p>
+<p><img alt="Figure 6. Enclosure relationship diagram, not a seal-groove section or manufacturing drawing. Seals, locking cords and final wiring are omitted." src="assets/images/assembly_guide/08_enclosure.png" /></p>
+<p>Figure 6. Enclosure relationship diagram, not a seal-groove section or manufacturing drawing. Seals, locking cords and final wiring are omitted.</p>
+<ol>
+<li>
+<p>Obtain a compatible 150 mm tube, front RAILS flange/window, rear 1 M10 + 8 M6 flange cap, and matching seals, locks, plugs and penetrators. The reference tube OD is 58 mm; the label "50 mm" alone does not establish compatibility.</p>
+</li>
+<li>
+<p>Follow the supplier process for cleaning, inspecting and lubricating seals. Align locking entries with tube cutouts. Use the OEM six M2 x 0.4-10 window screws and original stack, without added washers. Do not apply general M3 joint torque assumptions to this assembly.</p>
+</li>
+<li>
+<p>Assemble the tray module and removable wiring outside the tube. Insert without crowding sealing surfaces. Install final electronics only after the complete empty enclosure, connectors and wiring pass leak checks. Prefer the supplier endcap-service method rather than repeatedly dismantling the acrylic window.</p>
+</li>
+<li>
+<p>Place about 1 mm thick, 12 mm wide closed-cell EPDM in each lower saddle, cut to actual circumference with a butt joint and no overlap. Nominal compressed radial allowance is about 0.8 mm. Measure compression and seating; this liner is not a seal.</p>
+</li>
+<li>
+<p>Seat the tube in both saddles. Chassis end slots receive the metal flange projections for axial restraint, with about 0.6 mm nominal axial clearance. Do not load the acrylic window, seal grooves or lock entries, or force an endcap into the slot.</p>
+</li>
+<li>
+<p>Fit upper clamps at X = +/-50 mm. Four M3 x 16 enter downward with washers under heads and below the chassis, then nuts: 4 screws, 8 washers, 4 nuts. Stop at the clamp hard stops; do not crush the tube to prevent slip.</p>
+</li>
+</ol>
+<blockquote>
+<p>Leak-test the complete compatible system per supplier instructions. Its vacuum guide describes about 15 inHg, 10-15 minutes and no more than 0.5 inHg loss for an applicable setup. Confirm applicability and tool integrity first. Vacuum acceptance is not operating-depth certification.</p>
+</blockquote>
+<p>Supplier guides: bluerobotics.com/learn/watertight-enclosure-wte-assembly-new/ and bluerobotics.com/learn/using-the-vacuum-test-plug/.</p>
+<h2 id="08-wiring-and-the-wetdry-boundary">08 Wiring and the wet/dry boundary</h2>
+<p>System relationship only / not a frozen schematic or production harness</p>
+<p><img alt="Figure 7. Thrusters and frame are wet. ESCs, controller and other ordinary electronics belong in a verified dry enclosure." src="assets/images/assembly_guide/03_wet_dry.png" /></p>
+<p>Figure 7. Thrusters and frame are wet. ESCs, controller and other ordinary electronics belong in a verified dry enclosure.</p>
+<ol>
+<li>
+<p>Connect each three-phase brushless motor to one matched bidirectional ESC. The controller sends the selected control signal to each ESC; motors do not connect directly to MCU pins. ESCs, power protection, regulation and signal protocol remain unselected.</p>
+</li>
+<li>
+<p>Pass motor cables through penetrators suited to their real construction, outside diameter and jacket material. Loose conductors or multiwire bundles do not automatically seal in a single-cable compression gland. A compatible factory-potted harness may be necessary.</p>
+</li>
+<li>
+<p>Fit compatible penetrators in used ports and matching plugs in every unused port. Assemble sealing interfaces per supplier requirements. The rear 1 M10 + 8 M6 pattern is port capacity, not proof of connector compatibility or a completed waterproof harness.</p>
+</li>
+<li>
+<p>Leave service slack and provide strain relief without contacting propellers, sharp edges, seals or locks. Do not pinch wires in the endcap. Terminate the independent tether load path at the rear 6 mm eye; its recovery load is untested. Do not load penetrators, conductors or the camera USB lead in tension.</p>
+</li>
+<li>
+<p>Before closure, confirm battery/protection, controller, four ESCs, regulator, USB host, sensors, connectors and service space. The USB camera requires a suitable host to receive video. An MCU PWM output does not provide a video host.</p>
+</li>
+</ol>
+<blockquote>
+<p>Waterproofing belongs to the complete enclosure, penetrators and cable system. An ordinary MCU can operate inside a proven dry enclosure. Full electrical packaging, wiring, protection and heat management remain pending; this relationship diagram does not replace them.</p>
+</blockquote>
+<h2 id="09-fairing-optional-foam-and-trim">09 Fairing, optional foam and trim</h2>
+<p>Standard assembly omits top foam and straps / select additions from measured trim</p>
+<p><img alt="Figure 8. Top layout with the cover hidden. Horizontal arrows indicate the positive force convention, not water flow." src="assets/images/assembly_guide/01_top_layout.png" /></p>
+<p>Figure 8. Top layout with the cover hidden. Horizontal arrows indicate the positive force convention, not water flow.</p>
+<ol>
+<li>
+<p>Seat the fairing locating lip. Four tool wells align with X = +/-95, Y = +/-18 mm connections. Insert four M3 x 25 from above, washers under heads and below the chassis, then nuts: 4 screws, 8 washers, 4 nuts. Do not pinch wires in the lip. It is not a sealing surface.</p>
+</li>
+<li>
+<p>Optional only: place two nominal 62 x 160 x 35 mm closed-cell foam pieces fore/aft, centered X = +/-69 mm, bottom Z = 60.5 mm. Select a material for the intended depth and actual density, not hollow FDM or absorbent foam. Four nominal D12 tool reliefs must preserve screw-well access.</p>
+</li>
+<li>
+<p>Optional with foam: run four releasable straps along X around foam and load chassis at Y = +/-32.5 mm. Rear guides: X = -101/-35; front guides: X = 35/101 mm; slots 3 x 7 mm. Reference band 4.8 mm wide, at most 1.2 mm thick and about 450 mm long. Buckles are unmodeled; keep them accessible on top and clear of tools and propeller flow.</p>
+</li>
+<li>
+<p>Skip steps 26-27 for the standard assembly. Weigh the complete vehicle and measure displacement and submerged attitude. Add suitable foam or engineered ballast through the two bottom 12 x 3.4 mm slots as required. Establish CG below CB, fore/aft balance and a measured slightly positive submerged trim. Simulation values of 1.4 kg and 1% positive buoyancy are assumptions, not measurements.</p>
+</li>
+</ol>
+<h2 id="10-inspection-and-service">10 Inspection and service</h2>
+<p>Dry fit and empty-enclosure checks before recoverable, low-power shallow-water trials</p>
+<table>
+<thead>
+<tr>
+<th>Gate</th>
+<th>Check</th>
+<th>If incomplete</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Dry fit</td>
+<td>Fasteners accessible; motors, tube, camera and tray retained; wiring clear of propellers and lips.</td>
+<td>Correct gaps, blind depths, retention and routing before closure.</td>
+</tr>
+<tr>
+<td>Physical loading</td>
+<td>Test actual prints, carriers, clamps and tether eye, including wet retention.</td>
+<td>Digital checks cannot provide a physical load rating.</td>
+</tr>
+<tr>
+<td>Empty enclosure</td>
+<td>Real penetrators, plugs and harness assembled and tested by the compatible supplier procedure.</td>
+<td>Do not immerse powered electronics.</td>
+</tr>
+<tr>
+<td>Unpowered trim</td>
+<td>Representative final mass; fully submerged net buoyancy, attitude and fore/aft balance.</td>
+<td>Adjust mass/foam rather than using control thrust to mask static trim.</td>
+</tr>
+<tr>
+<td>Shallow powered trial</td>
+<td>Recoverable site, individual signs, loss-of-command stop, ascent/descent, yaw and depth hold.</td>
+<td>Keep power and depth bounded; investigate before expanding tests.</td>
+</tr>
+</tbody>
+</table>
+<p>The acceptance plan proposes about 41 N in both directions per motor mounting module, held five minutes and repeated three times. This is an unperformed project test, not a certification standard. Use a rigid substitute fixture at the motor thrust axis. Displacement must remain below half the actual minimum gap; inspect cracks, layer separation, slip and residual deformation. Whole-frame combined loads and actual material properties require separate validation.</p>
+<p>Service sequence: disconnect power and prevent motor start; if foam is installed, release straps and remove foam; remove the cover through its four wells; release clamps and service the enclosure per supplier instructions. Remove obstructing horizontal thrusters before skid service. Vertical motor side screws can be serviced independently.</p>
+<p>After use inspect moisture, cable wear, penetrators, print layers and nut pockets. Repeat leak checks after seal or penetrator changes. Reassess components after bottom strikes, collision, overheating or water ingress.</p>
+<blockquote>
+<p>No full-power endurance, service-life or depth rating is claimed. Remaining work includes positive tray retention, complete electrical space/heat assessment, penetrator wiring, actual motor interfaces and all physical trials.</p>
+</blockquote>
+<h2 id="11-files-and-build-records">11 Files and build records</h2>
+<p>Keep prints, purchased revisions and test evidence tied to the same vehicle revision</p>
+<table>
+<thead>
+<tr>
+<th>Need</th>
+<th>Repository location</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ten main prints</td>
+<td>mechanical/stl/; IDs correspond to page 2.</td>
+</tr>
+<tr>
+<td>Motor fit coupons</td>
+<td>mechanical/fit_coupons/H_mount_fit.stl and V_mount_fit.stl.</td>
+</tr>
+<tr>
+<td>Editable structure</td>
+<td>mechanical/step_parts/; source mechanical/build.py and parameters.json.</td>
+</tr>
+<tr>
+<td>Assembly variants</td>
+<td>mechanical/assemblies/: simple-rov.step is standard; filenames with buoyancy or fasteners identify the other variants.</td>
+</tr>
+<tr>
+<td>Print / fastener quantities</td>
+<td>bom/PRINT_MANIFEST.csv; BOM_FASTENERS.csv; FASTENER_INSTANCES.csv.</td>
+</tr>
+<tr>
+<td>Purchased parts / interfaces</td>
+<td>bom/BOM_PURCHASED.csv; KEY_HOLES.csv; mechanical/INTERFACES.json.</td>
+</tr>
+<tr>
+<td>Prototype and acceptance</td>
+<td>docs/build-plan.md; bom/component-confirmation.csv; docs/acceptance.md.</td>
+</tr>
+<tr>
+<td>Simulation / digital evidence</td>
+<td>docs/simulation.md; simulation/mujoco/; mechanical/GEOMETRY_CHECKS.json and EXPORT_CHECKS.json.</td>
+</tr>
+</tbody>
+</table>
+<p>Complete before a finished vehicle: motor hole/depth/cable verification; specific boards and adapters; positive tray retention; full battery/ESC/video-host/wiring layout and heat assessment; actual penetrators/plugs; mass, CG/CB and thrust calibration; printed load/wet retention, sealing and shallow-water trials.</p>
+<p>Record vehicle ID, print batch/material, orientation/layers/walls, fastener grade and measured engagement, purchased revisions, actual mass, motor signs/neutral/current, leak-test date/results, load evidence, unpowered trim and service events. A previous print batch does not establish the strength of a new one.</p>
+<p>Historical Onshape prints are imported editable solids without native sketch history; Python is the dimension-driven source. The rear supplier cap imported as an open shell; local OEM STEP remains solid. Historical cloud assembly includes optional foam. Current defaults are the repository assemblies; synchronize CAD, hole lists, documents and simulation after changes.</p>
+<p>Sources: X2 manufacturer dimensions; attributed Blue Robotics enclosure/camera STEP; supplier enclosure and vacuum guides. Reference motor meshes and diagrams are not OEM manufacturing data. Full source links and rights are recorded in SOURCES.json and THIRD_PARTY_NOTICES.md.</p>
+<blockquote>
+<p>First physical action: one motor and both fit coupons, alongside a full-scale electrical layout. Only after those pass should the main prints and remaining motors be ordered. STL files and a screw list alone do not establish a mature, validated vehicle.</p>
+</blockquote>
+<h2 id="supplier-instructions">Supplier instructions</h2>
+<p><a href="https://bluerobotics.com/learn/watertight-enclosure-wte-assembly-new/">Enclosure assembly</a> · <a href="https://bluerobotics.com/learn/using-the-vacuum-test-plug/">Vacuum leak testing</a></p></main><footer>SimpleROV · Prototype documentation · Original content all rights reserved</footer></body></html>

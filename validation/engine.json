@@ -1,0 +1,17 @@
+{
+  "verified_date": "2026-11-14",
+  "latest_stable_verified": "4.0.1",
+  "official_release": "https://github.com/google-deepmind/mujoco/releases/tag/4.0.1",
+  "python_binding_version": "4.0.1",
+  "native_engine_version": "4.0.1",
+  "packages": {
+    "mujoco": "4.0.1",
+    "mujoco-core": "4.0.1",
+    "mujoco-studio": "4.0.1",
+    "numpy": "2.5.4"
+  },
+  "default_physics_timestep_s": 0.002,
+  "default_control_Hz": 50,
+  "version_pin": "requirements/sim.txt",
+  "scope": "Latest stable verified on this date, not an automatic future-version guarantee. Physical coefficients remain uncalibrated."
+}

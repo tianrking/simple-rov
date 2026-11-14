@@ -1,0 +1,18 @@
+{
+  "pages": 11,
+  "expected_pages": 11,
+  "content_height_estimates_pt": [
+    472.5,
+    606.4,
+    478.8,
+    489.2,
+    447.6,
+    461.9,
+    530.7,
+    511.5,
+    463.2,
+    444.8,
+    510.4
+  ],
+  "all_pages_text_nonempty": true
+}

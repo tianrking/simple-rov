@@ -1,0 +1,28 @@
+# Local environments, caches and generated run outputs
+.venv/
+venv/
+runs/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.DS_Store
+MUJOCO_LOG.TXT
+# Secrets and machine-specific configuration
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+# CAD / KiCad transient data
+*.FCStd1
+*.bak
+*.tmp
+*.lck
+*.kicad_prl
+*-backups/
+fp-info-cache
+# Editor state
+.idea/
+.vscode/

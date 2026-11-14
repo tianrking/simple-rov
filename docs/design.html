@@ -1,0 +1,106 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>SimpleROV | Project documentation</title><style>
+:root{--ink:#183d46;--muted:#5d7480;--line:#dbe6e9;--accent:#176271;--orange:#ed8a24}
+*{box-sizing:border-box}body{margin:0;background:#f3f7f8;color:var(--ink);font:16px/1.8 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+header{background:#fff;border-bottom:1px solid var(--line)}nav{max-width:1100px;margin:auto;padding:18px 28px;display:flex;gap:22px;align-items:center;flex-wrap:wrap}nav strong{margin-right:auto;letter-spacing:-.5px;font-size:22px}nav a{font-size:14px;text-decoration:none}
+main{max-width:1100px;margin:32px auto 70px;background:#fff;border:1px solid var(--line);border-radius:16px;padding:42px 48px;box-shadow:0 8px 35px #183d4608}
+h1{font-size:42px;letter-spacing:-1.3px;line-height:1.2;margin-top:0}h2{font-size:26px;border-top:1px solid var(--line);padding-top:30px;margin-top:44px;line-height:1.35}h3{font-size:20px;margin-top:30px;line-height:1.4}p{margin:16px 0}a{color:var(--accent);text-underline-offset:3px}img,video{max-width:100%;height:auto;border-radius:8px}p>img{display:block;margin:22px auto}table{border-collapse:collapse;width:100%;font-size:14px;margin:20px 0}th,td{border:1px solid var(--line);padding:12px 15px;text-align:left;vertical-align:top}th{background:#eaf2f4;font-weight:600}tr:nth-child(even){background:#fafcfc}td img{width:100%}pre{overflow:auto;background:#163843;color:#edf6f8;padding:22px;border-radius:10px;font-size:13px;line-height:1.7}code{font-family:ui-monospace,SFMono-Regular,Consolas,monospace}p code,td code{background:#edf3f5;padding:2px 5px;border-radius:4px;font-size:.88em}blockquote{margin:20px 0;padding:1px 20px;background:#fff5e7;border-left:3px solid var(--orange)}details{border:1px solid var(--line);border-radius:10px;padding:12px 18px;margin:20px 0}summary{cursor:pointer}footer{color:var(--muted);font-size:12px;text-align:center;margin:35px auto}
+@media(max-width:700px){main{margin:12px 8px;padding:24px 18px;border-radius:10px}h1{font-size:34px}h2{font-size:23px}table{font-size:12px}th,td{padding:8px}nav{gap:12px;padding:14px 20px}pre{font-size:11px}}
+@media print{body,main{margin:0;padding:0;background:#fff;border:0;box-shadow:none}header,footer{display:none}h2{break-before:page}}
+</style></head><body><header><nav><strong>SimpleROV</strong><a href="index.html">Overview</a><a href="assembly.html">Assembly</a><a href="gallery.html">Gallery</a><a href="simulation.html">Simulation</a><a href="index.es.html">ES</a><a href="index.zh-CN.html">中文</a></nav></header><main><h1 id="structure-and-interface-reference">Structure and interface reference</h1>
+<p><a href="assembly.html">Illustrated assembly</a> · <a href="assembly.pdf">PDF</a> · <a href="acceptance.html">Acceptance</a></p>
+<p>SimpleROV uses two straight horizontal thrusters and two side-by-side vertical thrusters. The frame, fairing, carriers, camera mount and simulation are original project sources. Thrusters, camera and pressure hardware are attributed commercial references. This project does not make a rotating shaft seal or a PCB.</p>
+<p><img alt="Standard assembly" src="assets/gallery/hero.png" /></p>
+<h2 id="layout-and-coordinates">Layout and coordinates</h2>
+<p>CAD: mm, X forward, Y left, Z up. Standard envelope: <strong>213 × 210 × 148 mm</strong>, with no top foam/straps. The optional reference module increases height to <strong>184.7 mm</strong>. Final cables, penetrators, tether fittings, strap buckles and ballast are excluded.</p>
+<table>
+<thead>
+<tr>
+<th>Module</th>
+<th>Datum / role</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Horizontal pair</td>
+<td>Axes at (-78, ±74, 18) mm, along X; common thrust gives surge, differential thrust gives yaw</td>
+</tr>
+<tr>
+<td>Vertical pair</td>
+<td>Axes at (0, ±62, -40) mm, along Z; common thrust gives heave, differential thrust gives roll</td>
+</tr>
+<tr>
+<td>Central enclosure</td>
+<td>150 mm tube, 58 mm OD, axis at Z = 22 mm</td>
+</tr>
+<tr>
+<td>Camera</td>
+<td>Lens front near X = 77.35, Y = 0, Z = 22 mm</td>
+</tr>
+<tr>
+<td>Optional foam</td>
+<td>Two 62 × 160 × 35 mm reference blanks, centered X = ±69 mm, with four tool reliefs and four longitudinal straps</td>
+</tr>
+<tr>
+<td>Ballast / tether</td>
+<td>Two bottom M3 slots; integrated rear 6 mm tether eye, without a rated recovery load</td>
+</tr>
+</tbody>
+</table>
+<p>The four controlled inputs are Fx, Fz, Mx and Mz. Sway and pitch are passive axes, with possible coupling. Real CG/CB placement must establish fore/aft trim; a controller cannot make this a fully actuated six-axis vehicle.</p>
+<h2 id="ten-printed-parts">Ten printed parts</h2>
+<table>
+<thead>
+<tr>
+<th>Prefix</th>
+<th style="text-align: right;">Qty.</th>
+<th>Function / print orientation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>V5_01_LOAD_CHASSIS</td>
+<td style="text-align: right;">1</td>
+<td>Closed frame, beams, enclosure saddles/stops and tether eye; base down</td>
+</tr>
+<tr>
+<td>V5_02_UPPER_FAIRING</td>
+<td style="text-align: right;">1</td>
+<td>Freely flooding cover, locating lip and four screw wells; top down, local support</td>
+</tr>
+<tr>
+<td>V5_03_SKID</td>
+<td style="text-align: right;">2</td>
+<td>Side skids and reinforced legs; print on side</td>
+</tr>
+<tr>
+<td>V5_04_POD_CLAMP</td>
+<td style="text-align: right;">2</td>
+<td>Tube clamps with soft liners; end face down</td>
+</tr>
+<tr>
+<td>V5_05_VERTICAL_CARRIER</td>
+<td style="text-align: right;">2</td>
+<td>8 mm wall, two ribs and four foot bolts; motor face down, support flange ears</td>
+</tr>
+<tr>
+<td>V5_06_MODULE_TRAY</td>
+<td style="text-align: right;">1</td>
+<td>Internal generic tray with module slots and camera-carrier holes</td>
+</tr>
+<tr>
+<td>V5_07_CAMERA_CARRIER</td>
+<td style="text-align: right;">1</td>
+<td>Camera, USB relief and M2 nut pockets; local support</td>
+</tr>
+</tbody>
+</table>
+<p>Initial print settings: PETG, 0.2 mm layers, at least six walls and solid structural regions. Infill alone does not establish wet layer strength. Verify supports, nuts, holes and bed envelope in the slicer. The largest main part is about 210 × 210 mm in the bed plane; a nominal 220 mm printer needs sufficient usable travel and brim clearance.</p>
+<h2 id="commercial-interfaces">Commercial interfaces</h2>
+<p><strong>Thrusters: four APISQUEEN X2 complete waterproof units.</strong> Use an opposite-handed pair for each axis, then calibrate actual force direction. Manufacturer dimensional references give D56.38 and axial length 60 mm with a 14/8 mm cross pattern. All four holes are currently interpreted as M3, and a 31 mm mounting-face offset is inferred. No OEM X2 STEP is available; the motor/duct/propeller geometry is reconstructed. Confirm hole types, blind depths, axial datums and cable exits with one physical unit and both coupons. Horizontal M3 × 8 and vertical M3 × 12 are trial selections targeting about 3 / 3.5 mm engagement, not permission to bottom screws.</p>
+<p><strong>Camera: Blue Robotics Low-Light HD USB Camera.</strong> The 32 × 32 mm board has 28 × 28 mm mounting spacing and OEM 2.44 mm holes. Supplier STEP locates board, lens and USB relative to the carrier. Rotate the board 180° about its optical axis to move USB above it; rotate captured images 180° accordingly. The actual cable/plug is not selected.</p>
+<p><strong>Enclosure: Blue Robotics 50 mm series.</strong> Reference set: 150 mm tube, front RAILS flange/transparent window and rear 1 M10 + 8 M6 flange cap. Supplier geometry is rigidly positioned; locking entries and window holes are aligned. Use six OEM M2 × 0.4-10 window screws with the supplier's stack. Procure matching O-rings, locking cords, plugs and penetrators as a compatible system. Geometry does not establish vehicle operating depth.</p>
+<p><strong>Optional foam.</strong> Default quantity is zero. The reference blanks are cut closed-cell material, secured through 3 × 7 mm guides by approximately 450 × 4.8 mm straps, no more than 1.2 mm thick. Buckles are not modeled. Select grade, thickness and placement from actual trim; see <a href="buoyancy.html">buoyancy</a>.</p>
+<h2 id="editing-and-provenance">Editing and provenance</h2>
+<p>The parameter-driven source is <a href="../mechanical/build.py">build.py</a> with <a href="../mechanical/parameters.json">parameters.json</a>. Some local dimensions remain explicit constants. Changing a motor requires its full envelope, mounting-face offset, axial datums, wiring and screw stack, followed by interference, tool and flow checks. Do not scale purchased pressure hardware.</p>
+<p><a href="../mechanical/assemblies">STEP assemblies</a> define current standard and optional configurations. The <a href="https://cad.onshape.com/documents/256f9be06adfdc472f7aac06/w/aefb43ce726d3d5c24877f23/e/1186baa4f5bb2c01f6be971a">historical Onshape assembly</a> contains the optional foam. Ten printed parts are directly editable imported solids, not native feature-history models. The rear commercial cap imported as an open 480-face shell; local OEM STEP remains solid. The other 29 cloud reference solids and the ten printed-part envelopes/volumes were checked in the <a href="../validation/onshape/ONSHAPE_ROUNDTRIP.json">round-trip record</a>. Do not manufacture pressure parts from the cloud shell reference. Onshape edits do not write back into Python.</p>
+<p><a href="development.html">Development and rebuild</a> · <a href="gallery.html">Gallery</a> · <a href="build-plan.html">Prototype plan</a></p></main><footer>SimpleROV · Prototype documentation · Original content all rights reserved</footer></body></html>

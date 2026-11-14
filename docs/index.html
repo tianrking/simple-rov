@@ -1,0 +1,478 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>SimpleROV | Project documentation</title><style>
+:root{--ink:#183d46;--muted:#5d7480;--line:#dbe6e9;--accent:#176271;--orange:#ed8a24}
+*{box-sizing:border-box}body{margin:0;background:#f3f7f8;color:var(--ink);font:16px/1.8 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+header{background:#fff;border-bottom:1px solid var(--line)}nav{max-width:1100px;margin:auto;padding:18px 28px;display:flex;gap:22px;align-items:center;flex-wrap:wrap}nav strong{margin-right:auto;letter-spacing:-.5px;font-size:22px}nav a{font-size:14px;text-decoration:none}
+main{max-width:1100px;margin:32px auto 70px;background:#fff;border:1px solid var(--line);border-radius:16px;padding:42px 48px;box-shadow:0 8px 35px #183d4608}
+h1{font-size:42px;letter-spacing:-1.3px;line-height:1.2;margin-top:0}h2{font-size:26px;border-top:1px solid var(--line);padding-top:30px;margin-top:44px;line-height:1.35}h3{font-size:20px;margin-top:30px;line-height:1.4}p{margin:16px 0}a{color:var(--accent);text-underline-offset:3px}img,video{max-width:100%;height:auto;border-radius:8px}p>img{display:block;margin:22px auto}table{border-collapse:collapse;width:100%;font-size:14px;margin:20px 0}th,td{border:1px solid var(--line);padding:12px 15px;text-align:left;vertical-align:top}th{background:#eaf2f4;font-weight:600}tr:nth-child(even){background:#fafcfc}td img{width:100%}pre{overflow:auto;background:#163843;color:#edf6f8;padding:22px;border-radius:10px;font-size:13px;line-height:1.7}code{font-family:ui-monospace,SFMono-Regular,Consolas,monospace}p code,td code{background:#edf3f5;padding:2px 5px;border-radius:4px;font-size:.88em}blockquote{margin:20px 0;padding:1px 20px;background:#fff5e7;border-left:3px solid var(--orange)}details{border:1px solid var(--line);border-radius:10px;padding:12px 18px;margin:20px 0}summary{cursor:pointer}footer{color:var(--muted);font-size:12px;text-align:center;margin:35px auto}
+@media(max-width:700px){main{margin:12px 8px;padding:24px 18px;border-radius:10px}h1{font-size:34px}h2{font-size:23px}table{font-size:12px}th,td{padding:8px}nav{gap:12px;padding:14px 20px}pre{font-size:11px}}
+@media print{body,main{margin:0;padding:0;background:#fff;border:0;box-shadow:none}header,footer{display:none}h2{break-before:page}}
+</style></head><body><header><nav><strong>SimpleROV</strong><a href="index.html">Overview</a><a href="assembly.html">Assembly</a><a href="gallery.html">Gallery</a><a href="simulation.html">Simulation</a><a href="index.es.html">ES</a><a href="index.zh-CN.html">中文</a></nav></header><main><div align="center">
+<h1 id="simplerov">SimpleROV</h1>
+<p><strong>A compact four-thruster underwater robot.</strong></p>
+<p>Printable mechanics · Documented assembly · MuJoCo simulation</p>
+<p><a href="index.html"><strong>English</strong></a> · <a href="index.es.html">Español</a> · <a href="index.zh-CN.html">简体中文</a></p>
+<p><a href="https://github.com/tianrking/simple-rov/actions/workflows/verify.yml"><img alt="Checks" src="https://github.com/tianrking/simple-rov/actions/workflows/verify.yml/badge.svg" /></a>
+<a href="https://github.com/tianrking/simple-rov/releases/tag/v0.0.1"><img alt="Release" src="https://img.shields.io/badge/release-v0.0.1-176271" /></a>
+<a href="https://github.com/tianrking/simple-rov/blob/main/mechanical/README.md"><img alt="CAD" src="https://img.shields.io/badge/CAD-STEP%20%2B%20STL-f29932" /></a>
+<a href="https://github.com/tianrking/simple-rov/blob/main/docs/simulation.md"><img alt="Simulation" src="https://img.shields.io/badge/simulation-MuJoCo-176271" /></a></p>
+<p><img alt="SimpleROV standard assembly" src="assets/gallery/hero.png" /></p>
+<p><strong>213 × 210 × 148 mm</strong> &nbsp; · &nbsp; <strong>4 thrusters</strong> &nbsp; · &nbsp; <strong>10 printed parts</strong></p>
+<p><a href="assembly.html">Assembly guide</a> · <a href="https://github.com/tianrking/simple-rov/releases">Download</a> · <a href="../mechanical/README.md">CAD files</a> · <a href="simulation.html">Simulation</a> · <a href="gallery.html">Gallery</a></p>
+</div>
+<p>SimpleROV brings the frame, thruster mounts, camera carrier, enclosure mounts and simulation into one reproducible project. Start with a mechanical fit check, then develop tethered remote control, depth hold and heading hold around the same coordinate system.</p>
+<p>The <strong>standard assembly has no top buoyancy foam or retention straps</strong>. Mounting routes remain available for an optional buoyancy module, selected after measuring the completed vehicle's mass and trim. These images are CAD renderings, not photographs of tested hardware.</p>
+<h2 id="simulation-videos">Simulation videos</h2>
+<p><strong>Watch the 48-second overview directly below:</strong> four actual MuJoCo scenarios, 720p H.264, live telemetry and the forward camera.</p>
+<video controls playsinline preload="metadata" poster="assets/videos/poster.png" style="width:100%"><source src="assets/videos/simple-rov-overview.mp4" type="video/mp4"><a href="assets/videos/simple-rov-overview.mp4">Download MP4</a></video>
+
+<table>
+<thead>
+<tr>
+<th>Chapter</th>
+<th>Overview time</th>
+<th>What to watch</th>
+<th>Individual video</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Basic motion</td>
+<td>00:00-00:12</td>
+<td>Rise, descend, move forward and turn</td>
+<td><a href="assets/videos/pool.mp4">Pool</a></td>
+</tr>
+<tr>
+<td>Water current</td>
+<td>00:12-00:24</td>
+<td>Current arrow, changing position and lateral drift</td>
+<td><a href="assets/videos/cross-current.mp4">Cross-current</a></td>
+</tr>
+<tr>
+<td>Tether load</td>
+<td>00:24-00:36</td>
+<td>Tension/slack state and line force at the chassis eye</td>
+<td><a href="assets/videos/tethered.mp4">Tether</a></td>
+</tr>
+<tr>
+<td>Motor failure</td>
+<td>00:36-00:48</td>
+<td>H_LEFT at zero thrust, rank loss and allocation residual</td>
+<td><a href="assets/videos/motor-fault.mp4">Motor fault</a></td>
+</tr>
+</tbody>
+</table>
+<p><a href="videos.html">All video players and reproduction details</a> · <a href="assets/videos/simple-rov-overview.mp4">Download the overview MP4</a></p>
+<details>
+<summary><strong>Animated preview for mirrors without native video playback</strong></summary>
+<p><a href="assets/videos/simple-rov-overview.mp4"><img alt="12-second preview sampled from the four simulation clips" src="assets/videos/overview-preview.gif" /></a></p>
+</details>
+<p>These are simulated trajectories with uncalibrated parameters, sensor feedback and seed 0. They are classical-control demonstrations, not physical robot footage. MP4 originals, per-frame state traces and exact run metadata are committed alongside the rendering source.</p>
+<h2 id="at-a-glance">At a glance</h2>
+<table>
+<thead>
+<tr>
+<th>Mechanics</th>
+<th>Propulsion</th>
+<th>Development</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Compact load-bearing frame</td>
+<td>Two horizontal + two vertical thrusters</td>
+<td>Editable CadQuery source and STEP</td>
+</tr>
+<tr>
+<td>Commercial central dry enclosure</td>
+<td>Forward/reverse, ascent/descent, yaw</td>
+<td>Independent, bed-oriented STL files</td>
+</tr>
+<tr>
+<td>Removable fairing and skids</td>
+<td>Differential vertical thrust assists roll</td>
+<td>MuJoCo environment and classical control</td>
+</tr>
+<tr>
+<td>Optional top buoyancy module</td>
+<td>Four independent force commands</td>
+<td>Illustrated assembly, BOM and checks</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Specification</th>
+<th>Current reference</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Standard envelope, L × W × H</td>
+<td><strong>213 × 210 × 148 mm</strong></td>
+</tr>
+<tr>
+<td>With the reference buoyancy module</td>
+<td>213 × 210 × 184.7 mm</td>
+</tr>
+<tr>
+<td>Main printed parts</td>
+<td>10, plus 2 separate motor-fit coupons</td>
+</tr>
+<tr>
+<td>Thruster reference</td>
+<td>4 × APISQUEEN X2 complete waterproof thrusters</td>
+</tr>
+<tr>
+<td>Central enclosure reference</td>
+<td>Blue Robotics 50 mm series, 150 mm tube, 58 mm outside diameter</td>
+</tr>
+<tr>
+<td>Camera reference</td>
+<td>Blue Robotics Low-Light HD USB Camera</td>
+</tr>
+<tr>
+<td>Coordinates</td>
+<td>X forward, Y left, Z up; CAD in mm, simulation in m</td>
+</tr>
+</tbody>
+</table>
+<p>Dimensions exclude the final cables, penetrators, tether termination, strap buckles and ballast. Sway and pitch have no independent actuators. Actual motor threads, cable exits and the complete electrical packaging still need physical confirmation.</p>
+<h2 id="explore-the-structure">Explore the structure</h2>
+<p><img alt="Six orthographic views of the standard assembly" src="assets/gallery/overview.png" /></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Inside the frame</th>
+<th style="text-align: center;">Optional buoyancy module</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><img alt="Interior: fairing and pressure enclosure components hidden" src="assets/gallery/interior.png" /></td>
+<td style="text-align: center;"><img alt="Optional buoyancy module" src="assets/gallery/buoyancy-option.png" /></td>
+</tr>
+</tbody>
+</table>
+<p>The interior view removes the fairing and pressure enclosure components to show the camera carrier, tray and mounts. It does not imply that the final battery, controller, four ESCs and video host have been packaged.</p>
+<details>
+<summary><strong>Open the six individual views</strong></summary>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Front</th>
+<th style="text-align: center;">Rear</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><img alt="Front" src="assets/gallery/front.png" /></td>
+<td style="text-align: center;"><img alt="Rear" src="assets/gallery/rear.png" /></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Left</th>
+<th style="text-align: center;">Right</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><img alt="Left" src="assets/gallery/left.png" /></td>
+<td style="text-align: center;"><img alt="Right" src="assets/gallery/right.png" /></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Top</th>
+<th style="text-align: center;">Bottom</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><img alt="Top" src="assets/gallery/top.png" /></td>
+<td style="text-align: center;"><img alt="Bottom" src="assets/gallery/bottom.png" /></td>
+</tr>
+</tbody>
+</table>
+</details>
+<h3 id="in-onshape">In Onshape</h3>
+<p>These are <strong>actual screenshots of the historical cloud assembly</strong>, shown with the optional foam and straps fitted. The repository's standard STEP remains the reference for the default, foam-free configuration.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Assembly workspace</th>
+<th style="text-align: center;">Profile detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><img alt="Actual Onshape assembly viewport with optional buoyancy fitted" src="assets/onshape/assembly-isometric.jpg" /></td>
+<td style="text-align: center;"><img alt="Actual Onshape profile view with optional buoyancy fitted" src="assets/onshape/assembly-profile.jpg" /></td>
+</tr>
+</tbody>
+</table>
+<p><a href="https://cad.onshape.com/documents/256f9be06adfdc472f7aac06/w/aefb43ce726d3d5c24877f23/e/1186baa4f5bb2c01f6be971a">Open the public Onshape assembly</a> · <a href="gallery.html#onshape-screenshots">View provenance and import limitations</a></p>
+<h2 id="what-each-part-does">What each part does</h2>
+<table>
+<thead>
+<tr>
+<th>Part</th>
+<th style="text-align: right;">Qty.</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Load chassis</td>
+<td style="text-align: right;">1</td>
+<td>Carries thrust loads and joins the skids, enclosure, mounts and fairing; provides tether and ballast interfaces</td>
+</tr>
+<tr>
+<td>Upper fairing</td>
+<td style="text-align: right;">1</td>
+<td>Protects the structure and defines its outline; freely floods and is not a pressure vessel</td>
+</tr>
+<tr>
+<td>Skids</td>
+<td style="text-align: right;">2</td>
+<td>Support the vehicle on a bench or pool floor and protect its underside</td>
+</tr>
+<tr>
+<td>Enclosure clamps</td>
+<td style="text-align: right;">2</td>
+<td>Retain the commercial tube with soft liners; do not seal the endcaps</td>
+</tr>
+<tr>
+<td>Vertical carriers</td>
+<td style="text-align: right;">2</td>
+<td>Mount the vertical thrusters and transfer their loads to the chassis</td>
+</tr>
+<tr>
+<td>Internal tray</td>
+<td style="text-align: right;">1</td>
+<td>Supports the camera carrier and future electronics adapters; positive axial retention remains to be designed</td>
+</tr>
+<tr>
+<td>Camera carrier</td>
+<td style="text-align: right;">1</td>
+<td>Positions the camera board and provides lens, USB and fastener clearance</td>
+</tr>
+<tr>
+<td>Commercial pressure enclosure</td>
+<td style="text-align: right;">1 set</td>
+<td>Keeps ordinary electronics dry when correctly assembled and leak-tested</td>
+</tr>
+<tr>
+<td>Commercial thrusters</td>
+<td style="text-align: right;">4</td>
+<td>Complete motor, propeller and duct assemblies; not printed by this project</td>
+</tr>
+<tr>
+<td>Buoyancy foam and straps</td>
+<td style="text-align: right;">Optional</td>
+<td>Add buoyancy and adjust trim after measurement</td>
+</tr>
+</tbody>
+</table>
+<h2 id="choose-an-assembly">Choose an assembly</h2>
+<p><img alt="Standard assembly compared with the optional buoyancy module" src="assets/gallery/configuration-comparison.png" /></p>
+<table>
+<thead>
+<tr>
+<th>Configuration</th>
+<th>Top foam / straps</th>
+<th>Assembly STEP</th>
+<th>With nominal metal fasteners</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Standard</strong> <code>base</code></td>
+<td>None</td>
+<td><a href="../mechanical/assemblies/simple-rov.step">simple-rov.step</a></td>
+<td><a href="../mechanical/assemblies/simple-rov-with-fasteners.step">Fastener assembly</a></td>
+</tr>
+<tr>
+<td>Optional <code>with-buoyancy</code></td>
+<td>2 foam pieces / 4 straps</td>
+<td><a href="../mechanical/assemblies/simple-rov-with-buoyancy.step">Buoyancy assembly</a></td>
+<td><a href="../mechanical/assemblies/simple-rov-buoyancy-with-fasteners.step">Buoyancy + fasteners</a></td>
+</tr>
+</tbody>
+</table>
+<p>Both configurations share the same ten printed parts. Foam is cut from suitable closed-cell material; it is <strong>not printed as part of the fairing</strong>. Its default purchase quantity is zero, with optional quantities recorded separately.</p>
+<p>Omitting foam does not establish positive buoyancy or guarantee a passive ascent. Weigh the complete vehicle, measure displacement and check fully submerged trim before deciding whether to add foam or ballast. See <a href="buoyancy.html">buoyancy and trim</a>.</p>
+<h2 id="build-a-first-prototype">Build a first prototype</h2>
+<ol>
+<li><strong>Check one motor first.</strong> Buy one reference thruster and a matching bidirectional ESC. Test both <a href="../mechanical/fit_coupons">fit coupons</a> against the actual mounting face, holes, blind depth and cable exit.</li>
+<li><strong>Check the dry payload.</strong> Lay out the real battery, four ESCs, controller, video host, connectors and wiring at full scale before assuming they fit the tube.</li>
+<li><strong>Print and assemble.</strong> Use the <a href="../bom/PRINT_MANIFEST.csv">print manifest</a>, <a href="../bom/BOM_FASTENERS.csv">fastener BOM</a> and <a href="assembly.html">illustrated guide</a>. Install skids before horizontal thrusters obstruct their tool paths.</li>
+<li><strong>Complete retention and wiring.</strong> Add board-specific insulated adapters and positive tray retention. Select penetrators for the actual cable construction.</li>
+<li><strong>Leak-test and trim.</strong> Test the complete empty enclosure, then use representative payload mass to establish buoyancy and balance.</li>
+<li><strong>Run controlled shallow-water checks.</strong> Verify individual thrust directions, remote commands, depth/heading hold and loss-of-command shutdown in a recoverable setting.</li>
+</ol>
+<p>The guide specifies screw directions, washers, quantities and inspection hold points. Start with <a href="assembly.html">assembly</a>, <a href="acceptance.html">acceptance</a> and the <a href="build-plan.html">prototype build plan</a>.</p>
+<h2 id="run-the-simulation">Run the simulation</h2>
+<p>From the repository root, using Python 3.12:</p>
+<pre><code class="language-bash">git clone https://github.com/tianrking/simple-rov.git
+cd simple-rov
+python3 -m venv .venv
+source .venv/bin/activate
+python -m pip install -r requirements/sim.txt
+python simulation/mujoco/run.py --viewer --manual --seconds 300
+</code></pre>
+<p>On Windows, activate with <code>.venv\Scripts\activate</code>. On macOS, after installing dependencies, you can also open <code>launch-macos.command</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Control</th>
+<th>Input</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Forward / reverse</td>
+<td>Hold W / S; release to cancel surge thrust</td>
+</tr>
+<tr>
+<td>Turn left / right</td>
+<td>A / D; change heading target by 15°</td>
+</tr>
+<tr>
+<td>Ascend / descend</td>
+<td>U / J; change depth target by 0.1 m</td>
+</tr>
+<tr>
+<td>Hold current depth and heading</td>
+<td>X; does not lock horizontal position</td>
+</tr>
+<tr>
+<td>Orbit / zoom</td>
+<td>Left mouse drag / scroll wheel</td>
+</tr>
+<tr>
+<td>Quit</td>
+<td>Esc or close the window</td>
+</tr>
+</tbody>
+</table>
+<p>The dedicated driving window isolates these keys from MuJoCo's built-in viewer shortcuts. Losing focus cancels surge thrust; the vehicle can still coast.</p>
+<pre><code class="language-bash"># Display the optional assembly
+python simulation/mujoco/run.py --viewer --manual --configuration with-buoyancy --seconds 300
+
+# Record an automatic demonstration, state CSV and camera views
+python simulation/mujoco/run.py --render --output-dir runs/demo
+</code></pre>
+<h3 id="physics-and-control">Physics and control</h3>
+<p>Powered by <strong>MuJoCo 4.0.1</strong>, the foundation includes relative-current drag, buoyancy, delayed/rate-limited actuators, bounded allocation, sensor proxies, classical control, a lumped tether and fault scenarios. <a href="simulation-foundation.html">Simulation foundation</a>. <strong>Mass, inertia, centers of gravity/buoyancy, displacement, drag and reverse thrust are uncalibrated example parameters.</strong> Changing the assembly changes visuals and associated collision proxies; it does not automatically recalculate those parameters.</p>
+<p>This is a fully submerged, still-water model. It includes configurable current and a tension-only tether approximation; it does not include waves, free-surface transitions, distributed cable dynamics, CFD or realistic underwater optics. Open it through <code>run.py</code>: loading an XML alone omits the Python underwater forces.</p>
+<pre><code class="language-python">from simulation.mujoco.environment import ROV
+
+rov = ROV(configuration=&quot;base&quot;)
+for _ in range(1000):
+    forces = rov.controller(depth=1.2, surge_N=2.0, yaw=0.0)
+    position, attitude, velocity, angular_velocity = rov.step(forces)
+</code></pre>
+<p>Commands are forces in newtons, ordered horizontal-left, horizontal-right, vertical-left, vertical-right. They are not PWM or RPM. Keyboard commands set surge thrust, target depth and target heading; classical feedback stabilizes depth, roll and heading. <a href="simulation.html">Driving and control documentation</a>.</p>
+<p>To try a water current while driving:</p>
+<pre><code class="language-bash">python simulation/mujoco/run.py --scenario cross-current --viewer --manual --seconds 300
+</code></pre>
+<p>The development path is <strong>mechanical fit and assembly → tethered remote operation → classical stabilization → measured calibration and shallow-water trials</strong>. Hardware selection and onboard code follow the mechanical prototype.</p>
+<h2 id="edit-and-reproduce">Edit and reproduce</h2>
+<table>
+<thead>
+<tr>
+<th>Need</th>
+<th>Entry point</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ten bed-oriented prints</td>
+<td><a href="../mechanical/stl">mechanical/stl/</a></td>
+</tr>
+<tr>
+<td>Ten editable STEP parts</td>
+<td><a href="../mechanical/step_parts">mechanical/step_parts/</a></td>
+</tr>
+<tr>
+<td>Dimensions and CAD source</td>
+<td><a href="../mechanical/parameters.json">parameters.json</a> · <a href="../mechanical/build.py">build.py</a></td>
+</tr>
+<tr>
+<td>Configuration inventory</td>
+<td><a href="../mechanical/configurations.json">configurations.json</a></td>
+</tr>
+<tr>
+<td>Printed, purchased and metal parts</td>
+<td><a href="../bom">bom/</a></td>
+</tr>
+<tr>
+<td>Installation instructions</td>
+<td><a href="assembly.html">Assembly guide</a> · <a href="assembly.pdf">PDF</a></td>
+</tr>
+<tr>
+<td>Change workflow and checks</td>
+<td><a href="development.html">Development guide</a></td>
+</tr>
+</tbody>
+</table>
+<details>
+<summary><strong>CAD and simulation rebuild commands</strong></summary>
+<pre><code class="language-bash">python -m pip install -r requirements/cad.txt
+python mechanical/build.py
+python mechanical/build_fit_coupons.py
+python mechanical/verify.py
+python mechanical/export_metadata.py
+python mechanical/verify_configurations.py
+python simulation/mujoco/build_model.py
+python simulation/mujoco/verify.py
+python simulation/mujoco/verify_manual.py
+</code></pre>
+</details>
+<p>When changing motors, check the full envelope, mounting-face offset, hole pattern, depth, cable exit, propeller flow paths and screw length. Keep CAD, BOM, documents and simulation in sync. Existing part IDs are retained for compatibility with printed parts and hole tables.</p>
+<pre><code class="language-text">mechanical/          Parametric CAD, separate parts, assemblies and supplier references
+simulation/mujoco/   Underwater forces, classical control, driving and checks
+bom/                 Print, purchase, fastener and interface records
+electronics/         Future KiCad work and mechanical interface constraints
+firmware/            Future onboard implementation and failure handling
+docs/                Assembly, design, trim, simulation, development and images
+validation/          Digital check records and historical Onshape import records
+requirements/        Dependencies grouped by purpose
+runs/                Local outputs; excluded from version control
+</code></pre>
+<h2 id="project-status">Project status</h2>
+<table>
+<thead>
+<tr>
+<th>Available now</th>
+<th>Still to validate or develop</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Parametric mechanics, separate prints and two assembly variants</td>
+<td>Actual motor mounting depth, cable exits and print load capacity</td>
+</tr>
+<tr>
+<td>Illustrated guide, mechanical BOM and hole coordinates</td>
+<td>Full electronics packaging, tray retention, penetrators and thermal management</td>
+</tr>
+<tr>
+<td>MuJoCo demonstrator and classical control</td>
+<td>Measured mass, trim, thrust and hydrodynamic calibration</td>
+</tr>
+<tr>
+<td>Digital consistency and regression checks</td>
+<td>Physical assembly, sealing and shallow-water trials</td>
+</tr>
+</tbody>
+</table>
+<p>PCB manufacturing files and flashable firmware are future work. Digital checks are evidence about files, geometry and software, not a reliability or depth certification. <a href="../STATUS.json">Status</a> · <a href="roadmap.html">Roadmap</a> · <a href="../CHANGELOG.md">Changelog</a>.</p>
+<h2 id="rights-and-sources">Rights and sources</h2>
+<p>This repository is public for review. <strong>All rights reserved for original content; no open-source license is granted.</strong> Third-party CAD, manufacturer drawings and dependencies retain their owners' rights. <a href="../LICENSE">License</a> · <a href="../THIRD_PARTY_NOTICES.md">Third-party notices</a> · <a href="../SOURCES.json">Sources</a>.</p></main><footer>SimpleROV · Prototype documentation · Original content all rights reserved</footer></body></html>

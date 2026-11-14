@@ -1,0 +1,21 @@
+{
+  "mechanical_revision": "V5-01",
+  "pages": 11,
+  "illustrations": 8,
+  "numbered_assembly_steps": 28,
+  "printed_parts": 10,
+  "modeled_metal_fasteners": 134,
+  "pdf_render_review": "All 11 English pages rendered and visually reviewed; no clipping or overflow.",
+  "physical_tested": false,
+  "source_sha256": {
+    "docs/assembly.pdf": "c3a861539e79c18eb7bd5b1a90ebca84e67bb712e43f2ae212defd06d08353c5",
+    "docs/assembly.md": "4777878cfc062638bd019d527a22fce32f89406923385be847767a90ec1f8ace",
+    "mechanical/parts.json": "159ff3250d0ab5670ee69a24f069e64e2f93f741c49f19d8564b32f5a59fbabd",
+    "bom/BOM_FASTENERS.csv": "e69339e66175324b449ad5b602d01c4f33adb4841e14e3c18d8c55eacd21316a"
+  },
+  "passed": true,
+  "CSV_format": "LF normalized for Git; quantities unchanged",
+  "default_configuration": "base",
+  "optional_buoyancy_documented": true,
+  "language": "en"
+}

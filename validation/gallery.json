@@ -1,0 +1,144 @@
+{
+  "source": "Current CAD assembly meshes through MuJoCo visual meshes",
+  "source_parts_sha256": "159ff3250d0ab5670ee69a24f069e64e2f93f741c49f19d8564b32f5a59fbabd",
+  "default_configuration": "base",
+  "base_dimensions_mm": [
+    213.0,
+    210.0,
+    148.0
+  ],
+  "optional_dimensions_mm": [
+    213.0,
+    210.0,
+    184.7
+  ],
+  "views": [
+    {
+      "file": "hero.png",
+      "title": "ASSEMBLY / FRONT-LEFT",
+      "configuration": "base",
+      "azimuth_deg": 45,
+      "elevation_deg": -24,
+      "orthographic": false,
+      "interior": false,
+      "pixels": [
+        2400,
+        1800
+      ],
+      "sha256": "08fc777cafabea52b252ad9a0f1e6271c89f4402b5f905b2aa39d2e0e763cfa0"
+    },
+    {
+      "file": "front.png",
+      "title": "FRONT / +X",
+      "configuration": "base",
+      "azimuth_deg": 0,
+      "elevation_deg": 0,
+      "orthographic": true,
+      "interior": false,
+      "pixels": [
+        2400,
+        1800
+      ],
+      "sha256": "ae570570383a71bc9277d5dc7fe5bdc055f548969b15d8134384507af3afd6c4"
+    },
+    {
+      "file": "rear.png",
+      "title": "REAR / -X",
+      "configuration": "base",
+      "azimuth_deg": 180,
+      "elevation_deg": 0,
+      "orthographic": true,
+      "interior": false,
+      "pixels": [
+        2400,
+        1800
+      ],
+      "sha256": "2a37afb7361f52e4fe2a8bbcbb71e9a2a8288cd5808a972d49753a3eb0d5bebf"
+    },
+    {
+      "file": "left.png",
+      "title": "LEFT / +Y",
+      "configuration": "base",
+      "azimuth_deg": 90,
+      "elevation_deg": 0,
+      "orthographic": true,
+      "interior": false,
+      "pixels": [
+        2400,
+        1800
+      ],
+      "sha256": "4d500b194c0b5344718843b9613f2f07d24666f05db5ed22ca0a61d026ead634"
+    },
+    {
+      "file": "right.png",
+      "title": "RIGHT / -Y",
+      "configuration": "base",
+      "azimuth_deg": 270,
+      "elevation_deg": 0,
+      "orthographic": true,
+      "interior": false,
+      "pixels": [
+        2400,
+        1800
+      ],
+      "sha256": "23533c91070526e734200457f29cbc170b63627feb5b3dad7a772336705c0531"
+    },
+    {
+      "file": "top.png",
+      "title": "TOP / +Z",
+      "configuration": "base",
+      "azimuth_deg": 0,
+      "elevation_deg": -90,
+      "orthographic": true,
+      "interior": false,
+      "pixels": [
+        2400,
+        1800
+      ],
+      "sha256": "a4cf9f153dbcb24f7415cf2900b9d426f7986877279f932e927a4040281124e1"
+    },
+    {
+      "file": "bottom.png",
+      "title": "BOTTOM / -Z",
+      "configuration": "base",
+      "azimuth_deg": 0,
+      "elevation_deg": 90,
+      "orthographic": true,
+      "interior": false,
+      "pixels": [
+        2400,
+        1800
+      ],
+      "sha256": "8093286c09984108e82f37d4f8430db7694f4a590836f3d0550dd806360842bc"
+    },
+    {
+      "file": "interior.png",
+      "title": "INTERIOR / CAMERA AND TRAY",
+      "configuration": "base",
+      "azimuth_deg": 35,
+      "elevation_deg": -17,
+      "orthographic": false,
+      "interior": true,
+      "pixels": [
+        2400,
+        1800
+      ],
+      "sha256": "2303e6a115587f1de13597e3b2ba0f2a68e72ce3f09946bf4fa1815788f78c63"
+    },
+    {
+      "file": "buoyancy-option.png",
+      "title": "Optional buoyancy module",
+      "configuration": "with-buoyancy",
+      "azimuth_deg": 45,
+      "elevation_deg": -24,
+      "orthographic": false,
+      "interior": false,
+      "pixels": [
+        2400,
+        1800
+      ],
+      "sha256": "af7f116192ef710c60717bbf8970db1795851506e9295802138c9e4606b333e9"
+    }
+  ],
+  "notes": "Foam and straps are excluded in standard views. Renderings do not show unmodeled electronics/cables and are not physical test evidence."
+}

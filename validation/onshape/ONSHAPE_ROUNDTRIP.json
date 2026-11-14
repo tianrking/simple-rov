@@ -1,0 +1,92 @@
+{
+  "status": "PRINTED_PARTS_PASS_PURCHASED_REFERENCE_SURFACE",
+  "solids": 29,
+  "bounds_mm": [
+    -108.0000001,
+    105.0000001,
+    -105.0000001,
+    105.0000001,
+    -88.0,
+    96.69999999999999
+  ],
+  "printed_parts": [
+    {
+      "name": "V5_01_LOAD_CHASSIS",
+      "bbox_error_mm": 9.999999406318238e-08,
+      "volume_error_mm3": 1.925097803643439,
+      "passed": true
+    },
+    {
+      "name": "V5_02_UPPER_FAIRING",
+      "bbox_error_mm": 1.4210854715202004e-14,
+      "volume_error_mm3": 1.836614188097883,
+      "passed": true
+    },
+    {
+      "name": "V5_03_SKID_-97",
+      "bbox_error_mm": 1.0000000116860974e-07,
+      "volume_error_mm3": 6.111804395914078e-10,
+      "passed": true
+    },
+    {
+      "name": "V5_03_SKID_97",
+      "bbox_error_mm": 1.0000000116860974e-07,
+      "volume_error_mm3": 9.458744898438454e-11,
+      "passed": true
+    },
+    {
+      "name": "V5_04_POD_CLAMP_-50",
+      "bbox_error_mm": 9.999999761589606e-08,
+      "volume_error_mm3": 3.610693966038525e-10,
+      "passed": true
+    },
+    {
+      "name": "V5_04_POD_CLAMP_50",
+      "bbox_error_mm": 9.999999761589606e-08,
+      "volume_error_mm3": 3.601599019020796e-10,
+      "passed": true
+    },
+    {
+      "name": "V5_05_VERTICAL_CARRIER_-62",
+      "bbox_error_mm": 1.0000000116860974e-07,
+      "volume_error_mm3": 3.637978807091713e-10,
+      "passed": true
+    },
+    {
+      "name": "V5_05_VERTICAL_CARRIER_62",
+      "bbox_error_mm": 1.0000000116860974e-07,
+      "volume_error_mm3": 1.6007106751203537e-10,
+      "passed": true
+    },
+    {
+      "name": "V5_06_MODULE_TRAY",
+      "bbox_error_mm": 9.99999993922529e-08,
+      "volume_error_mm3": 7.275957614183426e-12,
+      "passed": true
+    },
+    {
+      "name": "V5_07_CAMERA_CARRIER",
+      "bbox_error_mm": 1.0000000116860974e-07,
+      "volume_error_mm3": 2.5011104298755527e-11,
+      "passed": true
+    }
+  ],
+  "sha256": "4c57cd73c0d5f794fd237d302806636aa1b93753e714523b4053774cccd07784",
+  "scope": "All 10 printed parts pass cloud STEP roundtrip: bounding boxes <0.02mm and volume differences <20ppm (or0.1mm3); 29 solids + one purchased rear-cap shell. This is not physical validation.",
+  "printed_parts_passed": true,
+  "purchased_rear_cap": {
+    "cloud_type": "open shell",
+    "faces": 480,
+    "cloud_bounds_mm": [
+      -81,
+      -59.5,
+      -31.75,
+      31.75,
+      -7,
+      51
+    ],
+    "matches_local_nominal_bounds": true,
+    "local_native_STEP": "supplier/BR-102922-009_RevC.step",
+    "note": "Do not use cloud shell to manufacture pressure hardware; purchase supplier part."
+  }
+}

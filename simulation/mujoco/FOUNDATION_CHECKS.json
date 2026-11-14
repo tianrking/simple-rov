@@ -1,0 +1,43 @@
+{
+  "invalid_configs_rejected": true,
+  "drag_passivity_100_samples": true,
+  "tether_slack_tension_no_compression": true,
+  "bounded_allocation_KKT_and_no_worse_than_clipping": true,
+  "failed_thruster_rank_loss_and_residual_visible": true,
+  "watchdog_zeroes_stale_commands": true,
+  "transport_delay_ticks": 10,
+  "sensor_sample_hold": true,
+  "same_seed_config_actions_exact_local_replay": true,
+  "different_seed_changes_sensor_noise": true,
+  "native_ellipsoid_one_fluid_geom_and_finite": true,
+  "runtime_mass_CG_applied_to_dynamics_and_allocation": true,
+  "runtime_reaction_torque_applied": true,
+  "co_moving_water_has_zero_analytic_drag": true,
+  "synthetic_drag_calibration_recovers_coefficients": true,
+  "pressure_to_depth_SI_conversion": true,
+  "saturated_depth_integral_does_not_wind_up": true,
+  "timestep_convergence": {
+    "timesteps_s": [
+      0.001,
+      0.002,
+      0.004
+    ],
+    "control_period_s": 0.02,
+    "max_position_spread_m": 0.00019708880894198089,
+    "max_attitude_spread_rad": 0.002124518786915164
+  },
+  "engine_version": "4.0.1",
+  "source_sha256": {
+    "environment.py": "81ba9ad0e852b3b9e8bd0d0ff190739e439f69cc4d47eca2c97c9e1a2545c9c2",
+    "configuration.py": "ce6c333f6df29415c71bc49396dc707c0a21e8ed61442f371da85ab837de482f",
+    "actuators.py": "2caf0a311ad47a58eb81eb8968424fa1e57567c35fae688da3e79e275d52bbcb",
+    "hydrodynamics.py": "2bdac92f366927450c229d111f63c8e844446c65ffe136d06ad0e451c8dac000",
+    "sensors.py": "30b63e6a0e951c71518df441954e06c570531e1c9278047825ac3b09d7eeaa92",
+    "config.json": "3a943fc2095208c578839438dc32a290353dcb40d184ec634c30ab73eb270532",
+    "scenarios.json": "fc2b9a0856f6565805fb0d001b75ea5a4b4b2f53ed3358e1db796a65c79fc8f1",
+    "verify_foundation.py": "81cd490b99c0fc0c6e711206d3011921f61679053343a55b1c7ffddd345d92a7",
+    "calibrate.py": "8ee677708956d37e8f33023a39ed3e076e52c7b99c3e8fb4bae4157e2831f5d0"
+  },
+  "passed": true,
+  "scope": "Software invariants and uncalibrated model checks, not experimental validation."
+}

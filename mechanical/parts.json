@@ -1,0 +1,3341 @@
+[
+  {
+    "name": "V5_01_LOAD_CHASSIS",
+    "kind": "PRINT",
+    "color": [
+      0.06,
+      0.18,
+      0.22
+    ],
+    "bounds": [
+      -105.0000001,
+      105.0000001,
+      -105.0000001,
+      105.0000001,
+      -18.0000001,
+      22.000000000000007
+    ],
+    "volume_mm3": 221160.84266999186,
+    "solids": 1,
+    "print_pose": null,
+    "optional_buoyancy": false
+  },
+  {
+    "name": "V5_02_UPPER_FAIRING",
+    "kind": "PRINT",
+    "color": [
+      0.98,
+      0.5,
+      0.04
+    ],
+    "bounds": [
+      -105.0000001,
+      105.0000001,
+      -105.0000001,
+      105.0000001,
+      -6.0000001000000145,
+      60.0000001
+    ],
+    "volume_mm3": 136707.4357960136,
+    "solids": 1,
+    "print_pose": "flip",
+    "optional_buoyancy": false
+  },
+  {
+    "name": "V5_03_SKID_-97",
+    "kind": "PRINT",
+    "color": [
+      0.06,
+      0.18,
+      0.22
+    ],
+    "bounds": [
+      -105.0,
+      105.0,
+      -103.0,
+      -91.0,
+      -88.0,
+      -18.0
+    ],
+    "volume_mm3": 50464.01893457342,
+    "solids": 1,
+    "print_pose": "side_y",
+    "optional_buoyancy": false
+  },
+  {
+    "name": "V5_03_SKID_97",
+    "kind": "PRINT",
+    "color": [
+      0.06,
+      0.18,
+      0.22
+    ],
+    "bounds": [
+      -105.0,
+      105.0,
+      91.0,
+      103.0,
+      -88.0,
+      -18.0
+    ],
+    "volume_mm3": 50464.01893457342,
+    "solids": 1,
+    "print_pose": "side_y",
+    "optional_buoyancy": false
+  },
+  {
+    "name": "V5_04_POD_CLAMP_-50",
+    "kind": "PRINT",
+    "color": [
+      0.1,
+      0.35,
+      0.38
+    ],
+    "bounds": [
+      -56.00000000000001,
+      -44.0,
+      -44.0,
+      44.0,
+      21.999999999999996,
+      55.5
+    ],
+    "volume_mm3": 5357.779087507182,
+    "solids": 1,
+    "print_pose": "end_x",
+    "optional_buoyancy": false
+  },
+  {
+    "name": "V5_04_POD_CLAMP_50",
+    "kind": "PRINT",
+    "color": [
+      0.1,
+      0.35,
+      0.38
+    ],
+    "bounds": [
+      43.99999999999999,
+      56.0,
+      -44.0,
+      44.0,
+      21.999999999999996,
+      55.5
+    ],
+    "volume_mm3": 5357.779087507182,
+    "solids": 1,
+    "print_pose": "end_x",
+    "optional_buoyancy": false
+  },
+  {
+    "name": "V5_05_VERTICAL_CARRIER_-62",
+    "kind": "PRINT",
+    "color": [
+      0.1,
+      0.35,
+      0.38
+    ],
+    "bounds": [
+      -53.0,
+      -23.0,
+      -88.0,
+      -36.0,
+      -66.0,
+      -18.0
+    ],
+    "volume_mm3": 21843.64804475782,
+    "solids": 1,
+    "print_pose": "end_x",
+    "optional_buoyancy": false
+  },
+  {
+    "name": "V5_05_VERTICAL_CARRIER_62",
+    "kind": "PRINT",
+    "color": [
+      0.1,
+      0.35,
+      0.38
+    ],
+    "bounds": [
+      -53.0,
+      -22.999999999999996,
+      36.0,
+      88.0,
+      -66.0,
+      -18.0
+    ],
+    "volume_mm3": 21843.64804475782,
+    "solids": 1,
+    "print_pose": "end_x",
+    "optional_buoyancy": false
+  },
+  {
+    "name": "BUY_TUBE",
+    "kind": "SUPPLIER",
+    "color": [
+      0.55,
+      0.68,
+      0.72
+    ],
+    "bounds": [
+      -75.0000001,
+      75.0000001,
+      -29.000000100000058,
+      29.0000001,
+      -7.000000100000029,
+      51.00000010000003
+    ],
+    "volume_mm3": 96539.95777187786,
+    "solids": 1,
+    "print_pose": null,
+    "optional_buoyancy": false
+  },
+  {
+    "name": "BUY_FRONT_FLANGE",
+    "kind": "SUPPLIER",
+    "color": [
+      0.3,
+      0.4,
+      0.43
+    ],
+    "bounds": [
+      59.49999989999999,
+      81.0000001,
+      -31.75,
+      31.750000000000004,
+      -7.000000100000004,
+      51.0
+    ],
+    "volume_mm3": 13045.985685398598,
+    "solids": 1,
+    "print_pose": null,
+    "optional_buoyancy": false
+  },
+  {
+    "name": "BUY_FRONT_WINDOW",
+    "kind": "SUPPLIER",
+    "color": [
+      0.65,
+      0.85,
+      0.9
+    ],
+    "bounds": [
+      81.0,
+      87.35000000000001,
+      -29.000000000000004,
+      29.000000000000004,
+      -7.0000000000000036,
+      51.0
+    ],
+    "volume_mm3": 16595.914534732634,
+    "solids": 1,
+    "print_pose": null,
+    "optional_buoyancy": false
+  },
+  {
+    "name": "BUY_REAR_CAP",
+    "kind": "SUPPLIER",
+    "color": [
+      0.3,
+      0.4,
+      0.43
+    ],
+    "bounds": [
+      -81.0000001,
+      -59.4999999,
+      -31.75,
+      31.750000000000004,
+      -7.000000100000004,
+      51.0
+    ],
+    "volume_mm3": 20999.310882830396,
+    "solids": 1,
+    "print_pose": null,
+    "optional_buoyancy": false
+  },
+  {
+    "name": "BUY_CAMERA_HD_USB",
+    "kind": "SUPPLIER",
+    "color": [
+      0.14,
+      0.45,
+      0.22
+    ],
+    "bounds": [
+      48.0,
+      77.35000000000001,
+      -16.0,
+      16.000000000000004,
+      5.9999999999999964,
+      38.0
+    ],
+    "volume_mm3": 6237.464320257151,
+    "solids": 2,
+    "print_pose": null,
+    "optional_buoyancy": false
+  },
+  {
+    "name": "V5_06_MODULE_TRAY",
+    "kind": "PRINT",
+    "color": [
+      0.15,
+      0.4,
+      0.43
+    ],
+    "bounds": [
+      -55.0,
+      45.0,
+      -17.5,
+      17.5,
+      -2.1999999999999993,
+      8.0
+    ],
+    "volume_mm3": 9847.431107893124,
+    "solids": 1,
+    "print_pose": null,
+    "optional_buoyancy": false
+  },
+  {
+    "name": "V5_07_CAMERA_CARRIER",
+    "kind": "PRINT",
+    "color": [
+      0.15,
+      0.4,
+      0.43
+    ],
+    "bounds": [
+      38.0,
+      54.0,
+      -17.0,
+      17.0,
+      5.0,
+      39.0
+    ],
+    "volume_mm3": 2617.89144566642,
+    "solids": 1,
+    "print_pose": "end_x",
+    "optional_buoyancy": false
+  },
+  {
+    "name": "REF_X2_H_LEFT",
+    "kind": "DRAWING_REFERENCE",
+    "color": [
+      0.28,
+      0.32,
+      0.34
+    ],
+    "bounds": [
+      -108.0,
+      -48.0,
+      45.81,
+      102.19,
+      -13.0,
+      46.190000000000005
+    ],
+    "volume_mm3": 40135.9762585444,
+    "solids": 2,
+    "print_pose": null,
+    "optional_buoyancy": false
+  },
+  {
+    "name": "REF_X2_H_RIGHT",
+    "kind": "DRAWING_REFERENCE",
+    "color": [
+      0.28,
+      0.32,
+      0.34
+    ],
+    "bounds": [
+      -108.0,
+      -48.0,
+      -102.19,
+      -45.81,
+      -13.0,
+      46.190000000000005
+    ],
+    "volume_mm3": 40135.9762585444,
+    "solids": 2,
+    "print_pose": null,
+    "optional_buoyancy": false
+  },
+  {
+    "name": "REF_X2_V_LEFT",
+    "kind": "DRAWING_REFERENCE",
+    "color": [
+      0.28,
+      0.32,
+      0.34
+    ],
+    "bounds": [
+      -31.0,
+      28.19000000000001,
+      33.81,
+      90.19,
+      -70.0,
+      -9.999999999999993
+    ],
+    "volume_mm3": 40135.97625854444,
+    "solids": 2,
+    "print_pose": null,
+    "optional_buoyancy": false
+  },
+  {
+    "name": "REF_X2_V_RIGHT",
+    "kind": "DRAWING_REFERENCE",
+    "color": [
+      0.28,
+      0.32,
+      0.34
+    ],
+    "bounds": [
+      -31.0,
+      28.19000000000001,
+      -90.19,
+      -33.81,
+      -70.0,
+      -9.999999999999993
+    ],
+    "volume_mm3": 40135.976258544455,
+    "solids": 2,
+    "print_pose": null,
+    "optional_buoyancy": false
+  },
+  {
+    "name": "BUY_TRIM_FOAM_-69",
+    "kind": "FOAM",
+    "color": [
+      0.85,
+      0.87,
+      0.81
+    ],
+    "bounds": [
+      -100.0,
+      -38.0,
+      -80.0,
+      80.0,
+      60.5,
+      95.5
+    ],
+    "volume_mm3": 338847.18897773244,
+    "solids": 1,
+    "print_pose": null,
+    "optional_buoyancy": true
+  },
+  {
+    "name": "BUY_TRIM_FOAM_69",
+    "kind": "FOAM",
+    "color": [
+      0.85,
+      0.87,
+      0.81
+    ],
+    "bounds": [
+      38.0,
+      100.0,
+      -80.0,
+      80.0,
+      60.5,
+      95.5
+    ],
+    "volume_mm3": 338847.1889777324,
+    "solids": 1,
+    "print_pose": null,
+    "optional_buoyancy": true
+  },
+  {
+    "name": "BUY_FOAM_STRAP_-1_-32.5",
+    "kind": "SOFT_HARDWARE",
+    "color": [
+      0.09,
+      0.1,
+      0.11
+    ],
+    "bounds": [
+      -101.6,
+      -34.4,
+      -34.900000000000006,
+      -30.1,
+      -19.200000000000003,
+      96.7
+    ],
+    "volume_mm3": 1967.903999999994,
+    "solids": 1,
+    "print_pose": null,
+    "optional_buoyancy": true
+  },
+  {
+    "name": "BUY_FOAM_STRAP_-1_32.5",
+    "kind": "SOFT_HARDWARE",
+    "color": [
+      0.09,
+      0.1,
+      0.11
+    ],
+    "bounds": [
+      -101.6,
+      -34.4,
+      30.099999999999998,
+      34.9,
+      -19.200000000000003,
+      96.7
+    ],
+    "volume_mm3": 1967.903999999994,
+    "solids": 1,
+    "print_pose": null,
+    "optional_buoyancy": true
+  },
+  {
+    "name": "BUY_FOAM_STRAP_1_-32.5",
+    "kind": "SOFT_HARDWARE",
+    "color": [
+      0.09,
+      0.1,
+      0.11
+    ],
+    "bounds": [
+      34.4,
+      101.6,
+      -34.900000000000006,
+      -30.1,
+      -19.200000000000003,
+      96.7
+    ],
+    "volume_mm3": 1967.903999999994,
+    "solids": 1,
+    "print_pose": null,
+    "optional_buoyancy": true
+  },
+  {
+    "name": "BUY_FOAM_STRAP_1_32.5",
+    "kind": "SOFT_HARDWARE",
+    "color": [
+      0.09,
+      0.1,
+      0.11
+    ],
+    "bounds": [
+      34.4,
+      101.6,
+      30.099999999999998,
+      34.9,
+      -19.200000000000003,
+      96.7
+    ],
+    "volume_mm3": 1967.903999999994,
+    "solids": 1,
+    "print_pose": null,
+    "optional_buoyancy": true
+  },
+  {
+    "name": "COVER_-95_-18_M3x25",
+    "kind": "HARDWARE",
+    "color": [
+      0.7,
+      0.72,
+      0.74
+    ],
+    "bounds": [
+      -97.75,
+      -92.25,
+      -20.75,
+      -15.25,
+      -26.5,
+      1.5000000000000004
+    ],
+    "volume_mm3": 247.98947009274428,
+    "solids": 1,
+    "print_pose": null,
+    "optional_buoyancy": false
+  },
+  {
+    "name": "COVER_-95_-18_W_TOP",
+    "kind": "HARDWARE",
+    "color": [
+      0.7,
+      0.72,
+      0.74
+    ],
+    "bounds": [
+      -98.5,
+      -91.5,
+      -21.5,
+      -14.5,
+      -2.0,
+      -1.5
+    ],
+    "volume_mm3": 15.221016406642565,
+    "solids": 1,
+    "print_pose": null,
+    "optional_buoyancy": false
+  },
+  {
+    "name": "COVER_-95_-18_W_BOTTOM",
+    "kind": "HARDWARE",
+    "color": [
+      0.7,
+      0.72,
+      0.74
+    ],
+    "bounds": [
+      -98.5,
+      -91.5,
+      -21.5,
+      -14.5,
+      -18.5,
+      -18.0
+    ],
+    "volume_mm3": 15.221016406642565,
+    "solids": 1,
+    "print_pose": null,
+    "optional_buoyancy": false
+  },
+  {
+    "name": "COVER_-95_-18_NUT",
+    "kind": "HARDWARE",
+    "color": [
+      0.7,
+      0.72,
+      0.74
+    ],
+    "bounds": [
+      -98.17542648054294,
+      -91.82457351945706,
+      -20.75,
+      -15.25,
+      -20.9,
+      -18.5
+    ],
+    "volume_mm3": 51.09247186378845,
+    "solids": 1,
+    "print_pose": null,
+    "optional_buoyancy": false
+  },
+  {
+    "name": "COVER_-95_18_M3x25",
+    "kind": "HARDWARE",
+    "color": [
+      0.7,
+      0.72,
+      0.74
+    ],
+    "bounds": [
+      -97.75,
+      -92.25,
+      15.25,
+      20.75,
+      -26.5,
+      1.5000000000000004
+    ],
+    "volume_mm3": 247.98947009274428,
+    "solids": 1,
+    "print_pose": null,
+    "optional_buoyancy": false
+  },
+  {
+    "name": "COVER_-95_18_W_TOP",
+    "kind": "HARDWARE",
+    "color": [
+      0.7,
+      0.72,
+      0.74
+    ],
+    "bounds": [
+      -98.5,
+      -91.5,
+      14.5,
+      21.5,
+      -2.0,
+      -1.5
+    ],
+    "volume_mm3": 15.221016406642565,
+    "solids": 1,
+    "print_pose": null,
+    "optional_buoyancy": false
+  },
+  {
+    "name": "COVER_-95_18_W_BOTTOM",
+    "kind": "HARDWARE",
+    "color": [
+      0.7,
+      0.72,
+      0.74
+    ],
+    "bounds": [
+      -98.5,
+      -91.5,
+      14.5,
+      21.5,
+      -18.5,
+      -18.0
+    ],
+    "volume_mm3": 15.221016406642565,
+    "solids": 1,
+    "print_pose": null,
+    "optional_buoyancy": false
+  },
+  {
+    "name": "COVER_-95_18_NUT",
+    "kind": "HARDWARE",
+    "color": [
+      0.7,
+      0.72,
+      0.74
+    ],
+    "bounds": [
+      -98.17542648054294,
+      -91.82457351945706,
+      15.25,
+      20.750000000000004,
+      -20.9,
+      -18.5
+    ],
+    "volume_mm3": 51.09247186378845,
+    "solids": 1,
+    "print_pose": null,
+    "optional_buoyancy": false
+  },
+  {
+    "name": "COVER_95_-18_M3x25",
+    "kind": "HARDWARE",
+    "color": [
+      0.7,
+      0.72,
+      0.74
+    ],
+    "bounds": [
+      92.25,
+      97.75,
+      -20.75,
+      -15.25,
+      -26.5,
+      1.5000000000000004
+    ],
+    "volume_mm3": 247.98947009274428,
+    "solids": 1,
+    "print_pose": null,
+    "optional_buoyancy": false
+  },
+  {
+    "name": "COVER_95_-18_W_TOP",
+    "kind": "HARDWARE",
+    "color": [
+      0.7,
+      0.72,
+      0.74
+    ],
+    "bounds": [
+      91.5,
+      98.5,
+      -21.5,
+      -14.5,
+      -2.0,
+      -1.5
+    ],
+    "volume_mm3": 15.221016406642565,
+    "solids": 1,
+    "print_pose": null,
+    "optional_buoyancy": false
+  },
+  {
+    "name": "COVER_95_-18_W_BOTTOM",
+    "kind": "HARDWARE",
+    "color": [
+      0.7,
+      0.72,
+      0.74
+    ],
+    "bounds": [
+      91.5,
+      98.5,
+      -21.5,
+      -14.5,
+      -18.5,
+      -18.0
+    ],
+    "volume_mm3": 15.221016406642562,
+    "solids": 1,
+    "print_pose": null,
+    "optional_buoyancy": false
+  },
+  {
+    "name": "COVER_95_-18_NUT",
+    "kind": "HARDWARE",
+    "color": [
+      0.7,
+      0.72,
+      0.74
+    ],
+    "bounds": [
+      91.82457351945706,
+      98.17542648054294,
+      -20.75,
+      -15.25,
+      -20.9,
+      -18.5
+    ],
+    "volume_mm3": 51.09247186378845,
+    "solids": 1,
+    "print_pose": null,
+    "optional_buoyancy": false
+  },
+  {
+    "name": "COVER_95_18_M3x25",
+    "kind": "HARDWARE",
+    "color": [
+      0.7,
+      0.72,
+      0.74
+    ],
+    "bounds": [
+      92.25,
+      97.75,
+      15.25,
+      20.75,
+      -26.5,
+      1.5000000000000004
+    ],
+    "volume_mm3": 247.98947009274428,
+    "solids": 1,
+    "print_pose": null,
+    "optional_buoyancy": false
+  },
+  {
+    "name": "COVER_95_18_W_TOP",
+    "kind": "HARDWARE",
+    "color": [
+      0.7,
+      0.72,
+      0.74
+    ],
+    "bounds": [
+      91.5,
+      98.5,
+      14.5,
+      21.5,
+      -2.0,
+      -1.5
+    ],
+    "volume_mm3": 15.221016406642562,
+    "solids": 1,
+    "print_pose": null,
+    "optional_buoyancy": false
+  },
+  {
+    "name": "COVER_95_18_W_BOTTOM",
+    "kind": "HARDWARE",
+    "color": [
+      0.7,
+      0.72,
+      0.74
+    ],
+    "bounds": [
+      91.5,
+      98.5,
+      14.5,
+      21.5,
+      -18.5,
+      -18.0
+    ],
+    "volume_mm3": 15.221016406642565,
+    "solids": 1,
+    "print_pose": null,
+    "optional_buoyancy": false
+  },
+  {
+    "name": "COVER_95_18_NUT",
+    "kind": "HARDWARE",
+    "color": [
+      0.7,
+      0.72,
+      0.74
+    ],
+    "bounds": [
+      91.82457351945706,
+      98.17542648054294,
+      15.25,
+      20.750000000000004,
+      -20.9,
+      -18.5
+    ],
+    "volume_mm3": 51.09247186378845,
+    "solids": 1,
+    "print_pose": null,
+    "optional_buoyancy": false
+  },
+  {
+    "name": "SKID_-80_-97_M3x16",
+    "kind": "HARDWARE",
+    "color": [
+      0.7,
+      0.72,
+      0.74
+    ],
+    "bounds": [
+      -82.75,
+      -77.25,
+      -99.75,
+      -94.25,
+      -27.5,
+      -8.5
+    ],
+    "volume_mm3": 184.37221885755102,
+    "solids": 1,
+    "print_pose": null,
+    "optional_buoyancy": false
+  },
+  {
+    "name": "SKID_-80_-97_W_TOP",
+    "kind": "HARDWARE",
+    "color": [
+      0.7,
+      0.72,
+      0.74
+    ],
+    "bounds": [
+      -83.5,
+      -76.5,
+      -100.5,
+      -93.5,
+      -12.0,
+      -11.5
+    ],
+    "volume_mm3": 15.221016406642557,
+    "solids": 1,
+    "print_pose": null,
+    "optional_buoyancy": false
+  },
+  {
+    "name": "SKID_-80_-97_NUT",
+    "kind": "HARDWARE",
+    "color": [
+      0.7,
+      0.72,
+      0.74
+    ],
+    "bounds": [
+      -83.17542648054294,
+      -76.82457351945706,
+      -99.75,
+      -94.25,
+      -24.8,
+      -22.4
+    ],
+    "volume_mm3": 51.092471863788454,
+    "solids": 1,
+    "print_pose": null,
+    "optional_buoyancy": false
+  },
+  {
+    "name": "SKID_-80_97_M3x16",
+    "kind": "HARDWARE",
+    "color": [
+      0.7,
+      0.72,
+      0.74
+    ],
+    "bounds": [
+      -82.75,
+      -77.25,
+      94.25,
+      99.75,
+      -27.5,
+      -8.5
+    ],
+    "volume_mm3": 184.37221885755102,
+    "solids": 1,
+    "print_pose": null,
+    "optional_buoyancy": false
+  },
+  {
+    "name": "SKID_-80_97_W_TOP",
+    "kind": "HARDWARE",
+    "color": [
+      0.7,
+      0.72,
+      0.74
+    ],
+    "bounds": [
+      -83.5,
+      -76.5,
+      93.5,
+      100.5,
+      -12.0,
+      -11.5
+    ],
+    "volume_mm3": 15.221016406642557,
+    "solids": 1,
+    "print_pose": null,
+    "optional_buoyancy": false
+  },
+  {
+    "name": "SKID_-80_97_NUT",
+    "kind": "HARDWARE",
+    "color": [
+      0.7,
+      0.72,
+      0.74
+    ],
+    "bounds": [
+      -83.17542648054294,
+      -76.82457351945706,
+      94.25,
+      99.75,
+      -24.8,
+      -22.4
+    ],
+    "volume_mm3": 51.092471863788454,
+    "solids": 1,
+    "print_pose": null,
+    "optional_buoyancy": false
+  },
+  {
+    "name": "SKID_80_-97_M3x16",
+    "kind": "HARDWARE",
+    "color": [
+      0.7,
+      0.72,
+      0.74
+    ],
+    "bounds": [
+      77.25,
+      82.75,
+      -99.75,
+      -94.25,
+      -27.5,
+      -8.5
+    ],
+    "volume_mm3": 184.37221885755102,
+    "solids": 1,
+    "print_pose": null,
+    "optional_buoyancy": false
+  },
+  {
+    "name": "SKID_80_-97_W_TOP",
+    "kind": "HARDWARE",
+    "color": [
+      0.7,
+      0.72,
+      0.74
+    ],
+    "bounds": [
+      76.5,
+      83.5,
+      -100.5,
+      -93.5,
+      -12.0,
+      -11.5
+    ],
+    "volume_mm3": 15.221016406642557,
+    "solids": 1,
+    "print_pose": null,
+    "optional_buoyancy": false
+  },
+  {
+    "name": "SKID_80_-97_NUT",
+    "kind": "HARDWARE",
+    "color": [
+      0.7,
+      0.72,
+      0.74
+    ],
+    "bounds": [
+      76.82457351945706,
+      83.17542648054294,
+      -99.75,
+      -94.25,
+      -24.8,
+      -22.4
+    ],
+    "volume_mm3": 51.092471863788454,
+    "solids": 1,
+    "print_pose": null,
+    "optional_buoyancy": false
+  },
+  {
+    "name": "SKID_80_97_M3x16",
+    "kind": "HARDWARE",
+    "color": [
+      0.7,
+      0.72,
+      0.74
+    ],
+    "bounds": [
+      77.25,
+      82.75,
+      94.25,
+      99.75,
+      -27.5,
+      -8.5
+    ],
+    "volume_mm3": 184.37221885755102,
+    "solids": 1,
+    "print_pose": null,
+    "optional_buoyancy": false
+  },
+  {
+    "name": "SKID_80_97_W_TOP",
+    "kind": "HARDWARE",
+    "color": [
+      0.7,
+      0.72,
+      0.74
+    ],
+    "bounds": [
+      76.5,
+      83.5,
+      93.5,
+      100.5,
+      -12.0,
+      -11.5
+    ],
+    "volume_mm3": 15.221016406642557,
+    "solids": 1,
+    "print_pose": null,
+    "optional_buoyancy": false
+  },
+  {
+    "name": "SKID_80_97_NUT",
+    "kind": "HARDWARE",
+    "color": [
+      0.7,
+      0.72,
+      0.74
+    ],
+    "bounds": [
+      76.82457351945706,
+      83.17542648054294,
+      94.25,
+      99.75,
+      -24.8,
+      -22.4
+    ],
+    "volume_mm3": 51.092471863788454,
+    "solids": 1,
+    "print_pose": null,
+    "optional_buoyancy": false
+  },
+  {
+    "name": "CLAMP_-50_-38_M3x16",
+    "kind": "HARDWARE",
+    "color": [
+      0.7,
+      0.72,
+      0.74
+    ],
+    "bounds": [
+      -52.75,
+      -47.25,
+      -40.75,
+      -35.25,
+      10.5,
+      29.5
+    ],
+    "volume_mm3": 184.37221885755096,
+    "solids": 1,
+    "print_pose": null,
+    "optional_buoyancy": false
+  },
+  {
+    "name": "CLAMP_-50_-38_W_TOP",
+    "kind": "HARDWARE",
+    "color": [
+      0.7,
+      0.72,
+      0.74
+    ],
+    "bounds": [
+      -53.5,
+      -46.5,
+      -41.5,
+      -34.5,
+      26.0,
+      26.5
+    ],
+    "volume_mm3": 15.221016406642544,
+    "solids": 1,
+    "print_pose": null,
+    "optional_buoyancy": false
+  },
+  {
+    "name": "CLAMP_-50_-38_W_BOTTOM",
+    "kind": "HARDWARE",
+    "color": [
+      0.7,
+      0.72,
+      0.74
+    ],
+    "bounds": [
+      -53.5,
+      -46.5,
+      -41.5,
+      -34.5,
+      15.5,
+      16.0
+    ],
+    "volume_mm3": 15.221016406642544,
+    "solids": 1,
+    "print_pose": null,
+    "optional_buoyancy": false
+  },
+  {
+    "name": "CLAMP_-50_-38_NUT",
+    "kind": "HARDWARE",
+    "color": [
+      0.7,
+      0.72,
+      0.74
+    ],
+    "bounds": [
+      -53.17542648054294,
+      -46.82457351945706,
+      -40.75,
+      -35.25,
+      13.1,
+      15.5
+    ],
+    "volume_mm3": 51.09247186378847,
+    "solids": 1,
+    "print_pose": null,
+    "optional_buoyancy": false
+  },
+  {
+    "name": "CLAMP_-50_38_M3x16",
+    "kind": "HARDWARE",
+    "color": [
+      0.7,
+      0.72,
+      0.74
+    ],
+    "bounds": [
+      -52.75,
+      -47.25,
+      35.25,
+      40.75,
+      10.5,
+      29.5
+    ],
+    "volume_mm3": 184.37221885755096,
+    "solids": 1,
+    "print_pose": null,
+    "optional_buoyancy": false
+  },
+  {
+    "name": "CLAMP_-50_38_W_TOP",
+    "kind": "HARDWARE",
+    "color": [
+      0.7,
+      0.72,
+      0.74
+    ],
+    "bounds": [
+      -53.5,
+      -46.5,
+      34.5,
+      41.5,
+      26.0,
+      26.5
+    ],
+    "volume_mm3": 15.221016406642544,
+    "solids": 1,
+    "print_pose": null,
+    "optional_buoyancy": false
+  },
+  {
+    "name": "CLAMP_-50_38_W_BOTTOM",
+    "kind": "HARDWARE",
+    "color": [
+      0.7,
+      0.72,
+      0.74
+    ],
+    "bounds": [
+      -53.5,
+      -46.5,
+      34.5,
+      41.5,
+      15.5,
+      16.0
+    ],
+    "volume_mm3": 15.221016406642544,
+    "solids": 1,
+    "print_pose": null,
+    "optional_buoyancy": false
+  },
+  {
+    "name": "CLAMP_-50_38_NUT",
+    "kind": "HARDWARE",
+    "color": [
+      0.7,
+      0.72,
+      0.74
+    ],
+    "bounds": [
+      -53.17542648054294,
+      -46.82457351945706,
+      35.25,
+      40.75,
+      13.1,
+      15.5
+    ],
+    "volume_mm3": 51.09247186378847,
+    "solids": 1,
+    "print_pose": null,
+    "optional_buoyancy": false
+  },
+  {
+    "name": "CLAMP_50_-38_M3x16",
+    "kind": "HARDWARE",
+    "color": [
+      0.7,
+      0.72,
+      0.74
+    ],
+    "bounds": [
+      47.25,
+      52.75,
+      -40.75,
+      -35.25,
+      10.5,
+      29.5
+    ],
+    "volume_mm3": 184.37221885755096,
+    "solids": 1,
+    "print_pose": null,
+    "optional_buoyancy": false
+  },
+  {
+    "name": "CLAMP_50_-38_W_TOP",
+    "kind": "HARDWARE",
+    "color": [
+      0.7,
+      0.72,
+      0.74
+    ],
+    "bounds": [
+      46.5,
+      53.5,
+      -41.5,
+      -34.5,
+      26.0,
+      26.5
+    ],
+    "volume_mm3": 15.221016406642544,
+    "solids": 1,
+    "print_pose": null,
+    "optional_buoyancy": false
+  },
+  {
+    "name": "CLAMP_50_-38_W_BOTTOM",
+    "kind": "HARDWARE",
+    "color": [
+      0.7,
+      0.72,
+      0.74
+    ],
+    "bounds": [
+      46.5,
+      53.5,
+      -41.5,
+      -34.5,
+      15.5,
+      16.0
+    ],
+    "volume_mm3": 15.221016406642544,
+    "solids": 1,
+    "print_pose": null,
+    "optional_buoyancy": false
+  },
+  {
+    "name": "CLAMP_50_-38_NUT",
+    "kind": "HARDWARE",
+    "color": [
+      0.7,
+      0.72,
+      0.74
+    ],
+    "bounds": [
+      46.82457351945706,
+      53.17542648054294,
+      -40.75,
+      -35.25,
+      13.1,
+      15.5
+    ],
+    "volume_mm3": 51.09247186378847,
+    "solids": 1,
+    "print_pose": null,
+    "optional_buoyancy": false
+  },
+  {
+    "name": "CLAMP_50_38_M3x16",
+    "kind": "HARDWARE",
+    "color": [
+      0.7,
+      0.72,
+      0.74
+    ],
+    "bounds": [
+      47.25,
+      52.75,
+      35.25,
+      40.75,
+      10.5,
+      29.5
+    ],
+    "volume_mm3": 184.37221885755096,
+    "solids": 1,
+    "print_pose": null,
+    "optional_buoyancy": false
+  },
+  {
+    "name": "CLAMP_50_38_W_TOP",
+    "kind": "HARDWARE",
+    "color": [
+      0.7,
+      0.72,
+      0.74
+    ],
+    "bounds": [
+      46.5,
+      53.5,
+      34.5,
+      41.5,
+      26.0,
+      26.5
+    ],
+    "volume_mm3": 15.221016406642544,
+    "solids": 1,
+    "print_pose": null,
+    "optional_buoyancy": false
+  },
+  {
+    "name": "CLAMP_50_38_W_BOTTOM",
+    "kind": "HARDWARE",
+    "color": [
+      0.7,
+      0.72,
+      0.74
+    ],
+    "bounds": [
+      46.5,
+      53.5,
+      34.5,
+      41.5,
+      15.5,
+      16.0
+    ],
+    "volume_mm3": 15.221016406642544,
+    "solids": 1,
+    "print_pose": null,
+    "optional_buoyancy": false
+  },
+  {
+    "name": "CLAMP_50_38_NUT",
+    "kind": "HARDWARE",
+    "color": [
+      0.7,
+      0.72,
+      0.74
+    ],
+    "bounds": [
+      46.82457351945706,
+      53.17542648054294,
+      35.25,
+      40.75,
+      13.1,
+      15.5
+    ],
+    "volume_mm3": 51.09247186378847,
+    "solids": 1,
+    "print_pose": null,
+    "optional_buoyancy": false
+  },
+  {
+    "name": "VFOOT_-44_-83_M3x20",
+    "kind": "HARDWARE",
+    "color": [
+      0.7,
+      0.72,
+      0.74
+    ],
+    "bounds": [
+      -46.75,
+      -41.25,
+      -85.75,
+      -80.25,
+      -29.5,
+      -6.5
+    ],
+    "volume_mm3": 212.64655273985917,
+    "solids": 1,
+    "print_pose": null,
+    "optional_buoyancy": false
+  },
+  {
+    "name": "VFOOT_-44_-83_W_BOTTOM",
+    "kind": "HARDWARE",
+    "color": [
+      0.7,
+      0.72,
+      0.74
+    ],
+    "bounds": [
+      -47.5,
+      -40.5,
+      -86.5,
+      -79.5,
+      -26.5,
+      -26.0
+    ],
+    "volume_mm3": 15.221016406642542,
+    "solids": 1,
+    "print_pose": null,
+    "optional_buoyancy": false
+  },
+  {
+    "name": "VFOOT_-44_-83_W_TOP",
+    "kind": "HARDWARE",
+    "color": [
+      0.7,
+      0.72,
+      0.74
+    ],
+    "bounds": [
+      -47.5,
+      -40.5,
+      -86.5,
+      -79.5,
+      -12.0,
+      -11.5
+    ],
+    "volume_mm3": 15.221016406642542,
+    "solids": 1,
+    "print_pose": null,
+    "optional_buoyancy": false
+  },
+  {
+    "name": "VFOOT_-44_-83_NUT",
+    "kind": "HARDWARE",
+    "color": [
+      0.7,
+      0.72,
+      0.74
+    ],
+    "bounds": [
+      -47.17542648054294,
+      -40.82457351945706,
+      -85.75,
+      -80.25,
+      -11.5,
+      -9.1
+    ],
+    "volume_mm3": 51.092471863788475,
+    "solids": 1,
+    "print_pose": null,
+    "optional_buoyancy": false
+  },
+  {
+    "name": "VFOOT_-44_-41_M3x20",
+    "kind": "HARDWARE",
+    "color": [
+      0.7,
+      0.72,
+      0.74
+    ],
+    "bounds": [
+      -46.75,
+      -41.25,
+      -43.75,
+      -38.25,
+      -29.5,
+      -6.5
+    ],
+    "volume_mm3": 212.64655273985917,
+    "solids": 1,
+    "print_pose": null,
+    "optional_buoyancy": false
+  },
+  {
+    "name": "VFOOT_-44_-41_W_BOTTOM",
+    "kind": "HARDWARE",
+    "color": [
+      0.7,
+      0.72,
+      0.74
+    ],
+    "bounds": [
+      -47.5,
+      -40.5,
+      -44.5,
+      -37.5,
+      -26.5,
+      -26.0
+    ],
+    "volume_mm3": 15.221016406642544,
+    "solids": 1,
+    "print_pose": null,
+    "optional_buoyancy": false
+  },
+  {
+    "name": "VFOOT_-44_-41_W_TOP",
+    "kind": "HARDWARE",
+    "color": [
+      0.7,
+      0.72,
+      0.74
+    ],
+    "bounds": [
+      -47.5,
+      -40.5,
+      -44.5,
+      -37.5,
+      -12.0,
+      -11.5
+    ],
+    "volume_mm3": 15.221016406642544,
+    "solids": 1,
+    "print_pose": null,
+    "optional_buoyancy": false
+  },
+  {
+    "name": "VFOOT_-44_-41_NUT",
+    "kind": "HARDWARE",
+    "color": [
+      0.7,
+      0.72,
+      0.74
+    ],
+    "bounds": [
+      -47.17542648054294,
+      -40.82457351945706,
+      -43.75,
+      -38.25,
+      -11.5,
+      -9.1
+    ],
+    "volume_mm3": 51.09247186378848,
+    "solids": 1,
+    "print_pose": null,
+    "optional_buoyancy": false
+  },
+  {
+    "name": "VFOOT_-30_-83_M3x20",
+    "kind": "HARDWARE",
+    "color": [
+      0.7,
+      0.72,
+      0.74
+    ],
+    "bounds": [
+      -32.75,
+      -27.25,
+      -85.75,
+      -80.25,
+      -29.5,
+      -6.5
+    ],
+    "volume_mm3": 212.64655273985917,
+    "solids": 1,
+    "print_pose": null,
+    "optional_buoyancy": false
+  },
+  {
+    "name": "VFOOT_-30_-83_W_BOTTOM",
+    "kind": "HARDWARE",
+    "color": [
+      0.7,
+      0.72,
+      0.74
+    ],
+    "bounds": [
+      -33.5,
+      -26.5,
+      -86.5,
+      -79.5,
+      -26.5,
+      -26.0
+    ],
+    "volume_mm3": 15.221016406642542,
+    "solids": 1,
+    "print_pose": null,
+    "optional_buoyancy": false
+  },
+  {
+    "name": "VFOOT_-30_-83_W_TOP",
+    "kind": "HARDWARE",
+    "color": [
+      0.7,
+      0.72,
+      0.74
+    ],
+    "bounds": [
+      -33.5,
+      -26.5,
+      -86.5,
+      -79.5,
+      -12.0,
+      -11.5
+    ],
+    "volume_mm3": 15.221016406642542,
+    "solids": 1,
+    "print_pose": null,
+    "optional_buoyancy": false
+  },
+  {
+    "name": "VFOOT_-30_-83_NUT",
+    "kind": "HARDWARE",
+    "color": [
+      0.7,
+      0.72,
+      0.74
+    ],
+    "bounds": [
+      -33.17542648054294,
+      -26.824573519457058,
+      -85.75,
+      -80.25,
+      -11.5,
+      -9.1
+    ],
+    "volume_mm3": 51.0924718637885,
+    "solids": 1,
+    "print_pose": null,
+    "optional_buoyancy": false
+  },
+  {
+    "name": "VFOOT_-30_-41_M3x20",
+    "kind": "HARDWARE",
+    "color": [
+      0.7,
+      0.72,
+      0.74
+    ],
+    "bounds": [
+      -32.75,
+      -27.25,
+      -43.75,
+      -38.25,
+      -29.5,
+      -6.5
+    ],
+    "volume_mm3": 212.64655273985915,
+    "solids": 1,
+    "print_pose": null,
+    "optional_buoyancy": false
+  },
+  {
+    "name": "VFOOT_-30_-41_W_BOTTOM",
+    "kind": "HARDWARE",
+    "color": [
+      0.7,
+      0.72,
+      0.74
+    ],
+    "bounds": [
+      -33.5,
+      -26.5,
+      -44.5,
+      -37.5,
+      -26.5,
+      -26.0
+    ],
+    "volume_mm3": 15.221016406642544,
+    "solids": 1,
+    "print_pose": null,
+    "optional_buoyancy": false
+  },
+  {
+    "name": "VFOOT_-30_-41_W_TOP",
+    "kind": "HARDWARE",
+    "color": [
+      0.7,
+      0.72,
+      0.74
+    ],
+    "bounds": [
+      -33.5,
+      -26.5,
+      -44.5,
+      -37.5,
+      -12.0,
+      -11.5
+    ],
+    "volume_mm3": 15.221016406642544,
+    "solids": 1,
+    "print_pose": null,
+    "optional_buoyancy": false
+  },
+  {
+    "name": "VFOOT_-30_-41_NUT",
+    "kind": "HARDWARE",
+    "color": [
+      0.7,
+      0.72,
+      0.74
+    ],
+    "bounds": [
+      -33.17542648054294,
+      -26.824573519457058,
+      -43.75,
+      -38.25,
+      -11.5,
+      -9.1
+    ],
+    "volume_mm3": 51.09247186378849,
+    "solids": 1,
+    "print_pose": null,
+    "optional_buoyancy": false
+  },
+  {
+    "name": "VFOOT_-44_41_M3x20",
+    "kind": "HARDWARE",
+    "color": [
+      0.7,
+      0.72,
+      0.74
+    ],
+    "bounds": [
+      -46.75,
+      -41.25,
+      38.25,
+      43.75,
+      -29.5,
+      -6.5
+    ],
+    "volume_mm3": 212.64655273985917,
+    "solids": 1,
+    "print_pose": null,
+    "optional_buoyancy": false
+  },
+  {
+    "name": "VFOOT_-44_41_W_BOTTOM",
+    "kind": "HARDWARE",
+    "color": [
+      0.7,
+      0.72,
+      0.74
+    ],
+    "bounds": [
+      -47.5,
+      -40.5,
+      37.5,
+      44.5,
+      -26.5,
+      -26.0
+    ],
+    "volume_mm3": 15.221016406642544,
+    "solids": 1,
+    "print_pose": null,
+    "optional_buoyancy": false
+  },
+  {
+    "name": "VFOOT_-44_41_W_TOP",
+    "kind": "HARDWARE",
+    "color": [
+      0.7,
+      0.72,
+      0.74
+    ],
+    "bounds": [
+      -47.5,
+      -40.5,
+      37.5,
+      44.5,
+      -12.0,
+      -11.5
+    ],
+    "volume_mm3": 15.221016406642544,
+    "solids": 1,
+    "print_pose": null,
+    "optional_buoyancy": false
+  },
+  {
+    "name": "VFOOT_-44_41_NUT",
+    "kind": "HARDWARE",
+    "color": [
+      0.7,
+      0.72,
+      0.74
+    ],
+    "bounds": [
+      -47.17542648054294,
+      -40.82457351945706,
+      38.25,
+      43.75,
+      -11.5,
+      -9.1
+    ],
+    "volume_mm3": 51.09247186378848,
+    "solids": 1,
+    "print_pose": null,
+    "optional_buoyancy": false
+  },
+  {
+    "name": "VFOOT_-44_83_M3x20",
+    "kind": "HARDWARE",
+    "color": [
+      0.7,
+      0.72,
+      0.74
+    ],
+    "bounds": [
+      -46.75,
+      -41.25,
+      80.25,
+      85.75,
+      -29.5,
+      -6.5
+    ],
+    "volume_mm3": 212.64655273985917,
+    "solids": 1,
+    "print_pose": null,
+    "optional_buoyancy": false
+  },
+  {
+    "name": "VFOOT_-44_83_W_BOTTOM",
+    "kind": "HARDWARE",
+    "color": [
+      0.7,
+      0.72,
+      0.74
+    ],
+    "bounds": [
+      -47.5,
+      -40.5,
+      79.5,
+      86.5,
+      -26.5,
+      -26.0
+    ],
+    "volume_mm3": 15.221016406642542,
+    "solids": 1,
+    "print_pose": null,
+    "optional_buoyancy": false
+  },
+  {
+    "name": "VFOOT_-44_83_W_TOP",
+    "kind": "HARDWARE",
+    "color": [
+      0.7,
+      0.72,
+      0.74
+    ],
+    "bounds": [
+      -47.5,
+      -40.5,
+      79.5,
+      86.5,
+      -12.0,
+      -11.5
+    ],
+    "volume_mm3": 15.221016406642542,
+    "solids": 1,
+    "print_pose": null,
+    "optional_buoyancy": false
+  },
+  {
+    "name": "VFOOT_-44_83_NUT",
+    "kind": "HARDWARE",
+    "color": [
+      0.7,
+      0.72,
+      0.74
+    ],
+    "bounds": [
+      -47.17542648054294,
+      -40.82457351945706,
+      80.25,
+      85.75,
+      -11.5,
+      -9.1
+    ],
+    "volume_mm3": 51.092471863788475,
+    "solids": 1,
+    "print_pose": null,
+    "optional_buoyancy": false
+  },
+  {
+    "name": "VFOOT_-30_41_M3x20",
+    "kind": "HARDWARE",
+    "color": [
+      0.7,
+      0.72,
+      0.74
+    ],
+    "bounds": [
+      -32.75,
+      -27.25,
+      38.25,
+      43.75,
+      -29.5,
+      -6.5
+    ],
+    "volume_mm3": 212.64655273985915,
+    "solids": 1,
+    "print_pose": null,
+    "optional_buoyancy": false
+  },
+  {
+    "name": "VFOOT_-30_41_W_BOTTOM",
+    "kind": "HARDWARE",
+    "color": [
+      0.7,
+      0.72,
+      0.74
+    ],
+    "bounds": [
+      -33.5,
+      -26.5,
+      37.5,
+      44.5,
+      -26.5,
+      -26.0
+    ],
+    "volume_mm3": 15.221016406642544,
+    "solids": 1,
+    "print_pose": null,
+    "optional_buoyancy": false
+  },
+  {
+    "name": "VFOOT_-30_41_W_TOP",
+    "kind": "HARDWARE",
+    "color": [
+      0.7,
+      0.72,
+      0.74
+    ],
+    "bounds": [
+      -33.5,
+      -26.5,
+      37.5,
+      44.5,
+      -12.0,
+      -11.5
+    ],
+    "volume_mm3": 15.221016406642544,
+    "solids": 1,
+    "print_pose": null,
+    "optional_buoyancy": false
+  },
+  {
+    "name": "VFOOT_-30_41_NUT",
+    "kind": "HARDWARE",
+    "color": [
+      0.7,
+      0.72,
+      0.74
+    ],
+    "bounds": [
+      -33.17542648054294,
+      -26.824573519457058,
+      38.25,
+      43.75,
+      -11.5,
+      -9.1
+    ],
+    "volume_mm3": 51.09247186378849,
+    "solids": 1,
+    "print_pose": null,
+    "optional_buoyancy": false
+  },
+  {
+    "name": "VFOOT_-30_83_M3x20",
+    "kind": "HARDWARE",
+    "color": [
+      0.7,
+      0.72,
+      0.74
+    ],
+    "bounds": [
+      -32.75,
+      -27.25,
+      80.25,
+      85.75,
+      -29.5,
+      -6.5
+    ],
+    "volume_mm3": 212.64655273985917,
+    "solids": 1,
+    "print_pose": null,
+    "optional_buoyancy": false
+  },
+  {
+    "name": "VFOOT_-30_83_W_BOTTOM",
+    "kind": "HARDWARE",
+    "color": [
+      0.7,
+      0.72,
+      0.74
+    ],
+    "bounds": [
+      -33.5,
+      -26.5,
+      79.5,
+      86.5,
+      -26.5,
+      -26.0
+    ],
+    "volume_mm3": 15.221016406642542,
+    "solids": 1,
+    "print_pose": null,
+    "optional_buoyancy": false
+  },
+  {
+    "name": "VFOOT_-30_83_W_TOP",
+    "kind": "HARDWARE",
+    "color": [
+      0.7,
+      0.72,
+      0.74
+    ],
+    "bounds": [
+      -33.5,
+      -26.5,
+      79.5,
+      86.5,
+      -12.0,
+      -11.5
+    ],
+    "volume_mm3": 15.221016406642542,
+    "solids": 1,
+    "print_pose": null,
+    "optional_buoyancy": false
+  },
+  {
+    "name": "VFOOT_-30_83_NUT",
+    "kind": "HARDWARE",
+    "color": [
+      0.7,
+      0.72,
+      0.74
+    ],
+    "bounds": [
+      -33.17542648054294,
+      -26.824573519457058,
+      80.25,
+      85.75,
+      -11.5,
+      -9.1
+    ],
+    "volume_mm3": 51.0924718637885,
+    "solids": 1,
+    "print_pose": null,
+    "optional_buoyancy": false
+  },
+  {
+    "name": "HMOTOR_LEFT_0_M3x8",
+    "kind": "HARDWARE",
+    "color": [
+      0.7,
+      0.72,
+      0.74
+    ],
+    "bounds": [
+      -87.75,
+      -82.25,
+      71.25,
+      76.75,
+      -21.0,
+      -10.0
+    ],
+    "volume_mm3": 127.82355109293472,
+    "solids": 1,
+    "print_pose": null,
+    "optional_buoyancy": false
+  },
+  {
+    "name": "HMOTOR_LEFT_0_W",
+    "kind": "HARDWARE",
+    "color": [
+      0.7,
+      0.72,
+      0.74
+    ],
+    "bounds": [
+      -88.5,
+      -81.5,
+      70.5,
+      77.5,
+      -18.0,
+      -17.5
+    ],
+    "volume_mm3": 15.221016406642557,
+    "solids": 1,
+    "print_pose": null,
+    "optional_buoyancy": false
+  },
+  {
+    "name": "HMOTOR_LEFT_1_M3x8",
+    "kind": "HARDWARE",
+    "color": [
+      0.7,
+      0.72,
+      0.74
+    ],
+    "bounds": [
+      -73.75,
+      -68.25,
+      71.25,
+      76.75,
+      -21.0,
+      -10.0
+    ],
+    "volume_mm3": 127.82355109293472,
+    "solids": 1,
+    "print_pose": null,
+    "optional_buoyancy": false
+  },
+  {
+    "name": "HMOTOR_LEFT_1_W",
+    "kind": "HARDWARE",
+    "color": [
+      0.7,
+      0.72,
+      0.74
+    ],
+    "bounds": [
+      -74.5,
+      -67.5,
+      70.5,
+      77.5,
+      -18.0,
+      -17.5
+    ],
+    "volume_mm3": 15.221016406642557,
+    "solids": 1,
+    "print_pose": null,
+    "optional_buoyancy": false
+  },
+  {
+    "name": "HMOTOR_LEFT_2_M3x8",
+    "kind": "HARDWARE",
+    "color": [
+      0.7,
+      0.72,
+      0.74
+    ],
+    "bounds": [
+      -80.75,
+      -75.25,
+      67.25,
+      72.75,
+      -21.0,
+      -10.0
+    ],
+    "volume_mm3": 127.82355109293472,
+    "solids": 1,
+    "print_pose": null,
+    "optional_buoyancy": false
+  },
+  {
+    "name": "HMOTOR_LEFT_2_W",
+    "kind": "HARDWARE",
+    "color": [
+      0.7,
+      0.72,
+      0.74
+    ],
+    "bounds": [
+      -81.5,
+      -74.5,
+      66.5,
+      73.5,
+      -18.0,
+      -17.5
+    ],
+    "volume_mm3": 15.221016406642557,
+    "solids": 1,
+    "print_pose": null,
+    "optional_buoyancy": false
+  },
+  {
+    "name": "HMOTOR_LEFT_3_M3x8",
+    "kind": "HARDWARE",
+    "color": [
+      0.7,
+      0.72,
+      0.74
+    ],
+    "bounds": [
+      -80.75,
+      -75.25,
+      75.25,
+      80.75,
+      -21.0,
+      -10.0
+    ],
+    "volume_mm3": 127.82355109293472,
+    "solids": 1,
+    "print_pose": null,
+    "optional_buoyancy": false
+  },
+  {
+    "name": "HMOTOR_LEFT_3_W",
+    "kind": "HARDWARE",
+    "color": [
+      0.7,
+      0.72,
+      0.74
+    ],
+    "bounds": [
+      -81.5,
+      -74.5,
+      74.5,
+      81.5,
+      -18.0,
+      -17.5
+    ],
+    "volume_mm3": 15.221016406642557,
+    "solids": 1,
+    "print_pose": null,
+    "optional_buoyancy": false
+  },
+  {
+    "name": "HMOTOR_RIGHT_0_M3x8",
+    "kind": "HARDWARE",
+    "color": [
+      0.7,
+      0.72,
+      0.74
+    ],
+    "bounds": [
+      -87.75,
+      -82.25,
+      -76.75,
+      -71.25,
+      -21.0,
+      -10.0
+    ],
+    "volume_mm3": 127.82355109293472,
+    "solids": 1,
+    "print_pose": null,
+    "optional_buoyancy": false
+  },
+  {
+    "name": "HMOTOR_RIGHT_0_W",
+    "kind": "HARDWARE",
+    "color": [
+      0.7,
+      0.72,
+      0.74
+    ],
+    "bounds": [
+      -88.5,
+      -81.5,
+      -77.5,
+      -70.5,
+      -18.0,
+      -17.5
+    ],
+    "volume_mm3": 15.221016406642557,
+    "solids": 1,
+    "print_pose": null,
+    "optional_buoyancy": false
+  },
+  {
+    "name": "HMOTOR_RIGHT_1_M3x8",
+    "kind": "HARDWARE",
+    "color": [
+      0.7,
+      0.72,
+      0.74
+    ],
+    "bounds": [
+      -73.75,
+      -68.25,
+      -76.75,
+      -71.25,
+      -21.0,
+      -10.0
+    ],
+    "volume_mm3": 127.82355109293472,
+    "solids": 1,
+    "print_pose": null,
+    "optional_buoyancy": false
+  },
+  {
+    "name": "HMOTOR_RIGHT_1_W",
+    "kind": "HARDWARE",
+    "color": [
+      0.7,
+      0.72,
+      0.74
+    ],
+    "bounds": [
+      -74.5,
+      -67.5,
+      -77.5,
+      -70.5,
+      -18.0,
+      -17.5
+    ],
+    "volume_mm3": 15.221016406642557,
+    "solids": 1,
+    "print_pose": null,
+    "optional_buoyancy": false
+  },
+  {
+    "name": "HMOTOR_RIGHT_2_M3x8",
+    "kind": "HARDWARE",
+    "color": [
+      0.7,
+      0.72,
+      0.74
+    ],
+    "bounds": [
+      -80.75,
+      -75.25,
+      -80.75,
+      -75.25,
+      -21.0,
+      -10.0
+    ],
+    "volume_mm3": 127.82355109293472,
+    "solids": 1,
+    "print_pose": null,
+    "optional_buoyancy": false
+  },
+  {
+    "name": "HMOTOR_RIGHT_2_W",
+    "kind": "HARDWARE",
+    "color": [
+      0.7,
+      0.72,
+      0.74
+    ],
+    "bounds": [
+      -81.5,
+      -74.5,
+      -81.5,
+      -74.5,
+      -18.0,
+      -17.5
+    ],
+    "volume_mm3": 15.221016406642557,
+    "solids": 1,
+    "print_pose": null,
+    "optional_buoyancy": false
+  },
+  {
+    "name": "HMOTOR_RIGHT_3_M3x8",
+    "kind": "HARDWARE",
+    "color": [
+      0.7,
+      0.72,
+      0.74
+    ],
+    "bounds": [
+      -80.75,
+      -75.25,
+      -72.75,
+      -67.25,
+      -21.0,
+      -10.0
+    ],
+    "volume_mm3": 127.82355109293472,
+    "solids": 1,
+    "print_pose": null,
+    "optional_buoyancy": false
+  },
+  {
+    "name": "HMOTOR_RIGHT_3_W",
+    "kind": "HARDWARE",
+    "color": [
+      0.7,
+      0.72,
+      0.74
+    ],
+    "bounds": [
+      -81.5,
+      -74.5,
+      -73.5,
+      -66.5,
+      -18.0,
+      -17.5
+    ],
+    "volume_mm3": 15.221016406642557,
+    "solids": 1,
+    "print_pose": null,
+    "optional_buoyancy": false
+  },
+  {
+    "name": "VMOTOR_LEFT_0_M3x12",
+    "kind": "HARDWARE",
+    "color": [
+      0.7,
+      0.72,
+      0.74
+    ],
+    "bounds": [
+      -42.5,
+      -27.5,
+      59.25,
+      64.75,
+      -49.75,
+      -44.25
+    ],
+    "volume_mm3": 156.09788497524286,
+    "solids": 1,
+    "print_pose": null,
+    "optional_buoyancy": false
+  },
+  {
+    "name": "VMOTOR_LEFT_0_W",
+    "kind": "HARDWARE",
+    "color": [
+      0.7,
+      0.72,
+      0.74
+    ],
+    "bounds": [
+      -39.5,
+      -39.0,
+      58.5,
+      65.5,
+      -50.5,
+      -43.5
+    ],
+    "volume_mm3": 15.221016406642544,
+    "solids": 1,
+    "print_pose": null,
+    "optional_buoyancy": false
+  },
+  {
+    "name": "VMOTOR_LEFT_1_M3x12",
+    "kind": "HARDWARE",
+    "color": [
+      0.7,
+      0.72,
+      0.74
+    ],
+    "bounds": [
+      -42.5,
+      -27.5,
+      59.25,
+      64.75,
+      -35.75,
+      -30.25
+    ],
+    "volume_mm3": 156.09788497524286,
+    "solids": 1,
+    "print_pose": null,
+    "optional_buoyancy": false
+  },
+  {
+    "name": "VMOTOR_LEFT_1_W",
+    "kind": "HARDWARE",
+    "color": [
+      0.7,
+      0.72,
+      0.74
+    ],
+    "bounds": [
+      -39.5,
+      -39.0,
+      58.5,
+      65.5,
+      -36.5,
+      -29.5
+    ],
+    "volume_mm3": 15.22101640664254,
+    "solids": 1,
+    "print_pose": null,
+    "optional_buoyancy": false
+  },
+  {
+    "name": "VMOTOR_LEFT_2_M3x12",
+    "kind": "HARDWARE",
+    "color": [
+      0.7,
+      0.72,
+      0.74
+    ],
+    "bounds": [
+      -42.5,
+      -27.5,
+      55.25,
+      60.75,
+      -42.75,
+      -37.25
+    ],
+    "volume_mm3": 156.09788497524286,
+    "solids": 1,
+    "print_pose": null,
+    "optional_buoyancy": false
+  },
+  {
+    "name": "VMOTOR_LEFT_2_W",
+    "kind": "HARDWARE",
+    "color": [
+      0.7,
+      0.72,
+      0.74
+    ],
+    "bounds": [
+      -39.5,
+      -39.0,
+      54.5,
+      61.5,
+      -43.5,
+      -36.5
+    ],
+    "volume_mm3": 15.221016406642544,
+    "solids": 1,
+    "print_pose": null,
+    "optional_buoyancy": false
+  },
+  {
+    "name": "VMOTOR_LEFT_3_M3x12",
+    "kind": "HARDWARE",
+    "color": [
+      0.7,
+      0.72,
+      0.74
+    ],
+    "bounds": [
+      -42.5,
+      -27.5,
+      63.25,
+      68.75,
+      -42.75,
+      -37.25
+    ],
+    "volume_mm3": 156.09788497524286,
+    "solids": 1,
+    "print_pose": null,
+    "optional_buoyancy": false
+  },
+  {
+    "name": "VMOTOR_LEFT_3_W",
+    "kind": "HARDWARE",
+    "color": [
+      0.7,
+      0.72,
+      0.74
+    ],
+    "bounds": [
+      -39.5,
+      -39.0,
+      62.5,
+      69.5,
+      -43.5,
+      -36.5
+    ],
+    "volume_mm3": 15.221016406642542,
+    "solids": 1,
+    "print_pose": null,
+    "optional_buoyancy": false
+  },
+  {
+    "name": "VMOTOR_RIGHT_0_M3x12",
+    "kind": "HARDWARE",
+    "color": [
+      0.7,
+      0.72,
+      0.74
+    ],
+    "bounds": [
+      -42.5,
+      -27.5,
+      -64.75,
+      -59.25,
+      -49.75,
+      -44.25
+    ],
+    "volume_mm3": 156.09788497524286,
+    "solids": 1,
+    "print_pose": null,
+    "optional_buoyancy": false
+  },
+  {
+    "name": "VMOTOR_RIGHT_0_W",
+    "kind": "HARDWARE",
+    "color": [
+      0.7,
+      0.72,
+      0.74
+    ],
+    "bounds": [
+      -39.5,
+      -39.0,
+      -65.5,
+      -58.5,
+      -50.5,
+      -43.5
+    ],
+    "volume_mm3": 15.221016406642544,
+    "solids": 1,
+    "print_pose": null,
+    "optional_buoyancy": false
+  },
+  {
+    "name": "VMOTOR_RIGHT_1_M3x12",
+    "kind": "HARDWARE",
+    "color": [
+      0.7,
+      0.72,
+      0.74
+    ],
+    "bounds": [
+      -42.5,
+      -27.5,
+      -64.75,
+      -59.25,
+      -35.75,
+      -30.25
+    ],
+    "volume_mm3": 156.09788497524286,
+    "solids": 1,
+    "print_pose": null,
+    "optional_buoyancy": false
+  },
+  {
+    "name": "VMOTOR_RIGHT_1_W",
+    "kind": "HARDWARE",
+    "color": [
+      0.7,
+      0.72,
+      0.74
+    ],
+    "bounds": [
+      -39.5,
+      -39.0,
+      -65.5,
+      -58.5,
+      -36.5,
+      -29.5
+    ],
+    "volume_mm3": 15.22101640664254,
+    "solids": 1,
+    "print_pose": null,
+    "optional_buoyancy": false
+  },
+  {
+    "name": "VMOTOR_RIGHT_2_M3x12",
+    "kind": "HARDWARE",
+    "color": [
+      0.7,
+      0.72,
+      0.74
+    ],
+    "bounds": [
+      -42.5,
+      -27.5,
+      -68.75,
+      -63.25,
+      -42.75,
+      -37.25
+    ],
+    "volume_mm3": 156.09788497524286,
+    "solids": 1,
+    "print_pose": null,
+    "optional_buoyancy": false
+  },
+  {
+    "name": "VMOTOR_RIGHT_2_W",
+    "kind": "HARDWARE",
+    "color": [
+      0.7,
+      0.72,
+      0.74
+    ],
+    "bounds": [
+      -39.5,
+      -39.0,
+      -69.5,
+      -62.5,
+      -43.5,
+      -36.5
+    ],
+    "volume_mm3": 15.221016406642542,
+    "solids": 1,
+    "print_pose": null,
+    "optional_buoyancy": false
+  },
+  {
+    "name": "VMOTOR_RIGHT_3_M3x12",
+    "kind": "HARDWARE",
+    "color": [
+      0.7,
+      0.72,
+      0.74
+    ],
+    "bounds": [
+      -42.5,
+      -27.5,
+      -60.75,
+      -55.25,
+      -42.75,
+      -37.25
+    ],
+    "volume_mm3": 156.09788497524286,
+    "solids": 1,
+    "print_pose": null,
+    "optional_buoyancy": false
+  },
+  {
+    "name": "VMOTOR_RIGHT_3_W",
+    "kind": "HARDWARE",
+    "color": [
+      0.7,
+      0.72,
+      0.74
+    ],
+    "bounds": [
+      -39.5,
+      -39.0,
+      -61.5,
+      -54.5,
+      -43.5,
+      -36.5
+    ],
+    "volume_mm3": 15.221016406642544,
+    "solids": 1,
+    "print_pose": null,
+    "optional_buoyancy": false
+  },
+  {
+    "name": "CAMFOOT_-10_M3x12",
+    "kind": "HARDWARE",
+    "color": [
+      0.7,
+      0.72,
+      0.74
+    ],
+    "bounds": [
+      39.25,
+      44.75,
+      -12.75,
+      -7.25,
+      0.49999999999999983,
+      15.5
+    ],
+    "volume_mm3": 156.0978849752428,
+    "solids": 1,
+    "print_pose": null,
+    "optional_buoyancy": false
+  },
+  {
+    "name": "CAMFOOT_-10_W_TOP",
+    "kind": "HARDWARE",
+    "color": [
+      0.7,
+      0.72,
+      0.74
+    ],
+    "bounds": [
+      38.5,
+      45.5,
+      -13.5,
+      -6.5,
+      12.0,
+      12.5
+    ],
+    "volume_mm3": 15.221016406642551,
+    "solids": 1,
+    "print_pose": null,
+    "optional_buoyancy": false
+  },
+  {
+    "name": "CAMFOOT_-10_W_BOTTOM",
+    "kind": "HARDWARE",
+    "color": [
+      0.7,
+      0.72,
+      0.74
+    ],
+    "bounds": [
+      38.5,
+      45.5,
+      -13.5,
+      -6.5,
+      5.5,
+      6.0
+    ],
+    "volume_mm3": 15.221016406642551,
+    "solids": 1,
+    "print_pose": null,
+    "optional_buoyancy": false
+  },
+  {
+    "name": "CAMFOOT_-10_NUT",
+    "kind": "HARDWARE",
+    "color": [
+      0.7,
+      0.72,
+      0.74
+    ],
+    "bounds": [
+      38.82457351945706,
+      45.17542648054294,
+      -12.75,
+      -7.249999999999999,
+      3.0999999999999996,
+      5.5
+    ],
+    "volume_mm3": 51.09247186378846,
+    "solids": 1,
+    "print_pose": null,
+    "optional_buoyancy": false
+  },
+  {
+    "name": "CAMFOOT_10_M3x12",
+    "kind": "HARDWARE",
+    "color": [
+      0.7,
+      0.72,
+      0.74
+    ],
+    "bounds": [
+      39.25,
+      44.75,
+      7.25,
+      12.75,
+      0.49999999999999983,
+      15.5
+    ],
+    "volume_mm3": 156.0978849752428,
+    "solids": 1,
+    "print_pose": null,
+    "optional_buoyancy": false
+  },
+  {
+    "name": "CAMFOOT_10_W_TOP",
+    "kind": "HARDWARE",
+    "color": [
+      0.7,
+      0.72,
+      0.74
+    ],
+    "bounds": [
+      38.5,
+      45.5,
+      6.5,
+      13.5,
+      12.0,
+      12.5
+    ],
+    "volume_mm3": 15.221016406642551,
+    "solids": 1,
+    "print_pose": null,
+    "optional_buoyancy": false
+  },
+  {
+    "name": "CAMFOOT_10_W_BOTTOM",
+    "kind": "HARDWARE",
+    "color": [
+      0.7,
+      0.72,
+      0.74
+    ],
+    "bounds": [
+      38.5,
+      45.5,
+      6.5,
+      13.5,
+      5.5,
+      6.0
+    ],
+    "volume_mm3": 15.221016406642551,
+    "solids": 1,
+    "print_pose": null,
+    "optional_buoyancy": false
+  },
+  {
+    "name": "CAMFOOT_10_NUT",
+    "kind": "HARDWARE",
+    "color": [
+      0.7,
+      0.72,
+      0.74
+    ],
+    "bounds": [
+      38.82457351945706,
+      45.17542648054294,
+      7.25,
+      12.75,
+      3.0999999999999996,
+      5.5
+    ],
+    "volume_mm3": 51.09247186378846,
+    "solids": 1,
+    "print_pose": null,
+    "optional_buoyancy": false
+  },
+  {
+    "name": "CAMERA_-14_8_M2x10",
+    "kind": "HARDWARE",
+    "color": [
+      0.7,
+      0.72,
+      0.74
+    ],
+    "bounds": [
+      45.9,
+      57.9,
+      -15.9,
+      -12.1,
+      6.1,
+      9.9
+    ],
+    "volume_mm3": 54.09822549481624,
+    "solids": 1,
+    "print_pose": null,
+    "optional_buoyancy": false
+  },
+  {
+    "name": "CAMERA_-14_8_W_FRONT",
+    "kind": "HARDWARE",
+    "color": [
+      0.7,
+      0.72,
+      0.74
+    ],
+    "bounds": [
+      55.6,
+      55.9,
+      -16.5,
+      -11.5,
+      5.5,
+      10.5
+    ],
+    "volume_mm3": 4.7500880922277515,
+    "solids": 1,
+    "print_pose": null,
+    "optional_buoyancy": false
+  },
+  {
+    "name": "CAMERA_-14_8_NUT",
+    "kind": "HARDWARE",
+    "color": [
+      0.7,
+      0.72,
+      0.74
+    ],
+    "bounds": [
+      46.8,
+      48.4,
+      -16.0,
+      -12.0,
+      5.690598923241497,
+      10.309401076758503
+    ],
+    "volume_mm3": 19.342816948650825,
+    "solids": 1,
+    "print_pose": null,
+    "optional_buoyancy": false
+  },
+  {
+    "name": "CAMERA_-14_36_M2x10",
+    "kind": "HARDWARE",
+    "color": [
+      0.7,
+      0.72,
+      0.74
+    ],
+    "bounds": [
+      45.9,
+      57.9,
+      -15.9,
+      -12.1,
+      34.1,
+      37.9
+    ],
+    "volume_mm3": 54.09822549481619,
+    "solids": 1,
+    "print_pose": null,
+    "optional_buoyancy": false
+  },
+  {
+    "name": "CAMERA_-14_36_W_FRONT",
+    "kind": "HARDWARE",
+    "color": [
+      0.7,
+      0.72,
+      0.74
+    ],
+    "bounds": [
+      55.6,
+      55.9,
+      -16.5,
+      -11.5,
+      33.5,
+      38.5
+    ],
+    "volume_mm3": 4.750088092227751,
+    "solids": 1,
+    "print_pose": null,
+    "optional_buoyancy": false
+  },
+  {
+    "name": "CAMERA_-14_36_NUT",
+    "kind": "HARDWARE",
+    "color": [
+      0.7,
+      0.72,
+      0.74
+    ],
+    "bounds": [
+      46.8,
+      48.4,
+      -16.0,
+      -12.0,
+      33.690598923241495,
+      38.309401076758505
+    ],
+    "volume_mm3": 19.342816948650842,
+    "solids": 1,
+    "print_pose": null,
+    "optional_buoyancy": false
+  },
+  {
+    "name": "CAMERA_14_8_M2x10",
+    "kind": "HARDWARE",
+    "color": [
+      0.7,
+      0.72,
+      0.74
+    ],
+    "bounds": [
+      45.9,
+      57.9,
+      12.1,
+      15.9,
+      6.1,
+      9.9
+    ],
+    "volume_mm3": 54.09822549481624,
+    "solids": 1,
+    "print_pose": null,
+    "optional_buoyancy": false
+  },
+  {
+    "name": "CAMERA_14_8_W_FRONT",
+    "kind": "HARDWARE",
+    "color": [
+      0.7,
+      0.72,
+      0.74
+    ],
+    "bounds": [
+      55.6,
+      55.9,
+      11.5,
+      16.5,
+      5.5,
+      10.5
+    ],
+    "volume_mm3": 4.7500880922277515,
+    "solids": 1,
+    "print_pose": null,
+    "optional_buoyancy": false
+  },
+  {
+    "name": "CAMERA_14_8_NUT",
+    "kind": "HARDWARE",
+    "color": [
+      0.7,
+      0.72,
+      0.74
+    ],
+    "bounds": [
+      46.8,
+      48.4,
+      11.999999999999998,
+      16.0,
+      5.690598923241497,
+      10.309401076758503
+    ],
+    "volume_mm3": 19.342816948650825,
+    "solids": 1,
+    "print_pose": null,
+    "optional_buoyancy": false
+  },
+  {
+    "name": "CAMERA_14_36_M2x10",
+    "kind": "HARDWARE",
+    "color": [
+      0.7,
+      0.72,
+      0.74
+    ],
+    "bounds": [
+      45.9,
+      57.9,
+      12.1,
+      15.9,
+      34.1,
+      37.9
+    ],
+    "volume_mm3": 54.09822549481619,
+    "solids": 1,
+    "print_pose": null,
+    "optional_buoyancy": false
+  },
+  {
+    "name": "CAMERA_14_36_W_FRONT",
+    "kind": "HARDWARE",
+    "color": [
+      0.7,
+      0.72,
+      0.74
+    ],
+    "bounds": [
+      55.6,
+      55.9,
+      11.5,
+      16.5,
+      33.5,
+      38.5
+    ],
+    "volume_mm3": 4.750088092227752,
+    "solids": 1,
+    "print_pose": null,
+    "optional_buoyancy": false
+  },
+  {
+    "name": "CAMERA_14_36_NUT",
+    "kind": "HARDWARE",
+    "color": [
+      0.7,
+      0.72,
+      0.74
+    ],
+    "bounds": [
+      46.8,
+      48.4,
+      11.999999999999998,
+      16.0,
+      33.690598923241495,
+      38.309401076758505
+    ],
+    "volume_mm3": 19.342816948650846,
+    "solids": 1,
+    "print_pose": null,
+    "optional_buoyancy": false
+  },
+  {
+    "name": "OEM_WINDOW_0_M2x10",
+    "kind": "HARDWARE",
+    "color": [
+      0.7,
+      0.72,
+      0.74
+    ],
+    "bounds": [
+      77.35,
+      89.35,
+      -23.897045256124738,
+      -20.09704525612474,
+      7.399999999999997,
+      11.199999999999998
+    ],
+    "volume_mm3": 54.09822549481624,
+    "solids": 1,
+    "print_pose": null,
+    "optional_buoyancy": false
+  },
+  {
+    "name": "OEM_WINDOW_1_M2x10",
+    "kind": "HARDWARE",
+    "color": [
+      0.7,
+      0.72,
+      0.74
+    ],
+    "bounds": [
+      77.35,
+      89.35,
+      -1.9000000000000061,
+      1.8999999999999937,
+      -5.299999999999999,
+      -1.4999999999999987
+    ],
+    "volume_mm3": 54.09822549481623,
+    "solids": 1,
+    "print_pose": null,
+    "optional_buoyancy": false
+  },
+  {
+    "name": "OEM_WINDOW_2_M2x10",
+    "kind": "HARDWARE",
+    "color": [
+      0.7,
+      0.72,
+      0.74
+    ],
+    "bounds": [
+      77.35,
+      89.35,
+      20.097045256124748,
+      23.897045256124745,
+      7.4000000000000075,
+      11.200000000000008
+    ],
+    "volume_mm3": 54.09822549481624,
+    "solids": 1,
+    "print_pose": null,
+    "optional_buoyancy": false
+  },
+  {
+    "name": "OEM_WINDOW_3_M2x10",
+    "kind": "HARDWARE",
+    "color": [
+      0.7,
+      0.72,
+      0.74
+    ],
+    "bounds": [
+      77.35,
+      89.35,
+      20.097045256124755,
+      23.897045256124752,
+      32.79999999999998,
+      36.59999999999998
+    ],
+    "volume_mm3": 54.098225494816205,
+    "solids": 1,
+    "print_pose": null,
+    "optional_buoyancy": false
+  },
+  {
+    "name": "OEM_WINDOW_4_M2x10",
+    "kind": "HARDWARE",
+    "color": [
+      0.7,
+      0.72,
+      0.74
+    ],
+    "bounds": [
+      77.35,
+      89.35,
+      -1.8999999999999906,
+      1.9000000000000092,
+      45.5,
+      49.3
+    ],
+    "volume_mm3": 54.09822549481621,
+    "solids": 1,
+    "print_pose": null,
+    "optional_buoyancy": false
+  },
+  {
+    "name": "OEM_WINDOW_5_M2x10",
+    "kind": "HARDWARE",
+    "color": [
+      0.7,
+      0.72,
+      0.74
+    ],
+    "bounds": [
+      77.35,
+      89.35,
+      -23.89704525612474,
+      -20.097045256124744,
+      32.8,
+      36.599999999999994
+    ],
+    "volume_mm3": 54.098225494816205,
+    "solids": 1,
+    "print_pose": null,
+    "optional_buoyancy": false
+  }
+]

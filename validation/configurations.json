@@ -1,0 +1,62 @@
+{
+  "default": "base",
+  "step_readback": [
+    {
+      "configuration": "base",
+      "dimensions_mm": [
+        213.0000001,
+        210.0000002,
+        148.0000001
+      ],
+      "solids": 24,
+      "passed": true
+    },
+    {
+      "configuration": "with-buoyancy",
+      "dimensions_mm": [
+        213.0000001,
+        210.0000002,
+        184.7000000000001
+      ],
+      "solids": 30,
+      "passed": true
+    }
+  ],
+  "optional_parts": [
+    "BUY_FOAM_STRAP_-1_-32.5",
+    "BUY_FOAM_STRAP_-1_32.5",
+    "BUY_FOAM_STRAP_1_-32.5",
+    "BUY_FOAM_STRAP_1_32.5",
+    "BUY_TRIM_FOAM_-69",
+    "BUY_TRIM_FOAM_69"
+  ],
+  "optional_purchase_rows": [
+    {
+      "item": "Suitable closed-cell buoyancy foam",
+      "quantity": "0",
+      "optional_quantity": "2",
+      "configuration": "optional buoyancy",
+      "specification": "Cut62x160x35mm;4D12 tool reliefs total",
+      "note": "Grade/depth rating/density to select; actual buoyancy trim unverified",
+      "source": ""
+    },
+    {
+      "item": "Releasable retention strap",
+      "quantity": "0",
+      "optional_quantity": "4",
+      "configuration": "optional buoyancy",
+      "specification": "Approx450x4.8mm;band thickness<=1.2mm",
+      "note": "Slots3x7;place lockheads on top; wet retention trial required",
+      "source": ""
+    }
+  ],
+  "source_sha256": {
+    "mechanical/configurations.json": "5d740067654f2d4d1435eb4c0ac8ebe8bcc202f815c6e798e45a5d5b4c21bbd9",
+    "mechanical/parts.json": "159ff3250d0ab5670ee69a24f069e64e2f93f741c49f19d8564b32f5a59fbabd",
+    "bom/BOM_PURCHASED.csv": "6be624420f24b55c66571de098ba6f013a700fffe999286a73d3bb489baf9883",
+    "mechanical/assemblies/simple-rov.step": "efc480827e70a321f3b946765cdf40d14bfc52c1703a8cdba45f3dbc9653e837",
+    "mechanical/assemblies/simple-rov-with-buoyancy.step": "3895694bf4ce0f831ab49fab97d997b9b2175b0c8eef0b63ee675bf12c04ac8c"
+  },
+  "physical_tested": false,
+  "passed": true
+}

@@ -1,0 +1,65 @@
+﻿group,axis,x_mm,y_mm,z_mm,diameter_mm,note
+H_LEFT,Z,-85.0,74,-13,3.4,OEM all4M3/depth/axial datum unverified
+H_LEFT,Z,-71.0,74,-13,3.4,OEM all4M3/depth/axial datum unverified
+H_LEFT,Z,-78,70.0,-13,3.4,OEM all4M3/depth/axial datum unverified
+H_LEFT,Z,-78,78.0,-13,3.4,OEM all4M3/depth/axial datum unverified
+H_RIGHT,Z,-85.0,-74,-13,3.4,OEM all4M3/depth/axial datum unverified
+H_RIGHT,Z,-71.0,-74,-13,3.4,OEM all4M3/depth/axial datum unverified
+H_RIGHT,Z,-78,-78.0,-13,3.4,OEM all4M3/depth/axial datum unverified
+H_RIGHT,Z,-78,-70.0,-13,3.4,OEM all4M3/depth/axial datum unverified
+V_LEFT,X,-31,62,-47.0,3.4,OEM all4M3/depth/axial datum unverified
+V_LEFT,X,-31,62,-33.0,3.4,OEM all4M3/depth/axial datum unverified
+V_LEFT,X,-31,58.0,-40,3.4,OEM all4M3/depth/axial datum unverified
+V_LEFT,X,-31,66.0,-40,3.4,OEM all4M3/depth/axial datum unverified
+V_RIGHT,X,-31,-62,-47.0,3.4,OEM all4M3/depth/axial datum unverified
+V_RIGHT,X,-31,-62,-33.0,3.4,OEM all4M3/depth/axial datum unverified
+V_RIGHT,X,-31,-66.0,-40,3.4,OEM all4M3/depth/axial datum unverified
+V_RIGHT,X,-31,-58.0,-40,3.4,OEM all4M3/depth/axial datum unverified
+COVER_-95_-18_M3x25,z,-95,-18,-1.5,3.4,Bolt seat coordinates;see assembly source for actual clearance location
+COVER_-95_18_M3x25,z,-95,18,-1.5,3.4,Bolt seat coordinates;see assembly source for actual clearance location
+COVER_95_-18_M3x25,z,95,-18,-1.5,3.4,Bolt seat coordinates;see assembly source for actual clearance location
+COVER_95_18_M3x25,z,95,18,-1.5,3.4,Bolt seat coordinates;see assembly source for actual clearance location
+SKID_-80_-97_M3x16,z,-80,-97,-11.5,3.4,Bolt seat coordinates;see assembly source for actual clearance location
+SKID_-80_97_M3x16,z,-80,97,-11.5,3.4,Bolt seat coordinates;see assembly source for actual clearance location
+SKID_80_-97_M3x16,z,80,-97,-11.5,3.4,Bolt seat coordinates;see assembly source for actual clearance location
+SKID_80_97_M3x16,z,80,97,-11.5,3.4,Bolt seat coordinates;see assembly source for actual clearance location
+CLAMP_-50_-38_M3x16,z,-50,-38,26.5,3.4,Bolt seat coordinates;see assembly source for actual clearance location
+CLAMP_-50_38_M3x16,z,-50,38,26.5,3.4,Bolt seat coordinates;see assembly source for actual clearance location
+CLAMP_50_-38_M3x16,z,50,-38,26.5,3.4,Bolt seat coordinates;see assembly source for actual clearance location
+CLAMP_50_38_M3x16,z,50,38,26.5,3.4,Bolt seat coordinates;see assembly source for actual clearance location
+VFOOT_-44_-83_M3x20,z,-44,-83,-26.5,3.4,Bolt seat coordinates;see assembly source for actual clearance location
+VFOOT_-44_-41_M3x20,z,-44,-41,-26.5,3.4,Bolt seat coordinates;see assembly source for actual clearance location
+VFOOT_-30_-83_M3x20,z,-30,-83,-26.5,3.4,Bolt seat coordinates;see assembly source for actual clearance location
+VFOOT_-30_-41_M3x20,z,-30,-41,-26.5,3.4,Bolt seat coordinates;see assembly source for actual clearance location
+VFOOT_-44_41_M3x20,z,-44,41,-26.5,3.4,Bolt seat coordinates;see assembly source for actual clearance location
+VFOOT_-44_83_M3x20,z,-44,83,-26.5,3.4,Bolt seat coordinates;see assembly source for actual clearance location
+VFOOT_-30_41_M3x20,z,-30,41,-26.5,3.4,Bolt seat coordinates;see assembly source for actual clearance location
+VFOOT_-30_83_M3x20,z,-30,83,-26.5,3.4,Bolt seat coordinates;see assembly source for actual clearance location
+HMOTOR_LEFT_0_M3x8,z,-85.0,74,-18,3.4,Bolt seat coordinates;see assembly source for actual clearance location
+HMOTOR_LEFT_1_M3x8,z,-71.0,74,-18,3.4,Bolt seat coordinates;see assembly source for actual clearance location
+HMOTOR_LEFT_2_M3x8,z,-78,70.0,-18,3.4,Bolt seat coordinates;see assembly source for actual clearance location
+HMOTOR_LEFT_3_M3x8,z,-78,78.0,-18,3.4,Bolt seat coordinates;see assembly source for actual clearance location
+HMOTOR_RIGHT_0_M3x8,z,-85.0,-74,-18,3.4,Bolt seat coordinates;see assembly source for actual clearance location
+HMOTOR_RIGHT_1_M3x8,z,-71.0,-74,-18,3.4,Bolt seat coordinates;see assembly source for actual clearance location
+HMOTOR_RIGHT_2_M3x8,z,-78,-78.0,-18,3.4,Bolt seat coordinates;see assembly source for actual clearance location
+HMOTOR_RIGHT_3_M3x8,z,-78,-70.0,-18,3.4,Bolt seat coordinates;see assembly source for actual clearance location
+VMOTOR_LEFT_0_M3x12,x,-39.5,62,-47.0,3.4,Bolt seat coordinates;see assembly source for actual clearance location
+VMOTOR_LEFT_1_M3x12,x,-39.5,62,-33.0,3.4,Bolt seat coordinates;see assembly source for actual clearance location
+VMOTOR_LEFT_2_M3x12,x,-39.5,58.0,-40,3.4,Bolt seat coordinates;see assembly source for actual clearance location
+VMOTOR_LEFT_3_M3x12,x,-39.5,66.0,-40,3.4,Bolt seat coordinates;see assembly source for actual clearance location
+VMOTOR_RIGHT_0_M3x12,x,-39.5,-62,-47.0,3.4,Bolt seat coordinates;see assembly source for actual clearance location
+VMOTOR_RIGHT_1_M3x12,x,-39.5,-62,-33.0,3.4,Bolt seat coordinates;see assembly source for actual clearance location
+VMOTOR_RIGHT_2_M3x12,x,-39.5,-66.0,-40,3.4,Bolt seat coordinates;see assembly source for actual clearance location
+VMOTOR_RIGHT_3_M3x12,x,-39.5,-58.0,-40,3.4,Bolt seat coordinates;see assembly source for actual clearance location
+CAMFOOT_-10_M3x12,z,42,-10,12.5,3.4,Bolt seat coordinates;see assembly source for actual clearance location
+CAMFOOT_10_M3x12,z,42,10,12.5,3.4,Bolt seat coordinates;see assembly source for actual clearance location
+CAMERA_-14_8_M2x10,x,55.9,-14,8,2.2,Bolt seat coordinates;see assembly source for actual clearance location
+CAMERA_-14_36_M2x10,x,55.9,-14,36,2.2,Bolt seat coordinates;see assembly source for actual clearance location
+CAMERA_14_8_M2x10,x,55.9,14,8,2.2,Bolt seat coordinates;see assembly source for actual clearance location
+CAMERA_14_36_M2x10,x,55.9,14,36,2.2,Bolt seat coordinates;see assembly source for actual clearance location
+OEM_WINDOW_0_M2x10,x,87.35,-21.99704525612474,9.299999999999997,2.2,Bolt seat coordinates;see assembly source for actual clearance location
+OEM_WINDOW_1_M2x10,x,87.35,-6.221205739668554e-15,-3.3999999999999986,2.2,Bolt seat coordinates;see assembly source for actual clearance location
+OEM_WINDOW_2_M2x10,x,87.35,21.997045256124746,9.300000000000008,2.2,Bolt seat coordinates;see assembly source for actual clearance location
+OEM_WINDOW_3_M2x10,x,87.35,21.997045256124753,34.69999999999998,2.2,Bolt seat coordinates;see assembly source for actual clearance location
+OEM_WINDOW_4_M2x10,x,87.35,9.33180860950283e-15,47.4,2.2,Bolt seat coordinates;see assembly source for actual clearance location
+OEM_WINDOW_5_M2x10,x,87.35,-21.997045256124743,34.699999999999996,2.2,Bolt seat coordinates;see assembly source for actual clearance location

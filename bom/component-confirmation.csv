@@ -1,0 +1,13 @@
+﻿module,target_quantity,model_revision,purchase_link,length_mm,width_mm,height_mm,mass_g,interfaces_cable_bend_envelope,allowed_voltage,continuous_peak_current,fit_harness_validation,notes
+Thruster,4,APISQUEEN X2,,,,,,,,,UNVERIFIED,Start with one; mounting holes/depth unmeasured; supplier mass reference 117 g each
+Bidirectional ESC,4,To select,,,,,,,,,UNVERIFIED,"Start with one matched unit; verify neutral, reverse thrust and protocol"
+Pressure-enclosure kit,1,BR50mm / 150mm reference,,,,,,,,,UNVERIFIED,"Include seals, locks and plugs; verify full payload first"
+Camera,1,BR Low-Light HD USB reference,,,,,,,,,UNVERIFIED,"Verify USB plug, bend envelope and host"
+Controller,1,To select,,,,,,,,,UNVERIFIED,Confirm current firmware/allocation support and physical dimensions
+USB host / communications computer,1,To select,,,,,,,,,UNVERIFIED,"Video support, power and heat"
+Battery and protection,1,To select,,,,,,,,,UNVERIFIED,"Maximum voltage, dimensions, current, protection and removal"
+Regulation and power distribution,1,To select,,,,,,,,,UNVERIFIED,Total/branch current and thermal behavior
+Depth sensor,1,To select,,,,,,,,,UNVERIFIED,"Range, pressure port, mounting and protocol"
+Leak detection,1,To select,,,,,,,,,UNVERIFIED,Placement and failure response
+Tether and penetrator harness,1,To select,,,,,,,,,UNVERIFIED,"Communication, independent strain relief, each port seal and plugs"
+Complete assembly,1,Mechanical prototype,,,,,,,,,UNVERIFIED,"Record mass, displacement, CG/CB, sealing and load tests"

@@ -1,0 +1,21 @@
+{
+  "W": 0.710685284529805,
+  "S": -0.710685284529805,
+  "U": 0.10028994199916119,
+  "J": -0.10027724584680442,
+  "A": 0.24988565461495227,
+  "D": -0.24988565461495205,
+  "X_holds_current_depth_heading_with_zero_surge": true,
+  "WS_release_and_focus_loss_zero_surge": true,
+  "depth_command_clamp_m": [
+    0.35,
+    2.5
+  ],
+  "source_sha256": {
+    "run.py": "260dd7dc94994555b07d2a128a1b8df1891b8db82532fac9f9882407d070177f",
+    "manual_control.py": "3cda99617347c4b394431532e07ed472de9150880bf66d5d6a05213f9a2c83a9",
+    "environment.py": "81ba9ad0e852b3b9e8bd0d0ff190739e439f69cc4d47eca2c97c9e1a2545c9c2"
+  },
+  "scope": "Keyboard command mapping and response under the existing assumed water model. Not physical robot validation.",
+  "passed": true
+}

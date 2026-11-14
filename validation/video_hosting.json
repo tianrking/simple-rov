@@ -1,0 +1,33 @@
+{
+  "archive_issue": "https://github.com/tianrking/simple-rov/issues/2",
+  "assets": [
+    {
+      "file": "docs/assets/videos/simple-rov-overview.mp4",
+      "url": "https://github.com/user-attachments/assets/2bf94293-84e5-456a-9249-f08cb007cc9f",
+      "sha256": "7833e2bbe7d1bebab5ffa859bcf56b1ab5a91216922764b67dd17886aa228182"
+    },
+    {
+      "file": "docs/assets/videos/pool.mp4",
+      "url": "https://github.com/user-attachments/assets/14b246bd-16ec-4847-b6e0-367b2e263e27",
+      "sha256": "ef454eb4cb974911ce4e5f691d99e5a6a5ab47a6f89fdbb6e98cffdd6af23889"
+    },
+    {
+      "file": "docs/assets/videos/cross-current.mp4",
+      "url": "https://github.com/user-attachments/assets/1454e87d-76c1-463d-bccc-eb611f41d231",
+      "sha256": "4b63c1f38a6d6f2751bd6834e40e179e2859f751ce1a5da634b5061aa97cf407"
+    },
+    {
+      "file": "docs/assets/videos/tethered.mp4",
+      "url": "https://github.com/user-attachments/assets/682f9a95-4fbe-4be1-8633-97d2394cfdbf",
+      "sha256": "75b09c5898e749beb0ad4cb366268ff22a77eedceb541135e4459ee05e761a29"
+    },
+    {
+      "file": "docs/assets/videos/motor-fault.mp4",
+      "url": "https://github.com/user-attachments/assets/84ad992a-7746-449a-a80a-532b0f8b8e52",
+      "sha256": "a92738ba4728868a91ff3b1cc3e0070738ab6c37697db06811666aa2048b4a8c"
+    }
+  ],
+  "purpose": "GitHub-native players for the README; identical MP4 originals are committed",
+  "codec": "H.264 / yuv420p",
+  "public": true
+}

@@ -1,0 +1,66 @@
+{
+  "physical_site_wrench_matches_CAD_map_max_error": 1.249000902703301e-16,
+  "allocation_rank": 4,
+  "forward": {
+    "signed_change": 0.451271162300409,
+    "unit": "m"
+  },
+  "reverse": {
+    "signed_change": -0.451271162300409,
+    "unit": "m"
+  },
+  "up": {
+    "signed_change": 0.36629753215116534,
+    "unit": "m"
+  },
+  "down": {
+    "signed_change": -0.32929572626404235,
+    "unit": "m"
+  },
+  "yaw": {
+    "signed_change": 0.876508113268649,
+    "unit": "rad"
+  },
+  "roll": {
+    "signed_change": 0.09522234044244444,
+    "unit": "rad"
+  },
+  "hover_20s": {
+    "depth_error_m": 3.173395970001991e-05,
+    "roll_rad": 1.7938588000637917e-16,
+    "pitch_rad": -1.603184306202488e-33
+  },
+  "depth_step": {
+    "target_m": 0.9,
+    "final_m": 0.8806394121241413
+  },
+  "roll_recovery": {
+    "initial_rad": 0.2,
+    "final_rad": -5.418942695914982e-05
+  },
+  "roll_recovery_at_rotated_heading": {
+    "initial_roll_rad": 0.2,
+    "target_yaw_rad": 1.0,
+    "final_roll_rad": -5.418942695897574e-05,
+    "final_yaw_rad": 1.0010018416409883
+  },
+  "assembly_configurations": {
+    "base": {
+      "foam_present": false,
+      "state_finite": true
+    },
+    "with-buoyancy": {
+      "foam_present": true,
+      "state_finite": true
+    }
+  },
+  "scope": "Functional checks under assumed uncalibrated mass/CG/CB/thrust/drag. Does not validate a physical robot, pressure depth, structure or optical performance.",
+  "source_sha256": {
+    "config.json": "3a943fc2095208c578839438dc32a290353dcb40d184ec634c30ab73eb270532",
+    "simple_rov.xml": "e07a4ff03a6f9b4b66c45d2d85399a02cd889de7f31124d280dfc5cc73190437",
+    "simple_rov_with_buoyancy.xml": "8138497016c5ffd1854d3d155d1edd1868d46e829accead5aa900f34c22f61d8",
+    "ACTUATOR_MAP.json": "afa0f4f0b0bb384daa62282e789e097b8203c855ce194f8cd00a79dc02490984",
+    "environment.py": "81ba9ad0e852b3b9e8bd0d0ff190739e439f69cc4d47eca2c97c9e1a2545c9c2"
+  },
+  "passed": true
+}

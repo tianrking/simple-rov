@@ -1,0 +1,89 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mujoco model="SimpleROV_base">
+  <compiler angle="radian" meshdir="meshes" inertiafromgeom="false" />
+  <option timestep=".002" gravity="0 0 -9.80665" density="0" viscosity="0" integrator="implicitfast" />
+  <visual>
+    <global offwidth="2400" offheight="1800" />
+    <headlight ambient=".5 .5 .5" diffuse=".8 .8 .8" />
+  </visual>
+  <statistic center="0 0 -1" extent="2" />
+  <asset>
+    <texture name="checker" type="2d" builtin="checker" rgb1=".5 .7 .76" rgb2=".65 .8 .85" width="128" height="128" />
+    <material name="tiles" texture="checker" texrepeat="12 12" reflectance=".1" />
+    <mesh name="V5_01_LOAD_CHASSIS" file="V5_01_LOAD_CHASSIS.stl" scale=".001 .001 .001" />
+    <mesh name="V5_02_UPPER_FAIRING" file="V5_02_UPPER_FAIRING.stl" scale=".001 .001 .001" />
+    <mesh name="V5_03_SKID_-97" file="V5_03_SKID_-97.stl" scale=".001 .001 .001" />
+    <mesh name="V5_03_SKID_97" file="V5_03_SKID_97.stl" scale=".001 .001 .001" />
+    <mesh name="V5_04_POD_CLAMP_-50" file="V5_04_POD_CLAMP_-50.stl" scale=".001 .001 .001" />
+    <mesh name="V5_04_POD_CLAMP_50" file="V5_04_POD_CLAMP_50.stl" scale=".001 .001 .001" />
+    <mesh name="V5_05_VERTICAL_CARRIER_-62" file="V5_05_VERTICAL_CARRIER_-62.stl" scale=".001 .001 .001" />
+    <mesh name="V5_05_VERTICAL_CARRIER_62" file="V5_05_VERTICAL_CARRIER_62.stl" scale=".001 .001 .001" />
+    <mesh name="BUY_TUBE" file="BUY_TUBE.stl" scale=".001 .001 .001" />
+    <mesh name="BUY_FRONT_FLANGE" file="BUY_FRONT_FLANGE.stl" scale=".001 .001 .001" />
+    <mesh name="BUY_FRONT_WINDOW" file="BUY_FRONT_WINDOW.stl" scale=".001 .001 .001" />
+    <mesh name="BUY_REAR_CAP" file="BUY_REAR_CAP.stl" scale=".001 .001 .001" />
+    <mesh name="BUY_CAMERA_HD_USB" file="BUY_CAMERA_HD_USB.stl" scale=".001 .001 .001" />
+    <mesh name="V5_06_MODULE_TRAY" file="V5_06_MODULE_TRAY.stl" scale=".001 .001 .001" />
+    <mesh name="V5_07_CAMERA_CARRIER" file="V5_07_CAMERA_CARRIER.stl" scale=".001 .001 .001" />
+    <mesh name="REF_X2_H_LEFT" file="REF_X2_H_LEFT.stl" scale=".001 .001 .001" />
+    <mesh name="REF_X2_H_RIGHT" file="REF_X2_H_RIGHT.stl" scale=".001 .001 .001" />
+    <mesh name="REF_X2_V_LEFT" file="REF_X2_V_LEFT.stl" scale=".001 .001 .001" />
+    <mesh name="REF_X2_V_RIGHT" file="REF_X2_V_RIGHT.stl" scale=".001 .001 .001" />
+  </asset>
+  <worldbody>
+    <light pos="0 0 2" dir="0 0 -1" diffuse=".9 .9 .9" />
+    <geom name="pool_floor" type="plane" size="5 5 .1" pos="0 0 -3" material="tiles" />
+    <geom name="surface" type="plane" size="5 5 .01" pos="0 0 0" rgba=".1 .5 .65 .12" contype="0" conaffinity="0" group="2" />
+    <geom type="box" size=".025 .15 .15" pos="2 0 -1" rgba=".9 .35 .12 1" />
+    <geom type="box" size=".025 .15 .15" pos="2 1 -1" rgba=".9 .35 .12 1" />
+    <geom type="box" size=".025 .15 .15" pos="2 -1 -1" rgba=".9 .35 .12 1" />
+    <body name="rov" pos="0 0 -1.2">
+      <freejoint name="free" />
+      <inertial mass="1.4" pos="0 0 0.005" diaginertia="0.009 0.01 0.012" />
+      <geom name="V5_01_LOAD_CHASSIS" type="mesh" mesh="V5_01_LOAD_CHASSIS" rgba="0.06 0.18 0.22 1" contype="0" conaffinity="0" group="1" density="0" />
+      <geom name="V5_02_UPPER_FAIRING" type="mesh" mesh="V5_02_UPPER_FAIRING" rgba="0.98 0.5 0.04 1" contype="0" conaffinity="0" group="1" density="0" />
+      <geom name="V5_03_SKID_-97" type="mesh" mesh="V5_03_SKID_-97" rgba="0.06 0.18 0.22 1" contype="0" conaffinity="0" group="1" density="0" />
+      <geom name="V5_03_SKID_97" type="mesh" mesh="V5_03_SKID_97" rgba="0.06 0.18 0.22 1" contype="0" conaffinity="0" group="1" density="0" />
+      <geom name="V5_04_POD_CLAMP_-50" type="mesh" mesh="V5_04_POD_CLAMP_-50" rgba="0.1 0.35 0.38 1" contype="0" conaffinity="0" group="1" density="0" />
+      <geom name="V5_04_POD_CLAMP_50" type="mesh" mesh="V5_04_POD_CLAMP_50" rgba="0.1 0.35 0.38 1" contype="0" conaffinity="0" group="1" density="0" />
+      <geom name="V5_05_VERTICAL_CARRIER_-62" type="mesh" mesh="V5_05_VERTICAL_CARRIER_-62" rgba="0.1 0.35 0.38 1" contype="0" conaffinity="0" group="1" density="0" />
+      <geom name="V5_05_VERTICAL_CARRIER_62" type="mesh" mesh="V5_05_VERTICAL_CARRIER_62" rgba="0.1 0.35 0.38 1" contype="0" conaffinity="0" group="1" density="0" />
+      <geom name="BUY_TUBE" type="mesh" mesh="BUY_TUBE" rgba="0.55 0.68 0.72 0.22" contype="0" conaffinity="0" group="1" density="0" />
+      <geom name="BUY_FRONT_FLANGE" type="mesh" mesh="BUY_FRONT_FLANGE" rgba="0.3 0.4 0.43 1" contype="0" conaffinity="0" group="1" density="0" />
+      <geom name="BUY_FRONT_WINDOW" type="mesh" mesh="BUY_FRONT_WINDOW" rgba="0.65 0.85 0.9 0.22" contype="0" conaffinity="0" group="1" density="0" />
+      <geom name="BUY_REAR_CAP" type="mesh" mesh="BUY_REAR_CAP" rgba="0.3 0.4 0.43 1" contype="0" conaffinity="0" group="1" density="0" />
+      <geom name="BUY_CAMERA_HD_USB" type="mesh" mesh="BUY_CAMERA_HD_USB" rgba="0.14 0.45 0.22 1" contype="0" conaffinity="0" group="1" density="0" />
+      <geom name="V5_06_MODULE_TRAY" type="mesh" mesh="V5_06_MODULE_TRAY" rgba="0.15 0.4 0.43 1" contype="0" conaffinity="0" group="1" density="0" />
+      <geom name="V5_07_CAMERA_CARRIER" type="mesh" mesh="V5_07_CAMERA_CARRIER" rgba="0.15 0.4 0.43 1" contype="0" conaffinity="0" group="1" density="0" />
+      <geom name="REF_X2_H_LEFT" type="mesh" mesh="REF_X2_H_LEFT" rgba="0.28 0.32 0.34 1" contype="0" conaffinity="0" group="1" density="0" />
+      <geom name="REF_X2_H_RIGHT" type="mesh" mesh="REF_X2_H_RIGHT" rgba="0.28 0.32 0.34 1" contype="0" conaffinity="0" group="1" density="0" />
+      <geom name="REF_X2_V_LEFT" type="mesh" mesh="REF_X2_V_LEFT" rgba="0.28 0.32 0.34 1" contype="0" conaffinity="0" group="1" density="0" />
+      <geom name="REF_X2_V_RIGHT" type="mesh" mesh="REF_X2_V_RIGHT" rgba="0.28 0.32 0.34 1" contype="0" conaffinity="0" group="1" density="0" />
+      <geom name="proxy_chassis" type="box" pos="0 0 -.015" size=".105 .105 .003" rgba=".3 .8 .3 .2" group="3" density="0" />
+      <geom name="proxy_pod" type="capsule" pos="0 0 .022" size=".029 .075" rgba=".3 .8 .3 .2" group="3" density="0" quat=".70710678 0 .70710678 0" />
+      <geom name="proxy_skid_-0.097" type="box" pos="0 -0.097 -.084" size=".105 .006 .004" rgba=".3 .8 .3 .2" group="3" density="0" />
+      <geom name="proxy_leg_-0.08_-0.097" type="box" pos="-0.08 -0.097 -.049" size=".008 .006 .031" rgba=".3 .8 .3 .2" group="3" density="0" />
+      <geom name="proxy_leg_0.08_-0.097" type="box" pos="0.08 -0.097 -.049" size=".008 .006 .031" rgba=".3 .8 .3 .2" group="3" density="0" />
+      <geom name="proxy_skid_0.097" type="box" pos="0 0.097 -.084" size=".105 .006 .004" rgba=".3 .8 .3 .2" group="3" density="0" />
+      <geom name="proxy_leg_-0.08_0.097" type="box" pos="-0.08 0.097 -.049" size=".008 .006 .031" rgba=".3 .8 .3 .2" group="3" density="0" />
+      <geom name="proxy_leg_0.08_0.097" type="box" pos="0.08 0.097 -.049" size=".008 .006 .031" rgba=".3 .8 .3 .2" group="3" density="0" />
+      <site name="H_LEFT" pos="-0.078 0.074 0.018" size=".003" rgba="1 .2 .1 1" />
+      <site name="H_RIGHT" pos="-0.078 -0.074 0.018" size=".003" rgba="1 .2 .1 1" />
+      <site name="V_LEFT" pos="0 0.062 -0.04" size=".003" rgba="1 .2 .1 1" />
+      <site name="V_RIGHT" pos="0 -0.062 -0.04" size=".003" rgba="1 .2 .1 1" />
+      <site name="imu" pos="0 0 0" size=".002" />
+      <camera name="front_camera" pos=".07735 0 .022" xyaxes="0 -1 0 0 0 1" fovy="64" />
+    </body>
+  </worldbody>
+  <actuator>
+    <motor name="H_LEFT" site="H_LEFT" gear="1 0 0 0.012 0.0 0.0" ctrllimited="true" ctrlrange="-10.0 20.593965" />
+    <motor name="H_RIGHT" site="H_RIGHT" gear="1 0 0 -0.012 -0.0 -0.0" ctrllimited="true" ctrlrange="-10.0 20.593965" />
+    <motor name="V_LEFT" site="V_LEFT" gear="0 0 1 0.0 0.0 0.012" ctrllimited="true" ctrlrange="-10.0 20.593965" />
+    <motor name="V_RIGHT" site="V_RIGHT" gear="0 0 1 -0.0 -0.0 -0.012" ctrllimited="true" ctrlrange="-10.0 20.593965" />
+  </actuator>
+  <sensor>
+    <framequat name="attitude" objtype="body" objname="rov" />
+    <gyro name="gyro" site="imu" />
+    <accelerometer name="accel" site="imu" />
+  </sensor>
+</mujoco>
