@@ -14,6 +14,30 @@
 
 [装配说明](docs/assembly.md) · [打印文件](mechanical/stl/) · [物料清单](bom/README.md) · [运行仿真](docs/simulation.md) · [图像与视图](docs/gallery.md) · [版本下载](https://github.com/tianrking/simple-rov/releases)
 
+## 仿真视频
+
+**下方可直接播放 48 秒总览**，包含四个实际 MuJoCo 场景、720p H.264 画面、实时数据和前视相机。
+
+https://github.com/user-attachments/assets/2bf94293-84e5-456a-9249-f08cb007cc9f
+
+| 场景 | 总览时间 | 单独视频 |
+|---|---|---|
+| 上升、下降、前进、转向 | 00:00-00:12 | [基础运动](docs/assets/videos/pool.mp4) |
+| 水流与横向漂移 | 00:12-00:24 | [水流场景](docs/assets/videos/cross-current.mp4) |
+| 系缆张力与松弛 | 00:24-00:36 | [系缆场景](docs/assets/videos/tethered.mp4) |
+| H_LEFT 推进器停机 | 00:36-00:48 | [电机故障](docs/assets/videos/motor-fault.mp4) |
+
+[完整视频库与复现说明](docs/videos.md) · [下载总览 MP4](docs/assets/videos/simple-rov-overview.mp4)
+
+<details>
+<summary><strong>动图预览</strong></summary>
+
+[![四个仿真场景的动图预览](docs/assets/videos/overview-preview.gif)](docs/assets/videos/simple-rov-overview.mp4)
+
+</details>
+
+视频来自未标定模型，采用传感器反馈和随机种子 0；不是实机测试或强化学习策略结果。原始 MP4、逐帧状态 CSV、运行参数和渲染源码均保存在仓库中。
+
 ## 项目概览
 
 SimpleROV 采用两个水平推进器和两个竖直推进器。承力底架连接推进器、中央密封舱和滑橇，上罩负责外部保护；电子设备安装在密封舱内。默认配置保留完整的四推进器布局，不安装额外的浮力模块。

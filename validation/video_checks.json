@@ -1,0 +1,72 @@
+{
+  "videos": [
+    {
+      "file": "docs/assets/videos/pool.mp4",
+      "frames": 240,
+      "duration_s": 12.0,
+      "codec": "h264",
+      "pixel_format": "yuv420p(progressive)",
+      "resolution": [
+        1280,
+        720
+      ],
+      "full_decode": "PASS"
+    },
+    {
+      "file": "docs/assets/videos/cross-current.mp4",
+      "frames": 240,
+      "duration_s": 12.0,
+      "codec": "h264",
+      "pixel_format": "yuv420p(progressive)",
+      "resolution": [
+        1280,
+        720
+      ],
+      "full_decode": "PASS"
+    },
+    {
+      "file": "docs/assets/videos/tethered.mp4",
+      "frames": 240,
+      "duration_s": 12.0,
+      "codec": "h264",
+      "pixel_format": "yuv420p(progressive)",
+      "resolution": [
+        1280,
+        720
+      ],
+      "full_decode": "PASS"
+    },
+    {
+      "file": "docs/assets/videos/motor-fault.mp4",
+      "frames": 240,
+      "duration_s": 12.0,
+      "codec": "h264",
+      "pixel_format": "yuv420p(progressive)",
+      "resolution": [
+        1280,
+        720
+      ],
+      "full_decode": "PASS"
+    },
+    {
+      "file": "docs/assets/videos/simple-rov-overview.mp4",
+      "frames": 960,
+      "duration_s": 48.0,
+      "codec": "h264",
+      "pixel_format": "yuv420p(progressive)",
+      "resolution": [
+        1280,
+        720
+      ],
+      "full_decode": "PASS"
+    }
+  ],
+  "source_sha256": {
+    "tools/render_videos.py": "b205c14ac99be0f7ec140e0a4d87d48cd9a6b6e38f4748dec2170833c832746f",
+    "tools/verify_videos.py": "1736efa9808ecb869952edc6038fc02c52468faccae7c14873c58e25ac4b9b6a",
+    "validation/videos.json": "080ed7102275a38849c658de2a55303fceb4299789c125937e0bd1072455c6d9"
+  },
+  "gif_preview_checked": true,
+  "scope": "Video decoding, timing, source and trace consistency; not physical validation.",
+  "passed": true
+}

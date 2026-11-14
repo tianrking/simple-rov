@@ -1,0 +1,252 @@
+{
+  "engine": "MuJoCo",
+  "engine_version": "4.0.1",
+  "numpy_version": "2.5.4",
+  "seed": 0,
+  "scenario": "tethered",
+  "assembly": "base",
+  "resolved_config": {
+    "water_density_kg_m3": 997.0,
+    "assumed_dry_mass_kg": 1.4,
+    "assumed_CG_m": [
+      0,
+      0,
+      0.005
+    ],
+    "assumed_CB_m": [
+      0,
+      0,
+      0.035
+    ],
+    "assumed_inertia_kg_m2": [
+      0.009,
+      0.01,
+      0.012
+    ],
+    "assumed_linear_drag": [
+      3,
+      4,
+      5
+    ],
+    "assumed_quadratic_drag": [
+      18,
+      22,
+      26
+    ],
+    "assumed_angular_linear_drag": [
+      0.03,
+      0.03,
+      0.04
+    ],
+    "assumed_angular_quadratic_drag": [
+      0.06,
+      0.06,
+      0.08
+    ],
+    "assumed_motor_time_constant_s": 0.12,
+    "assumed_reaction_torque_per_newton_m": 0.012,
+    "forward_limit_N": 20.593965,
+    "assumed_reverse_limit_N": 10.0,
+    "fully_submerged_only": true,
+    "status": "UNCALIBRATED SIMULATION FOUNDATION; scenario examples, not physical performance certification",
+    "must_measure": [
+      "mass/CG/CB and available displacement",
+      "inertia/added mass",
+      "forward and reverse thrust curves and reaction torque",
+      "motor lag",
+      "drag coefficients, tether loads and current response"
+    ],
+    "source_maximum_thrust": "APISQUEEN X2 claimed 2.1kgf maximum; continuous and reverse values not supplied. Reverse 10N is an editable placeholder, not manufacturer specification.",
+    "assumed_displaced_volume_m3": 0.0014182547642928786,
+    "assembly_note": "Default visual assembly omits optional foam and straps. Mass, inertia, CG, CB and displacement are independent unmeasured assumptions; neither assembly has validated buoyancy.",
+    "simulation": {
+      "timestep_s": 0.002,
+      "control_period_s": 0.02,
+      "surface_z_m": 0.0,
+      "surface_clearance_m": 0.02
+    },
+    "water": {
+      "backend": "analytic",
+      "current_world_m_s": [
+        0,
+        0,
+        0
+      ],
+      "oscillation_world_m_s": [
+        0,
+        0,
+        0
+      ],
+      "oscillation_period_s": 12.0,
+      "shear_world_per_m": [
+        0,
+        0,
+        0
+      ],
+      "drag_center_body_m": [
+        0,
+        0,
+        0.005
+      ],
+      "native_viscosity_Pa_s": 0.001,
+      "native_ellipsoid_semiaxes_m": [
+        0.1065,
+        0.105,
+        0.074
+      ],
+      "native_fluid_coefficients": [
+        0.5,
+        0.25,
+        1.5,
+        0,
+        0
+      ]
+    },
+    "thrusters": {
+      "effectiveness": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "command_delay_s": 0.02,
+      "slew_rate_N_s": 80.0,
+      "deadband_N": 0.03,
+      "timeout_s": 0.5,
+      "allocation_weights": [
+        1,
+        1,
+        10,
+        10
+      ],
+      "command_curve": {
+        "input": [
+          -1,
+          -0.5,
+          0,
+          0.5,
+          1
+        ],
+        "force_N": [
+          -10,
+          -2.5,
+          0,
+          5.14849125,
+          20.593965
+        ]
+      },
+      "curve_status": "ASSUMED normalized-command curve; replace with measured bidirectional data"
+    },
+    "sensors": {
+      "rate_Hz": 50.0,
+      "pressure_std_Pa": 15.0,
+      "pressure_bias_std_Pa": 10.0,
+      "attitude_std_rad": 0.002,
+      "gyro_std_rad_s": 0.002,
+      "accelerometer_std_m_s2": 0.02,
+      "atmospheric_pressure_Pa": 101325.0,
+      "depth_rate_filter_tau_s": 0.15
+    },
+    "controller": {
+      "depth_kp_N_m": 12.0,
+      "depth_kd_N_s_m": 8.0,
+      "integral_limit_m_s": 0.5,
+      "roll_kp_Nm_rad": 0.6,
+      "roll_kd_Nm_s_rad": 0.18,
+      "yaw_kp_Nm_rad": 0.35,
+      "yaw_kd_Nm_s_rad": 0.15,
+      "depth_ki_N_per_m_s": 0.8
+    },
+    "tether": {
+      "enabled": true,
+      "anchor_world_m": [
+        -0.3,
+        0,
+        -0.2
+      ],
+      "attachment_body_m": [
+        -0.096,
+        0,
+        0
+      ],
+      "rest_length_m": 0.95,
+      "stiffness_N_m": 5.0,
+      "damping_N_s_m": 0.5,
+      "status": "ASSUMED tension-only straight spring-damper; no distributed cable/contact/buoyancy"
+    },
+    "randomization": {
+      "enabled": false,
+      "mass_fraction": 0.1,
+      "drag_fraction": 0.2,
+      "volume_fraction": 0.02,
+      "motor_lag_fraction": 0.2,
+      "thrust_fraction": 0.1
+    }
+  },
+  "runtime_wrench_matrix_about_CG": [
+    [
+      1.0,
+      1.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      1.0,
+      1.0
+    ],
+    [
+      0.012,
+      -0.012,
+      0.062,
+      -0.062
+    ],
+    [
+      0.012999999999999998,
+      0.012999999999999998,
+      0.0,
+      -0.0
+    ],
+    [
+      -0.074,
+      0.074,
+      0.012,
+      -0.012
+    ]
+  ],
+  "controlled_allocation_rank": 4,
+  "source_sha256": {
+    "environment.py": "603ee2d389624cfbe7752c8b49ae9b777c502cde725b92e2c3d7c21a9cf01d37",
+    "configuration.py": "1d3daa1d65e66483ef9b849bb53b3860ed550dfdfd0e0c7308f97edc7523d86c",
+    "hydrodynamics.py": "2bdac92f366927450c229d111f63c8e844446c65ffe136d06ad0e451c8dac000",
+    "actuators.py": "2caf0a311ad47a58eb81eb8968424fa1e57567c35fae688da3e79e275d52bbcb",
+    "sensors.py": "30b63e6a0e951c71518df441954e06c570531e1c9278047825ac3b09d7eeaa92",
+    "config.json": "39606628adefc572e5eeeb3cfb3ad696a747ea7f56a71912073e24de872f2bd6",
+    "scenarios.json": "fc2b9a0856f6565805fb0d001b75ea5a4b4b2f53ed3358e1db796a65c79fc8f1",
+    "simple_rov.xml": "e07a4ff03a6f9b4b66c45d2d85399a02cd889de7f31124d280dfc5cc73190437",
+    "simple_rov_with_buoyancy.xml": "8138497016c5ffd1854d3d155d1edd1868d46e829accead5aa900f34c22f61d8",
+    "ACTUATOR_MAP.json": "afa0f4f0b0bb384daa62282e789e097b8203c855ce194f8cd00a79dc02490984"
+  },
+  "physical_calibration": false,
+  "scope": "Fully submerged rigid-body approximation. No CFD, free surface, distributed tether or validated IMU estimator. Analytic backend omits added mass; native ellipsoid is an uncalibrated comparative approximation.",
+  "renderer_script_sha256": "b205c14ac99be0f7ec140e0a4d87d48cd9a6b6e38f4748dec2170833c832746f",
+  "rendering": {
+    "resolution": [
+      1280,
+      720
+    ],
+    "fps": 20,
+    "frames": 240,
+    "duration_s": 12.0,
+    "codec": "H.264 / yuv420p",
+    "display_only": "Gradient sky, lighting, tube display finish, fault highlight, straight tether diagnostic and current arrow. Physics comes from ROV; camera inset uses the actual front_camera. Propeller meshes are static."
+  },
+  "video_sha256": "75b09c5898e749beb0ad4cb366268ff22a77eedceb541135e4459ee05e761a29"
+}

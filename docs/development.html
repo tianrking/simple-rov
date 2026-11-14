@@ -26,6 +26,8 @@ python tools/docs/build_web.py
 </code></pre>
 <p><code>make_figures.py</code> also regenerates the nine-view gallery. Run <code>python tools/docs/render_gallery.py</code> for the gallery alone. English figures use standard Latin fonts; <code>SROV_FONT</code> optionally selects a TrueType font for gallery labels. The PDF uses built-in Helvetica. Render every PDF page with <code>pdftoppm</code> and visually inspect it before recording a completed review.</p>
 <p>Onshape captures are real browser screenshots, not generated renders. Keep their source URL, configuration and hashes in <code>validation/onshape/screenshots.json</code>. Do not imply the historical cloud assembly is the current foam-free default.</p>
+<h2 id="simulation-videos">Simulation videos</h2>
+<p><code>python tools/render_videos.py</code> renders the four telemetry-enhanced scenario clips, overview, poster, GIF and state/parameter sidecars. <code>python tools/verify_videos.py --publish</code> performs full H.264 decoding, timing and source checks. See <a href="videos.html">video gallery</a>. Committed MP4s remain the source of truth; GitHub-hosted copies enable README players.</p>
 <h2 id="integrity-and-packaging">Integrity and packaging</h2>
 <pre><code class="language-bash">python tools/validate_repository.py
 python tools/update_manifest.py

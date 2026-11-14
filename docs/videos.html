@@ -1,0 +1,80 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>SimpleROV | Project documentation</title><style>
+:root{--ink:#183d46;--muted:#5d7480;--line:#dbe6e9;--accent:#176271;--orange:#ed8a24}
+*{box-sizing:border-box}body{margin:0;background:#f3f7f8;color:var(--ink);font:16px/1.8 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+header{background:#fff;border-bottom:1px solid var(--line)}nav{max-width:1100px;margin:auto;padding:18px 28px;display:flex;gap:22px;align-items:center;flex-wrap:wrap}nav strong{margin-right:auto;letter-spacing:-.5px;font-size:22px}nav a{font-size:14px;text-decoration:none}
+main{max-width:1100px;margin:32px auto 70px;background:#fff;border:1px solid var(--line);border-radius:16px;padding:42px 48px;box-shadow:0 8px 35px #183d4608}
+h1{font-size:42px;letter-spacing:-1.3px;line-height:1.2;margin-top:0}h2{font-size:26px;border-top:1px solid var(--line);padding-top:30px;margin-top:44px;line-height:1.35}h3{font-size:20px;margin-top:30px;line-height:1.4}p{margin:16px 0}a{color:var(--accent);text-underline-offset:3px}img,video{max-width:100%;height:auto;border-radius:8px}p>img{display:block;margin:22px auto}table{border-collapse:collapse;width:100%;font-size:14px;margin:20px 0}th,td{border:1px solid var(--line);padding:12px 15px;text-align:left;vertical-align:top}th{background:#eaf2f4;font-weight:600}tr:nth-child(even){background:#fafcfc}td img{width:100%}pre{overflow:auto;background:#163843;color:#edf6f8;padding:22px;border-radius:10px;font-size:13px;line-height:1.7}code{font-family:ui-monospace,SFMono-Regular,Consolas,monospace}p code,td code{background:#edf3f5;padding:2px 5px;border-radius:4px;font-size:.88em}blockquote{margin:20px 0;padding:1px 20px;background:#fff5e7;border-left:3px solid var(--orange)}details{border:1px solid var(--line);border-radius:10px;padding:12px 18px;margin:20px 0}summary{cursor:pointer}footer{color:var(--muted);font-size:12px;text-align:center;margin:35px auto}
+@media(max-width:700px){main{margin:12px 8px;padding:24px 18px;border-radius:10px}h1{font-size:34px}h2{font-size:23px}table{font-size:12px}th,td{padding:8px}nav{gap:12px;padding:14px 20px}pre{font-size:11px}}
+@media print{body,main{margin:0;padding:0;background:#fff;border:0;box-shadow:none}header,footer{display:none}h2{break-before:page}}
+</style></head><body><header><nav><strong>SimpleROV</strong><a href="index.html">Overview</a><a href="assembly.html">Assembly</a><a href="gallery.html">Gallery</a><a href="simulation.html">Simulation</a><a href="index.es.html">ES</a><a href="index.zh-CN.html">中文</a></nav></header><main><h1 id="simulation-video-gallery">Simulation video gallery</h1>
+<p>Real MuJoCo 4.0.1 trajectories, 1280 × 720 H.264 at 20 fps. All four scenarios use the foam-free standard assembly, sensor feedback, 500 Hz physics, 50 Hz control and seed 0. Parameters remain uncalibrated. These are not physical robot footage or trained-policy results.</p>
+<h2 id="overview">Overview</h2>
+<video controls playsinline preload="metadata" poster="assets/videos/poster.png" style="width:100%"><source src="assets/videos/simple-rov-overview.mp4" type="video/mp4"><a href="assets/videos/simple-rov-overview.mp4">Download MP4</a></video>
+
+<p><a href="assets/videos/simple-rov-overview.mp4">Download the 48-second MP4</a> · <a href="assets/videos/overview-preview.gif">Animated preview</a></p>
+<table>
+<thead>
+<tr>
+<th>Chapter</th>
+<th>Time</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Basic movement</td>
+<td>00:00-00:12</td>
+</tr>
+<tr>
+<td>Cross-current</td>
+<td>00:12-00:24</td>
+</tr>
+<tr>
+<td>Lumped tether</td>
+<td>00:24-00:36</td>
+</tr>
+<tr>
+<td>H_LEFT disabled</td>
+<td>00:36-00:48</td>
+</tr>
+</tbody>
+</table>
+<h2 id="basic-movement">Basic movement</h2>
+<p>Depth steps, forward surge, a heading change and stabilization.</p>
+<video controls playsinline preload="metadata" poster="assets/videos/poster.png" style="width:100%"><source src="assets/videos/pool.mp4" type="video/mp4"><a href="assets/videos/pool.mp4">Download MP4</a></video>
+
+<p><a href="assets/videos/pool.mp4">MP4 original</a> · <a href="assets/videos/pool-trace.csv">State trace</a> · <a href="assets/videos/pool-metadata.json">Resolved parameters and source hashes</a></p>
+<h2 id="water-current">Water current</h2>
+<p>An arrow shows local water velocity. The vehicle drifts laterally because it has no independent sway actuator.</p>
+<video controls playsinline preload="metadata" poster="assets/videos/poster.png" style="width:100%"><source src="assets/videos/cross-current.mp4" type="video/mp4"><a href="assets/videos/cross-current.mp4">Download MP4</a></video>
+
+<p><a href="assets/videos/cross-current.mp4">MP4 original</a> · <a href="assets/videos/cross-current-trace.csv">State trace</a> · <a href="assets/videos/cross-current-metadata.json">Resolved parameters and source hashes</a></p>
+<h2 id="tether-load">Tether load</h2>
+<p>A straight diagnostic link joins the configured anchor and chassis eye. Tension is real model output; a slack link fades. It is not a distributed cable shape.</p>
+<video controls playsinline preload="metadata" poster="assets/videos/poster.png" style="width:100%"><source src="assets/videos/tethered.mp4" type="video/mp4"><a href="assets/videos/tethered.mp4">Download MP4</a></video>
+
+<p><a href="assets/videos/tethered.mp4">MP4 original</a> · <a href="assets/videos/tethered-trace.csv">State trace</a> · <a href="assets/videos/tethered-metadata.json">Resolved parameters and source hashes</a></p>
+<h2 id="motor-failure">Motor failure</h2>
+<p>H_LEFT is disabled. The panel shows zero actual thrust, allocation rank three and residual error. Four-axis control is no longer fully achievable.</p>
+<video controls playsinline preload="metadata" poster="assets/videos/poster.png" style="width:100%"><source src="assets/videos/motor-fault.mp4" type="video/mp4"><a href="assets/videos/motor-fault.mp4">Download MP4</a></video>
+
+<p><a href="assets/videos/motor-fault.mp4">MP4 original</a> · <a href="assets/videos/motor-fault-trace.csv">State trace</a> · <a href="assets/videos/motor-fault-metadata.json">Resolved parameters and source hashes</a></p>
+<h2 id="what-the-display-means">What the display means</h2>
+<ul>
+<li>Depth and heading are shown beside the controller targets; world position is ground truth.</li>
+<li>The force panel shows actual delayed/rate-limited model thrust, not nominal commands or electrical current.</li>
+<li>The forward-camera inset is the model's actual <code>front_camera</code>, without realistic refraction or turbidity.</li>
+<li>The current arrow and straight tether link are display diagnostics. They do not add forces to the plant.</li>
+<li>Sky color, lighting, tube display finish and the failed-motor highlight are presentation changes only. Propeller meshes are static; thrust is applied at the modeled sites.</li>
+<li>Values are in SI. No battery/ESC power model, waves or CFD are implied.</li>
+</ul>
+<h2 id="reproduce-the-published-videos">Reproduce the published videos</h2>
+<p>From the repository root, after installing <code>requirements/sim.txt</code>:</p>
+<pre><code class="language-bash">python tools/render_videos.py
+python tools/verify_videos.py
+</code></pre>
+<p>The renderer produces four 12-second clips, the 48-second overview, a 12-second animated preview, poster, traces and metadata. It uses the same <code>ROV</code> physics/control implementation as the simulator. Normal individual recordings are also available with:</p>
+<pre><code class="language-bash">python simulation/mujoco/run.py --render --scenario cross-current --output-dir runs/current-video
+</code></pre>
+<p>The normal runner uses its own demonstration sequence; <code>tools/render_videos.py</code> reproduces the specifically published presentation sequence. Neither command depends on GitHub media hosting.</p>
+<p><a href="../tools/render_videos.py">Renderer source</a> · <a href="../validation/video_checks.json">Video checks</a> · <a href="../validation/videos.json">Media inventory and hashes</a> · <a href="../validation/video_hosting.json">GitHub hosting record</a> · <a href="simulation-foundation.html">Simulation foundation</a>.</p>
+<p>GitHub-native assets are mirrored from the committed MP4 originals. Offline HTML pages use the local MP4 files with standard player controls; no external host is required. The animated fallback remains available on Markdown mirrors without a native player.</p></main><footer>SimpleROV · Prototype documentation · Original content all rights reserved</footer></body></html>

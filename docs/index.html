@@ -12,7 +12,7 @@ h1{font-size:42px;letter-spacing:-1.3px;line-height:1.2;margin-top:0}h2{font-siz
 <p>Printable mechanics · Documented assembly · MuJoCo simulation</p>
 <p><a href="index.html"><strong>English</strong></a> · <a href="index.es.html">Español</a> · <a href="index.zh-CN.html">简体中文</a></p>
 <p><a href="https://github.com/tianrking/simple-rov/actions/workflows/verify.yml"><img alt="Checks" src="https://github.com/tianrking/simple-rov/actions/workflows/verify.yml/badge.svg" /></a>
-<a href="https://github.com/tianrking/simple-rov/releases/tag/v0.6.0"><img alt="Release" src="https://img.shields.io/badge/release-v0.6.0-176271" /></a>
+<a href="https://github.com/tianrking/simple-rov/releases/tag/v0.6.1"><img alt="Release" src="https://img.shields.io/badge/release-v0.6.1-176271" /></a>
 <a href="https://github.com/tianrking/simple-rov/blob/main/mechanical/README.md"><img alt="CAD" src="https://img.shields.io/badge/CAD-STEP%20%2B%20STL-f29932" /></a>
 <a href="https://github.com/tianrking/simple-rov/blob/main/docs/simulation.md"><img alt="Simulation" src="https://img.shields.io/badge/simulation-MuJoCo-176271" /></a></p>
 <p><img alt="SimpleROV standard assembly" src="assets/gallery/hero.png" /></p>
@@ -21,6 +21,52 @@ h1{font-size:42px;letter-spacing:-1.3px;line-height:1.2;margin-top:0}h2{font-siz
 </div>
 <p>SimpleROV brings the frame, thruster mounts, camera carrier, enclosure mounts and simulation into one reproducible project. Start with a mechanical fit check, then develop tethered remote control, depth hold and heading hold around the same coordinate system.</p>
 <p>The <strong>standard assembly has no top buoyancy foam or retention straps</strong>. Mounting routes remain available for an optional buoyancy module, selected after measuring the completed vehicle's mass and trim. These images are CAD renderings, not photographs of tested hardware.</p>
+<h2 id="simulation-videos">Simulation videos</h2>
+<p><strong>Watch the 48-second overview directly below:</strong> four actual MuJoCo scenarios, 720p H.264, live telemetry and the forward camera.</p>
+<video controls playsinline preload="metadata" poster="assets/videos/poster.png" style="width:100%"><source src="assets/videos/simple-rov-overview.mp4" type="video/mp4"><a href="assets/videos/simple-rov-overview.mp4">Download MP4</a></video>
+
+<table>
+<thead>
+<tr>
+<th>Chapter</th>
+<th>Overview time</th>
+<th>What to watch</th>
+<th>Individual video</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Basic motion</td>
+<td>00:00-00:12</td>
+<td>Rise, descend, move forward and turn</td>
+<td><a href="assets/videos/pool.mp4">Pool</a></td>
+</tr>
+<tr>
+<td>Water current</td>
+<td>00:12-00:24</td>
+<td>Current arrow, changing position and lateral drift</td>
+<td><a href="assets/videos/cross-current.mp4">Cross-current</a></td>
+</tr>
+<tr>
+<td>Tether load</td>
+<td>00:24-00:36</td>
+<td>Tension/slack state and line force at the chassis eye</td>
+<td><a href="assets/videos/tethered.mp4">Tether</a></td>
+</tr>
+<tr>
+<td>Motor failure</td>
+<td>00:36-00:48</td>
+<td>H_LEFT at zero thrust, rank loss and allocation residual</td>
+<td><a href="assets/videos/motor-fault.mp4">Motor fault</a></td>
+</tr>
+</tbody>
+</table>
+<p><a href="videos.html">All video players and reproduction details</a> · <a href="assets/videos/simple-rov-overview.mp4">Download the overview MP4</a></p>
+<details>
+<summary><strong>Animated preview for mirrors without native video playback</strong></summary>
+<p><a href="assets/videos/simple-rov-overview.mp4"><img alt="12-second preview sampled from the four simulation clips" src="assets/videos/overview-preview.gif" /></a></p>
+</details>
+<p>These are simulated trajectories with uncalibrated parameters, sensor feedback and seed 0. They are not physical robot footage or trained-policy results. MP4 originals, per-frame state traces and exact run metadata are committed alongside the rendering source.</p>
 <h2 id="at-a-glance">At a glance</h2>
 <table>
 <thead>

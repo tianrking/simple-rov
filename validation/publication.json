@@ -1,5 +1,5 @@
 {
-  "version": "v0.6.0",
+  "version": "v0.6.1",
   "mechanical_revision": "V5-01",
   "repository": "https://github.com/tianrking/simple-rov",
   "rights": "Original work all rights reserved; third-party rights retained",
@@ -23,7 +23,10 @@
     "gymnasium_1_4_0_checker": "PASS",
     "seeded_18_case_benchmark": "PASS",
     "physics_timestep_convergence": "PASS",
-    "calibration_synthetic_recovery": "PASS"
+    "calibration_synthetic_recovery": "PASS",
+    "five_H264_videos_full_decode": "PASS",
+    "github_native_README_video_render": "PASS",
+    "offline_local_video_players": "PASS"
   },
   "engineering_scope": "Digitally checked mechanical prototype and uncalibrated simulation foundation. Current, actuator, sensor, tether and learning interfaces are software models; physical assembly/strength/sealing/trim remain unverified.",
   "electronics": "PLANNED_NO_PCB_DESIGN",

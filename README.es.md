@@ -9,7 +9,7 @@ Mecánica imprimible · Montaje documentado · Simulación en MuJoCo
 [English](README.md) · [**Español**](README.es.md) · [简体中文](README.zh-CN.md)
 
 [![Verificaciones](https://github.com/tianrking/simple-rov/actions/workflows/verify.yml/badge.svg)](https://github.com/tianrking/simple-rov/actions/workflows/verify.yml)
-[![Versión](https://img.shields.io/badge/release-v0.6.0-176271)](https://github.com/tianrking/simple-rov/releases/tag/v0.6.0)
+[![Versión](https://img.shields.io/badge/release-v0.6.1-176271)](https://github.com/tianrking/simple-rov/releases/tag/v0.6.1)
 [![CAD](https://img.shields.io/badge/CAD-STEP%20%2B%20STL-f29932)](https://github.com/tianrking/simple-rov/blob/main/mechanical/README.md)
 
 ![Montaje estándar de SimpleROV](docs/assets/gallery/hero.png)
@@ -25,6 +25,30 @@ SimpleROV reúne el bastidor, los soportes de propulsión, la cámara, el alojam
 El idioma principal del proyecto y de la documentación técnica es **inglés**. Este README ofrece una introducción en español; los manuales enlazados están en inglés.
 
 El **montaje estándar no incluye espuma de flotabilidad superior ni correas**. Conserva las interfaces para añadir un módulo opcional tras medir la masa y el equilibrio del vehículo completo. Las imágenes son renderizados CAD, no fotografías de un prototipo probado.
+
+## Vídeos de simulación
+
+**Resumen de 48 segundos, reproducible aquí:** cuatro escenarios reales de MuJoCo, vídeo H.264 a 720p, telemetría y cámara frontal.
+
+https://github.com/user-attachments/assets/2bf94293-84e5-456a-9249-f08cb007cc9f
+
+| Escenario | Intervalo del resumen | Vídeo individual |
+|---|---|---|
+| Ascenso, descenso, avance y giro | 00:00-00:12 | [Piscina](docs/assets/videos/pool.mp4) |
+| Corriente y deriva lateral | 00:12-00:24 | [Corriente](docs/assets/videos/cross-current.mp4) |
+| Tensión y holgura del umbilical | 00:24-00:36 | [Cable](docs/assets/videos/tethered.mp4) |
+| Fallo del propulsor H_LEFT | 00:36-00:48 | [Fallo de motor](docs/assets/videos/motor-fault.mp4) |
+
+[Todos los reproductores y reproducción del experimento](docs/videos.md) · [Descargar MP4](docs/assets/videos/simple-rov-overview.mp4)
+
+<details>
+<summary><strong>Vista previa animada</strong></summary>
+
+[![Vista previa de los cuatro escenarios](docs/assets/videos/overview-preview.gif)](docs/assets/videos/simple-rov-overview.mp4)
+
+</details>
+
+Son trayectorias simuladas con parámetros sin calibrar, realimentación de sensores y semilla 0. No son pruebas físicas ni resultados de una política entrenada. Se conservan los MP4, trazas CSV, parámetros exactos y fuente de renderizado en el repositorio.
 
 ## Vista general
 

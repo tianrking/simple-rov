@@ -90,6 +90,19 @@ require(all(view['title'].isascii() for view in gallery['views']),'Gallery label
 captures=json.loads((ROOT/'validation/onshape/screenshots.json').read_text())
 for n,h in captures['source_sha256'].items():require(hashlib.sha256((ROOT/n).read_bytes()).hexdigest()==h,'Onshape capture fingerprint: '+n)
 
+videos=json.loads((ROOT/'validation/videos.json').read_text());require(len(videos['clips'])==4 and videos['overview']['duration_s']==48,'Video inventory')
+for n,h in videos['media_sha256'].items():require(hashlib.sha256((ROOT/n).read_bytes()).hexdigest()==h,'Stale video asset: '+n)
+for n,h in videos['source_physics_sha256'].items():require(hashlib.sha256((ROOT/'simulation/mujoco'/n).read_bytes()).hexdigest()==h,'Stale video physics source: '+n)
+video_checks=json.loads((ROOT/'validation/video_checks.json').read_text());require(video_checks['passed'],'Video decode report')
+for n,h in video_checks['source_sha256'].items():require(hashlib.sha256((ROOT/n).read_bytes()).hexdigest()==h,'Stale video-check source: '+n)
+hosted=json.loads((ROOT/'validation/video_hosting.json').read_text());require(len(hosted['assets'])==5,'Native media inventory')
+for asset in hosted['assets']:
+ require(asset['url'].startswith('https://github.com/user-attachments/assets/'),'Native video host')
+ require(hashlib.sha256((ROOT/asset['file']).read_bytes()).hexdigest()==asset['sha256'],'Native asset mirror fingerprint')
+for name in ['README.md','README.es.md','README.zh-CN.md']:
+ require('\n'+hosted['assets'][0]['url']+'\n' in (ROOT/name).read_text(),'Native video player missing: '+name)
+for name in ['index.html','index.es.html','index.zh-CN.html','videos.html']:
+ require('<video controls' in (ROOT/'docs'/name).read_text(),'Offline video player missing: '+name)
 if args.manifest:
     manifest=json.loads((ROOT/'MANIFEST.sha256.json').read_text());actual={str(p.relative_to(ROOT)):hashlib.sha256(p.read_bytes()).hexdigest() for p in files};require(manifest==actual,'Manifest differs from project files; update after final verification')
 if errors:raise SystemExit('\n'.join(errors))

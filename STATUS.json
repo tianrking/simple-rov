@@ -44,7 +44,7 @@
   "license": "All rights reserved for original work; third-party rights retained",
   "pcb_status": "PLANNED_NO_DESIGN",
   "firmware_status": "PLANNED_NO_FIRMWARE",
-  "release": "v0.6.0",
+  "release": "v0.6.1",
   "mechanical_revision": "V5-01",
   "default_configuration": "base",
   "size_with_buoyancy_mm": [
@@ -64,5 +64,15 @@
   "simulation_physics_Hz": 500,
   "simulation_foundation_checks_passed": true,
   "gymnasium_version": "1.4.0",
-  "trained_policy": false
+  "trained_policy": false,
+  "simulation_videos": {
+    "overview_seconds": 48,
+    "individual_clips": 4,
+    "resolution": [
+      1280,
+      720
+    ],
+    "fps": 20,
+    "native_README_players": true
+  }
 }

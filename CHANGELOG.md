@@ -1,5 +1,13 @@
 # Changelog
 
+## v0.6.1
+
+- Add a 48-second 720p simulation overview and four individual clips with live telemetry and a front-camera inset.
+- Embed GitHub-native video players in English, Spanish and Chinese README entry points; keep MP4 originals and an animated fallback in the repository.
+- Add per-frame traces, exact parameter/source records, a reproducible renderer and full video-decoding checks.
+- Add an offline video gallery with local players. Physics and mechanical geometry are unchanged.
+
+
 ## v0.6.0
 
 - Verify MuJoCo 4.0.1 as the current stable runtime; retain a reproducible version pin.

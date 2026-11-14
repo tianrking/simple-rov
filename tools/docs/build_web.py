@@ -1,6 +1,6 @@
 """Generate the English assembly guide and multilingual offline HTML entry points."""
 from pathlib import Path
-import posixpath,re
+import posixpath,re,json
 import markdown
 from content import PAGES
 R=Path(__file__).resolve().parents[2]
@@ -29,13 +29,24 @@ entries={R/'README.md':R/'docs/index.html',R/'README.es.md':R/'docs/index.es.htm
 entries.update({p:p.with_suffix('.html') for p in sorted((R/'docs').glob('*.md'))})
 for source,target in entries.items():
     raw=source.read_text()
-    def resolve(m):
-        url=m.group(2)
-        if url.startswith(('https:','http:','#','mailto:','data:')):return m.group(0)
+    # Markdown on GitHub uses native attachments; offline pages play the committed originals.
+    hosting=R/'validation/video_hosting.json'
+    if hosting.is_file():
+        for asset in json.loads(hosting.read_text())['assets']:
+            local=posixpath.relpath(R/asset['file'],target.parent)
+            poster=posixpath.relpath(R/'docs/assets/videos/poster.png',target.parent)
+            player='<video controls playsinline preload="metadata" poster="'+poster+'" style="width:100%"><source src="'+local+'" type="video/mp4"><a href="'+local+'">Download MP4</a></video>'
+            raw=re.sub(r'(?m)^'+re.escape(asset['url'])+r'[ \t]*$',lambda _:player,raw)
+
+    def convert_url(url):
+        if url.startswith(('https:','http:','#','mailto:','data:')):return url
         path,sep,fragment=url.partition('#');dest=(source.parent/path).resolve()
         if dest in entries:dest=entries[dest]
-        return '['+m.group(1)+']('+posixpath.relpath(dest,target.parent)+(sep+fragment if sep else '')+')'
+        return posixpath.relpath(dest,target.parent)+(sep+fragment if sep else '')
+    def resolve(m):return '['+m.group(1)+']('+convert_url(m.group(2))+')'
     raw=re.sub(r'\[([^\]]*)\]\(([^)]+)\)',resolve,raw)
+    # Handle the outer target of linked thumbnails after rebasing their image source.
+    raw=re.sub(r'\)\]\(([^)]+)\)',lambda m:')]('+convert_url(m.group(1))+')',raw)
     raw=raw.replace('<div align="center">','<div align="center" markdown="1">').replace('<details>','<details markdown="1">')
     body=markdown.markdown(raw,extensions=['tables','fenced_code','md_in_html','toc'])
     lang='es' if source.name=='README.es.md' else ('zh-CN' if source.name=='README.zh-CN.md' else 'en')

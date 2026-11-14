@@ -9,7 +9,7 @@ Printable mechanics · Documented assembly · MuJoCo simulation
 [**English**](README.md) · [Español](README.es.md) · [简体中文](README.zh-CN.md)
 
 [![Checks](https://github.com/tianrking/simple-rov/actions/workflows/verify.yml/badge.svg)](https://github.com/tianrking/simple-rov/actions/workflows/verify.yml)
-[![Release](https://img.shields.io/badge/release-v0.6.0-176271)](https://github.com/tianrking/simple-rov/releases/tag/v0.6.0)
+[![Release](https://img.shields.io/badge/release-v0.6.1-176271)](https://github.com/tianrking/simple-rov/releases/tag/v0.6.1)
 [![CAD](https://img.shields.io/badge/CAD-STEP%20%2B%20STL-f29932)](https://github.com/tianrking/simple-rov/blob/main/mechanical/README.md)
 [![Simulation](https://img.shields.io/badge/simulation-MuJoCo-176271)](https://github.com/tianrking/simple-rov/blob/main/docs/simulation.md)
 
@@ -24,6 +24,30 @@ Printable mechanics · Documented assembly · MuJoCo simulation
 SimpleROV brings the frame, thruster mounts, camera carrier, enclosure mounts and simulation into one reproducible project. Start with a mechanical fit check, then develop tethered remote control, depth hold and heading hold around the same coordinate system.
 
 The **standard assembly has no top buoyancy foam or retention straps**. Mounting routes remain available for an optional buoyancy module, selected after measuring the completed vehicle's mass and trim. These images are CAD renderings, not photographs of tested hardware.
+
+## Simulation videos
+
+**Watch the 48-second overview directly below:** four actual MuJoCo scenarios, 720p H.264, live telemetry and the forward camera.
+
+https://github.com/user-attachments/assets/2bf94293-84e5-456a-9249-f08cb007cc9f
+
+| Chapter | Overview time | What to watch | Individual video |
+|---|---|---|---|
+| Basic motion | 00:00-00:12 | Rise, descend, move forward and turn | [Pool](docs/assets/videos/pool.mp4) |
+| Water current | 00:12-00:24 | Current arrow, changing position and lateral drift | [Cross-current](docs/assets/videos/cross-current.mp4) |
+| Tether load | 00:24-00:36 | Tension/slack state and line force at the chassis eye | [Tether](docs/assets/videos/tethered.mp4) |
+| Motor failure | 00:36-00:48 | H_LEFT at zero thrust, rank loss and allocation residual | [Motor fault](docs/assets/videos/motor-fault.mp4) |
+
+[All video players and reproduction details](docs/videos.md) · [Download the overview MP4](docs/assets/videos/simple-rov-overview.mp4)
+
+<details>
+<summary><strong>Animated preview for mirrors without native video playback</strong></summary>
+
+[![12-second preview sampled from the four simulation clips](docs/assets/videos/overview-preview.gif)](docs/assets/videos/simple-rov-overview.mp4)
+
+</details>
+
+These are simulated trajectories with uncalibrated parameters, sensor feedback and seed 0. They are not physical robot footage or trained-policy results. MP4 originals, per-frame state traces and exact run metadata are committed alongside the rendering source.
 
 ## At a glance
 

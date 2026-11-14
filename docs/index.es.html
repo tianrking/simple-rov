@@ -12,7 +12,7 @@ h1{font-size:42px;letter-spacing:-1.3px;line-height:1.2;margin-top:0}h2{font-siz
 <p>Mecánica imprimible · Montaje documentado · Simulación en MuJoCo</p>
 <p><a href="index.html">English</a> · <a href="index.es.html"><strong>Español</strong></a> · <a href="index.zh-CN.html">简体中文</a></p>
 <p><a href="https://github.com/tianrking/simple-rov/actions/workflows/verify.yml"><img alt="Verificaciones" src="https://github.com/tianrking/simple-rov/actions/workflows/verify.yml/badge.svg" /></a>
-<a href="https://github.com/tianrking/simple-rov/releases/tag/v0.6.0"><img alt="Versión" src="https://img.shields.io/badge/release-v0.6.0-176271" /></a>
+<a href="https://github.com/tianrking/simple-rov/releases/tag/v0.6.1"><img alt="Versión" src="https://img.shields.io/badge/release-v0.6.1-176271" /></a>
 <a href="https://github.com/tianrking/simple-rov/blob/main/mechanical/README.md"><img alt="CAD" src="https://img.shields.io/badge/CAD-STEP%20%2B%20STL-f29932" /></a></p>
 <p><img alt="Montaje estándar de SimpleROV" src="assets/gallery/hero.png" /></p>
 <p><strong>213 × 210 × 148 mm</strong> &nbsp; · &nbsp; <strong>4 propulsores</strong> &nbsp; · &nbsp; <strong>10 piezas impresas</strong></p>
@@ -21,6 +21,47 @@ h1{font-size:42px;letter-spacing:-1.3px;line-height:1.2;margin-top:0}h2{font-siz
 <p>SimpleROV reúne el bastidor, los soportes de propulsión, la cámara, el alojamiento estanco y la simulación en un proyecto reproducible. Está pensado para empezar con pruebas de ajuste mecánico y avanzar hacia el control remoto por cable, el mantenimiento de profundidad y el control de rumbo.</p>
 <p>El idioma principal del proyecto y de la documentación técnica es <strong>inglés</strong>. Este README ofrece una introducción en español; los manuales enlazados están en inglés.</p>
 <p>El <strong>montaje estándar no incluye espuma de flotabilidad superior ni correas</strong>. Conserva las interfaces para añadir un módulo opcional tras medir la masa y el equilibrio del vehículo completo. Las imágenes son renderizados CAD, no fotografías de un prototipo probado.</p>
+<h2 id="videos-de-simulacion">Vídeos de simulación</h2>
+<p><strong>Resumen de 48 segundos, reproducible aquí:</strong> cuatro escenarios reales de MuJoCo, vídeo H.264 a 720p, telemetría y cámara frontal.</p>
+<video controls playsinline preload="metadata" poster="assets/videos/poster.png" style="width:100%"><source src="assets/videos/simple-rov-overview.mp4" type="video/mp4"><a href="assets/videos/simple-rov-overview.mp4">Download MP4</a></video>
+
+<table>
+<thead>
+<tr>
+<th>Escenario</th>
+<th>Intervalo del resumen</th>
+<th>Vídeo individual</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ascenso, descenso, avance y giro</td>
+<td>00:00-00:12</td>
+<td><a href="assets/videos/pool.mp4">Piscina</a></td>
+</tr>
+<tr>
+<td>Corriente y deriva lateral</td>
+<td>00:12-00:24</td>
+<td><a href="assets/videos/cross-current.mp4">Corriente</a></td>
+</tr>
+<tr>
+<td>Tensión y holgura del umbilical</td>
+<td>00:24-00:36</td>
+<td><a href="assets/videos/tethered.mp4">Cable</a></td>
+</tr>
+<tr>
+<td>Fallo del propulsor H_LEFT</td>
+<td>00:36-00:48</td>
+<td><a href="assets/videos/motor-fault.mp4">Fallo de motor</a></td>
+</tr>
+</tbody>
+</table>
+<p><a href="videos.html">Todos los reproductores y reproducción del experimento</a> · <a href="assets/videos/simple-rov-overview.mp4">Descargar MP4</a></p>
+<details>
+<summary><strong>Vista previa animada</strong></summary>
+<p><a href="assets/videos/simple-rov-overview.mp4"><img alt="Vista previa de los cuatro escenarios" src="assets/videos/overview-preview.gif" /></a></p>
+</details>
+<p>Son trayectorias simuladas con parámetros sin calibrar, realimentación de sensores y semilla 0. No son pruebas físicas ni resultados de una política entrenada. Se conservan los MP4, trazas CSV, parámetros exactos y fuente de renderizado en el repositorio.</p>
 <h2 id="vista-general">Vista general</h2>
 <table>
 <thead>

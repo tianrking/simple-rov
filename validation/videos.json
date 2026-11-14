@@ -1,0 +1,94 @@
+{
+  "engine_version": "4.0.1",
+  "source_script_sha256": "b205c14ac99be0f7ec140e0a4d87d48cd9a6b6e38f4748dec2170833c832746f",
+  "source_physics_sha256": {
+    "environment.py": "603ee2d389624cfbe7752c8b49ae9b777c502cde725b92e2c3d7c21a9cf01d37",
+    "configuration.py": "1d3daa1d65e66483ef9b849bb53b3860ed550dfdfd0e0c7308f97edc7523d86c",
+    "hydrodynamics.py": "2bdac92f366927450c229d111f63c8e844446c65ffe136d06ad0e451c8dac000",
+    "actuators.py": "2caf0a311ad47a58eb81eb8968424fa1e57567c35fae688da3e79e275d52bbcb",
+    "sensors.py": "30b63e6a0e951c71518df441954e06c570531e1c9278047825ac3b09d7eeaa92",
+    "config.json": "39606628adefc572e5eeeb3cfb3ad696a747ea7f56a71912073e24de872f2bd6",
+    "scenarios.json": "fc2b9a0856f6565805fb0d001b75ea5a4b4b2f53ed3358e1db796a65c79fc8f1",
+    "simple_rov.xml": "e07a4ff03a6f9b4b66c45d2d85399a02cd889de7f31124d280dfc5cc73190437",
+    "simple_rov_with_buoyancy.xml": "8138497016c5ffd1854d3d155d1edd1868d46e829accead5aa900f34c22f61d8",
+    "ACTUATOR_MAP.json": "afa0f4f0b0bb384daa62282e789e097b8203c855ce194f8cd00a79dc02490984"
+  },
+  "clips": [
+    {
+      "scenario": "pool",
+      "file": "docs/assets/videos/pool.mp4",
+      "duration_s": 12.0,
+      "frames": 240,
+      "fps": 20,
+      "resolution": [
+        1280,
+        720
+      ],
+      "sha256": "ef454eb4cb974911ce4e5f691d99e5a6a5ab47a6f89fdbb6e98cffdd6af23889",
+      "bytes": 529243
+    },
+    {
+      "scenario": "cross-current",
+      "file": "docs/assets/videos/cross-current.mp4",
+      "duration_s": 12.0,
+      "frames": 240,
+      "fps": 20,
+      "resolution": [
+        1280,
+        720
+      ],
+      "sha256": "4b63c1f38a6d6f2751bd6834e40e179e2859f751ce1a5da634b5061aa97cf407",
+      "bytes": 702030
+    },
+    {
+      "scenario": "tethered",
+      "file": "docs/assets/videos/tethered.mp4",
+      "duration_s": 12.0,
+      "frames": 240,
+      "fps": 20,
+      "resolution": [
+        1280,
+        720
+      ],
+      "sha256": "75b09c5898e749beb0ad4cb366268ff22a77eedceb541135e4459ee05e761a29",
+      "bytes": 754436
+    },
+    {
+      "scenario": "motor-fault",
+      "file": "docs/assets/videos/motor-fault.mp4",
+      "duration_s": 12.0,
+      "frames": 240,
+      "fps": 20,
+      "resolution": [
+        1280,
+        720
+      ],
+      "sha256": "a92738ba4728868a91ff3b1cc3e0070738ab6c37697db06811666aa2048b4a8c",
+      "bytes": 486030
+    }
+  ],
+  "overview": {
+    "file": "docs/assets/videos/simple-rov-overview.mp4",
+    "duration_s": 48.0,
+    "sha256": "7833e2bbe7d1bebab5ffa859bcf56b1ab5a91216922764b67dd17886aa228182",
+    "bytes": 2469357
+  },
+  "media_sha256": {
+    "docs/assets/videos/cross-current-metadata.json": "02eee38169b0271e95513db531ed668c4874854428e3f6eb254f3e72b8ed3508",
+    "docs/assets/videos/cross-current-trace.csv": "4972bdab2dbb8a50929d0b933dfebf2c7101b2c744ff3cd356222906860e1332",
+    "docs/assets/videos/cross-current.mp4": "4b63c1f38a6d6f2751bd6834e40e179e2859f751ce1a5da634b5061aa97cf407",
+    "docs/assets/videos/motor-fault-metadata.json": "162236b122698e5d868ffae3fa340dd7bbeb08793367a3a52ed4c213466cb3ec",
+    "docs/assets/videos/motor-fault-trace.csv": "75cd5d2a8e37cf4ca80ab5f32e245422b8af9d298fa059cfdceefd442f2d58ed",
+    "docs/assets/videos/motor-fault.mp4": "a92738ba4728868a91ff3b1cc3e0070738ab6c37697db06811666aa2048b4a8c",
+    "docs/assets/videos/overview-preview.gif": "681f8462e2312add4434fa6eaa3c60b9356a69423b2388b632dc798c6c82e409",
+    "docs/assets/videos/pool-metadata.json": "301e3594584a890821688e0827aed5873e8ec65810d370d90e73b4e8dd643834",
+    "docs/assets/videos/pool-trace.csv": "85f1126d1dbac8d4e108759464b42da1ba8af69fc4b88c79c1e7780a1068070b",
+    "docs/assets/videos/pool.mp4": "ef454eb4cb974911ce4e5f691d99e5a6a5ab47a6f89fdbb6e98cffdd6af23889",
+    "docs/assets/videos/poster.png": "599e99089cf87384051e03d4b3ba336842c8557a266a340117c309ef095f1838",
+    "docs/assets/videos/simple-rov-overview.mp4": "7833e2bbe7d1bebab5ffa859bcf56b1ab5a91216922764b67dd17886aa228182",
+    "docs/assets/videos/tethered-metadata.json": "a1a55b4811ba694012bb3c60ff2ad9f2f0b6fceb8df4a41387fe67c13ba19168",
+    "docs/assets/videos/tethered-trace.csv": "af62ce4145f218d1c1492794c8552c3c28c194a05a83eb6962e0059d3250465e",
+    "docs/assets/videos/tethered.mp4": "75b09c5898e749beb0ad4cb366268ff22a77eedceb541135e4459ee05e761a29"
+  },
+  "scope": "Actual uncalibrated MuJoCo trajectories. English telemetry and display diagnostics; no physical robot footage or trained policy. Native GitHub attachments mirror committed MP4s."
+}

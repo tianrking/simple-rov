@@ -35,6 +35,10 @@ python tools/docs/build_web.py
 
 Onshape captures are real browser screenshots, not generated renders. Keep their source URL, configuration and hashes in `validation/onshape/screenshots.json`. Do not imply the historical cloud assembly is the current foam-free default.
 
+## Simulation videos
+
+`python tools/render_videos.py` renders the four telemetry-enhanced scenario clips, overview, poster, GIF and state/parameter sidecars. `python tools/verify_videos.py --publish` performs full H.264 decoding, timing and source checks. See [video gallery](videos.md). Committed MP4s remain the source of truth; GitHub-hosted copies enable README players.
+
 ## Integrity and packaging
 
 ```bash

@@ -4,6 +4,8 @@ SimpleROV runs on **MuJoCo 4.0.1**, verified against the official latest stable 
 
 This foundation supports repeatable controller development, fault experiments, calibration and a sensor-based learning task. It remains an uncalibrated rigid-body approximation. A software benchmark is not an experimental validation or a global optimality result.
 
+[Watch the four-scenario video overview](videos.md).
+
 ## Architecture and timing
 
 ```text

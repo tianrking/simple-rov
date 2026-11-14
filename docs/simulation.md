@@ -57,7 +57,7 @@ python simulation/mujoco/run.py --render --output-dir runs/demo
 
 Automatic recording writes `demo.mp4`, `demo_states.csv`, `simulation.png` and `front-camera.png`. Manual runs write `manual_states.csv`; automatic viewer runs write `viewer_states.csv`. Every run also writes `run_metadata.json` with the resolved parameters, feedback mode, seed and source hashes. Omit `--output-dir` for a UTC timestamp directory under `runs/`.
 
-[Example video](../simulation/mujoco/demo.mp4)
+[Watch the scenario videos](videos.md) · [Compact automatic demonstration](../simulation/mujoco/demo.mp4)
 
 ![Driving-window framebuffer check](assets/images/driving-window.png)
 
